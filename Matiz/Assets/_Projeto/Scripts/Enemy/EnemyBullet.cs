@@ -25,11 +25,14 @@ public class EnemyBullet : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
 
         //transform.eulerAngles = Vector3.zero;
+
+        //rb.AddForce(target.transform.position * speed * Time.deltaTime);
     }
 
     private void Update()
     {
-        //transform.Translate(target.transform.position * speed * Time.deltaTime);
-        //transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        ///transform.Translate(target.transform.position * speed * Time.deltaTime);
+
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }

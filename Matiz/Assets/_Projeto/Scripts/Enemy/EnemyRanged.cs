@@ -46,8 +46,8 @@ public class EnemyRanged : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bullet, muzzle.position, Quaternion.identity);
-        //Instantiate(bullet, muzzle.position, muzzle.rotation);
+        //Instantiate(bullet, muzzle.position, Quaternion.identity);
+        Instantiate(bullet, muzzle.position, muzzle.rotation);
         //Instantiate(vfx, muzzle.position, Quaternion.identity);
         fireTime = fireRate;
     }
