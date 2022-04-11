@@ -10,6 +10,8 @@ public class CharacterMovement : MonoBehaviour
     public float timeDash;
     public float forceDash;
 
+    public LayerMask groundLayer;
+
     [HideInInspector]
     public bool canMove;
     [HideInInspector]
@@ -38,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit) && hit.transform.gameObject.layer == 6) // 6 = layermask ground
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer)) // 6 = layermask ground
             {
 
                 StartCoroutine(Dash(hit));

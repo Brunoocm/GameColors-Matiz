@@ -7,6 +7,7 @@ public class CharacterAttack : MonoBehaviour
     
     public GameObject attack;
 
+    public LayerMask groundLayer;
     public float timeBTWAttack;
     public float timeAttack;
     public float force;
@@ -30,7 +31,7 @@ public class CharacterAttack : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity) && hit.transform.gameObject.layer == 6) // 6 = layermask ground
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer)) // 6 = layermask ground
             {
                 AttackPlayerOption2(hit);
 
