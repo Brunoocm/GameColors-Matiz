@@ -5,9 +5,10 @@ using UnityEngine;
 public class CharacterDamage : MonoBehaviour
 {
     public int damage;
+
     void Start()
     {
-        
+      
     }
 
     void Update()
