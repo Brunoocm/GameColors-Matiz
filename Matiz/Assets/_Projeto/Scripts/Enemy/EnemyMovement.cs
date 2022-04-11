@@ -31,12 +31,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if(Physics.CheckSphere(transform.position, retreatRange, playerLayer))
         {
-            print("retreating");
             FollowRetreat(-retreatSpeed);
         }
         else if(Physics.CheckSphere(transform.position, followRange, playerLayer))
         {
-            print("following");
             FollowRetreat(followSpeed);
         }
         else
