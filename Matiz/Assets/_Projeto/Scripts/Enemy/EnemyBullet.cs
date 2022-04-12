@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    //public variables
 
     public int damage;
     public float speed;
     //public GameObject vfx;
 
-    //private variables
-
     GameObject target;
-
-    //components
 
     Rigidbody rb;
 
@@ -24,15 +19,23 @@ public class EnemyBullet : MonoBehaviour
 
         target = GameObject.FindGameObjectWithTag("Player");
 
-        //transform.eulerAngles = Vector3.zero;
-
-        //rb.AddForce(target.transform.position * speed * Time.deltaTime);
+        Destroy(gameObject, 5f);
     }
 
     private void Update()
     {
-        ///transform.Translate(target.transform.position * speed * Time.deltaTime);
-
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            if (other.gameObject.GetComponent<CharacterStats>().canDamage)
+            {
+                other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+                Destroy(gameObject);
+            }
+        }
     }
 }
