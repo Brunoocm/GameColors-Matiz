@@ -6,6 +6,7 @@ public class CharacterStats : MonoBehaviour
 {
     public int health;
     public float timeInvencible;
+    public SpriteRenderer sprite;
     private float m_timeInvencible;
 
     [SerializeField] public bool canDamage;
@@ -14,7 +15,6 @@ public class CharacterStats : MonoBehaviour
     {
         canDamage = true;
         m_timeInvencible = timeInvencible;
-
     }
 
     void Update()
@@ -28,6 +28,11 @@ public class CharacterStats : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if ( canDamage )
+            sprite.color = Color.white;
+        else
+            sprite.color = Color.cyan;
     }
 
     public void DamageVoid(int dano)

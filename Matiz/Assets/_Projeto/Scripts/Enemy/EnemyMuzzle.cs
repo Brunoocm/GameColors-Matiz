@@ -13,6 +13,6 @@ public class EnemyMuzzle : MonoBehaviour
 
     private void Update()
     {
-        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        if(player != null) transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
     }
 }
