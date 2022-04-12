@@ -24,6 +24,7 @@ public class CharacterStats : MonoBehaviour
         {
             canDamage = true;
         }
+
         if(health <= 0)
         {
             Destroy(gameObject);
