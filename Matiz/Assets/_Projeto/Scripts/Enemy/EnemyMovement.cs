@@ -5,13 +5,23 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-
     public float followSpeed;
     public float followRange;
-    public float retreatSpeed;
-    public float retreatRange;
+    public float rangeJumpAttack;
+    //public float retreatSpeed;
+    //public float retreatRange;
     public LayerMask playerLayer;
     public LayerMask enemyLayer;
+
+
+    [Header("RandomJump")]
+    public float timeJump;
+    public float speedJump;
+    public Transform[] waypoints;
+    private float m_timeJump;
+    private int m_CurrentWaypointIndex;
+    private bool isJumpAttack;
+
 
     [Header("aa")]
     private bool playerFound;
@@ -22,37 +32,35 @@ public class EnemyMovement : MonoBehaviour
     GameObject player;
     GameObject myObject;
 
+
     Animator anim => gameObject.GetComponent<Animator>();
     NavMeshAgent navMeshAgent => gameObject.GetComponent<NavMeshAgent>();
+    private void Awake()
+    {
+        navMeshAgent.speed = followSpeed;
+    }
     private void Start()
     {
         myObject = this.gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
+        m_timeJump = timeJump;
     }
 
     private void Update()
     {
         playerFound = Physics.CheckSphere(transform.position, followRange, playerLayer);
         otherEnemyFound = Physics.CheckSphere(transform.position, followRange, enemyLayer);
+        isJumpAttack = Physics.CheckSphere(transform.position, rangeJumpAttack, playerLayer);
 
-        if (playerFound)
+        if(isJumpAttack)
+        {
+            JumpAttack();
+        }
+        else if (playerFound)
         {
             FollowRetreat(followSpeed); //Chase player
 
-          
-        }
-        if (otherEnemyFound)
-        {
-            EnemyTransform = GameObject.FindGameObjectsWithTag("Enemy");
-            CheckIsActive();
-            MoveAway(followSpeed);
-        }
-        else if (Physics.CheckSphere(transform.position, retreatRange, playerLayer))
-        {
-            //FollowRetreat(-retreatSpeed);
-        }
-        else if (Physics.CheckSphere(transform.position, followRange, enemyLayer))
-        {
+
         }
         else
         {
@@ -61,24 +69,90 @@ public class EnemyMovement : MonoBehaviour
                 anim.SetBool("walk", false);
             }
         }
+
     }
 
     void FollowRetreat(float speed)
     {
-        Vector3 target = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        navMeshAgent.SetDestination(target);
 
-        if(anim != null)
+        if(!isJumpAttack)
+        {
+            Vector3 target = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+            navMeshAgent.SetDestination(target);
+        }
+
+        if (anim != null)
         {
             anim.SetBool("walk", true);
         }
     }
 
+    
+
+    private void JumpAttack()
+    {
+        navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+
+        if (timeJump <= 0)
+        {
+            NextPoint();
+            Move(followSpeed);
+            m_CurrentWaypointIndex = Random.Range(0,3);
+            //anim.SetTrigger("TriggerJump");
+            resetTimerAnim(); //tirar dps
+        }
+        else
+        {
+            Move(followSpeed);
+            timeJump -= Time.deltaTime;
+        }
+
+
+    }
+    public void resetTimerAnim()
+    {
+        timeJump = m_timeJump;
+
+    }
+
+    public void NextPoint()
+    {
+        m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
+        navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+    }
+    //void Stop()
+    //{
+    //    navMeshAgent.isStopped = true;
+    //    navMeshAgent.ResetPath();
+    //    navMeshAgent.speed = 0;
+    //}
+    void Move(float speed)
+    {
+        navMeshAgent.isStopped = false;
+        navMeshAgent.speed = speed;
+    }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, followRange);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, rangeJumpAttack);
+    }
+
+    //TESTE     //TESTE    //TESTE    //TESTE    //TESTE    //TESTE
+
     void MoveAway(float speed)
     {
-        Vector3 target = new Vector3(closestTarget.transform.position.x, transform.position.y, closestTarget.transform.position.z);
-        navMeshAgent.SetDestination(-target * 10);
+        Vector3 playerTarget = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        Vector3 closestEnemyTarget = new Vector3(closestTarget.transform.position.x, transform.position.y, closestTarget.transform.position.z);
+        Vector3 myPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+
+        navMeshAgent.SetDestination(closestEnemyTarget - myPos);
+
     }
+    //TESTE    //TESTE    //TESTE    //TESTE    //TESTE    //TESTE
 
     void CheckIsActive()
     {
@@ -112,13 +186,6 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
+    //TESTE    //TESTE    //TESTE    //TESTE    //TESTE    //TESTE
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, followRange);
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, retreatRange);
-    }
 }
