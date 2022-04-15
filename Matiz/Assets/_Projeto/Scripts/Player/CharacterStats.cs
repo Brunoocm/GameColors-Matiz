@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    [Header("stats")]
     public int health;
     public float timeInvencible;
-    public SpriteRenderer sprite;
     private float m_timeInvencible;
+    public SpriteRenderer sprite;
+   
 
-    [SerializeField] public bool canDamage;
+    [Header("Shield")]
+    public bool hasShield;
+    public bool canDamage;
+    public GameObject shieldObj;
   
     void Start()
     {
+        hasShield = true;
         canDamage = true;
         m_timeInvencible = timeInvencible;
     }
@@ -20,29 +26,48 @@ public class CharacterStats : MonoBehaviour
     void Update()
     {
         timeInvencible -= Time.deltaTime;
-        if(timeInvencible <= 0)
-        {
-            canDamage = true;
-        }
 
-        if(health <= 0)
+        if (hasShield)
         {
-            Destroy(gameObject);
+            shieldObj.SetActive(true);
         }
-
-        if ( canDamage )
-            sprite.color = Color.white;
         else
-            sprite.color = Color.cyan;
+        {
+            if (timeInvencible <= 0)
+            {
+                canDamage = true;
+            }
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+
+            if (canDamage)
+                sprite.color = Color.white;
+            else
+                sprite.color = Color.cyan;
+        }
+
+
     }
 
     public void DamageVoid(int dano)
     {
-        if (canDamage)
+        if(hasShield)
         {
-            health -= dano;
-            canDamage = false;
-            timeInvencible = m_timeInvencible;
+            shieldObj.SetActive(false);
+            hasShield = false;
         }
+        else if(!hasShield)
+        {
+            if (canDamage)
+            {
+                health -= dano;
+                timeInvencible = m_timeInvencible;
+                canDamage = false;
+            }
+        }
+   
     }
 }

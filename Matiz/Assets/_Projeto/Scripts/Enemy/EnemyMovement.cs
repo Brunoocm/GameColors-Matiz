@@ -131,61 +131,61 @@ public class EnemyMovement : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speed;
     }
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, followRange);
+    //void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, followRange);
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, rangeJumpAttack);
-    }
+    //    Gizmos.color = Color.blue;
+    //    Gizmos.DrawWireSphere(transform.position, rangeJumpAttack);
+    //}
 
     //TESTE     //TESTE    //TESTE    //TESTE    //TESTE    //TESTE
 
-    void MoveAway(float speed)
-    {
-        Vector3 playerTarget = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        Vector3 closestEnemyTarget = new Vector3(closestTarget.transform.position.x, transform.position.y, closestTarget.transform.position.z);
-        Vector3 myPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    //void MoveAway(float speed)
+    //{
+    //    Vector3 playerTarget = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+    //    Vector3 closestEnemyTarget = new Vector3(closestTarget.transform.position.x, transform.position.y, closestTarget.transform.position.z);
+    //    Vector3 myPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
 
-        navMeshAgent.SetDestination(closestEnemyTarget - myPos);
+    //    navMeshAgent.SetDestination(closestEnemyTarget - myPos);
 
-    }
-    //TESTE    //TESTE    //TESTE    //TESTE    //TESTE    //TESTE
+    //}
+    ////TESTE    //TESTE    //TESTE    //TESTE    //TESTE    //TESTE
 
-    void CheckIsActive()
-    {
+    //void CheckIsActive()
+    //{
 
-        float closestDistanceSqr = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
+    //    float closestDistanceSqr = Mathf.Infinity;
+    //    Vector3 currentPosition = transform.position;
 
-        foreach (GameObject pointsTarget in EnemyTransform)
-        {
-            Vector3 directionToTarget = pointsTarget.transform.position - currentPosition;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
-            {
-                //for (int i = 0; i < EnemyTransform.Length; i++)
-                //{
-                //    pointsTarget++;
-                //}
+    //    foreach (GameObject pointsTarget in EnemyTransform)
+    //    {
+    //        Vector3 directionToTarget = pointsTarget.transform.position - currentPosition;
+    //        float dSqrToTarget = directionToTarget.sqrMagnitude;
+    //        if (dSqrToTarget < closestDistanceSqr)
+    //        {
+    //            //for (int i = 0; i < EnemyTransform.Length; i++)
+    //            //{
+    //            //    pointsTarget++;
+    //            //}
 
-                if (pointsTarget == myObject)
-                    continue;
-                closestDistanceSqr = dSqrToTarget;
-                closestTarget = pointsTarget.transform;
+    //            if (pointsTarget == myObject)
+    //                continue;
+    //            closestDistanceSqr = dSqrToTarget;
+    //            closestTarget = pointsTarget.transform;
 
-            }
-            else
-            {
+    //        }
+    //        else
+    //        {
 
-            }
+    //        }
 
 
-        }
+    //    }
 
-    }
+    //}
     //TESTE    //TESTE    //TESTE    //TESTE    //TESTE    //TESTE
 
 }
