@@ -24,14 +24,18 @@ public class CharacterMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer => gameObject.GetComponentInChildren<SpriteRenderer>();
     private CharacterController characterController => gameObject.GetComponent<CharacterController>();
     private CharacterAttack characterAttack => gameObject.GetComponent<CharacterAttack>();
-    private Animator anim => gameObject.GetComponentInChildren<Animator>();
+    [HideInInspector] public Animator anim => gameObject.GetComponentInChildren<Animator>();
 
     private Vector3 _movement;
+
+    private Boat boat;
 
     private void Start()
     {
         canMove = true;
         canDash = true;
+
+        boat = FindObjectOfType<Boat>();
     }
     private void Update()
     {
@@ -100,4 +104,19 @@ public class CharacterMovement : MonoBehaviour
        
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Harbor"))
+        {
+            boat.inHarbor = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Harbor"))
+        {
+            boat.inHarbor = false;
+        }
+    }
 }
