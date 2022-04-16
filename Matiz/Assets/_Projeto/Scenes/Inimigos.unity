@@ -2845,11 +2845,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fc73ac091c0bc47a4741ab46768700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
   antecipation: 1
-  dashForce: 10
-  timeDash: 0.2
-  cdToDash: 5
+  dashForce: 27
+  timeDash: 0.5
+  bulletExplosion: {fileID: 1412731884244503919, guid: 3861c55b081391441a69846195184ab3, type: 3}
   tagNameTarget: Player
 --- !u!114 &1932044376
 MonoBehaviour:
@@ -2864,7 +2864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemySeenRange: 31.4
-  EnemyAttackRange: 7
+  EnemyAttackRange: 10
   attackDuration: 1
   stopDistance: 0
   speed: 5
@@ -2918,10 +2918,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.18
+  m_Radius: 0.48
   m_Height: 2.268266
   m_Direction: 1
-  m_Center: {x: 0, y: 1.1784221, z: 0.36}
+  m_Center: {x: 0, y: 1.1784221, z: 0.23}
 --- !u!54 &1932044379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2946,7 +2946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932044372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 230.22, y: 0, z: 235.98}
+  m_LocalPosition: {x: 216.5, y: 0, z: 246.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429806569}

@@ -11,12 +11,11 @@ public class EnemyAttackExplosivo : MonoBehaviour
     [Header("Dash")]
     public float dashForce;
     public float timeDash;
-    public float cdToDash;
+    public GameObject bulletExplosion;
 
     [Header("Target")]
     public string tagNameTarget;
     private bool oneTime;
-    private bool hitTarget;
     GameObject targetObj;
 
     Rigidbody rb => gameObject.GetComponent<Rigidbody>();
@@ -41,11 +40,21 @@ public class EnemyAttackExplosivo : MonoBehaviour
 
     public void HitTarget(GameObject target)
     {
-        hitTarget = true;
+       
         if (targetObj.gameObject.GetComponent<CharacterStats>())
         {
             targetObj.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
         }
+    }
+
+    public void Explosion()
+    {
+        GameObject bullet = bulletExplosion;
+        bullet.GetComponent<ExplosionBullet>().damage = damage;
+        Instantiate(bullet, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
+
     }
 
     public IEnumerator Dash(Transform dir)
@@ -59,16 +68,13 @@ public class EnemyAttackExplosivo : MonoBehaviour
         float horizontal = dir.position.x - transform.position.x;
 
         float startTime = Time.time;
-        while (Time.time < startTime + timeDash && !hitTarget)
+        while (Time.time < startTime + timeDash)
         {
             transform.Translate(new Vector3(horizontal, 0, vertical).normalized * dashForce * Time.deltaTime);
             yield return null;
         }
 
-        yield return new WaitForSeconds(cdToDash);
-
-        oneTime = false;
-        hitTarget = false;
+        Explosion();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -76,6 +82,9 @@ public class EnemyAttackExplosivo : MonoBehaviour
         if (other.gameObject.CompareTag(tagNameTarget))
         {
             HitTarget(other.gameObject);
+            Explosion();
+
+
         }
     }
 
