@@ -12,7 +12,6 @@ public class EnemyAttackRanged : MonoBehaviour
     public float timeJump;
     public float speedJump;
     public float cdJump;
-    public Transform[] waypoints;
 
     [Header("Target")]
     public Transform muzzle;
@@ -35,7 +34,7 @@ public class EnemyAttackRanged : MonoBehaviour
         if (!oneTime)
         {
             int num = Random.Range(0, 4);
-            StartCoroutine(Jump(waypoints[num], num));
+            StartCoroutine(Jump(num));
         }
     }
 
@@ -43,12 +42,9 @@ public class EnemyAttackRanged : MonoBehaviour
     {
         Instantiate(bullet, muzzle.position, muzzle.rotation);
     }
-    public IEnumerator Jump(Transform dir, int num)
+    public IEnumerator Jump(int num)
     {
         oneTime = true;
-
-        float vertical = dir.position.z ;
-        float horizontal = dir.position.x ;
 
         float startTime = Time.time;
         while (Time.time < startTime + timeJump)
