@@ -2458,7 +2458,7 @@ GameObject:
   - component: {fileID: 1761362153}
   m_Layer: 7
   m_Name: Slash
-  m_TagString: Untagged
+  m_TagString: AttackPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2847,7 +2847,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   antecipation: 1
-  dashForce: 27
+  timeToExplode: 0.6
+  dashForce: 25
   timeDash: 0.5
   bulletExplosion: {fileID: 1412731884244503919, guid: 3861c55b081391441a69846195184ab3, type: 3}
   tagNameTarget: Player
@@ -2867,7 +2868,7 @@ MonoBehaviour:
   EnemyAttackRange: 10
   attackDuration: 1
   stopDistance: 0
-  speed: 5
+  speed: 8
   gizmos: 1
   seesTarget: 0
   attackingTarget: 0
@@ -2904,8 +2905,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  timeKnockback: 0.3
-  forceKnockback: 7
+  timeKnockback: 0.6
+  forceKnockback: 25
   flashMaterial: {fileID: 2100000, guid: 781d0fcddee803043b1aee679c2c060c, type: 2}
   duration: 0.1
 --- !u!136 &1932044378

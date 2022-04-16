@@ -7,6 +7,7 @@ public class EnemyAttackExplosivo : MonoBehaviour
     [Header("Stats")]
     public int damage;
     public float antecipation;
+    public float timeToExplode;
 
     [Header("Dash")]
     public float dashForce;
@@ -16,8 +17,10 @@ public class EnemyAttackExplosivo : MonoBehaviour
     [Header("Target")]
     public string tagNameTarget;
     private bool oneTime;
+    private bool hitBy;
     GameObject targetObj;
 
+    EnemyBaseMove enemyBaseMove => gameObject.GetComponent<EnemyBaseMove>();
     Rigidbody rb => gameObject.GetComponent<Rigidbody>();
     Animator anim => gameObject.GetComponent<Animator>();
     void Start()
@@ -27,13 +30,13 @@ public class EnemyAttackExplosivo : MonoBehaviour
 
     void Update()
     {
+      
     }
 
     public void AttackVoid()
     {
         if (!oneTime)
         {
-            //anim.SetTrigger("AntecipationTrigger");
             StartCoroutine(Dash(targetObj.transform));
         }
     }
@@ -47,8 +50,10 @@ public class EnemyAttackExplosivo : MonoBehaviour
         }
     }
 
-    public void Explosion()
+    public IEnumerator Explosion(float time)
     {
+        yield return new WaitForSeconds(time);
+
         GameObject bullet = bulletExplosion;
         bullet.GetComponent<ExplosionBullet>().damage = damage;
         Instantiate(bullet, transform.position, Quaternion.identity);
@@ -62,19 +67,19 @@ public class EnemyAttackExplosivo : MonoBehaviour
         oneTime = true;
 
         yield return new WaitForSeconds(antecipation);
-        //anim.SetTrigger("DashTrigger");
 
         float vertical = dir.position.z - transform.position.z;
         float horizontal = dir.position.x - transform.position.x;
 
         float startTime = Time.time;
-        while (Time.time < startTime + timeDash)
+        while (Time.time < startTime + timeDash && !hitBy)
         {
             transform.Translate(new Vector3(horizontal, 0, vertical).normalized * dashForce * Time.deltaTime);
             yield return null;
         }
 
-        Explosion();
+        if(!hitBy) StartCoroutine(Explosion(0f));
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -82,9 +87,18 @@ public class EnemyAttackExplosivo : MonoBehaviour
         if (other.gameObject.CompareTag(tagNameTarget))
         {
             HitTarget(other.gameObject);
-            Explosion();
+            StartCoroutine(Explosion(0f));
 
+        } 
+        if (other.gameObject.CompareTag("AttackPlayer"))
+        {
+            hitBy = true;
+            if (hitBy)
+            {
+                enemyBaseMove.stopMoving = true;
+                StartCoroutine(Explosion(timeToExplode));
 
+            }
         }
     }
 
