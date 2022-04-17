@@ -8,18 +8,13 @@ public class Boat : MonoBehaviour
     [SerializeField] private Transform playerPlace;
     [SerializeField] private Transform harbor;
 
-    //[HideInInspector] 
-    public bool boatCanMove;
+    [HideInInspector] public bool boatCanMove;
+    [HideInInspector] public bool inHarbor;
+    [HideInInspector] public bool inBoat;
 
-    //[HideInInspector] 
-    public bool inHarbor;
+    private CharacterMovement player;
 
-    //[HideInInspector] 
-    public bool inBoat;
-
-    CharacterMovement player;
-
-    //Animator anim;
+    [SerializeField] private Animator anim;
     CharacterController charController;
     Rigidbody rb;
 
@@ -27,19 +22,18 @@ public class Boat : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
 
-        //anim = GetComponent<Animator>();
         charController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        //if (boatCanMove) BoatMove();
+        if (boatCanMove) BoatMove();
     }
 
     private void Update()
     {
-        if (boatCanMove) BoatMove();
+        //if (boatCanMove) BoatMove();
 
         if (inHarbor && Input.GetKeyDown(KeyCode.E))
         {
@@ -52,15 +46,17 @@ public class Boat : MonoBehaviour
                 Board();
             }
         }
+
+        if (inBoat)
+        {
+            player.transform.position = playerPlace.position;
+        }
     }
 
     void Board()
     {
-        print("board");
-
         player.canMove = false;
         player.transform.parent = transform;
-        player.transform.position = playerPlace.position;
         player.anim.enabled = false;
 
         inBoat = true;
@@ -69,8 +65,6 @@ public class Boat : MonoBehaviour
 
     void Land()
     {
-        print("land");
-
         player.canMove = true;
         player.transform.parent = null;
         player.anim.enabled = true;
@@ -78,8 +72,6 @@ public class Boat : MonoBehaviour
         inBoat = false;
         boatCanMove = false;
         transform.position = harbor.position;
-
-        //anim.SetBool("idle", true);
     }
 
     void BoatMove()
@@ -89,16 +81,14 @@ public class Boat : MonoBehaviour
 
         Vector3 moveDir = new Vector3(xMove, 0, yMove).normalized;
 
-        if(moveDir.magnitude > 0.1f)
+        if(moveDir.magnitude > 0.9f)
         {
-            charController.Move(moveDir * speed * Time.deltaTime);
-            //rb.velocity = new Vector3(moveDir.x * speed * Time.deltaTime, 0, moveDir.y * speed * Time.deltaTime);
+            //charController.Move(moveDir * speed * Time.deltaTime);
+            rb.AddForce(moveDir * speed * Time.deltaTime);
         }
 
-        //anim.SetFloat("xMove", xMove);
-        //anim.SetFloat("yMove", yMove);
-        //anim.SetFloat("speed", moveDir.sqrMagnitude);
-
-        print(moveDir.sqrMagnitude);
+        anim.SetFloat("MoveX", xMove);
+        anim.SetFloat("MoveZ", yMove);
+        anim.SetFloat("Speed", moveDir.sqrMagnitude);
     }
 }
