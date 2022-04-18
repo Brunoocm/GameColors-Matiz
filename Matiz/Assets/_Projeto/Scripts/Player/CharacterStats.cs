@@ -14,6 +14,7 @@ public class CharacterStats : MonoBehaviour
     [Header("Shield")]
     public bool hasShield;
     public bool canDamage;
+    public GameObject dropPrisma;
     public GameObject shieldObj;
   
     void Start()
@@ -57,6 +58,7 @@ public class CharacterStats : MonoBehaviour
         if(hasShield)
         {
             shieldObj.SetActive(false);
+            Instantiate(dropPrisma, transform.position, Quaternion.identity);
             hasShield = false;
         }
         else if(!hasShield)
