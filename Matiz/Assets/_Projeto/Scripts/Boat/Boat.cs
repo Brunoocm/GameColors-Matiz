@@ -7,6 +7,7 @@ public class Boat : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Transform playerPlace;
     [SerializeField] private Transform harbor;
+    [SerializeField] private Transform playerHarbor;
 
     [HideInInspector] public bool boatCanMove;
     [HideInInspector] public bool inHarbor;
@@ -61,17 +62,22 @@ public class Boat : MonoBehaviour
 
         inBoat = true;
         boatCanMove = true;
+
+        rb.isKinematic = false;
     }
 
     void Land()
     {
         player.canMove = true;
         player.transform.parent = null;
+        player.transform.position = playerHarbor.position;
         player.anim.enabled = true;
 
         inBoat = false;
         boatCanMove = false;
-        transform.position = harbor.position;
+        //transform.position = harbor.position;
+
+        rb.isKinematic = true;
     }
 
     void BoatMove()
