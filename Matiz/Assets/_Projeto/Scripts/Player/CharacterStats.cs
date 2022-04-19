@@ -16,6 +16,7 @@ public class CharacterStats : MonoBehaviour
     public bool canDamage;
     public GameObject dropPrisma;
     public GameObject shieldObj;
+    public Transform primaPos;
   
     void Start()
     {
@@ -28,27 +29,20 @@ public class CharacterStats : MonoBehaviour
     {
         timeInvencible -= Time.deltaTime;
 
-        if (hasShield)
+        if (timeInvencible <= 0)
         {
-            shieldObj.SetActive(true);
+            canDamage = true;
         }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        if (canDamage)
+            sprite.color = Color.white;
         else
-        {
-            if (timeInvencible <= 0)
-            {
-                canDamage = true;
-            }
-
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
-
-            if (canDamage)
-                sprite.color = Color.white;
-            else
-                sprite.color = Color.cyan;
-        }
+            sprite.color = Color.cyan;
 
 
     }
@@ -58,7 +52,7 @@ public class CharacterStats : MonoBehaviour
         if(hasShield)
         {
             shieldObj.SetActive(false);
-            Instantiate(dropPrisma, transform.position, Quaternion.identity);
+            SpawnPrisma();
             hasShield = false;
         }
         else if(!hasShield)
@@ -71,5 +65,18 @@ public class CharacterStats : MonoBehaviour
             }
         }
    
+    }
+
+    public void GiveShield()
+    {
+        shieldObj.SetActive(true);
+        hasShield = true;
+    }
+
+    public void SpawnPrisma()
+    {
+        GameObject prisma = Instantiate(dropPrisma, primaPos.position, Quaternion.identity);
+        prisma.GetComponent<PrismaBase>().characterStats = gameObject.GetComponent<CharacterStats>();
+
     }
 }
