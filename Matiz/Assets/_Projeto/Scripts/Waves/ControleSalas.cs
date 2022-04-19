@@ -13,85 +13,31 @@ public class ControleSalas : MonoBehaviour
     [Header("INIMIGOS")]
     public bool hasEnemy;
     public GameObject ranged;
-    public GameObject rangedSlow;
-    public GameObject tank;
-    public GameObject papel;
+    public GameObject melee;
+    public GameObject explosive;
 
     [Header("PROGRESSÃO")]
     public Level[] levels;
-    public Animator elevadorEsq;
-    public Animator elevadorDir;
-    public GameObject contratoObj;
-
 
     [Header("DEBUG")]
     public Level currentLevel;
     private LayoutWave currentLayout;
-    public List<GameObject> inimigosDisponiveis;//tipos de inimigos que podem ser spawnados no level atual
+    public List<GameObject> inimigosDisponiveis;
     private int currentLevelNumber = 0;
-    [HideInInspector] public bool isShop = true;
-    private bool oneTime;
-    private bool oneTime2;
 
 
     private void Awake()
     {
         StartCoroutine(StartGameplay());
     }
-    private void Start()
-    {
-    }
-
-    private void Update()
-    {
-        levelAtual = currentLevelNumber;
-        hasEnemy = FindObjectOfType<EnemyHealth>();
-
-        if(hasEnemy && isShop)
-        {
-
-        }
-        else
-        {
-            if (!hasEnemy && !isShop && !oneTime)
-            {
-                elevadorDir.SetTrigger("Open");
-                oneTime = true;
-            }
-            if (!hasEnemy && isShop && oneTime || hasEnemy && !isShop && oneTime)
-            {
-                isShop = false;
-                elevadorDir.SetTrigger("Close");
-                oneTime = false;
-            }
-        
-        }
- 
-        //if (hasEnemy && isShop) 
-    }
-
-    public void NextLevel()
-    {
-        isShop = true;
-
-        StartCoroutine(StartGameplay()); 
-    }
-
-    public void BakeNavMesh()
-    {
-
-    }
 
     private void SpawnEnemies()
     {
         inimigosDisponiveis.Clear();
 
-        if (currentLevel.inimigos.rangedSlow) inimigosDisponiveis.Add(rangedSlow);
+        if (currentLevel.inimigos.melee) inimigosDisponiveis.Add(melee);
         if (currentLevel.inimigos.ranged) inimigosDisponiveis.Add(ranged);
-        if (currentLevel.inimigos.tank) inimigosDisponiveis.Add(tank);
-        if (currentLevel.inimigos.papel) inimigosDisponiveis.Add(papel);
-        if (currentLevel.temContrato) contratoObj.SetActive(true);
-        if (!currentLevel.temContrato) contratoObj.SetActive(false);
+        if (currentLevel.inimigos.explosive) inimigosDisponiveis.Add(explosive);
 
         foreach (Transform spawnpoint in currentLayout.spawnpoints)
         {
@@ -101,27 +47,17 @@ public class ControleSalas : MonoBehaviour
 
     IEnumerator StartGameplay()
     {
-        
-        elevadorDir.SetTrigger("Close");
-
-        //FindObjectOfType<AudioManager>().Play("ArCondicionado");
-
         currentLevelNumber++;
         currentLevel = levels[currentLevelNumber - 1];
 
-        if(currentLayout != null)currentLayout.visual.SetActive(false);
+        //if(currentLayout != null)currentLayout.visual.SetActive(false);
 
         currentLayout = layouts[currentLevelNumber - 1];
-        currentLayout.visual.SetActive(true);
+        //currentLayout.visual.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
-        elevadorEsq.SetTrigger("Open");
-        BakeNavMesh();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
 
         SpawnEnemies();
-        oneTime = false;
-
     }
 }
 
@@ -130,7 +66,6 @@ public class Level
 {
     public string name;
     public Inimigos inimigos;
-    public bool temContrato;
 
 }
 
@@ -138,7 +73,6 @@ public class Level
 public class Inimigos
 {
     public bool ranged;
-    public bool rangedSlow;
-    public bool tank;
-    public bool papel;
+    public bool melee;
+    public bool explosive;
 }
