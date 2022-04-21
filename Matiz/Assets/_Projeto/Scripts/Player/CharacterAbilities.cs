@@ -14,6 +14,8 @@ public class CharacterAbilities : MonoBehaviour
     public AzulAbility azulAbility;
     public VerdeAbility verdeAbility;
 
+    CharacterStats characterStats => GetComponent<CharacterStats>();
+
     void Start()
     {
 
@@ -56,7 +58,6 @@ public class CharacterAbilities : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, cinzaAbility.groundLayer)) // 6 = layermask ground
             {
-
 
             }
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 10000f))
@@ -103,10 +104,13 @@ public class CharacterAbilities : MonoBehaviour
     [System.Serializable]
     public class VermelhoAbility
     {
+        public CharacterStats characterStats;
 
         public void Passiva()
         {
+            float ratio = (float)characterStats.health / (float)characterStats.m_health;
 
+            //quanto menor for o ratio, maior a velocidade e dano (puxar nos scripts de movimentação e stats)
         }
 
         public void Especial()

@@ -6,8 +6,11 @@ public class CharacterStats : MonoBehaviour
 {
     [Header("stats")]
     public int health;
+    [HideInInspector] public int m_health;
+    public int damage;
+    [HideInInspector] public int m_damage;
     public float timeInvencible;
-    private float m_timeInvencible;
+    [HideInInspector] public float m_timeInvencible;
     public SpriteRenderer sprite;
    
 
@@ -17,11 +20,14 @@ public class CharacterStats : MonoBehaviour
     public GameObject dropPrisma;
     public GameObject shieldObj;
     public Transform primaPos;
+
   
     void Start()
     {
         hasShield = true;
         canDamage = true;
+        m_health = health;
+        m_damage = damage;
         m_timeInvencible = timeInvencible;
     }
 
@@ -49,22 +55,22 @@ public class CharacterStats : MonoBehaviour
 
     public void DamageVoid(int dano)
     {
-        if(hasShield)
+        if (canDamage)
         {
-            shieldObj.SetActive(false);
-            SpawnPrisma();
-            hasShield = false;
-        }
-        else if(!hasShield)
-        {
-            if (canDamage)
+            if (hasShield)
+            {
+                shieldObj.SetActive(false);
+                SpawnPrisma();
+                hasShield = false;
+            }
+            else
             {
                 health -= dano;
-                timeInvencible = m_timeInvencible;
-                canDamage = false;
             }
-        }
-   
+
+            timeInvencible = m_timeInvencible;
+            canDamage = false;
+        }   
     }
 
     public void GiveShield()

@@ -17,13 +17,15 @@ public class CharacterMovement : MonoBehaviour
     [HideInInspector]
     public bool canDash;
 
-    [SerializeField]
-    private float speed = 2f;
+    public float speed = 2f;
+    [HideInInspector] public float m_speed;
 
     private Rigidbody rb => gameObject.GetComponent<Rigidbody>();
     private SpriteRenderer spriteRenderer => gameObject.GetComponentInChildren<SpriteRenderer>();
     private CharacterController characterController => gameObject.GetComponent<CharacterController>();
     private CharacterAttack characterAttack => gameObject.GetComponent<CharacterAttack>();
+    private CharacterAbilities characterAbilities => gameObject.GetComponent<CharacterAbilities>();
+    private CharacterStats characterStats => gameObject.GetComponent<CharacterStats>();
     [HideInInspector] public Animator anim => gameObject.GetComponentInChildren<Animator>();
 
     private Vector3 _movement;
@@ -36,6 +38,8 @@ public class CharacterMovement : MonoBehaviour
         canDash = true;
 
         boat = FindObjectOfType<Boat>();
+
+        m_speed = speed;
     }
     private void Update()
     {
@@ -76,6 +80,12 @@ public class CharacterMovement : MonoBehaviour
 
     public IEnumerator Dash(RaycastHit dir)
     {
+        if (characterAbilities.cinzaTrue)
+        {
+            characterStats.timeInvencible = characterStats.m_timeInvencible;
+            characterStats.canDamage = false;
+        }
+
         canMove = false;
         canDash = false;
 

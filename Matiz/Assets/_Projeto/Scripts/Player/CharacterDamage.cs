@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class CharacterDamage : MonoBehaviour
 {
-    public int damage;
+    CharacterStats charStats => gameObject.GetComponentInParent<CharacterStats>();
 
-    //CharacterAbilities characterAbilities => gameObject.GetComponentInParent<CharacterAbilities>();
     void Start()
     {
       
@@ -21,7 +20,7 @@ public class CharacterDamage : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().DamageVoid(damage);
+            other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
 
         }
 
