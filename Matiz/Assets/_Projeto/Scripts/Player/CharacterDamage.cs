@@ -6,6 +6,7 @@ public class CharacterDamage : MonoBehaviour
 {
     public int damage;
 
+    //CharacterAbilities characterAbilities => gameObject.GetComponentInParent<CharacterAbilities>();
     void Start()
     {
       
@@ -21,6 +22,8 @@ public class CharacterDamage : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<EnemyHealth>().DamageVoid(damage);
+
         }
+
     }
 }

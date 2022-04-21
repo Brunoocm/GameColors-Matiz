@@ -16,6 +16,7 @@ public class CharacterAttack : MonoBehaviour
     public bool canAttack;
 
     CharacterMovement characterMovement => gameObject.GetComponent<CharacterMovement>();
+    CharacterAbilities characterAbilities => gameObject.GetComponent<CharacterAbilities>();
     Transform playerPos => gameObject.GetComponent<Transform>();
     Animator anim => gameObject.GetComponentInChildren<Animator>();
     Rigidbody rb => gameObject.GetComponent<Rigidbody>();
@@ -33,12 +34,12 @@ public class CharacterAttack : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer)) // 6 = layermask ground
             {
-                AttackPlayerOption2(hit);
+                AttackPlayer(hit);
 
             }
         }
     }
-    void AttackPlayerOption2(RaycastHit mousePos)
+    void AttackPlayer(RaycastHit mousePos)
     {
         canAttack = false;
 

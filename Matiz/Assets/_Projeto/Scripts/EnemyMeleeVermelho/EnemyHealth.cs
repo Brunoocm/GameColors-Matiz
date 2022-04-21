@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [Header("Stats")]
     public int health;
     public float timeKnockback;
     public float forceKnockback;
 
+    [Header("Stacks")]
+    public int currentStacks;
 
     [SerializeField] private Material flashMaterial;
 
     [SerializeField] private float duration;
 
     private SpriteRenderer spriteRenderer;
-
     private Material originalMaterial;
-
     private Coroutine flashRoutine;
-
     GameObject playerObj;
+
+    CharacterAbilities characterAbilities => FindObjectOfType<CharacterAbilities>();
     void Start()
     {
         playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -58,7 +60,26 @@ public class EnemyHealth : MonoBehaviour
     }
     public void DamageVoid(int dano)
     {
-        health -= dano;
+        if(characterAbilities.cinzaTrue) //HABILIDADE CINZA Script: CharacterAbilities.cs
+        {
+            currentStacks++;
+
+            if(currentStacks == characterAbilities.cinzaAbility.numStacks)
+            {
+                health -= dano * 2;
+                currentStacks = 0;
+            }
+            else
+            {
+                health -= dano;
+
+            }
+        }                                //HABILIDADE CINZA Script: CharacterAbilities.cs
+        else
+        {
+            health -= dano;  
+        }
+
         Flash();
         StartCoroutine(Knockback());
     }
