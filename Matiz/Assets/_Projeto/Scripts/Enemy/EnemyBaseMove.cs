@@ -60,6 +60,7 @@ public class EnemyBaseMove : MonoBehaviour
             if (attackDuration <= 0)
             {
                 stopMoving = false;
+                //attackDuration = m_attackDuration;
             }
         }
     }
@@ -71,16 +72,24 @@ public class EnemyBaseMove : MonoBehaviour
             Vector3 target = new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z);
             navMeshAgent.SetDestination(target);
         }
+        else
+        {
+            navMeshAgent.ResetPath();
+        }
     }
 
     void AttackTarget()
     {
-        stopMoving = true;
-        attackDuration = m_attackDuration;
+        ResetMovement();
         eventAttack.Invoke();
-        navMeshAgent.ResetPath();
     }
 
+    public void ResetMovement()
+    {
+        stopMoving = true;
+        attackDuration = m_attackDuration;
+        navMeshAgent.ResetPath();
+    }
     void OnDrawGizmosSelected()
     {
         if (gizmos)

@@ -25,7 +25,6 @@ public class CharacterAbilities : MonoBehaviour
     {
         if (cinzaTrue)
         {
-            spawnEspecialCinza();
             cinzaAbility.Especial();
             cinzaAbility.Dash();
         }
@@ -58,20 +57,21 @@ public class CharacterAbilities : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, cinzaAbility.groundLayer)) // 6 = layermask ground
             {
-
-            }
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 10000f))
-            {
-                GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, hit.transform.position, Quaternion.identity);
+                GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, hit.point, Quaternion.identity);
                 obj.GetComponent<SpecialCinza>().forceKnockback = cinzaAbility.forceKnockback;
                 obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
+
             }
+          
+            
         }
-    }
+        }
 
     [System.Serializable]
     public class CinzaAbility
     {
+        public CharacterAbilities characterAbilities;
+
         [Header("Passiva")]
         public int numStacks;
 
@@ -92,7 +92,7 @@ public class CharacterAbilities : MonoBehaviour
 
         public void Especial()
         {
-
+            characterAbilities.spawnEspecialCinza();
         }
 
         public void Dash()
