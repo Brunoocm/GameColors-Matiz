@@ -20,6 +20,12 @@ public class CharacterMovement : MonoBehaviour
     public float speed = 2f;
     [HideInInspector] public float m_speed;
 
+    private bool dashing;
+    private float dashMeter;
+    private float xMove, yMove;
+    Vector3 lastDir;
+    Vector3 moveDir;
+
     private Rigidbody rb => gameObject.GetComponent<Rigidbody>();
     private SpriteRenderer spriteRenderer => gameObject.GetComponentInChildren<SpriteRenderer>();
     private CharacterController characterController => gameObject.GetComponent<CharacterController>();
@@ -43,44 +49,57 @@ public class CharacterMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !characterAbilities.vermelhoTrue)
         {
             if (canMove && canDash)
             {
+                StartCoroutine(Dash(timeDash));
+            }
+        }
 
 
-                RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //print(dashMeter);
 
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer)) // 6 = layermask ground
+        if (characterAbilities.vermelhoTrue)
+        {
+            if (Input.GetKey(KeyCode.Space) && dashMeter < characterAbilities.vermelhoAbility.dashMaxForce)
+            {
+                canMove = false;
+
+                dashMeter += Time.deltaTime / 5;
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                if(dashMeter >= characterAbilities.vermelhoAbility.dashMinForce)
                 {
-
-                    StartCoroutine(Dash(hit));
-
+                    StartCoroutine(Dash(dashMeter));
+                }
+                else
+                {
+                    canMove = true;
                 }
             }
         }
     }
 
-    void PlayerMove()
+    void PlayerMove(float xMove, float yMove)
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 dir = new Vector3(horizontal, 0f, vertical).normalized;
-
-        if(dir.magnitude >0.1f)
+        if (moveDir.magnitude >0.1f)
         {
-            characterController.Move(dir * speed * Time.deltaTime);
+            characterController.Move(moveDir * speed * Time.deltaTime);
         }
 
-        anim.SetFloat("MoveX", horizontal);
-        anim.SetFloat("MoveZ", vertical);
-        anim.SetFloat("Speed", dir.sqrMagnitude);
+        anim.SetFloat("MoveX", xMove);
+        anim.SetFloat("MoveZ", yMove);
+        anim.SetFloat("Speed", moveDir.sqrMagnitude);
     }
 
-    public IEnumerator Dash(RaycastHit dir)
+    public IEnumerator Dash(float dashTime)
     {
-        if (characterAbilities.cinzaTrue)
+        dashMeter = 0;
+
+        if (characterAbilities.cinzaTrue || characterAbilities.vermelhoTrue)
         {
             characterStats.timeInvencible = characterStats.m_timeInvencible;
             characterStats.canDamage = false;
@@ -89,17 +108,20 @@ public class CharacterMovement : MonoBehaviour
         canMove = false;
         canDash = false;
 
-        float vertical = dir.point.z - transform.position.z;
-        float horizontal = dir.point.x - transform.position.x;
+        float xMove = Input.GetAxisRaw("Horizontal");
+        float yMove = Input.GetAxisRaw("Vertical");
+        Vector3 moveDir = new Vector3(xMove, 0f, yMove).normalized;
 
         anim.SetTrigger("DashTrigger");
-        anim.SetFloat("Vertical", vertical);
-        anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Vertical", yMove);
+        anim.SetFloat("Horizontal", xMove);
 
         float startTime = Time.time;
-        while (Time.time < startTime + timeDash)
+        while (Time.time < startTime + dashTime)
         {
-            transform.Translate(new Vector3(horizontal, 0, vertical).normalized * forceDash * Time.deltaTime);
+            dashing = true;
+            //transform.Translate(moveDir * forceDash * Time.deltaTime);
+            transform.Translate(lastDir * forceDash * Time.deltaTime);
             yield return null;
         }
 
@@ -107,11 +129,21 @@ public class CharacterMovement : MonoBehaviour
 
         yield return new WaitForSeconds(timeBTWDash);
         canDash = true;
+        dashing = false;
     }
     private void FixedUpdate()
     {
-        if (canMove) PlayerMove();
-       
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        moveDir = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (canMove) PlayerMove(horizontal, vertical);
+
+        if (moveDir != Vector3.zero)
+        {
+            lastDir = moveDir;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -119,6 +151,18 @@ public class CharacterMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Harbor"))
         {
             boat.inHarbor = true;
+        }
+
+        if (other.gameObject.CompareTag("Enemy") && other.GetComponent<EnemyHealth>() != null && dashing)
+        {
+            if (characterAbilities.cinzaTrue)
+            {
+                other.GetComponent<EnemyHealth>().DamageVoid(0);
+            }
+            else if (characterAbilities.vermelhoTrue)
+            {
+                other.GetComponent<EnemyHealth>().DamageVoid(characterAbilities.vermelhoAbility.dashDamage);
+            }
         }
     }
 

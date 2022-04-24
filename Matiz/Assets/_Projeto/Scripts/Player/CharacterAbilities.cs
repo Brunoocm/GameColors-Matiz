@@ -16,6 +16,8 @@ public class CharacterAbilities : MonoBehaviour
 
     CharacterStats characterStats => GetComponent<CharacterStats>();
 
+    private float time;
+
     void Start()
     {
 
@@ -33,6 +35,20 @@ public class CharacterAbilities : MonoBehaviour
             vermelhoAbility.Passiva();
             vermelhoAbility.Especial();
             vermelhoAbility.Dash();
+
+            if(time <= vermelhoAbility.specialCooldown)
+            {
+                time += Time.deltaTime;
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
+                    red.transform.parent = transform;
+                    time = 0;
+                }
+            }
         }
         else if (azulTrue)
         {
@@ -104,13 +120,27 @@ public class CharacterAbilities : MonoBehaviour
     [System.Serializable]
     public class VermelhoAbility
     {
+        public int dashDamage, passiveDamage;
+        public float dashMinForce, dashMaxForce, specialCooldown, passiveSpeed;
+        public GameObject specialVermelho;
+
         public CharacterStats characterStats;
+        public CharacterMovement characterMove;
 
         public void Passiva()
         {
-            float ratio = (float)characterStats.health / (float)characterStats.m_health;
+            //quanto menor for a ratio de vida, maior a velocidade e dano (puxar nos scripts de movimentação e stats)
 
-            //quanto menor for o ratio, maior a velocidade e dano (puxar nos scripts de movimentação e stats)
+            if(characterStats.health == 1)
+            {
+                characterStats.damage = passiveDamage;
+                characterMove.speed = passiveSpeed;
+            }
+            else
+            {
+                characterStats.damage = characterStats.m_damage;
+                characterMove.speed = characterMove.m_speed;
+            }
         }
 
         public void Especial()
@@ -120,7 +150,7 @@ public class CharacterAbilities : MonoBehaviour
 
         public void Dash()
         {
-
+            //
         }
 
     }
