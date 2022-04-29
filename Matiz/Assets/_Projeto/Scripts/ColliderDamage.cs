@@ -15,8 +15,7 @@ public class ColliderDamage : MonoBehaviour
                 other.GetComponent<CharacterStats>().DamageVoid(damage);
             }
             else if(other.GetComponent<EnemyHealth>() != null)
-            {
-                other.GetComponent<EnemyHealth>().DamageVoid(damage);
+            {                other.GetComponent<EnemyHealth>().DamageVoid(damage);
             }
         }
     }
