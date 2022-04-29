@@ -5,15 +5,15 @@ using UnityEngine;
 public class Boat : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private Transform playerPlace;
-    [SerializeField] private Transform harbor;
-    [SerializeField] private Transform playerHarbor;
+    [SerializeField] private Transform seat;
 
     [HideInInspector] public bool boatCanMove;
     [HideInInspector] public bool inHarbor;
     [HideInInspector] public bool inBoat;
+    [HideInInspector] public Transform land;
 
-    private CharacterMovement player;
+    private CharacterMovement charMove;
+    private CharacterStats charStats;
 
     [SerializeField] private Animator anim;
     CharacterController charController;
@@ -21,7 +21,8 @@ public class Boat : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
+        charMove = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
+        charStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
 
         charController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
@@ -50,15 +51,17 @@ public class Boat : MonoBehaviour
 
         if (inBoat)
         {
-            player.transform.position = playerPlace.position;
+            charMove.transform.position = seat.position;
         }
     }
 
     void Board()
     {
-        player.canMove = false;
-        player.transform.parent = transform;
-        player.anim.enabled = false;
+        charMove.canMove = false;
+        charMove.transform.parent = transform;
+        charMove.anim.enabled = false;
+
+        charStats.canUseSkill = false;
 
         inBoat = true;
         boatCanMove = true;
@@ -68,14 +71,15 @@ public class Boat : MonoBehaviour
 
     void Land()
     {
-        player.canMove = true;
-        player.transform.parent = null;
-        player.transform.position = playerHarbor.position;
-        player.anim.enabled = true;
+        charMove.canMove = true;
+        charMove.transform.parent = null;
+        charMove.transform.position = land.position;
+        charMove.anim.enabled = true;
+
+        charStats.canUseSkill = true;
 
         inBoat = false;
         boatCanMove = false;
-        //transform.position = harbor.position;
 
         rb.isKinematic = true;
     }
