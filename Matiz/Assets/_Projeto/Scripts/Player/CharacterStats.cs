@@ -12,6 +12,7 @@ public class CharacterStats : MonoBehaviour
     public float timeInvencible;
     [HideInInspector] public float m_timeInvencible;
     public SpriteRenderer sprite;
+    [HideInInspector] public bool canUseSkill;
    
 
     [Header("Shield")]
