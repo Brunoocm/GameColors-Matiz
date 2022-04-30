@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int health;
     public float timeKnockback;
     public float forceKnockback;
+    [HideInInspector]public bool stopMove;
 
     [Header("Stacks")]
     public int currentStacks;
@@ -37,6 +38,15 @@ public class EnemyHealth : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+        }
+        print(stopMove);
+        if(stopMove)
+        {
+            enemyBaseMove.ResetMovement();
+        }
+        else
+        {
+
         }
     }
     public void Flash()
@@ -142,11 +152,12 @@ public class EnemyHealth : MonoBehaviour
             enemyBaseMove.stopMoving = true;
             yield return null;
         }
-        while (Time.time < startTime + time)
-        {
-            enemyBaseMove.ResetMovement();
-        }
-       
+
+        stopMove = true;
+
+        yield return new WaitForSeconds(2f);
+
+        stopMove = false;
 
     }
 }

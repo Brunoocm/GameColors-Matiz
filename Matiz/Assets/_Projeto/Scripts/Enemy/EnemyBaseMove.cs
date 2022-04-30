@@ -32,6 +32,7 @@ public class EnemyBaseMove : MonoBehaviour
 
     GameObject targetObj;
     NavMeshAgent navMeshAgent => gameObject.GetComponent<NavMeshAgent>();
+    EnemyHealth enemyHealth => gameObject.GetComponent<EnemyHealth>();
 
     private void Awake()
     {
@@ -80,8 +81,11 @@ public class EnemyBaseMove : MonoBehaviour
 
     void AttackTarget()
     {
-        ResetMovement();
-        eventAttack.Invoke();
+        if (!enemyHealth.stopMove)
+        {
+            ResetMovement();
+            eventAttack.Invoke();
+        }
     }
 
     public void ResetMovement()

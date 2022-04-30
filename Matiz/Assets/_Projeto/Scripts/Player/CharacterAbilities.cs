@@ -66,7 +66,7 @@ public class CharacterAbilities : MonoBehaviour
 
     public void spawnEspecialCinza()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
