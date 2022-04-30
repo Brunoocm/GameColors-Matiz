@@ -11,6 +11,11 @@ public class PrismaMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        if(target == null)
+        {
+            target = FindObjectOfType<CharacterStats>().gameObject.transform;
+        }
         Vector3 desiredPosition = target.position + offset;
         Vector3 smothedposition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smothedposition;

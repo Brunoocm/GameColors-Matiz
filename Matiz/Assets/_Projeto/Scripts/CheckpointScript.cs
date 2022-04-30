@@ -13,7 +13,12 @@ public class CheckpointScript : MonoBehaviour
 
     [Header("Spawn")]
     public Transform spawnpoint;
+    public bool currentSpawnpoint;
     private bool isActive;
+    
+
+    MainCheckpoint mainCheckpoint => gameObject.GetComponentInParent<MainCheckpoint>();
+
     void Start()
     {
         light.intensity = 0;
@@ -23,6 +28,15 @@ public class CheckpointScript : MonoBehaviour
     void Update()
     {
         light.intensity = intensity;
+
+        if(isActive)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                mainCheckpoint.ResetSpawnpoints();
+                currentSpawnpoint = true;
+            }
+        }
 
         if (isActive && intensity <= maxIntensity)
         {
