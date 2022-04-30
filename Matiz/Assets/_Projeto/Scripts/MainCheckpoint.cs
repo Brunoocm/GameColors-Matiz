@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-
+using DG.Tweening;
+using UnityEngine.UI;
 public class MainCheckpoint : MonoBehaviour
 {
     public CheckpointScript[] checkpoints;
     public GameObject playerObj;
+    public GameObject textObj;
     GameObject currentSpawnpoint;
 
+    Image transition => gameObject.GetComponentInChildren<Image>();
     CinemachineVirtualCamera cinemachineVirtualCamera => FindObjectOfType<CinemachineVirtualCamera>();
+    [HideInInspector] public CharacterMovement characterMovement;
     void Start()
     {
-        
+        characterMovement = FindObjectOfType<CharacterMovement>();
     }
 
     void Update()
     {
-        print(currentSpawnpoint);
         if(Input.GetKeyDown(KeyCode.R))
         {
             Death();
@@ -54,18 +57,23 @@ public class MainCheckpoint : MonoBehaviour
     {
         if (FindObjectOfType<CharacterStats>() == null)
         {
-            Instantiate(playerObj, currentSpawnpoint.GetComponent<CheckpointScript>().spawnpoint.position, Quaternion.identity);
+            Instantiate(playerObj, currentSpawnpoint.GetComponent<CheckpointScript>().spawnpoint.transform.position, Quaternion.identity);
         }
         else
         {
             Destroy(FindObjectOfType<CharacterStats>().gameObject);
-            Transform pos = currentSpawnpoint.GetComponent<CheckpointScript>().spawnpoint;
+            GameObject pos = currentSpawnpoint.GetComponent<CheckpointScript>().spawnpoint;
 
-            yield return new WaitForSeconds(1f);
-            cinemachineVirtualCamera.Follow = pos;
+            transition.transform.DOScale(new Vector2(11,11), 1);
+
+            yield return new WaitForSeconds(3);
+            cinemachineVirtualCamera.Follow = pos.transform;
             yield return new WaitForSeconds(1f);
 
-            GameObject player = Instantiate(playerObj, pos.position, Quaternion.identity);
+            transition.transform.DOScale(new Vector2(0, 0), 1);
+
+            GameObject player = Instantiate(playerObj, pos.transform.position, Quaternion.identity);
+            characterMovement = player.GetComponent<CharacterMovement>();
             cinemachineVirtualCamera.Follow = player.transform;
             cinemachineVirtualCamera.LookAt = player.transform;
             cinemachineVirtualCamera.transform.eulerAngles = new Vector3(49, 0, 0);
