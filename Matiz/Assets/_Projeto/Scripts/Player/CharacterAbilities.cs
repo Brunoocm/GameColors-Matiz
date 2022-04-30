@@ -73,7 +73,7 @@ public class CharacterAbilities : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, cinzaAbility.groundLayer)) // 6 = layermask ground
             {
-                GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, hit.point, Quaternion.identity);
+                GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, new Vector3(hit.point.x, hit.point.y + 1, hit.point.z), Quaternion.identity);
                 obj.GetComponent<SpecialCinza>().forceKnockback = cinzaAbility.forceKnockback;
                 obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
 

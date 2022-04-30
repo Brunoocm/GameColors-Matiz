@@ -29,23 +29,26 @@ public class SelectColorSpecial : MonoBehaviour
             colors[index + 1].isSelected = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (checkpointScript.selectColor)
         {
-            if(index > 0)
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                index--;
+                if (index > 0)
+                {
+                    index--;
 
+                }
+                //esquerda
             }
-            //esquerda
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            if(index < colors.Length - 1)
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                index++;
+                if (index < colors.Length - 1)
+                {
+                    index++;
 
+                }
+                //Direita
             }
-            //Direita
         }
 
 

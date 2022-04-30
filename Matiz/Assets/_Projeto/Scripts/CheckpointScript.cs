@@ -16,6 +16,7 @@ public class CheckpointScript : MonoBehaviour
     [Header("Spawn")]
     public GameObject spawnpoint;
     public bool currentSpawnpoint;
+    [HideInInspector] public bool selectColor;
     private bool isActive;
     private bool saving;
     
@@ -65,12 +66,14 @@ public class CheckpointScript : MonoBehaviour
 
     public IEnumerator ChromaAppiers()
     {
+        selectColor = true;
         chromas.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.4f);
         chromas.transform.DOScale(1, 0.4f);
     }   
     public IEnumerator ChromaDesappiers()
     {
+        selectColor = false;
         chromas.transform.DOScale(0, 0.4f);
         yield return new WaitForSeconds(0.4f);
         chromas.gameObject.SetActive(false);
