@@ -36,19 +36,21 @@ public class CharacterAbilities : MonoBehaviour
             vermelhoAbility.Especial();
             vermelhoAbility.Dash();
 
-            if(time <= vermelhoAbility.specialCooldown)
-            {
-                time += Time.deltaTime;
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.Mouse1))
-                {
-                    GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
-                    red.transform.parent = transform;
-                    time = 0;
-                }
-            }
+            print("vermelho true");
+
+            //if(time <= vermelhoAbility.specialCooldown)
+            //{
+            //    time += Time.deltaTime;
+            //}
+            //else
+            //{
+            //    if (Input.GetKeyDown(KeyCode.Mouse1))
+            //    {
+            //        GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
+            //        red.transform.parent = transform;
+            //        time = 0;
+            //    }
+            //}
         }
         else if (azulTrue)
         {
@@ -76,12 +78,36 @@ public class CharacterAbilities : MonoBehaviour
                 GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, new Vector3(hit.point.x, hit.point.y + 1, hit.point.z), Quaternion.identity);
                 obj.GetComponent<SpecialCinza>().forceKnockback = cinzaAbility.forceKnockback;
                 obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
-
             }
-          
-            
         }
+    }
+
+    public void SpecialRed()
+    {
+        print("special redding");
+
+        if (time <= vermelhoAbility.specialCooldown)
+        {
+            print("1");
+
+            time += Time.deltaTime;
         }
+        else
+        {
+            print("2");
+
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                print("clicking mouse 1");
+
+                GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
+                red.transform.parent = transform;
+                time = 0;
+            }
+        }
+    }
+
+
 
     [System.Serializable]
     public class CinzaAbility
@@ -126,6 +152,7 @@ public class CharacterAbilities : MonoBehaviour
 
         public CharacterStats characterStats;
         public CharacterMovement characterMove;
+        public CharacterAbilities characterAbilities;
 
         public void Passiva()
         {
@@ -145,7 +172,7 @@ public class CharacterAbilities : MonoBehaviour
 
         public void Especial()
         {
-
+            characterAbilities.SpecialRed();
         }
 
         public void Dash()
