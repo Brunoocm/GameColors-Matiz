@@ -2,56 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectColorSpecial : MonoBehaviour
+
+namespace OniricoStudios
 {
-    public ColorSpecial[] colors;
-    public int index;
-
-    MainCheckpoint mainCheckpoint => gameObject.GetComponentInParent<MainCheckpoint>();
-    CheckpointScript checkpointScript => gameObject.GetComponentInParent<CheckpointScript>();
-    void Start()
+    public class SelectColorSpecial : MonoBehaviour
     {
-        
-    }
+        public ColorSpecial[] colors;
+        public int index;
 
-    void Update()
-    {
-        //int previousSelected = index;
-
-        colors[index].isSelected = true;
-
-        if(index != 0)
+        MainCheckpoint mainCheckpoint => gameObject.GetComponentInParent<MainCheckpoint>();
+        CheckpointScript checkpointScript => gameObject.GetComponentInParent<CheckpointScript>();
+        void Start()
         {
-            colors[index - 1].isSelected = false;
-        }
-        if(index != colors.Length - 1)
-        {
-            colors[index + 1].isSelected = false;
+
         }
 
-        if (checkpointScript.selectColor)
+        void Update()
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            //int previousSelected = index;
+
+            colors[index].isSelected = true;
+
+            if (index != 0)
             {
-                if (index > 0)
-                {
-                    index--;
-
-                }
-                //esquerda
+                colors[index - 1].isSelected = false;
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (index != colors.Length - 1)
             {
-                if (index < colors.Length - 1)
-                {
-                    index++;
-
-                }
-                //Direita
+                colors[index + 1].isSelected = false;
             }
+
+            if (checkpointScript.selectColor)
+            {
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (index > 0)
+                    {
+                        index--;
+
+                    }
+                    //esquerda
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    if (index < colors.Length - 1)
+                    {
+                        index++;
+
+                    }
+                    //Direita
+                }
+            }
+
+
+
         }
-
-
-
     }
 }

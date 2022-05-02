@@ -2,39 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+namespace OniricoStudios
 {
-
-    public int damage;
-    public float speed;
-    //public GameObject vfx;
-
-    GameObject target;
-
-    Rigidbody rb;
-
-    private void Start()
+    public class EnemyBullet : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
 
-        target = GameObject.FindGameObjectWithTag("Player");
+        public int damage;
+        public float speed;
+        //public GameObject vfx;
 
-        Destroy(gameObject, 5f);
-    }
+        GameObject target;
 
-    private void Update()
-    {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
+        Rigidbody rb;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
+        private void Start()
         {
-            if (other.gameObject.GetComponent<CharacterStats>().canDamage)
+            rb = GetComponent<Rigidbody>();
+
+            target = GameObject.FindGameObjectWithTag("Player");
+
+            Destroy(gameObject, 5f);
+        }
+
+        private void Update()
+        {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
             {
-                other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
-                Destroy(gameObject);
+                if (other.gameObject.GetComponent<CharacterStats>().canDamage)
+                {
+                    other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+                    Destroy(gameObject);
+                }
             }
         }
     }

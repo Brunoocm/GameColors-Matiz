@@ -2,34 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Harbor : MonoBehaviour
+namespace OniricoStudios
 {
-    [SerializeField] private Transform land;
-    [SerializeField] private Transform ocean;
-
-    private Boat boat;
-
-    void Start()
+    public class Harbor : MonoBehaviour
     {
-        boat = FindObjectOfType<Boat>();
-    }
+        [SerializeField] private Transform land;
+        [SerializeField] private Transform ocean;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        private Boat boat;
+
+        void Start()
         {
-            boat.inHarbor = true;
-            boat.land = land;
-            boat.transform.position = ocean.position;
+            boat = FindObjectOfType<Boat>();
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        private void OnTriggerEnter(Collider other)
         {
-            boat.inHarbor = false;
-            boat.land = null;
+            if (other.gameObject.CompareTag("Player"))
+            {
+                boat.inHarbor = true;
+                boat.land = land;
+                boat.transform.position = ocean.position;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                boat.inHarbor = false;
+                boat.land = null;
+            }
         }
     }
 }

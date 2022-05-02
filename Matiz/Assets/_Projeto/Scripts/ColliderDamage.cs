@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderDamage : MonoBehaviour
+namespace OniricoStudios
 {
-    public int damage;
-
-    private void OnTriggerEnter(Collider other)
+    public class ColliderDamage : MonoBehaviour
     {
-        if ((other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")))
+        public int damage;
+
+        private void OnTriggerEnter(Collider other)
         {
-            if(other.GetComponent<CharacterStats>() != null)
+            if ((other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")))
             {
-                other.GetComponent<CharacterStats>().DamageVoid(damage);
-            }
-            else if(other.GetComponent<EnemyHealth>() != null)
-            {                other.GetComponent<EnemyHealth>().DamageVoid(damage);
+                if (other.GetComponent<CharacterStats>() != null)
+                {
+                    other.GetComponent<CharacterStats>().DamageVoid(damage);
+                }
+                else if (other.GetComponent<EnemyHealth>() != null)
+                {
+                    other.GetComponent<EnemyHealth>().DamageVoid(damage);
+                }
             }
         }
     }

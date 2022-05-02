@@ -2,105 +2,108 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackExplosivo : MonoBehaviour
+namespace OniricoStudios
 {
-    [Header("Stats")]
-    public int damage;
-    public float antecipation;
-    public float timeToExplode;
-
-    [Header("Dash")]
-    public float dashForce;
-    public float timeDash;
-    public GameObject bulletExplosion;
-
-    [Header("Target")]
-    public string tagNameTarget;
-    private bool oneTime;
-    private bool hitBy;
-    GameObject targetObj;
-
-    EnemyBaseMove enemyBaseMove => gameObject.GetComponent<EnemyBaseMove>();
-    Rigidbody rb => gameObject.GetComponent<Rigidbody>();
-    Animator anim => gameObject.GetComponent<Animator>();
-    void Start()
+    public class EnemyAttackExplosivo : MonoBehaviour
     {
-        targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
-    }
+        [Header("Stats")]
+        public int damage;
+        public float antecipation;
+        public float timeToExplode;
 
-    void Update()
-    {
-      
-    }
+        [Header("Dash")]
+        public float dashForce;
+        public float timeDash;
+        public GameObject bulletExplosion;
 
-    public void AttackVoid()
-    {
-        if (!oneTime)
+        [Header("Target")]
+        public string tagNameTarget;
+        private bool oneTime;
+        private bool hitBy;
+        GameObject targetObj;
+
+        EnemyBaseMove enemyBaseMove => gameObject.GetComponent<EnemyBaseMove>();
+        Rigidbody rb => gameObject.GetComponent<Rigidbody>();
+        Animator anim => gameObject.GetComponent<Animator>();
+        void Start()
         {
-            StartCoroutine(Dash(targetObj.transform));
-        }
-    }
-
-    public void HitTarget(GameObject target)
-    {
-       
-        if (targetObj.gameObject.GetComponent<CharacterStats>())
-        {
-            targetObj.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
-        }
-    }
-
-    public IEnumerator Explosion(float time)
-    {
-        yield return new WaitForSeconds(time);
-
-        GameObject bullet = bulletExplosion;
-        bullet.GetComponent<ExplosionBullet>().damage = damage;
-        Instantiate(bullet, transform.position, Quaternion.identity);
-
-        Destroy(gameObject);
-
-    }
-
-    public IEnumerator Dash(Transform dir)
-    {
-        oneTime = true;
-
-        yield return new WaitForSeconds(antecipation);
-
-        float vertical = dir.position.z - transform.position.z;
-        float horizontal = dir.position.x - transform.position.x;
-
-        float startTime = Time.time;
-        while (Time.time < startTime + timeDash && !hitBy)
-        {
-            transform.Translate(new Vector3(horizontal, 0, vertical).normalized * dashForce * Time.deltaTime);
-            yield return null;
+            targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
         }
 
-        if(!hitBy) StartCoroutine(Explosion(0f));
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag(tagNameTarget))
+        void Update()
         {
-            HitTarget(other.gameObject);
-            StartCoroutine(Explosion(0f));
 
-        } 
-        if (other.gameObject.CompareTag("AttackPlayer"))
+        }
+
+        public void AttackVoid()
         {
-            hitBy = true;
-            if (hitBy)
+            if (!oneTime)
             {
-                enemyBaseMove.stopMoving = true;
-                StartCoroutine(Explosion(timeToExplode));
-
+                StartCoroutine(Dash(targetObj.transform));
             }
         }
+
+        public void HitTarget(GameObject target)
+        {
+
+            if (targetObj.gameObject.GetComponent<CharacterStats>())
+            {
+                targetObj.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+            }
+        }
+
+        public IEnumerator Explosion(float time)
+        {
+            yield return new WaitForSeconds(time);
+
+            GameObject bullet = bulletExplosion;
+            bullet.GetComponent<ExplosionBullet>().damage = damage;
+            Instantiate(bullet, transform.position, Quaternion.identity);
+
+            Destroy(gameObject);
+
+        }
+
+        public IEnumerator Dash(Transform dir)
+        {
+            oneTime = true;
+
+            yield return new WaitForSeconds(antecipation);
+
+            float vertical = dir.position.z - transform.position.z;
+            float horizontal = dir.position.x - transform.position.x;
+
+            float startTime = Time.time;
+            while (Time.time < startTime + timeDash && !hitBy)
+            {
+                transform.Translate(new Vector3(horizontal, 0, vertical).normalized * dashForce * Time.deltaTime);
+                yield return null;
+            }
+
+            if (!hitBy) StartCoroutine(Explosion(0f));
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag(tagNameTarget))
+            {
+                HitTarget(other.gameObject);
+                StartCoroutine(Explosion(0f));
+
+            }
+            if (other.gameObject.CompareTag("AttackPlayer"))
+            {
+                hitBy = true;
+                if (hitBy)
+                {
+                    enemyBaseMove.stopMoving = true;
+                    StartCoroutine(Explosion(timeToExplode));
+
+                }
+            }
+        }
+
+
     }
-
-
 }

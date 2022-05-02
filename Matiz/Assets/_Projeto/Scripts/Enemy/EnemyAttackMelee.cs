@@ -2,88 +2,92 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackMelee : MonoBehaviour
+
+namespace OniricoStudios
 {
-    [Header("Stats")]
-    public int damage;
-    public float antecipation;
-
-    [Header("Dash")]
-    public float dashForce;
-    public float timeDash;
-    public float cdToDash;
-
-    [Header("Target")]
-    public string tagNameTarget;
-    private bool oneTime;
-    private bool hitTarget;
-    GameObject targetObj;
-
-    Rigidbody rb => gameObject.GetComponent<Rigidbody>();
-    Animator anim => gameObject.GetComponent<Animator>();
-    void Start()
+    public class EnemyAttackMelee : MonoBehaviour
     {
-        targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
-    }
+        [Header("Stats")]
+        public int damage;
+        public float antecipation;
 
-    void Update()
-    {
-    }
+        [Header("Dash")]
+        public float dashForce;
+        public float timeDash;
+        public float cdToDash;
 
-    public void AttackVoid()
-    {
-        if (!oneTime)
+        [Header("Target")]
+        public string tagNameTarget;
+        private bool oneTime;
+        private bool hitTarget;
+        GameObject targetObj;
+
+        Rigidbody rb => gameObject.GetComponent<Rigidbody>();
+        Animator anim => gameObject.GetComponent<Animator>();
+        void Start()
         {
-            //anim.SetTrigger("AntecipationTrigger");
-            StartCoroutine(Dash(targetObj.transform));
-        }
-    }
-
-    public void HitTarget(GameObject target)
-    {
-        hitTarget = true;
-        if(targetObj.gameObject.GetComponent<CharacterStats>())
-        {
-            targetObj.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
-        }
-    }
-
-    public IEnumerator Dash(Transform dir)
-    {
-        oneTime = true;
-
-        yield return new WaitForSeconds(antecipation);
-        //anim.SetTrigger("DashTrigger");
-
-        float vertical = dir.position.z - transform.position.z;
-        float horizontal = dir.position.x - transform.position.x;
-
-        float startTime = Time.time;
-        while (Time.time < startTime + timeDash && !hitTarget)
-        {
-            transform.Translate(new Vector3(horizontal, 0, vertical).normalized * dashForce * Time.deltaTime);
-            yield return null;
+            targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
         }
 
-        yield return new WaitForSeconds(cdToDash);
-
-        oneTime = false;
-        hitTarget = false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag(tagNameTarget))
+        void Update()
         {
-            HitTarget(other.gameObject);
         }
-    }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag(tagNameTarget))
-    //    {
-    //        HitTarget(other.gameObject);
-    //    }
-    //}
+        public void AttackVoid()
+        {
+            if (!oneTime)
+            {
+                //anim.SetTrigger("AntecipationTrigger");
+                StartCoroutine(Dash(targetObj.transform));
+            }
+        }
+
+        public void HitTarget(GameObject target)
+        {
+            hitTarget = true;
+            if (targetObj.gameObject.GetComponent<CharacterStats>())
+            {
+                targetObj.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+            }
+        }
+
+        public IEnumerator Dash(Transform dir)
+        {
+            oneTime = true;
+
+            yield return new WaitForSeconds(antecipation);
+            //anim.SetTrigger("DashTrigger");
+
+            float vertical = dir.position.z - transform.position.z;
+            float horizontal = dir.position.x - transform.position.x;
+
+            float startTime = Time.time;
+            while (Time.time < startTime + timeDash && !hitTarget)
+            {
+                transform.Translate(new Vector3(horizontal, 0, vertical).normalized * dashForce * Time.deltaTime);
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(cdToDash);
+
+            oneTime = false;
+            hitTarget = false;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag(tagNameTarget))
+            {
+                HitTarget(other.gameObject);
+            }
+        }
+
+        //private void OnTriggerStay(Collider other)
+        //{
+        //    if (other.gameObject.CompareTag(tagNameTarget))
+        //    {
+        //        HitTarget(other.gameObject);
+        //    }
+        //}
+    }
 }

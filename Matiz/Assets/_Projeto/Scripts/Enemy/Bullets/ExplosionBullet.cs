@@ -2,26 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionBullet : MonoBehaviour
+
+namespace OniricoStudios
 {
-    public float timeToDisappear;
-    public int damage;
-
-    void Start()
+    public class ExplosionBullet : MonoBehaviour
     {
-        Destroy(gameObject, timeToDisappear);
-    }
+        public float timeToDisappear;
+        public int damage;
 
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
+        void Start()
         {
-            other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+            Destroy(gameObject, timeToDisappear);
+        }
+
+        void Update()
+        {
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+            }
         }
     }
 }

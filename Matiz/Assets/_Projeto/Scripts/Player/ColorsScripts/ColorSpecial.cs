@@ -3,39 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class ColorSpecial : MonoBehaviour
+namespace OniricoStudios
 {
-    public bool isSelected;
-    public bool isCinza, isVermelho, isVerde, isAzul;
-
-
-    CharacterAbilities characterAbilities;
-    void Start()
+    public class ColorSpecial : MonoBehaviour
     {
+        public bool isSelected;
+        public bool isCinza, isVermelho, isVerde, isAzul;
 
-    }
 
-    void Update()
-    {
-        if (isSelected)
+        CharacterAbilities characterAbilities;
+        void Start()
         {
-            SetColor();
-            gameObject.transform.DOScale(1.5f, 0.3f);
+
         }
-        else
+
+        void Update()
         {
-            gameObject.transform.DOScale(1, 0.3f);
+            if (isSelected)
+            {
+                SetColor();
+                gameObject.transform.DOScale(1.5f, 0.3f);
+            }
+            else
+            {
+                gameObject.transform.DOScale(1, 0.3f);
+            }
         }
-    }
 
-    void SetColor()
-    {
-        characterAbilities = FindObjectOfType<CharacterAbilities>();
+        void SetColor()
+        {
+            characterAbilities = FindObjectOfType<CharacterAbilities>();
 
-        if (isCinza) {characterAbilities.cinzaTrue = true; characterAbilities.vermelhoTrue = false; characterAbilities.verdeTrue = false; characterAbilities.azulTrue = false;}
-        else if (isVermelho) {characterAbilities.vermelhoTrue = true; characterAbilities.cinzaTrue = false; characterAbilities.verdeTrue = false; characterAbilities.azulTrue = false;}
-        else if (isVerde) {characterAbilities.verdeTrue = true; characterAbilities.cinzaTrue = false; characterAbilities.vermelhoTrue = false; characterAbilities.azulTrue = false;}
-        else if (isAzul) {characterAbilities.azulTrue = true; characterAbilities.cinzaTrue = false; characterAbilities.vermelhoTrue = false; characterAbilities.verdeTrue = false;}
+            if (isCinza) { characterAbilities.cinzaTrue = true; characterAbilities.vermelhoTrue = false; characterAbilities.verdeTrue = false; characterAbilities.azulTrue = false; }
+            else if (isVermelho) { characterAbilities.vermelhoTrue = true; characterAbilities.cinzaTrue = false; characterAbilities.verdeTrue = false; characterAbilities.azulTrue = false; }
+            else if (isVerde) { characterAbilities.verdeTrue = true; characterAbilities.cinzaTrue = false; characterAbilities.vermelhoTrue = false; characterAbilities.azulTrue = false; }
+            else if (isAzul) { characterAbilities.azulTrue = true; characterAbilities.cinzaTrue = false; characterAbilities.vermelhoTrue = false; characterAbilities.verdeTrue = false; }
 
+        }
     }
 }

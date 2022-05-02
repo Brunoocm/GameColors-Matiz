@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrismaMovement : MonoBehaviour
+
+namespace OniricoStudios
 {
-    public Transform target;
-
-    public float smoothSpeed;
-    public Vector3 offset;
-
-    private void FixedUpdate()
+    public class PrismaMovement : MonoBehaviour
     {
+        public Transform target;
 
-        if(target == null)
+        public float smoothSpeed;
+        public Vector3 offset;
+
+        private void FixedUpdate()
         {
-            target = FindObjectOfType<CharacterStats>().gameObject.transform;
+
+            if (target == null)
+            {
+                target = FindObjectOfType<CharacterStats>().gameObject.transform;
+            }
+            Vector3 desiredPosition = target.position + offset;
+            Vector3 smothedposition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smothedposition;
         }
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smothedposition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smothedposition;
     }
 }

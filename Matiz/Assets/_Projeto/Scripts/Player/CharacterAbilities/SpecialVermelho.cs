@@ -2,38 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialVermelho : MonoBehaviour
+
+namespace OniricoStudios
 {
-    public int damage;
-    public float cooldown;
-    public float timeToDestroy;
-
-    private float time;
-
-    private void Start()
+    public class SpecialVermelho : MonoBehaviour
     {
-        Destroy(gameObject, timeToDestroy);
-    }
+        public int damage;
+        public float cooldown;
+        public float timeToDestroy;
 
-    bool canDamage()
-    {
-        if(time <= cooldown)
+        private float time;
+
+        private void Start()
         {
-            time += Time.deltaTime;
-            return false;
+            Destroy(gameObject, timeToDestroy);
         }
-        else
-        {
-            return true;
-        }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy") && other.GetComponent<EnemyHealth>() != null)
+        bool canDamage()
         {
-            other.GetComponent<EnemyHealth>().DamageVoid(1);
-            time = 0;
+            if (time <= cooldown)
+            {
+                time += Time.deltaTime;
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.CompareTag("Enemy") && other.GetComponent<EnemyHealth>() != null)
+            {
+                other.GetComponent<EnemyHealth>().DamageVoid(1);
+                time = 0;
+            }
         }
     }
 }

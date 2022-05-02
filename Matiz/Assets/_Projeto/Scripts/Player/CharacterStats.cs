@@ -2,88 +2,98 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterStats : MonoBehaviour
+namespace OniricoStudios
 {
-    [Header("stats")]
-    public int health;
-    [HideInInspector] public int m_health;
-    public int damage;
-    [HideInInspector] public int m_damage;
-    public float timeInvencible;
-    [HideInInspector] public float m_timeInvencible;
-    public SpriteRenderer sprite;
-    [HideInInspector] public bool canUseSkill;
-   
-
-    [Header("Shield")]
-    public bool hasShield;
-    public bool canDamage;
-    public GameObject dropPrisma;
-    public GameObject shieldObj;
-    public Transform primaPos;
-
-  
-    void Start()
+    public class CharacterStats : MonoBehaviour
     {
-        hasShield = true;
-        canDamage = true;
-        m_health = health;
-        m_damage = damage;
-        m_timeInvencible = timeInvencible;
-    }
+        [Header("stats")]
+        public int health;
+        [HideInInspector] public int m_health;
+        public int damage;
+        [HideInInspector] public int m_damage;
+        public float timeInvencible;
+        [HideInInspector] public float m_timeInvencible;
+        public SpriteRenderer sprite;
+        [HideInInspector] public bool canUseSkill;
 
-    void Update()
-    {
-        timeInvencible -= Time.deltaTime;
 
-        if (timeInvencible <= 0)
+        [Header("Shield")]
+        public bool hasShield;
+        public bool canDamage;
+        public GameObject dropPrisma;
+        public GameObject shieldObj;
+        public Transform primaPos;
+
+
+        public static CharacterStats playerObj;
+
+
+        private void Awake()
         {
+            playerObj = this;
+        }
+        void Start()
+        {
+            hasShield = true;
             canDamage = true;
+            m_health = health;
+            m_damage = damage;
+            m_timeInvencible = timeInvencible;
         }
 
-        if (health <= 0)
+        void Update()
         {
-            Destroy(gameObject);
-        }
+            timeInvencible -= Time.deltaTime;
 
-        if (canDamage)
-            sprite.color = Color.white;
-        else
-            sprite.color = Color.cyan;
-
-
-    }
-
-    public void DamageVoid(int dano)
-    {
-        if (canDamage)
-        {
-            if (hasShield)
+            if (timeInvencible <= 0)
             {
-                shieldObj.SetActive(false);
-                SpawnPrisma();
-                hasShield = false;
+                canDamage = true;
             }
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+
+            if (canDamage)
+                sprite.color = Color.white;
             else
+                sprite.color = Color.cyan;
+
+
+        }
+
+        public void DamageVoid(int dano)
+        {
+            if (canDamage)
             {
-                health -= dano;
+                if (hasShield)
+                {
+                    shieldObj.SetActive(false);
+                    SpawnPrisma();
+                    hasShield = false;
+                }
+                else
+                {
+                    health -= dano;
+                }
+
+                timeInvencible = m_timeInvencible;
+                canDamage = false;
             }
+        }
 
-            timeInvencible = m_timeInvencible;
-            canDamage = false;
-        }   
-    }
+        public void GiveShield()
+        {
+            shieldObj.SetActive(true);
+            hasShield = true;
+        }
 
-    public void GiveShield()
-    {
-        shieldObj.SetActive(true);
-        hasShield = true;
-    }
+        public void SpawnPrisma()
+        {
+            GameObject prisma = Instantiate(dropPrisma, primaPos.position, Quaternion.identity);
+            prisma.GetComponent<PrismaBase>().characterStats = gameObject.GetComponent<CharacterStats>();
 
-    public void SpawnPrisma()
-    {
-        GameObject prisma = Instantiate(dropPrisma, primaPos.position, Quaternion.identity);
-        prisma.GetComponent<PrismaBase>().characterStats = gameObject.GetComponent<CharacterStats>();
-
+        }
     }
 }

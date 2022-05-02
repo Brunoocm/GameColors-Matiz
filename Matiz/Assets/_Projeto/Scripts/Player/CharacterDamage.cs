@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterDamage : MonoBehaviour
+namespace OniricoStudios
 {
-    CharacterStats charStats => gameObject.GetComponentInParent<CharacterStats>();
-
-    void Start()
+    public class CharacterDamage : MonoBehaviour
     {
-      
-    }
+        CharacterStats charStats => gameObject.GetComponentInParent<CharacterStats>();
 
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Enemy"))
+        void Start()
         {
-            other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
 
         }
 
+        void Update()
+        {
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
+
+            }
+
+        }
     }
 }

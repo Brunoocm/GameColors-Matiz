@@ -2,40 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterAbilities : MonoBehaviour
+namespace OniricoStudios
 {
-    public bool cinzaTrue;
-    public bool vermelhoTrue;
-    public bool azulTrue;
-    public bool verdeTrue;
-
-    public CinzaAbility cinzaAbility;
-    public VermelhoAbility vermelhoAbility;
-    public AzulAbility azulAbility;
-    public VerdeAbility verdeAbility;
-
-    CharacterStats characterStats => GetComponent<CharacterStats>();
-
-    private float time;
-
-    void Start()
+    public class CharacterAbilities : MonoBehaviour
     {
+        public bool cinzaTrue;
+        public bool vermelhoTrue;
+        public bool azulTrue;
+        public bool verdeTrue;
 
-    }
+        public CinzaAbility cinzaAbility;
+        public VermelhoAbility vermelhoAbility;
+        public AzulAbility azulAbility;
+        public VerdeAbility verdeAbility;
 
-    void Update()
-    {
-        if (cinzaTrue)
+        CharacterStats characterStats => GetComponent<CharacterStats>();
+
+        private float time;
+
+        void Start()
         {
-            cinzaAbility.Especial();
-            cinzaAbility.Dash();
+
         }
-        else if (vermelhoTrue)
-        {
-            vermelhoAbility.Passiva();
-            vermelhoAbility.Especial();
-            vermelhoAbility.Dash();
 
+<<<<<<< Updated upstream
             print("vermelho true");
 
             //if(time <= vermelhoAbility.specialCooldown)
@@ -51,30 +41,54 @@ public class CharacterAbilities : MonoBehaviour
             //        time = 0;
             //    }
             //}
-        }
-        else if (azulTrue)
+=======
+        void Update()
         {
-            azulAbility.Passiva();
-            azulAbility.Especial();
-            azulAbility.Dash();
-        }
-        else if (verdeTrue)
-        {
-            verdeAbility.Passiva();
-            verdeAbility.Especial();
-            verdeAbility.Dash();
-        }
-    }
-
-    public void spawnEspecialCinza()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, cinzaAbility.groundLayer)) // 6 = layermask ground
+            if (cinzaTrue)
             {
+                cinzaAbility.Especial();
+                cinzaAbility.Dash();
+            }
+            else if (vermelhoTrue)
+            {
+                vermelhoAbility.Passiva();
+                vermelhoAbility.Especial();
+                vermelhoAbility.Dash();
+
+                if (time <= vermelhoAbility.specialCooldown)
+                {
+                    time += Time.deltaTime;
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.Mouse1))
+                    {
+                        GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
+                        red.transform.parent = transform;
+                        time = 0;
+                    }
+                }
+            }
+            else if (azulTrue)
+            {
+                azulAbility.Passiva();
+                azulAbility.Especial();
+                azulAbility.Dash();
+            }
+            else if (verdeTrue)
+            {
+                verdeAbility.Passiva();
+                verdeAbility.Especial();
+                verdeAbility.Dash();
+            }
+>>>>>>> Stashed changes
+        }
+
+        public void spawnEspecialCinza()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+<<<<<<< Updated upstream
                 GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, new Vector3(hit.point.x, hit.point.y + 1, hit.point.z), Quaternion.identity);
                 obj.GetComponent<SpecialCinza>().forceKnockback = cinzaAbility.forceKnockback;
                 obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
@@ -91,6 +105,21 @@ public class CharacterAbilities : MonoBehaviour
             print("1");
 
             time += Time.deltaTime;
+=======
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, cinzaAbility.groundLayer)) // 6 = layermask ground
+                {
+                    GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, new Vector3(hit.point.x, hit.point.y + 1, hit.point.z), Quaternion.identity);
+                    obj.GetComponent<SpecialCinza>().forceKnockback = cinzaAbility.forceKnockback;
+                    obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
+
+                }
+
+
+            }
+>>>>>>> Stashed changes
         }
         else
         {
@@ -109,40 +138,57 @@ public class CharacterAbilities : MonoBehaviour
 
 
 
-    [System.Serializable]
-    public class CinzaAbility
-    {
-        public CharacterAbilities characterAbilities;
+        [System.Serializable]
+        public class CinzaAbility
+        {
+            public CharacterAbilities characterAbilities;
 
-        [Header("Passiva")]
-        public int numStacks;
+            [Header("Passiva")]
+            public int numStacks;
 
+<<<<<<< Updated upstream
         [Header("Especial")]
         public float timeKnockback;
         public float forceKnockback;
         public GameObject specialCinzaObj;
         public GameObject dashFX;
         public LayerMask groundLayer;
+=======
+            [Header("Especial")]
+            public float timeKnockback;
+            public float forceKnockback;
+            public GameObject specialCinzaObj;
+            public LayerMask groundLayer;
+>>>>>>> Stashed changes
 
 
-        [HideInInspector]
-        public int currentStacks;
+            [HideInInspector]
+            public int currentStacks;
 
-        public void PassivaTeste()
-        {
-            //HABILIDADE CINZA Script: EnemyHealth
+            public void PassivaTeste()
+            {
+                //HABILIDADE CINZA Script: EnemyHealth
+            }
+
+            public void Especial()
+            {
+                characterAbilities.spawnEspecialCinza();
+            }
+
+            public void Dash()
+            {
+
+            }
+
         }
-
-        public void Especial()
+        [System.Serializable]
+        public class VermelhoAbility
         {
-            characterAbilities.spawnEspecialCinza();
-        }
+            public int dashDamage, passiveDamage;
+            public float dashMinForce, dashMaxForce, specialCooldown, passiveSpeed;
+            public GameObject specialVermelho;
 
-        public void Dash()
-        {
-
-        }
-
+<<<<<<< Updated upstream
     }
     [System.Serializable]
     public class VermelhoAbility
@@ -155,71 +201,84 @@ public class CharacterAbilities : MonoBehaviour
         public CharacterStats characterStats;
         public CharacterMovement characterMove;
         public CharacterAbilities characterAbilities;
+=======
+            public CharacterStats characterStats;
+            public CharacterMovement characterMove;
 
-        public void Passiva()
-        {
-            //quanto menor for a ratio de vida, maior a velocidade e dano (puxar nos scripts de movimentação e stats)
+            public void Passiva()
+            {
+                //quanto menor for a ratio de vida, maior a velocidade e dano (puxar nos scripts de movimentação e stats)
+>>>>>>> Stashed changes
 
-            if(characterStats.health == 1)
-            {
-                characterStats.damage = passiveDamage;
-                characterMove.speed = passiveSpeed;
+                if (characterStats.health == 1)
+                {
+                    characterStats.damage = passiveDamage;
+                    characterMove.speed = passiveSpeed;
+                }
+                else
+                {
+                    characterStats.damage = characterStats.m_damage;
+                    characterMove.speed = characterMove.m_speed;
+                }
             }
-            else
+
+            public void Especial()
             {
-                characterStats.damage = characterStats.m_damage;
-                characterMove.speed = characterMove.m_speed;
+
             }
+
+            public void Dash()
+            {
+                //
+            }
+<<<<<<< Updated upstream
         }
 
         public void Especial()
         {
             characterAbilities.SpecialRed();
+=======
+
+>>>>>>> Stashed changes
         }
-
-        public void Dash()
-        {
-            //
-        }
-
-    }
-    [System.Serializable]
-    public class AzulAbility
-    {
-
-        public void Passiva()
+        [System.Serializable]
+        public class AzulAbility
         {
 
-        }
+            public void Passiva()
+            {
 
-        public void Especial()
-        {
+            }
 
-        }
+            public void Especial()
+            {
 
-        public void Dash()
-        {
+            }
 
-        }
+            public void Dash()
+            {
 
-    }
-    [System.Serializable]
-    public class VerdeAbility
-    {
-
-        public void Passiva()
-        {
+            }
 
         }
-
-        public void Especial()
+        [System.Serializable]
+        public class VerdeAbility
         {
 
-        }
+            public void Passiva()
+            {
 
-        public void Dash()
-        {
+            }
 
+            public void Especial()
+            {
+
+            }
+
+            public void Dash()
+            {
+
+            }
         }
     }
 }

@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterLifeUI : MonoBehaviour
+namespace OniricoStudios
 {
-    public GameObject[] imagemVida;
-
-    private CharacterStats characterStats;
-    private int playerHealth;
-    private int playerMaxHealth;
-
-    private void Start()
+    public class CharacterLifeUI : MonoBehaviour
     {
-        characterStats = GameObject.FindObjectOfType<CharacterStats>( ).GetComponent<CharacterStats>();
-    }
+        public GameObject[] imagemVida;
 
-    private void Update()
-    {
-        playerHealth = characterStats.health;
+        private CharacterStats characterStats;
+        private int playerHealth;
+        private int playerMaxHealth;
 
-        for(int i = 0; i <= imagemVida.Length; i++)
+        private void Start()
         {
-            if ( playerHealth < i )
-                imagemVida[ i - 1 ].SetActive( false );
+            characterStats = GameObject.FindObjectOfType<CharacterStats>().GetComponent<CharacterStats>();
+        }
+
+        private void Update()
+        {
+            playerHealth = characterStats.health;
+
+            for (int i = 0; i <= imagemVida.Length; i++)
+            {
+                if (playerHealth < i)
+                    imagemVida[i - 1].SetActive(false);
+            }
         }
     }
 }
