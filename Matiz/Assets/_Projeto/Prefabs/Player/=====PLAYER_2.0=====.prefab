@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4535214753563979164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5388244591430089300}
+  m_Layer: 7
+  m_Name: feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5388244591430089300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535214753563979164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.673, z: 0.329}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9113579767074470295}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9113579766819438693
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +94,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9113579767548516465}
+  - {fileID: 5388244591430089300}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87,6 +118,7 @@ MonoBehaviour:
   m_timeInvencible: 0
   canUseSkill: 0
   sprite: {fileID: 9113579767548516464}
+  attackFX: {fileID: 7148702779302362437, guid: 620b2dfea3ec4c341a89df62870eb580, type: 3}
   hasShield: 1
   canDamage: 0
   dropPrisma: {fileID: 7468153022993694362, guid: 009e8de5bd52d3a4aaf067a9ba086970, type: 3}
@@ -113,10 +145,9 @@ MonoBehaviour:
   canDash: 0
   speed: 8
   m_speed: 0
-  trailCooldown: 0
-  trailFX: {fileID: 7148702779302362437, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
-  dashFX: {fileID: 7148702779302362437, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
-  feet: {fileID: 7148702779302362434, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
+  trailCooldown: 0.75
+  trailFX: {fileID: 7148702779302362437, guid: d8bd3180735a7ca4d9578cdf2a0d8adf, type: 3}
+  feet: {fileID: 5388244591430089300}
 --- !u!114 &9113579767074470313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +190,7 @@ MonoBehaviour:
     timeKnockback: 0.2
     forceKnockback: 20
     specialCinzaObj: {fileID: 640322881160915065, guid: e51d7b0d27d5b564dad6c5c21b3000b2, type: 3}
-    dashFX: {fileID: 7148702779302362437, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
+    dashFX: {fileID: 7148702779302362437, guid: cdf7bb1ab064df142a1ce3f91a5bffae, type: 3}
     groundLayer:
       serializedVersion: 2
       m_Bits: 64

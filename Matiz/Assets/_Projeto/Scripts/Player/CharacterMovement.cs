@@ -24,7 +24,6 @@ namespace OniricoStudios
 
         public float trailCooldown;
         public GameObject trailFX;
-        public GameObject dashFX;
         public Transform feet;
 
         private bool dashing;

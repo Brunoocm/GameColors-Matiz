@@ -8,24 +8,14 @@ namespace OniricoStudios
     {
         CharacterStats charStats => gameObject.GetComponentInParent<CharacterStats>();
 
-        void Start()
-        {
-
-        }
-
-        void Update()
-        {
-
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
                 other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
 
+                Instantiate(charStats.attackFX, other.transform.position, Quaternion.identity);
             }
-
         }
     }
 }

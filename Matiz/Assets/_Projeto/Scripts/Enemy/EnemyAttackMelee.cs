@@ -15,6 +15,8 @@ namespace OniricoStudios
         public float dashForce;
         public float timeDash;
         public float cdToDash;
+        public GameObject dashFX;
+        public Transform feet;
 
         [Header("Target")]
         public string tagNameTarget;
@@ -64,6 +66,8 @@ namespace OniricoStudios
             float startTime = Time.time;
             while (Time.time < startTime + timeDash && !hitTarget)
             {
+                Instantiate(dashFX, feet.position, Quaternion.identity);
+
                 transform.Translate(new Vector3(horizontal, 0, vertical).normalized * dashForce * Time.deltaTime);
                 yield return null;
             }

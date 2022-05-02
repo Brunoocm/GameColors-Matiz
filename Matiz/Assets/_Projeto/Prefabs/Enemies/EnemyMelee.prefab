@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2648562437787670222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7571898066946837087}
+  m_Layer: 0
+  m_Name: feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7571898066946837087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648562437787670222}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.48, z: 0.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4546134676138393703}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4546134674981368519
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c93c53ac8fc52184c92fe8a7560c631f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3189a672621042746a8eb2f70cfe4fb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,6 +191,7 @@ Transform:
   m_Children:
   - {fileID: 4546134674981368518}
   - {fileID: 4546134675808795201}
+  - {fileID: 7571898066946837087}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -270,6 +301,8 @@ MonoBehaviour:
   dashForce: 20
   timeDash: 0.5
   cdToDash: 1
+  dashFX: {fileID: 7148702779302362437, guid: 4435df1e1b7b0904897eff79d59a3b8c, type: 3}
+  feet: {fileID: 7571898066946837087}
   tagNameTarget: Player
 --- !u!195 &4546134676138393708
 NavMeshAgent:

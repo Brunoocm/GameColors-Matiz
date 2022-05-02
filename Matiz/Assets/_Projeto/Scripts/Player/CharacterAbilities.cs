@@ -16,17 +16,25 @@ namespace OniricoStudios
         public AzulAbility azulAbility;
         public VerdeAbility verdeAbility;
 
-        CharacterStats characterStats => GetComponent<CharacterStats>();
+        CharacterStats charStats => GetComponent<CharacterStats>();
 
         private float time;
 
         void Start()
         {
-
+            cinzaTrue = CharacterStats.cinzaTrue;
+            vermelhoTrue = CharacterStats.vermelhoTrue;
+            azulTrue = CharacterStats.azulTrue;
+            verdeTrue = CharacterStats.verdeTrue;
         }
 
         void Update()
         {
+            CharacterStats.cinzaTrue = cinzaTrue;
+            CharacterStats.vermelhoTrue = vermelhoTrue;
+            CharacterStats.azulTrue = azulTrue;
+            CharacterStats.verdeTrue = verdeTrue;
+
             if (cinzaTrue)
             {
                 cinzaAbility.Especial();

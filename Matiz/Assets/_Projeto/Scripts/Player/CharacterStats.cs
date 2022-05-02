@@ -18,6 +18,7 @@ namespace OniricoStudios
         [HideInInspector] public bool canUseSkill;
         private bool isDead;
         public SpriteRenderer sprite;
+        public GameObject attackFX;
 
 
         [Header("Shield")]
@@ -29,6 +30,13 @@ namespace OniricoStudios
 
         public static CharacterStats playerObj;
 
+        public static bool cinzaTrue;
+        public static bool vermelhoTrue;
+        public static bool azulTrue;
+        public static bool verdeTrue;
+
+
+        CharacterAbilities charAbilities => GetComponent<CharacterAbilities>();
         MainCheckpoint mainCheckpoint => FindObjectOfType<MainCheckpoint>();
         private void Awake()
         {
