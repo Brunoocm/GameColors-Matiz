@@ -85,13 +85,12 @@ MonoBehaviour:
   m_damage: 0
   timeInvencible: 0.5
   m_timeInvencible: 0
-  sprite: {fileID: 9113579767548516464}
   canUseSkill: 0
+  sprite: {fileID: 9113579767548516464}
   hasShield: 1
   canDamage: 0
   dropPrisma: {fileID: 7468153022993694362, guid: 009e8de5bd52d3a4aaf067a9ba086970, type: 3}
-  shieldObj: {fileID: 0}
-  primaPos: {fileID: 0}
+  shieldObj: {fileID: 3517940942780522073, guid: 18f1736b01bd7804cbb5b323061612ea, type: 3}
 --- !u!114 &9113579767074470312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +113,10 @@ MonoBehaviour:
   canDash: 0
   speed: 8
   m_speed: 0
+  trailCooldown: 0
+  trailFX: {fileID: 7148702779302362437, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
+  dashFX: {fileID: 7148702779302362437, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
+  feet: {fileID: 7148702779302362434, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
 --- !u!114 &9113579767074470313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +159,7 @@ MonoBehaviour:
     timeKnockback: 0.2
     forceKnockback: 20
     specialCinzaObj: {fileID: 640322881160915065, guid: e51d7b0d27d5b564dad6c5c21b3000b2, type: 3}
+    dashFX: {fileID: 7148702779302362437, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
     groundLayer:
       serializedVersion: 2
       m_Bits: 64
@@ -168,8 +172,10 @@ MonoBehaviour:
     specialCooldown: 10
     passiveSpeed: 9
     specialVermelho: {fileID: 640322881160915065, guid: 31cb7bfa1a07d934eb349667fdb77b7e, type: 3}
+    dashFX: {fileID: 7148702779302362437, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
     characterStats: {fileID: 9113579767074470294}
     characterMove: {fileID: 9113579767074470312}
+    characterAbilities: {fileID: 9113579767074470292}
 --- !u!143 &9113579767074470293
 CharacterController:
   m_ObjectHideFlags: 0

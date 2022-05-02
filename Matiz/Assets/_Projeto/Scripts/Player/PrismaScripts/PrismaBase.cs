@@ -26,6 +26,7 @@ namespace OniricoStudios
             {
                 Inpulse();
             }
+            if (CharacterStats.playerObj == null) Destroy(gameObject);
         }
 
         void Inpulse()
@@ -55,6 +56,15 @@ namespace OniricoStudios
                     characterStats.GiveShield();
                     Destroy(gameObject);
                 }
+            }
+           
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Ground"))
+            {
+                rb.isKinematic = true;
             }
         }
     }

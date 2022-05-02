@@ -20,13 +20,13 @@ namespace OniricoStudios
         public string tagNameTarget;
         private bool oneTime;
         private bool hitTarget;
-        GameObject targetObj;
+        //GameObject targetObj;
 
         Rigidbody rb => gameObject.GetComponent<Rigidbody>();
         Animator anim => gameObject.GetComponent<Animator>();
         void Start()
         {
-            targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
+            //targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
         }
 
         void Update()
@@ -38,16 +38,16 @@ namespace OniricoStudios
             if (!oneTime)
             {
                 //anim.SetTrigger("AntecipationTrigger");
-                StartCoroutine(Dash(targetObj.transform));
+                if(CharacterStats.playerObj != null) StartCoroutine(Dash(CharacterStats.playerObj.transform));
             }
         }
 
         public void HitTarget(GameObject target)
         {
             hitTarget = true;
-            if (targetObj.gameObject.GetComponent<CharacterStats>())
+            if (CharacterStats.playerObj)
             {
-                targetObj.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+                CharacterStats.playerObj.DamageVoid(damage);
             }
         }
 

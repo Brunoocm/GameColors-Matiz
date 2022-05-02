@@ -45,25 +45,30 @@ namespace OniricoStudios
 
         void Start()
         {
-            targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
+            //targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
         }
 
 
         void Update()
         {
-            seesTarget = Physics.CheckSphere(transform.position, EnemySeenRange, layerTarget);
-            attackingTarget = Physics.CheckSphere(transform.position, EnemyAttackRange, layerTarget);
+            
 
-            if (seesTarget) FollowTarget();
-            if (attackingTarget) AttackTarget();
-
-            if (stopMoving)
+            if (CharacterStats.playerObj != null)
             {
-                attackDuration -= Time.deltaTime;
-                if (attackDuration <= 0)
+                seesTarget = Physics.CheckSphere(transform.position, EnemySeenRange, layerTarget);
+                attackingTarget = Physics.CheckSphere(transform.position, EnemyAttackRange, layerTarget);
+
+                if (seesTarget) FollowTarget();
+                if (attackingTarget) AttackTarget();
+
+                if (stopMoving)
                 {
-                    stopMoving = false;
-                    //attackDuration = m_attackDuration;
+                    attackDuration -= Time.deltaTime;
+                    if (attackDuration <= 0)
+                    {
+                        stopMoving = false;
+                        //attackDuration = m_attackDuration;
+                    }
                 }
             }
         }
@@ -72,7 +77,7 @@ namespace OniricoStudios
         {
             if (!stopMoving)
             {
-                Vector3 target = new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z);
+                Vector3 target = new Vector3(CharacterStats.playerObj.transform.position.x, transform.position.y, CharacterStats.playerObj.transform.position.z);
                 navMeshAgent.SetDestination(target);
             }
             else

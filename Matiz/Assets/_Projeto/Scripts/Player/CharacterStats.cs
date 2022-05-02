@@ -11,10 +11,13 @@ namespace OniricoStudios
         [HideInInspector] public int m_health;
         public int damage;
         [HideInInspector] public int m_damage;
+
         public float timeInvencible;
         [HideInInspector] public float m_timeInvencible;
-        public SpriteRenderer sprite;
+
         [HideInInspector] public bool canUseSkill;
+        private bool isDead;
+        public SpriteRenderer sprite;
 
 
         [Header("Shield")]
@@ -22,15 +25,26 @@ namespace OniricoStudios
         public bool canDamage;
         public GameObject dropPrisma;
         public GameObject shieldObj;
-        public Transform primaPos;
-
+        private GameObject m_shieldObj;
 
         public static CharacterStats playerObj;
 
-
+        MainCheckpoint mainCheckpoint => FindObjectOfType<MainCheckpoint>();
         private void Awake()
         {
             playerObj = this;
+
+            //shieldObj = GameObject.FindGameObjectWithTag("PrismaFollow");
+            if(GameObject.FindGameObjectWithTag("PrismaFollow") == null)
+            {
+                m_shieldObj = Instantiate(shieldObj, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Destroy(GameObject.FindGameObjectWithTag("PrismaFollow"));
+                m_shieldObj = Instantiate(shieldObj, transform.position, Quaternion.identity);
+
+            }
         }
         void Start()
         {
@@ -52,7 +66,11 @@ namespace OniricoStudios
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                if (!isDead)
+                {
+                    mainCheckpoint.Death();
+                    isDead = true;
+                }
             }
 
             if (canDamage)
@@ -69,7 +87,7 @@ namespace OniricoStudios
             {
                 if (hasShield)
                 {
-                    shieldObj.SetActive(false);
+                    m_shieldObj.SetActive(false);
                     SpawnPrisma();
                     hasShield = false;
                 }
@@ -85,13 +103,13 @@ namespace OniricoStudios
 
         public void GiveShield()
         {
-            shieldObj.SetActive(true);
+            m_shieldObj.SetActive(true);
             hasShield = true;
         }
 
         public void SpawnPrisma()
         {
-            GameObject prisma = Instantiate(dropPrisma, primaPos.position, Quaternion.identity);
+            GameObject prisma = Instantiate(dropPrisma, m_shieldObj.GetComponentInChildren<Transform>().position, Quaternion.identity);
             prisma.GetComponent<PrismaBase>().characterStats = gameObject.GetComponent<CharacterStats>();
 
         }

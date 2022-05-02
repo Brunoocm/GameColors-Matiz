@@ -11,8 +11,8 @@ namespace OniricoStudios
     {
         public CheckpointScript[] checkpoints;
         public GameObject playerObj;
+        public GameObject playerUIObj;
         public GameObject textObj;
-        public GameObject startGamePos;
         static GameObject currentSpawnpoint;
 
         Image transition => gameObject.GetComponentInChildren<Image>();
@@ -21,15 +21,14 @@ namespace OniricoStudios
         void Start()
         {
             characterMovement = FindObjectOfType<CharacterMovement>();
-            currentSpawnpoint = startGamePos;
         }
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Death();
-            }
+            //if (Input.GetKeyDown(KeyCode.R))
+            //{
+            //    Death();
+            //}
         }
 
         public void ResetSpawnpoints()

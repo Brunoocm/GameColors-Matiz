@@ -7,7 +7,6 @@ namespace OniricoStudios
 {
     public class PrismaMovement : MonoBehaviour
     {
-        public Transform target;
 
         public float smoothSpeed;
         public Vector3 offset;
@@ -15,13 +14,14 @@ namespace OniricoStudios
         private void FixedUpdate()
         {
 
-            if (target == null)
-            {
-                target = FindObjectOfType<CharacterStats>().gameObject.transform;
+            if (CharacterStats.playerObj != null)
+            {                
+
+                Vector3 desiredPosition = CharacterStats.playerObj.transform.position + offset;
+                Vector3 smothedposition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+                transform.position = smothedposition;
             }
-            Vector3 desiredPosition = target.position + offset;
-            Vector3 smothedposition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-            transform.position = smothedposition;
+         
         }
     }
 }
