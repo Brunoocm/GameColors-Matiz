@@ -20,9 +20,15 @@ public class CharacterMovement : MonoBehaviour
     public float speed = 2f;
     [HideInInspector] public float m_speed;
 
+    public float trailCooldown;
+    public GameObject trailFX;
+    public GameObject dashFX;
+    public Transform feet;
+
     private bool dashing;
     private float dashMeter;
     private float xMove, yMove;
+    private float trailTime;
     Vector3 lastDir;
     Vector3 moveDir;
 
@@ -85,9 +91,17 @@ public class CharacterMovement : MonoBehaviour
 
     void PlayerMove(float xMove, float yMove)
     {
-        if (moveDir.magnitude >0.1f)
+        if (moveDir.magnitude > 0.1f)
         {
             characterController.Move(moveDir * speed * Time.deltaTime);
+
+            trailTime -= Time.deltaTime;
+
+            if (trailTime <= 0)
+            {
+                Instantiate(trailFX, feet.position, Quaternion.identity);
+                trailTime = trailCooldown;
+            }
         }
 
         anim.SetFloat("MoveX", xMove);
@@ -119,6 +133,16 @@ public class CharacterMovement : MonoBehaviour
         float startTime = Time.time;
         while (Time.time < startTime + dashTime)
         {
+            if (characterAbilities.vermelhoTrue)
+            {
+                Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
+            }
+
+            if (characterAbilities.cinzaTrue)
+            {
+                Instantiate(characterAbilities.cinzaAbility.dashFX, feet.position, Quaternion.identity);
+            }
+
             dashing = true;
             //transform.Translate(moveDir * forceDash * Time.deltaTime);
             transform.Translate(lastDir * forceDash * Time.deltaTime);

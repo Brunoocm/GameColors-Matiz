@@ -121,6 +121,7 @@ public class CharacterAbilities : MonoBehaviour
         public float timeKnockback;
         public float forceKnockback;
         public GameObject specialCinzaObj;
+        public GameObject dashFX;
         public LayerMask groundLayer;
 
 
@@ -149,6 +150,7 @@ public class CharacterAbilities : MonoBehaviour
         public int dashDamage, passiveDamage;
         public float dashMinForce, dashMaxForce, specialCooldown, passiveSpeed;
         public GameObject specialVermelho;
+        public GameObject dashFX;
 
         public CharacterStats characterStats;
         public CharacterMovement characterMove;
