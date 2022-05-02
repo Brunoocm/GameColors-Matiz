@@ -10,6 +10,7 @@ namespace OniricoStudios
         public bool vermelhoTrue;
         public bool azulTrue;
         public bool verdeTrue;
+<<<<<<< Updated upstream
 
         public CinzaAbility cinzaAbility;
         public VermelhoAbility vermelhoAbility;
@@ -20,11 +21,24 @@ namespace OniricoStudios
 
         private float time;
 
+=======
+
+        public CinzaAbility cinzaAbility;
+        public VermelhoAbility vermelhoAbility;
+        public AzulAbility azulAbility;
+        public VerdeAbility verdeAbility;
+
+        CharacterStats characterStats => GetComponent<CharacterStats>();
+
+        private float time;
+
+>>>>>>> Stashed changes
         void Start()
         {
 
         }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             print("vermelho true");
 
@@ -42,6 +56,8 @@ namespace OniricoStudios
             //    }
             //}
 =======
+=======
+>>>>>>> Stashed changes
         void Update()
         {
             if (cinzaTrue)
@@ -56,11 +72,19 @@ namespace OniricoStudios
                 vermelhoAbility.Dash();
 
                 if (time <= vermelhoAbility.specialCooldown)
+<<<<<<< Updated upstream
                 {
                     time += Time.deltaTime;
                 }
                 else
                 {
+=======
+                {
+                    time += Time.deltaTime;
+                }
+                else
+                {
+>>>>>>> Stashed changes
                     if (Input.GetKeyDown(KeyCode.Mouse1))
                     {
                         GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
@@ -81,6 +105,7 @@ namespace OniricoStudios
                 verdeAbility.Especial();
                 verdeAbility.Dash();
             }
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
         }
 
@@ -106,6 +131,14 @@ namespace OniricoStudios
 
             time += Time.deltaTime;
 =======
+=======
+        }
+
+        public void spawnEspecialCinza()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+>>>>>>> Stashed changes
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -119,6 +152,7 @@ namespace OniricoStudios
 
 
             }
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
         }
         else
@@ -133,9 +167,12 @@ namespace OniricoStudios
                 red.transform.parent = transform;
                 time = 0;
             }
+=======
+>>>>>>> Stashed changes
         }
     }
 
+<<<<<<< Updated upstream
 
 
         [System.Serializable]
@@ -154,11 +191,24 @@ namespace OniricoStudios
         public GameObject dashFX;
         public LayerMask groundLayer;
 =======
+=======
+        [System.Serializable]
+        public class CinzaAbility
+        {
+            public CharacterAbilities characterAbilities;
+
+            [Header("Passiva")]
+            public int numStacks;
+
+>>>>>>> Stashed changes
             [Header("Especial")]
             public float timeKnockback;
             public float forceKnockback;
             public GameObject specialCinzaObj;
             public LayerMask groundLayer;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
@@ -189,6 +239,7 @@ namespace OniricoStudios
             public GameObject specialVermelho;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     }
     [System.Serializable]
     public class VermelhoAbility
@@ -210,6 +261,15 @@ namespace OniricoStudios
                 //quanto menor for a ratio de vida, maior a velocidade e dano (puxar nos scripts de movimentação e stats)
 >>>>>>> Stashed changes
 
+=======
+            public CharacterStats characterStats;
+            public CharacterMovement characterMove;
+
+            public void Passiva()
+            {
+                //quanto menor for a ratio de vida, maior a velocidade e dano (puxar nos scripts de movimentação e stats)
+
+>>>>>>> Stashed changes
                 if (characterStats.health == 1)
                 {
                     characterStats.damage = passiveDamage;
@@ -232,12 +292,15 @@ namespace OniricoStudios
                 //
             }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         }
 
         public void Especial()
         {
             characterAbilities.SpecialRed();
 =======
+=======
+>>>>>>> Stashed changes
 
 >>>>>>> Stashed changes
         }

@@ -12,6 +12,7 @@ namespace OniricoStudios
         public float timeDash;
         public float forceDash;
         public float gravity;
+<<<<<<< Updated upstream
 
         public LayerMask groundLayer;
 
@@ -33,6 +34,18 @@ namespace OniricoStudios
     Vector3 lastDir;
     Vector3 moveDir;
 =======
+        public float speed = 2f;
+        [HideInInspector] public float m_speed;
+>>>>>>> Stashed changes
+=======
+
+        public LayerMask groundLayer;
+
+        [HideInInspector]
+        public bool canMove;
+        [HideInInspector]
+        public bool canDash;
+
         public float speed = 2f;
         [HideInInspector] public float m_speed;
 >>>>>>> Stashed changes
@@ -102,6 +115,7 @@ namespace OniricoStudios
         }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     void PlayerMove(float xMove, float yMove)
     {
         if (moveDir.magnitude > 0.1f)
@@ -116,6 +130,10 @@ namespace OniricoStudios
                 trailTime = trailCooldown;
             }
         }
+=======
+        void coooo()
+        {
+>>>>>>> Stashed changes
 =======
         void coooo()
         {
@@ -157,6 +175,7 @@ namespace OniricoStudios
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         float startTime = Time.time;
         while (Time.time < startTime + dashTime)
         {
@@ -175,6 +194,10 @@ namespace OniricoStudios
             transform.Translate(lastDir * forceDash * Time.deltaTime);
             yield return null;
         }
+=======
+            canMove = false;
+            canDash = false;
+>>>>>>> Stashed changes
 =======
             canMove = false;
             canDash = false;
