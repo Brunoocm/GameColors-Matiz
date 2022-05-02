@@ -11,7 +11,6 @@ namespace OniricoStudios
         public float timeBTWDash;
         public float timeDash;
         public float forceDash;
-        public float gravity;
 
         public LayerMask groundLayer;
 
@@ -20,26 +19,18 @@ namespace OniricoStudios
         [HideInInspector]
         public bool canDash;
 
-<<<<<<< Updated upstream
-    public float trailCooldown;
-    public GameObject trailFX;
-    public GameObject dashFX;
-    public Transform feet;
-
-    private bool dashing;
-    private float dashMeter;
-    private float xMove, yMove;
-    private float trailTime;
-    Vector3 lastDir;
-    Vector3 moveDir;
-=======
         public float speed = 2f;
         [HideInInspector] public float m_speed;
->>>>>>> Stashed changes
+
+        public float trailCooldown;
+        public GameObject trailFX;
+        public GameObject dashFX;
+        public Transform feet;
 
         private bool dashing;
         private float dashMeter;
-
+        private float xMove, yMove;
+        private float trailTime;
         Vector3 lastDir;
         Vector3 moveDir;
 
@@ -74,7 +65,6 @@ namespace OniricoStudios
                 }
             }
 
-            coooo();
 
             //print(dashMeter);
 
@@ -101,44 +91,19 @@ namespace OniricoStudios
             }
         }
 
-<<<<<<< Updated upstream
-    void PlayerMove(float xMove, float yMove)
-    {
-        if (moveDir.magnitude > 0.1f)
-        {
-            characterController.Move(moveDir * speed * Time.deltaTime);
-
-            trailTime -= Time.deltaTime;
-
-            if (trailTime <= 0)
-            {
-                Instantiate(trailFX, feet.position, Quaternion.identity);
-                trailTime = trailCooldown;
-            }
-        }
-=======
-        void coooo()
-        {
->>>>>>> Stashed changes
-
-            //REeset the MoveVector
-            Vector3 moveVector = Vector3.zero;
-
-            //Check if cjharacter is grounded
-            if (characterController.isGrounded == false)
-            {
-                //Add our gravity Vecotr
-                moveVector += Physics.gravity;
-            }
-
-            //Apply our move Vector , remeber to multiply by Time.delta
-            characterController.Move(moveVector * Time.deltaTime);
-        }
         void PlayerMove(float xMove, float yMove)
         {
             if (moveDir.magnitude > 0.1f)
             {
                 characterController.Move(moveDir * speed * Time.deltaTime);
+
+                trailTime -= Time.deltaTime;
+
+                if (trailTime <= 0)
+                {
+                    Instantiate(trailFX, feet.position, Quaternion.identity);
+                    trailTime = trailCooldown;
+                }
             }
 
             anim.SetFloat("MoveX", xMove);
@@ -156,29 +121,8 @@ namespace OniricoStudios
                 characterStats.canDamage = false;
             }
 
-<<<<<<< Updated upstream
-        float startTime = Time.time;
-        while (Time.time < startTime + dashTime)
-        {
-            if (characterAbilities.vermelhoTrue)
-            {
-                Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
-            }
-
-            if (characterAbilities.cinzaTrue)
-            {
-                Instantiate(characterAbilities.cinzaAbility.dashFX, feet.position, Quaternion.identity);
-            }
-
-            dashing = true;
-            //transform.Translate(moveDir * forceDash * Time.deltaTime);
-            transform.Translate(lastDir * forceDash * Time.deltaTime);
-            yield return null;
-        }
-=======
             canMove = false;
             canDash = false;
->>>>>>> Stashed changes
 
             float xMove = Input.GetAxisRaw("Horizontal");
             float yMove = Input.GetAxisRaw("Vertical");
@@ -191,6 +135,16 @@ namespace OniricoStudios
             float startTime = Time.time;
             while (Time.time < startTime + dashTime)
             {
+                if (characterAbilities.vermelhoTrue)
+                {
+                    Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
+                }
+
+                if (characterAbilities.cinzaTrue)
+                {
+                    Instantiate(characterAbilities.cinzaAbility.dashFX, feet.position, Quaternion.identity);
+                }
+
                 dashing = true;
                 //transform.Translate(moveDir * forceDash * Time.deltaTime);
                 transform.Translate(lastDir * forceDash * Time.deltaTime);

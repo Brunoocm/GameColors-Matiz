@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,23 +25,6 @@ namespace OniricoStudios
 
         }
 
-<<<<<<< Updated upstream
-            print("vermelho true");
-
-            //if(time <= vermelhoAbility.specialCooldown)
-            //{
-            //    time += Time.deltaTime;
-            //}
-            //else
-            //{
-            //    if (Input.GetKeyDown(KeyCode.Mouse1))
-            //    {
-            //        GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
-            //        red.transform.parent = transform;
-            //        time = 0;
-            //    }
-            //}
-=======
         void Update()
         {
             if (cinzaTrue)
@@ -55,19 +38,21 @@ namespace OniricoStudios
                 vermelhoAbility.Especial();
                 vermelhoAbility.Dash();
 
-                if (time <= vermelhoAbility.specialCooldown)
-                {
-                    time += Time.deltaTime;
-                }
-                else
-                {
-                    if (Input.GetKeyDown(KeyCode.Mouse1))
-                    {
-                        GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
-                        red.transform.parent = transform;
-                        time = 0;
-                    }
-                }
+                print("vermelho true");
+
+                //if(time <= vermelhoAbility.specialCooldown)
+                //{
+                //    time += Time.deltaTime;
+                //}
+                //else
+                //{
+                //    if (Input.GetKeyDown(KeyCode.Mouse1))
+                //    {
+                //        GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
+                //        red.transform.parent = transform;
+                //        time = 0;
+                //    }
+                //}
             }
             else if (azulTrue)
             {
@@ -81,31 +66,12 @@ namespace OniricoStudios
                 verdeAbility.Especial();
                 verdeAbility.Dash();
             }
->>>>>>> Stashed changes
         }
 
         public void spawnEspecialCinza()
         {
             if (Input.GetMouseButtonDown(1))
             {
-<<<<<<< Updated upstream
-                GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, new Vector3(hit.point.x, hit.point.y + 1, hit.point.z), Quaternion.identity);
-                obj.GetComponent<SpecialCinza>().forceKnockback = cinzaAbility.forceKnockback;
-                obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
-            }
-        }
-    }
-
-    public void SpecialRed()
-    {
-        print("special redding");
-
-        if (time <= vermelhoAbility.specialCooldown)
-        {
-            print("1");
-
-            time += Time.deltaTime;
-=======
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -114,27 +80,34 @@ namespace OniricoStudios
                     GameObject obj = Instantiate(cinzaAbility.specialCinzaObj, new Vector3(hit.point.x, hit.point.y + 1, hit.point.z), Quaternion.identity);
                     obj.GetComponent<SpecialCinza>().forceKnockback = cinzaAbility.forceKnockback;
                     obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
-
                 }
-
-
             }
->>>>>>> Stashed changes
         }
-        else
+
+        public void SpecialRed()
         {
-            print("2");
+            print("special redding");
 
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (time <= vermelhoAbility.specialCooldown)
             {
-                print("clicking mouse 1");
+                print("1");
 
-                GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
-                red.transform.parent = transform;
-                time = 0;
+                time += Time.deltaTime;
+            }
+            else
+            {
+                print("2");
+
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    print("clicking mouse 1");
+
+                    GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
+                    red.transform.parent = transform;
+                    time = 0;
+                }
             }
         }
-    }
 
 
 
@@ -146,20 +119,12 @@ namespace OniricoStudios
             [Header("Passiva")]
             public int numStacks;
 
-<<<<<<< Updated upstream
-        [Header("Especial")]
-        public float timeKnockback;
-        public float forceKnockback;
-        public GameObject specialCinzaObj;
-        public GameObject dashFX;
-        public LayerMask groundLayer;
-=======
             [Header("Especial")]
             public float timeKnockback;
             public float forceKnockback;
             public GameObject specialCinzaObj;
+            public GameObject dashFX;
             public LayerMask groundLayer;
->>>>>>> Stashed changes
 
 
             [HideInInspector]
@@ -187,28 +152,15 @@ namespace OniricoStudios
             public int dashDamage, passiveDamage;
             public float dashMinForce, dashMaxForce, specialCooldown, passiveSpeed;
             public GameObject specialVermelho;
+            public GameObject dashFX;
 
-<<<<<<< Updated upstream
-    }
-    [System.Serializable]
-    public class VermelhoAbility
-    {
-        public int dashDamage, passiveDamage;
-        public float dashMinForce, dashMaxForce, specialCooldown, passiveSpeed;
-        public GameObject specialVermelho;
-        public GameObject dashFX;
-
-        public CharacterStats characterStats;
-        public CharacterMovement characterMove;
-        public CharacterAbilities characterAbilities;
-=======
             public CharacterStats characterStats;
             public CharacterMovement characterMove;
+            public CharacterAbilities characterAbilities;
 
             public void Passiva()
             {
-                //quanto menor for a ratio de vida, maior a velocidade e dano (puxar nos scripts de movimentação e stats)
->>>>>>> Stashed changes
+                //quanto menor for a ratio de vida, maior a velocidade e dano (puxar nos scripts de movimentaï¿½ï¿½o e stats)
 
                 if (characterStats.health == 1)
                 {
@@ -224,22 +176,14 @@ namespace OniricoStudios
 
             public void Especial()
             {
-
+                characterAbilities.SpecialRed();
             }
 
             public void Dash()
             {
                 //
             }
-<<<<<<< Updated upstream
-        }
 
-        public void Especial()
-        {
-            characterAbilities.SpecialRed();
-=======
-
->>>>>>> Stashed changes
         }
         [System.Serializable]
         public class AzulAbility
