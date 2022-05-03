@@ -30,6 +30,7 @@ namespace OniricoStudios
         private float dashMeter;
         private float xMove, yMove;
         private float trailTime;
+        private float vSpeed;
         Vector3 lastDir;
         Vector3 moveDir;
 
@@ -56,6 +57,8 @@ namespace OniricoStudios
         }
         private void Update()
         {
+            Gravity();
+
             if (Input.GetKeyDown(KeyCode.Space) && !characterAbilities.vermelhoTrue)
             {
                 if (canMove && canDash)
@@ -88,6 +91,20 @@ namespace OniricoStudios
                     }
                 }
             }
+        }
+
+        void Gravity()
+        {
+           
+            Vector3 vel = transform.forward * Input.GetAxis("Vertical") * speed;
+            //var controller = GetComponent(CharacterController);
+
+            // apply gravity acceleration to vertical speed:
+            vSpeed -= 1 * Time.deltaTime;
+            vel.y = vSpeed; // include vertical speed in vel
+                            // convert vel to displacement and Move the character:
+            characterController.Move(vel * Time.deltaTime);
+
         }
 
         void PlayerMove(float xMove, float yMove)
