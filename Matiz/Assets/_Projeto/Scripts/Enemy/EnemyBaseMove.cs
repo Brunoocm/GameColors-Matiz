@@ -32,12 +32,17 @@ namespace OniricoStudios
 
         private float m_attackDuration;
 
+        private SpriteRenderer spriteRenderer;
+        private GameObject sprite;
+
         GameObject targetObj;
         NavMeshAgent navMeshAgent => gameObject.GetComponent<NavMeshAgent>();
         EnemyHealth enemyHealth => gameObject.GetComponent<EnemyHealth>();
 
         private void Awake()
         {
+            spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
+            sprite = spriteRenderer.gameObject;
             navMeshAgent.speed = speed;
             navMeshAgent.stoppingDistance = stopDistance;
             m_attackDuration = attackDuration;
@@ -79,6 +84,7 @@ namespace OniricoStudios
             {
                 Vector3 target = new Vector3(CharacterStats.playerObj.transform.position.x, transform.position.y, CharacterStats.playerObj.transform.position.z);
                 navMeshAgent.SetDestination(target);
+                Flip();
             }
             else
             {
@@ -99,7 +105,24 @@ namespace OniricoStudios
         {
             stopMoving = true;
             attackDuration = m_attackDuration;
+            Flip();
             navMeshAgent.ResetPath();
+        }
+
+        void Flip()
+        {
+            if(CharacterStats.playerObj.transform.position.x < transform.position.x)
+            {
+                sprite.transform.localRotation = Quaternion.Euler(-45, 180, 0);
+            }
+            else
+            {
+                sprite.transform.localRotation = Quaternion.Euler(45, 0, 0);
+
+            }
+
+            //spriteRenderer.sprite.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+
         }
         void OnDrawGizmosSelected()
         {
@@ -112,6 +135,7 @@ namespace OniricoStudios
                 Gizmos.DrawWireSphere(transform.position, EnemyAttackRange);
             }
         }
+
 
     }
 }

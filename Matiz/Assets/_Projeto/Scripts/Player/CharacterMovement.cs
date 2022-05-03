@@ -96,14 +96,13 @@ namespace OniricoStudios
         void Gravity()
         {
            
-            Vector3 vel = transform.forward * Input.GetAxis("Vertical") * speed;
+            //Vector3 vel = transform.forward * Input.GetAxis("Vertical") * speed;
             //var controller = GetComponent(CharacterController);
 
-            // apply gravity acceleration to vertical speed:
             vSpeed -= 1 * Time.deltaTime;
-            vel.y = vSpeed; // include vertical speed in vel
+            //vel.y = vSpeed; // include vertical speed in vel
                             // convert vel to displacement and Move the character:
-            characterController.Move(vel * Time.deltaTime);
+            characterController.Move(new Vector3(0,-10,0) * Time.deltaTime);
 
         }
 

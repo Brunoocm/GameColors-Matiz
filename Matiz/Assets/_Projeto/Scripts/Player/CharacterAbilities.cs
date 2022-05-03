@@ -20,6 +20,13 @@ namespace OniricoStudios
 
         private float time;
 
+        private void Awake()
+        {
+            CharacterStats.cinzaTrue = true;
+            CharacterStats.vermelhoTrue = false;
+            CharacterStats.azulTrue = false;
+            CharacterStats.verdeTrue = false;
+        }
         void Start()
         {
             cinzaTrue = CharacterStats.cinzaTrue;
@@ -46,7 +53,6 @@ namespace OniricoStudios
                 vermelhoAbility.Especial();
                 vermelhoAbility.Dash();
 
-                print("vermelho true");
 
                 //if(time <= vermelhoAbility.specialCooldown)
                 //{
@@ -94,21 +100,17 @@ namespace OniricoStudios
 
         public void SpecialRed()
         {
-            print("special redding");
 
             if (time <= vermelhoAbility.specialCooldown)
             {
-                print("1");
 
                 time += Time.deltaTime;
             }
             else
             {
-                print("2");
 
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                 {
-                    print("clicking mouse 1");
 
                     GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
                     red.transform.parent = transform;

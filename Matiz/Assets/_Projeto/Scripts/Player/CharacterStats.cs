@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 namespace OniricoStudios
 {
@@ -38,6 +39,8 @@ namespace OniricoStudios
 
         CharacterAbilities charAbilities => GetComponent<CharacterAbilities>();
         MainCheckpoint mainCheckpoint => FindObjectOfType<MainCheckpoint>();
+        CinemachineVirtualCamera cinemachineVirtualCamera => FindObjectOfType<CinemachineVirtualCamera>();
+
         private void Awake()
         {
             playerObj = this;
@@ -61,6 +64,8 @@ namespace OniricoStudios
             m_health = health;
             m_damage = damage;
             m_timeInvencible = timeInvencible;
+            cinemachineVirtualCamera.Follow = this.transform;
+            cinemachineVirtualCamera.LookAt = this.transform;
         }
 
         void Update()
