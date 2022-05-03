@@ -9,6 +9,7 @@ namespace OniricoStudios
     public class DoorExit : MonoBehaviour
     {
         Image transition => gameObject.GetComponentInChildren<Image>();
+        public Transform pos;
 
         [SerializeField] Link link = null;
         void Awake()
@@ -21,7 +22,7 @@ namespace OniricoStudios
 
         private void Spawn()
         {
-            CharacterStats.playerObj.transform.position = transform.position;
+            CharacterStats.playerObj.transform.position = pos.transform.position;
         }
 
         IEnumerator ReloadPosition()
