@@ -53,14 +53,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9113579766819438693}
-  m_LocalRotation: {x: -0.049951736, y: -0.9159752, z: 0.37940934, w: 0.120594166}
-  m_LocalPosition: {x: 0, y: 0.56568485, z: 0.5656849}
+  m_LocalRotation: {x: -0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9113579768481794706}
   m_Father: {fileID: 9113579767548516465}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -165, z: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!1 &9113579767074470315
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   timeInvencible: 0.5
   m_timeInvencible: 0
   canUseSkill: 0
+  isDead: 0
   sprite: {fileID: 9113579767548516464}
   attackFX: {fileID: 7148702779302362437, guid: 620b2dfea3ec4c341a89df62870eb580, type: 3}
   hasShield: 1
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b02562b3cfc374ab7aba72975e1dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBTWDash: 0.3
+  timeBTWDash: 0.2
   timeDash: 0.2
   forceDash: 25
   groundLayer:
@@ -143,11 +144,12 @@ MonoBehaviour:
     m_Bits: 64
   canMove: 1
   canDash: 0
-  speed: 8
+  speed: 9
   m_speed: 0
   trailCooldown: 0.75
   trailFX: {fileID: 7148702779302362437, guid: d8bd3180735a7ca4d9578cdf2a0d8adf, type: 3}
   feet: {fileID: 5388244591430089300}
+  dashing: 0
 --- !u!114 &9113579767074470313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 9113579768481794707}
+  pivotAttack: {fileID: 9113579766819438693}
+  xaa: 0
+  yaa: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -201,7 +206,7 @@ MonoBehaviour:
     dashMinForce: 0.1
     dashMaxForce: 0.3
     specialCooldown: 10
-    passiveSpeed: 9
+    passiveSpeed: 11
     specialVermelho: {fileID: 640322881160915065, guid: 31cb7bfa1a07d934eb349667fdb77b7e, type: 3}
     dashFX: {fileID: 7148702779302362437, guid: 61af67639a8c4c24a9e32c9bf9d0ceed, type: 3}
     characterStats: {fileID: 9113579767074470294}
@@ -355,13 +360,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9113579768481794707}
-  m_LocalRotation: {x: 0.43046045, y: -0.5609847, z: 0.5609847, w: 0.43046045}
-  m_LocalPosition: {x: -0.11, y: 1.02, z: 0.5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.37, y: 1.02, z: 0.5}
   m_LocalScale: {x: 0.09054881, y: 0.2827, z: 0.2827}
   m_Children: []
   m_Father: {fileID: 9113579766819438692}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 105}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &9113579768481794719
 MonoBehaviour:
   m_ObjectHideFlags: 0

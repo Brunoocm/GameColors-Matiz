@@ -8,7 +8,10 @@ namespace OniricoStudios
     {
 
         public GameObject attack;
+        public GameObject pivotAttack;
 
+
+        public float xaa, yaa;
         public LayerMask groundLayer;
         public float timeBTWAttack;
         public float timeAttack;
@@ -29,7 +32,7 @@ namespace OniricoStudios
 
         void Update()
         {
-            if (Input.GetMouseButtonDown(0) && canAttack && characterMovement.canMove && characterMovement.canDash)
+            if (Input.GetMouseButtonDown(0) && canAttack && characterMovement.canMove && !characterMovement.dashing)
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -37,7 +40,12 @@ namespace OniricoStudios
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer)) // 6 = layermask ground
                 {
                     AttackPlayer(hit);
+                    //Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
+                    //pivotAttack.rotation = rotation;
 
+                    //var direction = hit.point - transform.position;
+                    //direction.y = 0;
+                    //pivotAttack.transform.rotation = Quaternion.LookRotation(direction);
                 }
             }
         }
@@ -46,7 +54,6 @@ namespace OniricoStudios
             canAttack = false;
 
             anim.SetTrigger("AttackTrigger");
-            attack.SetActive(true);
 
             float vertical = mousePos.point.z - playerPos.position.z;
             float horizontal = mousePos.point.x - playerPos.position.x;
@@ -54,6 +61,7 @@ namespace OniricoStudios
             anim.SetFloat("Vertical", vertical);
             anim.SetFloat("Horizontal", horizontal);
 
+            attack.SetActive(true);
             SprintLR(horizontal, vertical);
         }
 
@@ -70,6 +78,7 @@ namespace OniricoStudios
             float startTime = Time.time;
             while (Time.time < startTime + timeAttack)
             {
+                
                 transform.Translate(new Vector3(dirH, 0, dirV).normalized * force * Time.deltaTime);
                 yield return null;
             }

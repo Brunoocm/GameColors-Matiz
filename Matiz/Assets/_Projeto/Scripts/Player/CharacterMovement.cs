@@ -26,7 +26,7 @@ namespace OniricoStudios
         public GameObject trailFX;
         public Transform feet;
 
-        private bool dashing;
+        [HideInInspector]public bool dashing;
         private float dashMeter;
         private float xMove, yMove;
         private float trailTime;
@@ -167,10 +167,10 @@ namespace OniricoStudios
             }
 
             canMove = true;
+            dashing = false;
 
             yield return new WaitForSeconds(timeBTWDash);
             canDash = true;
-            dashing = false;
         }
         private void FixedUpdate()
         {
