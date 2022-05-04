@@ -17,7 +17,7 @@ namespace OniricoStudios
         [HideInInspector] public float m_timeInvencible;
 
         [HideInInspector] public bool canUseSkill;
-        private bool isDead;
+        [HideInInspector] public bool isDead;
         public SpriteRenderer sprite;
         public GameObject attackFX;
 
