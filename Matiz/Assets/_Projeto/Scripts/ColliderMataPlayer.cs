@@ -12,7 +12,6 @@ namespace OniricoStudios
         {
             if (other.gameObject.GetComponent<CharacterStats>() != null)
             {
-                print("aa");
 
                 if (!other.gameObject.GetComponent<CharacterStats>().isDead)
                 {

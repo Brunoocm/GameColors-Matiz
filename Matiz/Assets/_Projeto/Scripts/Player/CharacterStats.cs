@@ -65,7 +65,7 @@ namespace OniricoStudios
             m_damage = damage;
             m_timeInvencible = timeInvencible;
             cinemachineVirtualCamera.Follow = this.transform;
-            cinemachineVirtualCamera.LookAt = this.transform;
+            //cinemachineVirtualCamera.LookAt = this.transform;
         }
 
         void Update()

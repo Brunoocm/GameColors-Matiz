@@ -51,7 +51,7 @@ namespace OniricoStudios
                 else if (Input.GetKeyDown(KeyCode.S) && !saving)
                 {
                     StartCoroutine(ChromaDesappiers());
-                    mainCheckpoint.characterMovement.canMove = true;
+                    characterMovement.canMove = true;
                 }
             }
 
@@ -85,7 +85,7 @@ namespace OniricoStudios
 
         public IEnumerator SaveCoroutine()
         {
-            mainCheckpoint.characterMovement.canMove = false;
+            characterMovement.canMove = false;
             mainCheckpoint.textObj.SetActive(true);
             yield return new WaitForSeconds(1.5f);
             saving = false;
@@ -96,6 +96,8 @@ namespace OniricoStudios
             if (other.CompareTag("Player"))
             {
                 isActive = true;
+
+                characterMovement = other.gameObject.GetComponent<CharacterMovement>();
             }
         }
 

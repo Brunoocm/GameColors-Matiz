@@ -114,7 +114,7 @@ namespace OniricoStudios
                 GameObject player = Instantiate(playerObj, pos.transform.position, Quaternion.identity);
                 characterMovement = player.GetComponent<CharacterMovement>();
                 cinemachineVirtualCamera.Follow = player.transform;
-                cinemachineVirtualCamera.LookAt = player.transform;
+                //cinemachineVirtualCamera.LookAt = player.transform;
                 cinemachineVirtualCamera.transform.eulerAngles = new Vector3(49, 0, 0);
 
                 yield return new WaitForSeconds(1f);
@@ -152,7 +152,7 @@ namespace OniricoStudios
                 GameObject player = Instantiate(playerObj, pos.transform.position, Quaternion.identity);
                 characterMovement = player.GetComponent<CharacterMovement>();
                 cinemachineVirtualCamera.Follow = player.transform;
-                cinemachineVirtualCamera.LookAt = player.transform;
+                //cinemachineVirtualCamera.LookAt = player.transform;
                 cinemachineVirtualCamera.transform.eulerAngles = new Vector3(49, 0, 0);
 
                 yield return new WaitForSeconds(1f);

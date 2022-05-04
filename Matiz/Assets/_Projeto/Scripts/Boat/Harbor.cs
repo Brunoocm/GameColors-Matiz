@@ -20,9 +20,21 @@ namespace OniricoStudios
         {
             if (other.gameObject.CompareTag("Player"))
             {
+                if (!boat.inBoat)
+                {
+                    boat.gameObject.SetActive(false);
+                    boat.gameObject.SetActive(true);
+                }
+
+                boat.charMove = other.gameObject.GetComponent<CharacterMovement>();
+                boat.charStats = other.gameObject.GetComponent<CharacterStats>();
+                boat.player = other.gameObject;
+
                 boat.inHarbor = true;
                 boat.land = land;
                 boat.transform.position = ocean.position;
+
+               
             }
         }
 
@@ -30,6 +42,7 @@ namespace OniricoStudios
         {
             if (other.gameObject.CompareTag("Player"))
             {
+               
                 boat.inHarbor = false;
                 boat.land = null;
             }
