@@ -55,7 +55,7 @@ namespace OniricoStudios
                 yield return null;
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5F);
             CharacterStats.playerObj.gameObject.transform.position = pos.position;
         }
     }
