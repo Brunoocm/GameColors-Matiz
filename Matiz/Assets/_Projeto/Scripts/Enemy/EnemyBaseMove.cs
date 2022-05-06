@@ -111,13 +111,14 @@ namespace OniricoStudios
 
         void Flip()
         {
-            if(CharacterStats.playerObj.transform.position.x < transform.position.x)
+            if (CharacterStats.playerObj.transform.position.x < transform.position.x)
             {
-                sprite.transform.localRotation = Quaternion.Euler(-45, 180, 0);
+                spriteRenderer.flipX = true;
+
             }
             else
             {
-                sprite.transform.localRotation = Quaternion.Euler(45, 0, 0);
+                spriteRenderer.flipX = false;
 
             }
 
