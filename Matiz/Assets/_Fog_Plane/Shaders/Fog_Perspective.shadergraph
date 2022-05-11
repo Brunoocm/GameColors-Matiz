@@ -77,6 +77,9 @@
         },
         {
             "m_Id": "f88702065db54253ad5f9e3bea97abce"
+        },
+        {
+            "m_Id": "83bab24932c34db9b9861bff6df67c71"
         }
     ],
     "m_GroupDatas": [
@@ -379,6 +382,9 @@
             },
             {
                 "m_Id": "f88702065db54253ad5f9e3bea97abce"
+            },
+            {
+                "m_Id": "83bab24932c34db9b9861bff6df67c71"
             }
         ]
     },
@@ -674,9 +680,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 2049.0,
-            "y": -152.0,
-            "width": 208.0,
+            "x": 2042.0,
+            "y": -137.0,
+            "width": 208.00001525878907,
             "height": 302.0
         }
     },
@@ -909,8 +915,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 695.0,
-            "y": -245.0,
+            "x": 676.0,
+            "y": -243.00001525878907,
             "width": 213.00001525878907,
             "height": 343.0000305175781
         }
@@ -1025,8 +1031,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -782.0,
-            "y": -76.0,
+            "x": -856.0000610351563,
+            "y": -75.99999237060547,
             "width": 145.0,
             "height": 113.0
         }
@@ -1186,6 +1192,31 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.ColorRGBAMaterialSlot",
+    "m_ObjectId": "47f7d18af6744fa397b548e2470969a4",
+    "m_Id": 0,
+    "m_DisplayName": "Sprite Mask",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "SpriteMask",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "49fb3599c5c89581b0d6ad7c8221d65d",
     "m_Id": 2,
@@ -1326,10 +1357,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
+            "x": 2254.0,
+            "y": -188.0,
+            "width": 200.00001525878907,
+            "height": 41.000003814697269
         }
     },
     "m_Slots": [
@@ -1648,6 +1679,39 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "83bab24932c34db9b9861bff6df67c71",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.SpriteMask",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "47f7d18af6744fa397b548e2470969a4"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.SpriteMask"
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SplitNode",
     "m_ObjectId": "84f0b0f9e199278ba366bb5450aec99d",
     "m_Group": {
@@ -1702,9 +1766,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1006.0,
-            "y": 145.0,
-            "width": 208.0,
+            "x": -1005.0000610351563,
+            "y": 145.00001525878907,
+            "width": 208.00001525878907,
             "height": 314.0
         }
     },
@@ -1735,9 +1799,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 153.0,
+            "x": 152.0,
             "y": -245.0,
-            "width": 208.0,
+            "width": 208.00001525878907,
             "height": 302.0
         }
     },
