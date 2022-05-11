@@ -24,7 +24,7 @@ namespace OniricoStudios
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+                other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage, transform);
             }
         }
     }

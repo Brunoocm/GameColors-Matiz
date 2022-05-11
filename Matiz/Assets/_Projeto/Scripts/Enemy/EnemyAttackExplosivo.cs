@@ -48,7 +48,7 @@ namespace OniricoStudios
 
             if (targetObj.gameObject.GetComponent<CharacterStats>())
             {
-                targetObj.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+                targetObj.gameObject.GetComponent<CharacterStats>().DamageVoid(damage, transform);
             }
         }
 

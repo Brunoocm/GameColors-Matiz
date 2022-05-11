@@ -14,7 +14,7 @@ namespace OniricoStudios
             {
                 if (other.GetComponent<CharacterStats>() != null)
                 {
-                    other.GetComponent<CharacterStats>().DamageVoid(damage);
+                    other.GetComponent<CharacterStats>().DamageVoid(damage, transform);
                 }
                 else if (other.GetComponent<EnemyHealth>() != null)
                 {

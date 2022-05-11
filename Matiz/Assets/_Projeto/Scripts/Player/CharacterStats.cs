@@ -20,6 +20,10 @@ namespace OniricoStudios
         [HideInInspector] public bool isDead;
         public SpriteRenderer sprite;
         public GameObject attackFX;
+        public GameObject damageFX;
+        public GameObject prismFX;
+        public GameObject deathFX;
+        public Transform vfxPivot;
 
 
         [Header("Shield")]
@@ -36,7 +40,8 @@ namespace OniricoStudios
         public static bool azulTrue;
         public static bool verdeTrue;
 
-
+        CharacterMovement charMove => GetComponent<CharacterMovement>();
+        CharacterAttack charAttack => GetComponent<CharacterAttack>();
         CharacterAbilities charAbilities => GetComponent<CharacterAbilities>();
         MainCheckpoint mainCheckpoint => FindObjectOfType<MainCheckpoint>();
         CinemachineVirtualCamera cinemachineVirtualCamera => FindObjectOfType<CinemachineVirtualCamera>();
@@ -54,7 +59,6 @@ namespace OniricoStudios
             {
                 Destroy(GameObject.FindGameObjectWithTag("PrismaFollow"));
                 m_shieldObj = Instantiate(shieldObj, transform.position, Quaternion.identity);
-
             }
         }
         void Start()
@@ -81,8 +85,7 @@ namespace OniricoStudios
             {
                 if (!isDead)
                 {
-                    mainCheckpoint.Death();
-                    isDead = true;
+                    Die();
                 }
             }
 
@@ -94,19 +97,43 @@ namespace OniricoStudios
 
         }
 
-        public void DamageVoid(int dano)
+        void Die()
+        {
+            Instantiate(deathFX, vfxPivot.position, Quaternion.identity);
+
+            mainCheckpoint.Death();
+            isDead = true;
+        }
+
+        public void DamageVoid(int dano, Transform enemy)
         {
             if (canDamage)
             {
                 if (hasShield)
                 {
+                    float enemyX = transform.position.x - enemy.position.x;
+                    float enemyZ = transform.position.z - enemy.position.z;
+
+                    charAttack.SprintLR(enemyX, enemyZ);
+
+
+
                     m_shieldObj.SetActive(false);
                     SpawnPrisma();
                     hasShield = false;
+                    //Instantiate(prismFX, vfxPivot.position, Quaternion.identity);
                 }
                 else
                 {
-                    health -= dano;
+                    //piscadinha branca
+
+                    float enemyX = transform.position.x - enemy.position.x;
+                    float enemyZ = transform.position.z - enemy.position.z;
+
+                    charAttack.SprintLR(enemyX, enemyZ);
+
+                    //health -= dano;
+                    Instantiate(damageFX, vfxPivot.position, Quaternion.identity);
                 }
 
                 timeInvencible = m_timeInvencible;

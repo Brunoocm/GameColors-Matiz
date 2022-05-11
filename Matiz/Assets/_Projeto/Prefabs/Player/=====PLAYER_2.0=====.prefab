@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &765796551368672843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2235474368869622388}
+  m_Layer: 7
+  m_Name: vfx pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2235474368869622388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765796551368672843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.48, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9113579767074470295}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4441854261023641638
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +219,7 @@ Transform:
   - {fileID: 9113579767548516465}
   - {fileID: 5388244591430089300}
   - {fileID: 9094528766065268990}
+  - {fileID: 2235474368869622388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -214,6 +245,10 @@ MonoBehaviour:
   isDead: 0
   sprite: {fileID: 9113579767548516464}
   attackFX: {fileID: 7148702779302362437, guid: 620b2dfea3ec4c341a89df62870eb580, type: 3}
+  damageFX: {fileID: 4386625202866934257, guid: 14135aeb5712f7541be16392994caf78, type: 3}
+  prismFX: {fileID: 4386625202866934257, guid: 14135aeb5712f7541be16392994caf78, type: 3}
+  deathFX: {fileID: 4386625202866934257, guid: 14135aeb5712f7541be16392994caf78, type: 3}
+  vfxPivot: {fileID: 2235474368869622388}
   hasShield: 1
   canDamage: 0
   dropPrisma: {fileID: 7468153022993694362, guid: 009e8de5bd52d3a4aaf067a9ba086970, type: 3}

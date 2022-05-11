@@ -49,7 +49,7 @@ namespace OniricoStudios
             hitTarget = true;
             if (CharacterStats.playerObj)
             {
-                CharacterStats.playerObj.DamageVoid(damage);
+                CharacterStats.playerObj.DamageVoid(damage, transform);
             }
         }
 

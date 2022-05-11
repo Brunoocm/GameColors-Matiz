@@ -99,7 +99,9 @@ namespace OniricoStudios
 
         public IEnumerator Knockback()
         {
-            Vector3 finalPos = new Vector3(CharacterStats.playerObj.transform.position.x - transform.position.x, 0, CharacterStats.playerObj.transform.position.z - transform.position.z);
+            Vector3 finalPos = new Vector3(
+                CharacterStats.playerObj.transform.position.x - transform.position.x,
+                0, CharacterStats.playerObj.transform.position.z - transform.position.z);
 
             float startTime = Time.time;
             while (Time.time < startTime + timeKnockback)

@@ -35,7 +35,7 @@ namespace OniricoStudios
             {
                 if (other.gameObject.GetComponent<CharacterStats>().canDamage)
                 {
-                    other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage);
+                    other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage, transform);
                     Destroy(gameObject);
                 }
             }
