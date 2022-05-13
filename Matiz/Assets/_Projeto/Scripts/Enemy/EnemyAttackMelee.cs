@@ -83,7 +83,26 @@ namespace OniricoStudios
             if (other.gameObject.CompareTag(tagNameTarget))
             {
                 HitTarget(other.gameObject);
+                StartCoroutine(Knock(other.transform, 0.1f));
             }
+        }
+
+        public IEnumerator Knock(Transform dir, float timeKnock)
+        {
+            //anim.SetTrigger("DashTrigger");
+
+            float vertical = dir.position.z - transform.position.z;
+            float horizontal = dir.position.x - transform.position.x;
+
+            float startTime = Time.time;
+            while (Time.time < startTime + timeKnock)
+            {
+
+                transform.Translate(new Vector3(-horizontal, 0, -vertical).normalized * dashForce/2 * Time.deltaTime);
+                yield return null;
+            }
+
+
         }
 
         //private void OnTriggerStay(Collider other)

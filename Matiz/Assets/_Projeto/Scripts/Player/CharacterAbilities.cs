@@ -95,6 +95,9 @@ namespace OniricoStudios
                     obj.GetComponent<SpecialCinza>().forceKnockback = cinzaAbility.forceKnockback;
                     obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
                 }
+
+                cinzaAbility.m_cooldownSpecial = cinzaAbility.cooldownSpecial;
+
             }
         }
 
@@ -132,6 +135,8 @@ namespace OniricoStudios
             [Header("Especial")]
             public float timeKnockback;
             public float forceKnockback;
+            [HideInInspector] public float cooldownSpecial;
+            public float m_cooldownSpecial;
             public GameObject specialCinzaObj;
             public GameObject dashFX;
             public LayerMask groundLayer;
@@ -147,7 +152,14 @@ namespace OniricoStudios
 
             public void Especial()
             {
-                characterAbilities.spawnEspecialCinza();
+                if (m_cooldownSpecial <= 0)
+                {
+                    characterAbilities.spawnEspecialCinza();
+                }
+                else
+                {
+                    m_cooldownSpecial -= Time.deltaTime;
+                }
             }
 
             public void Dash()

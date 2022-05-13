@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using DG.Tweening;
+
 
 namespace OniricoStudios
 {
@@ -68,17 +70,22 @@ namespace OniricoStudios
             m_health = health;
             m_damage = damage;
             m_timeInvencible = timeInvencible;
+            timeInvencible = 0;
             cinemachineVirtualCamera.Follow = this.transform;
             //cinemachineVirtualCamera.LookAt = this.transform;
         }
 
         void Update()
         {
-            timeInvencible -= Time.deltaTime;
 
             if (timeInvencible <= 0)
             {
                 canDamage = true;
+            }
+            else
+            {
+                timeInvencible -= Time.deltaTime;
+
             }
 
             if (health <= 0)
@@ -90,10 +97,18 @@ namespace OniricoStudios
             }
 
             if (canDamage)
-                sprite.color = Color.white;
-            else
-                sprite.color = Color.cyan;
+            {
+                sprite.DOColor(Color.white, 1);
 
+                //sprite.color = Color.white;
+            }
+            else
+            {
+                //sprite.DOColor(Color.black, 0.3f).SetLoops(-1, LoopType.Yoyo);
+
+            }
+
+        
 
         }
 
@@ -132,11 +147,13 @@ namespace OniricoStudios
 
                     charAttack.SprintLR(enemyX, enemyZ);
 
-                    //health -= dano;
+                    health -= dano;
                     Instantiate(damageFX, vfxPivot.position, Quaternion.identity);
                 }
 
                 timeInvencible = m_timeInvencible;
+                InvulnerableTime();
+
                 canDamage = false;
             }
         }
@@ -153,5 +170,16 @@ namespace OniricoStudios
             prisma.GetComponent<PrismaBase>().characterStats = gameObject.GetComponent<CharacterStats>();
 
         }
+
+        private void InvulnerableTime()
+        {
+            Sequence mySequence = DOTween.Sequence();
+            mySequence.Append(sprite.DOColor(Color.grey, 0.2f))
+                .Append(sprite.DOColor(Color.white, 0.2f));
+            mySequence.SetLoops(-1, LoopType.Restart);
+
+        }
+
+
     }
 }
