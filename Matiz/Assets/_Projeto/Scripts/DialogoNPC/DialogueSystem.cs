@@ -9,6 +9,8 @@ public class DialogueSystem : MonoBehaviour
 
     [TextArea (3, 3)]
     public string[] sentences;
+    [TextArea(3, 3)]
+    public string[] sentencesBonus;
     public float delaySentences;
     public float delay;
 
@@ -24,32 +26,32 @@ public class DialogueSystem : MonoBehaviour
     {
         background.rectTransform.sizeDelta = new Vector2(textDisplay.rectTransform.rect.width / 2.5f, textDisplay.rectTransform.rect.height /2);
 
-        if (Input.GetKeyDown(KeyCode.M)) Restart();
+        //if (Input.GetKeyDown(KeyCode.M)) Restart();
     }
 
-    public IEnumerator TextDisplayCoroutine()
+    public IEnumerator TextDisplayCoroutine(string[] sentence)
     {
         playingText = true;
 
-        foreach (char letter in sentences[index].ToCharArray())
+        foreach (char letter in sentence[index].ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(delay);
         }
 
         yield return new WaitForSeconds(delaySentences);
-        NextSentence();
+        NextSentence(sentence);
 
 
     }
 
-    public void NextSentence()
+    public void NextSentence(string[] sentence)
     {
-        if(index < sentences.Length - 1)
+        if(index < sentence.Length - 1)
         {
             index++;
             textDisplay.text = "";
-            StartCoroutine(TextDisplayCoroutine());
+            StartCoroutine(TextDisplayCoroutine(sentence));
         }
         else
         {
@@ -58,9 +60,9 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public void Restart()
+    public void Restart(string[] sentence)
     {
         index = 0;
-        StartCoroutine(TextDisplayCoroutine());
+        StartCoroutine(TextDisplayCoroutine(sentence));
     }
 }
