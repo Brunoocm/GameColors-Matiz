@@ -10,6 +10,7 @@ namespace OniricoStudios
         public int damage;
         public float antecipation;
         public float timeToExplode;
+        [HideInInspector] public bool launched;
 
         [Header("Dash")]
         public float dashForce;
@@ -80,7 +81,15 @@ namespace OniricoStudios
                 yield return null;
             }
 
-            if (!hitBy) StartCoroutine(Explosion(0f));
+            if (!launched)
+            {
+                if (!hitBy) StartCoroutine(Explosion(0f));
+            }
+            else
+            {
+                oneTime = false;
+                launched = false;
+            }
 
         }
 
@@ -88,6 +97,7 @@ namespace OniricoStudios
         {
             if (other.gameObject.CompareTag(tagNameTarget))
             {
+          
                 HitTarget(other.gameObject);
                 StartCoroutine(Explosion(0f));
 

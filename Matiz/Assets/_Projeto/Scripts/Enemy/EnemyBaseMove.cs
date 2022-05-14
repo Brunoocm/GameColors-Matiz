@@ -88,7 +88,7 @@ namespace OniricoStudios
             }
             else
             {
-                navMeshAgent.ResetPath();
+                //navMeshAgent.ResetPath();
             }
         }
 
@@ -98,6 +98,7 @@ namespace OniricoStudios
             {
                 ResetMovement();
                 eventAttack.Invoke();
+                navMeshAgent.ResetPath();
             }
         }
 

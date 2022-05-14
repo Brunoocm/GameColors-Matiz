@@ -20,7 +20,7 @@ public class DialogueNPC : MonoBehaviour
         {
             if (!dialogueSystem.playingText)
             {
-                OpenDialogue();
+                dialogueSystem.Restart();
             }
         }
     }
