@@ -188,7 +188,7 @@ namespace OniricoStudios
             if(other.gameObject.CompareTag("LifeOrb"))
             {
                 extraLifeScript.currentStacksLife++;
-                Destroy(other);
+                Destroy(other.gameObject);
             }
         }
 
