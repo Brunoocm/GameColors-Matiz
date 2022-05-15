@@ -7,6 +7,10 @@ public class Flower : MonoBehaviour
     public GameObject lifePoints;
     public int maxLifePoints;
     public float range;
+    public float timeToRespawn;
+
+    MeshRenderer meshRenderer => GetComponent<MeshRenderer>();
+    Collider col => GetComponent<Collider>();
     void Start()
     {
         
@@ -14,7 +18,6 @@ public class Flower : MonoBehaviour
 
     void Update()
     {
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +32,8 @@ public class Flower : MonoBehaviour
                 StartCoroutine(SpawnObj());
                 i++;
             }
+
+            StartCoroutine(Respawn());
 
         }
     }
@@ -49,6 +54,17 @@ public class Flower : MonoBehaviour
         obj.GetComponent<FollowPlayer>().follow = true;
         obj.GetComponent<Collider>().enabled = true;
 
+
+    }
+    IEnumerator Respawn()
+    {
+        meshRenderer.enabled = false;
+        col.enabled = false;
+
+        yield return new WaitForSeconds(timeToRespawn);
+
+        meshRenderer.enabled = true;
+        col.enabled = true;
 
     }
 }
