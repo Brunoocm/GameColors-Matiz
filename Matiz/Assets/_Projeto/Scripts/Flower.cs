@@ -5,6 +5,7 @@ using DG.Tweening;
 public class Flower : MonoBehaviour
 {
     public GameObject lifePoints;
+    public int maxLifePoints;
     public float range;
     void Start()
     {
@@ -20,8 +21,14 @@ public class Flower : MonoBehaviour
     {
         if(other.gameObject.CompareTag("AttackPlayer"))
         {
-            StartCoroutine(SpawnObj());
-            StartCoroutine(SpawnObj());
+
+            int num = Random.Range(1, maxLifePoints);
+            int i = 0;
+            while (i <= num)
+            {
+                StartCoroutine(SpawnObj());
+                i++;
+            }
 
         }
     }
