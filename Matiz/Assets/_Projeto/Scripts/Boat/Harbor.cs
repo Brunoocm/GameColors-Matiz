@@ -32,7 +32,12 @@ namespace OniricoStudios
 
                 boat.inHarbor = true;
                 boat.land = land;
-                boat.transform.position = ocean.position;
+                
+
+                if(!boat.inBoat)
+                {
+                    boat.transform.position = ocean.position;
+                }
 
                
             }

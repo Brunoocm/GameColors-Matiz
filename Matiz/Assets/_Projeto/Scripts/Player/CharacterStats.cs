@@ -12,6 +12,7 @@ namespace OniricoStudios
         [Header("stats")]
         public int health;
         [HideInInspector] public int m_health;
+        [HideInInspector] public int maxHealth = 3;
         public int damage;
         [HideInInspector] public int m_damage;
 
@@ -47,6 +48,8 @@ namespace OniricoStudios
         CharacterAbilities charAbilities => GetComponent<CharacterAbilities>();
         MainCheckpoint mainCheckpoint => FindObjectOfType<MainCheckpoint>();
         CinemachineVirtualCamera cinemachineVirtualCamera => FindObjectOfType<CinemachineVirtualCamera>();
+        ExtraLifeScript extraLifeScript => FindObjectOfType<ExtraLifeScript>();
+        
 
         private void Awake()
         {
@@ -180,6 +183,14 @@ namespace OniricoStudios
 
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if(other.gameObject.CompareTag("LifeOrb"))
+            {
+                extraLifeScript.currentStacksLife++;
+                Destroy(other);
+            }
+        }
 
     }
 }
