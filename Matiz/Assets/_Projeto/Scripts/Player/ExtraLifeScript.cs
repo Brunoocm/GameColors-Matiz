@@ -21,16 +21,16 @@ namespace OniricoStudios
         {
             extraObj.GetComponentInChildren<Slider>().value = currentStacksLife;
 
-            if (currentStacksLife >= maxStacksLife)
+            if (currentStacksLife >= maxStacksLife && CharacterStats.playerObj.health < 3)
             {
                 CharacterStats.playerObj.health++;
                 currentStacksLife = 0;
             }
 
-            if(Input.GetKeyDown(KeyCode.K))
-            {
-                currentStacksLife++;
-            }
+            //if(Input.GetKeyDown(KeyCode.K))
+            //{
+            //    currentStacksLife++;
+            //}
         }
     }
 }
