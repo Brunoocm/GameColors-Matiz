@@ -14,7 +14,7 @@ namespace OniricoStudios
 
         public LayerMask groundLayer;
 
-        [HideInInspector]
+        //[HideInInspector]
         public bool canMove;
         [HideInInspector]
         public bool canDash;
@@ -59,7 +59,7 @@ namespace OniricoStudios
         {
             Gravity();
 
-            if (Input.GetKeyDown(KeyCode.Space) && !characterAbilities.vermelhoTrue)
+            if (Input.GetKeyDown(KeyCode.Space) && characterAbilities.cinzaTrue)
             {
                 if (canMove && canDash)
                 {
@@ -74,9 +74,13 @@ namespace OniricoStudios
             {
                 if (Input.GetKey(KeyCode.Space) && dashMeter < characterAbilities.vermelhoAbility.dashMaxForce)
                 {
-                    canMove = false;
+                    //canMove = false;
 
-                    dashMeter += Time.deltaTime / 5;
+                    float slowMo = m_speed * 0.25f;
+
+                    speed = slowMo;
+
+                    dashMeter += Time.deltaTime / 3;
                 }
 
                 if (Input.GetKeyUp(KeyCode.Space))
@@ -136,7 +140,11 @@ namespace OniricoStudios
                 characterStats.canDamage = false;
             }
 
-            canMove = false;
+            if (!characterAbilities.vermelhoTrue)
+            {
+                canMove = false;
+            }
+
             canDash = false;
 
             float xMove = Input.GetAxisRaw("Horizontal");
@@ -153,23 +161,27 @@ namespace OniricoStudios
                 if (characterAbilities.vermelhoTrue)
                 {
                     Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
+                    transform.Translate(lastDir * forceDash * characterAbilities.vermelhoAbility.dashSpeed * Time.deltaTime);
                 }
 
                 if (characterAbilities.cinzaTrue)
                 {
                     Instantiate(characterAbilities.cinzaAbility.dashFX, feet.position, Quaternion.identity);
+                    transform.Translate(lastDir * forceDash * Time.deltaTime);
                 }
 
                 dashing = true;
                 //transform.Translate(moveDir * forceDash * Time.deltaTime);
-                transform.Translate(lastDir * forceDash * Time.deltaTime);
                 yield return null;
             }
+
+            //speed = m_speed;
 
             canMove = true;
             dashing = false;
 
             yield return new WaitForSeconds(timeBTWDash);
+
             canDash = true;
         }
         private void FixedUpdate()

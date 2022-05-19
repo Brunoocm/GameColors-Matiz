@@ -172,7 +172,7 @@ namespace OniricoStudios
         public class VermelhoAbility
         {
             public int dashDamage, passiveDamage;
-            public float dashMinForce, dashMaxForce, specialCooldown, passiveSpeed;
+            public float dashMinForce, dashMaxForce, specialCooldown, passiveSpeed, dashSpeed;
             public GameObject specialVermelho;
             public GameObject dashFX;
 
