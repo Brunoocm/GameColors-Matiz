@@ -136,8 +136,7 @@ namespace OniricoStudios
 
             if (characterAbilities.cinzaTrue || characterAbilities.vermelhoTrue)
             {
-                characterStats.timeInvencible = characterStats.m_timeInvencible;
-                characterStats.canDamage = false;
+                
             }
 
             if (!characterAbilities.vermelhoTrue)
@@ -158,6 +157,9 @@ namespace OniricoStudios
             float startTime = Time.time;
             while (Time.time < startTime + dashTime)
             {
+                characterStats.timeInvencible = characterStats.m_timeInvencible;
+                characterStats.canDamage = false;
+
                 if (characterAbilities.vermelhoTrue)
                 {
                     Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
@@ -175,7 +177,8 @@ namespace OniricoStudios
                 yield return null;
             }
 
-            //speed = m_speed;
+            characterStats.timeInvencible = 0;
+            characterStats.canDamage = true;
 
             canMove = true;
             dashing = false;
