@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 4546294198943110625}
   - component: {fileID: 4546294198943110626}
   - component: {fileID: 4546294198943110627}
-  - component: {fileID: 4546294198943110638}
+  - component: {fileID: 4013588670265367063}
   - component: {fileID: 4546294198943110628}
   - component: {fileID: 4546294198943110629}
   m_Layer: 8
-  m_Name: EnemyRanged
+  m_Name: EnemyThrower
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,8 +85,8 @@ MonoBehaviour:
   timeKnockback: 0.3
   forceKnockback: 7
   stopMove: 0
-  hurtFX: {fileID: 4386625202866934257, guid: a239ac0cb9ad59e46b106454ab5f4cb3, type: 3}
-  deathFX: {fileID: 4386625202866934257, guid: 533bde696f6471447a447e8569e864ab, type: 3}
+  hurtFX: {fileID: 4386625202866934257, guid: 28ccb4ded6202bd4d9f7cd34c1a4e472, type: 3}
+  deathFX: {fileID: 4386625202866934257, guid: 30740723875494749a45be39bde6b4bc, type: 3}
   currentStacks: 0
   flashMaterial: {fileID: 2100000, guid: 781d0fcddee803043b1aee679c2c060c, type: 2}
   duration: 0.1
@@ -118,8 +118,8 @@ MonoBehaviour:
   eventAttack:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4546294198943110638}
-        m_TargetAssemblyTypeName: EnemyAttackRanged, Assembly-CSharp
+      - m_Target: {fileID: 4013588670265367063}
+        m_TargetAssemblyTypeName: OniricoStudios.EnemyAttackLancador, Assembly-CSharp
         m_MethodName: AttackVoid
         m_Mode: 1
         m_Arguments:
@@ -130,7 +130,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4546294198943110638
+--- !u!114 &4013588670265367063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,17 +139,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4546294198943110630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d6c59d44a42c24698d4badd8e69b71, type: 3}
+  m_Script: {fileID: 11500000, guid: 66a50100fa8a3dc489bfe1226e38324b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  antecipation: 1
-  timeJump: 0.5
-  speedJump: 10
-  cdJump: 1
-  muzzle: {fileID: 4546294199739810777}
-  bullet: {fileID: 4404404740093054649, guid: 9c0c5a78ad6324a40b7ffca11f38adfa, type: 3}
-  tagNameTarget: Player
+  enemyExplosivo: {fileID: 8546821478046619608, guid: 513d02c1a1fa80e49a330059deaa66c8, type: 3}
+  cooldownShoot: 5
 --- !u!195 &4546294198943110628
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -262,7 +256,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4ddc9aad26f1ed745bdf98395a30c41b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3036181eaed5a6a46a619e5da62679f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

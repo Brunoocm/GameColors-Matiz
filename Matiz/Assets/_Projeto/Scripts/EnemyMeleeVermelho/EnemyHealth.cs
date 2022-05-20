@@ -12,6 +12,9 @@ namespace OniricoStudios
         public float forceKnockback;
         [HideInInspector] public bool stopMove;
 
+        public GameObject hurtFX;
+        public GameObject deathFX;
+
         [Header("Stacks")]
         public int currentStacks;
 
@@ -39,6 +42,7 @@ namespace OniricoStudios
         {
             if (health <= 0)
             {
+                Instantiate(deathFX);
                 Destroy(gameObject);
             }
             if (stopMove)
@@ -92,6 +96,8 @@ namespace OniricoStudios
             {
                 health -= dano;
             }
+
+            Instantiate(hurtFX);
 
             Flash();
             StartCoroutine(Knockback());
