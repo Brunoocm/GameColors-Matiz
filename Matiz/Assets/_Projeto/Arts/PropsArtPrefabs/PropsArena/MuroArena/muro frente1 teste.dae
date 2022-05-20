@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>bruno</author>
+      <authoring_tool>Adobe Photoshop</authoring_tool>
+      <comments>Photoshop Build Version - 20191122.r.57 x6</comments>
+    </contributor>
+    <created>2022-05-20T16:26:42Z</created>
+    <modified>2022-05-20T16:26:42Z</modified>
+    <unit meter="0.001" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_lights>
+    <light id="Luz_infinita__1" name="Luz_infinita__0">
+      <technique_common>
+        <directional>
+          <color>1 1 1</color>
+        </directional>
+      </technique_common>
+      <extra>
+        <technique profile="MAX3D">
+          <aspect_ratio>1</aspect_ratio>
+          <overshoot>1</overshoot>
+          <decay_type>0</decay_type>
+          <decay_start>10</decay_start>
+          <use_near_attenuation>1</use_near_attenuation>
+          <use_far_attenuation>1</use_far_attenuation>
+          <near_attenuation_start>1</near_attenuation_start>
+          <near_attenuation_end>2</near_attenuation_end>
+          <far_attenuation_start>5</far_attenuation_start>
+          <far_attenuation_end>10</far_attenuation_end>
+        </technique>
+        <technique profile="FCOLLADA">
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+          <falloff_angle>5</falloff_angle>
+          <falloff_exponent>1</falloff_exponent>
+          <intensity>0.9</intensity>
+          <outer_cone>5</outer_cone>
+        </technique>
+      </extra>
+    </light>
+    <light id="Luz_de_acordo_com_a_imagem__1" name="Luz_de_acordo_com_a_imagem__0">
+      <technique_common>
+        <directional>
+          <color>0.1 0.1 0.1</color>
+        </directional>
+      </technique_common>
+      <extra>
+        <technique profile="FCOLLADA">
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+          <falloff_angle>5</falloff_angle>
+          <falloff_exponent>1</falloff_exponent>
+          <intensity>1</intensity>
+          <outer_cone>5</outer_cone>
+        </technique>
+      </extra>
+      <extra type="adobe_light_type">
+        <technique profile="ADOBE">
+          <type>
+            <imageBased>1</imageBased>
+          </type>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images>
+    <image id="muro_cima_teste.PNG">
+      <init_from>./muro%20cima%20teste.PNG</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="muro_cima_teste.PNG1">
+      <init_from>./muro%20cima%20teste.PNG</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="muro_cima_teste_Material_de_extrus__o_-_Textura_padr__o.PNG">
+      <init_from>./muro%20cima%20teste%20Material%20de%20extrus%C3%A3o%20-%20Textura%20padr%C3%A3o.PNG</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="muro_cima_teste.PNG2">
+      <init_from>./muro%20cima%20teste.PNG</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="muro_cima_teste.PNG3">
+      <init_from>./muro%20cima%20teste.PNG</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="muro_cima_teste_Material_de_infla____o_da_frente" name="muro_cima_teste_Material_de_inflação_da_frente">
+      <instance_effect url="#muro_cima_teste_Material_de_infla____o_da_frente-fx"/>
+    </material>
+    <material id="muro_cima_teste_Material_de_chanfro_da_frente" name="muro_cima_teste_Material_de_chanfro_da_frente">
+      <instance_effect url="#muro_cima_teste_Material_de_chanfro_da_frente-fx"/>
+    </material>
+    <material id="muro_cima_teste_Material_de_extrus__o" name="muro_cima_teste_Material_de_extrusão">
+      <instance_effect url="#muro_cima_teste_Material_de_extrus__o-fx"/>
+    </material>
+    <material id="muro_cima_teste_Material_de_chanfro_do_verso" name="muro_cima_teste_Material_de_chanfro_do_verso">
+      <instance_effect url="#muro_cima_teste_Material_de_chanfro_do_verso-fx"/>
+    </material>
+    <material id="muro_cima_teste_Material_de_infla____o_do_verso" name="muro_cima_teste_Material_de_inflação_do_verso">
+      <instance_effect url="#muro_cima_teste_Material_de_infla____o_do_verso-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="muro_cima_teste_Material_de_infla____o_da_frente-fx" name="muro_cima_teste_Material_de_inflação_da_frente">
+      <profile_COMMON>
+        <newparam sid="muro_cima_teste_PNG-surface">
+          <surface type="2D">
+            <init_from>muro_cima_teste.PNG</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="muro_cima_teste_PNG-sampler">
+          <sampler2D>
+            <source>muro_cima_teste_PNG-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>UNKNOWN</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="muro_cima_teste_PNG-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0.000003</offsetu>
+                      <offsetv>0.447015</offsetv>
+                      <scaleu>0.916225</scaleu>
+                      <scalev>0.409389</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="muro_cima_teste_Material_de_chanfro_da_frente-fx" name="muro_cima_teste_Material_de_chanfro_da_frente">
+      <profile_COMMON>
+        <newparam sid="muro_cima_teste_PNG1-surface">
+          <surface type="2D">
+            <init_from>muro_cima_teste.PNG1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="muro_cima_teste_PNG1-sampler">
+          <sampler2D>
+            <source>muro_cima_teste_PNG1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>UNKNOWN</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="muro_cima_teste_PNG1-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0.000003</offsetu>
+                      <offsetv>0.447015</offsetv>
+                      <scaleu>0.916225</scaleu>
+                      <scalev>0.409389</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="muro_cima_teste_Material_de_extrus__o-fx" name="muro_cima_teste_Material_de_extrusão">
+      <profile_COMMON>
+        <newparam sid="muro_cima_teste_Material_de_extrus__o_-_Textura_padr__o_PNG-surface">
+          <surface type="2D">
+            <init_from>muro_cima_teste_Material_de_extrus__o_-_Textura_padr__o.PNG</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="muro_cima_teste_Material_de_extrus__o_-_Textura_padr__o_PNG-sampler">
+          <sampler2D>
+            <source>muro_cima_teste_Material_de_extrus__o_-_Textura_padr__o_PNG-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>UNKNOWN</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="muro_cima_teste_Material_de_extrus__o_-_Textura_padr__o_PNG-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0</offsetu>
+                      <offsetv>0</offsetv>
+                      <scaleu>1</scaleu>
+                      <scalev>1</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="muro_cima_teste_Material_de_chanfro_do_verso-fx" name="muro_cima_teste_Material_de_chanfro_do_verso">
+      <profile_COMMON>
+        <newparam sid="muro_cima_teste_PNG2-surface">
+          <surface type="2D">
+            <init_from>muro_cima_teste.PNG2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="muro_cima_teste_PNG2-sampler">
+          <sampler2D>
+            <source>muro_cima_teste_PNG2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>UNKNOWN</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="muro_cima_teste_PNG2-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0.000003</offsetu>
+                      <offsetv>0.447015</offsetv>
+                      <scaleu>0.916225</scaleu>
+                      <scalev>0.409389</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="muro_cima_teste_Material_de_infla____o_do_verso-fx" name="muro_cima_teste_Material_de_inflação_do_verso">
+      <profile_COMMON>
+        <newparam sid="muro_cima_teste_PNG3-surface">
+          <surface type="2D">
+            <init_from>muro_cima_teste.PNG3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="muro_cima_teste_PNG3-sampler">
+          <sampler2D>
+            <source>muro_cima_teste_PNG3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>UNKNOWN</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="muro_cima_teste_PNG3-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0.000003</offsetu>
+                      <offsetv>0.447015</offsetv>
+                      <scaleu>0.916225</scaleu>
+                      <scalev>0.409389</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="muro_cima_teste1" name="muro_cima_teste">
+      <mesh>
+        <source id="muro_cima_teste1-positions">
+          <float_array id="muro_cima_teste1-positions-array" count="798">276.691 242.655 -51.6683 275.913 226.012 -51.6683 272.97 226.273 -51.6683 275.048 240.788 -51.6683 271.567 226.551 -51.6683 274.356 254.528 -51.6683 270.217 226.945 -51.6683 243.295 249.446 -51.6683 241.955 227.349 -51.6683 238.62 245.245 -51.6683 236.21 227.965 -51.6683 232.1 239.751 -51.6683 231.346 228.802 -51.6683 229.674 237.244 -51.6683 230.503 228.774 -51.6683 227.5 234.684 -51.6683 228.635 228.468 -51.6683 224.026 230.441 -51.6683 224.438 227.622 -51.6683 223.253 229.594 -51.6683 223.347 227.523 -51.6683 222.258 227.523 -51.6683 222.326 228.667 -51.6683 221.181 227.651 -51.6683 248.676 254.75 -51.6683 221.181 282.329 -51.6683 453.377 274.394 -51.6683 453.812 281.619 -51.6683 453.955 275.031 -51.6683 454.979 281.481 -51.6683 454.758 275.863 -51.6683 456.113 281.254 -51.6683 455.719 276.84 -51.6683 457.213 280.92 -51.6683 458.277 280.461 -51.6683 457.063 278.061 -51.6683 459.305 279.86 -51.6683 454.599 275.685 -51.6683 460.167 277.181 -51.6683 451.517 272.096 -51.6683 460.91 273.75 -51.6683 446.201 266.026 -51.6683 461.759 267.519 -51.6683 438.238 257.63 -51.6683 462.295 257.958 -51.6683 439.974 249.695 -51.6683 462.011 248.047 -51.6683 444.665 243.879 -51.6683 461.168 241.094 -51.6683 447.38 240.504 -51.6683 460.271 236.962 -51.6683 450.065 237.007 -51.6683 459.083 233.407 -51.6683 450.879 235.873 -51.6683 458.374 231.89 -51.6683 451.799 234.573 -51.6683 457.586 230.574 -51.6683 452.51 233.415 -51.6683 456.716 229.475 -51.6683 455.761 228.612 -51.6683 453.099 232.248 -51.6683 454.719 228.003 -51.6683 450.773 236.007 -51.6683 452.063 227.464 -51.6683 448.492 238.976 -51.6683 449.141 227.173 -51.6683 445.036 243.38 -51.6683 444.485 227.125 -51.6683 440.798 248.603 -51.6683 438.306 227.608 -51.6683 437.446 252.746 -51.6683 432.917 228.468 -51.6683 431.789 228.709 -51.6683 419.508 254.685 -51.6683 420.853 227.651 -51.6683 298.439 227.298 -51.6683 295.428 254.81 -51.6683 295.297 227.48 -51.6683 288.451 254.652 -51.6683 290.423 227.244 -51.6683 277.443 226.004 -51.6683 276.669 249.397 -51.6683 433.312 255.33 -51.6683 435.61 255.084 -51.6683 299.169 254.695 -51.6683 277.116 254.129 -51.6683 459.305 279.86 -51.6683 460.167 277.181 -51.6683 460.91 273.75 -51.6683 461.759 267.519 -51.6683 462.295 257.958 -51.6683 462.011 248.047 -51.6683 461.168 241.094 -51.6683 460.271 236.962 -51.6683 459.083 233.407 -51.6683 458.374 231.89 -51.6683 457.586 230.574 -51.6683 456.716 229.475 -51.6683 455.761 228.612 -51.6683 454.719 228.003 -51.6683 452.063 227.464 -51.6683 449.141 227.173 -51.6683 444.485 227.125 -51.6683 438.306 227.608 -51.6683 432.917 228.468 -51.6683 431.789 228.709 -51.6683 420.853 227.651 -51.6683 298.439 227.298 -51.6683 295.297 227.48 -51.6683 290.423 227.244 -51.6683 277.443 226.004 -51.6683 275.913 226.012 -51.6683 272.97 226.273 -51.6683 271.567 226.551 -51.6683 270.217 226.945 -51.6683 241.955 227.349 -51.6683 236.21 227.965 -51.6683 231.346 228.802 -51.6683 230.503 228.774 -51.6683 228.635 228.468 -51.6683 224.438 227.622 -51.6683 223.347 227.523 -51.6683 222.258 227.523 -51.6683 221.181 227.651 -51.6683 459.305 279.86 -107.993 460.167 277.181 -107.993 460.91 273.75 -107.993 461.759 267.519 -107.993 462.295 257.958 -107.993 462.011 248.047 -107.993 461.168 241.094 -107.993 460.271 236.962 -107.993 459.083 233.407 -107.993 458.374 231.89 -107.993 457.586 230.574 -107.993 456.716 229.475 -107.993 455.761 228.612 -107.993 454.719 228.003 -107.993 452.063 227.464 -107.993 449.141 227.173 -107.993 444.485 227.125 -107.993 438.306 227.608 -107.993 432.917 228.468 -107.993 431.789 228.709 -107.993 420.853 227.651 -107.993 298.439 227.298 -107.993 295.297 227.48 -107.993 290.423 227.244 -107.993 277.443 226.004 -107.993 275.913 226.012 -107.993 272.97 226.273 -107.993 271.567 226.551 -107.993 270.217 226.945 -107.993 241.955 227.349 -107.993 236.21 227.965 -107.993 231.346 228.802 -107.993 230.503 228.774 -107.993 228.635 228.468 -107.993 224.438 227.622 -107.993 223.347 227.523 -107.993 222.258 227.523 -107.993 221.181 227.651 -107.993 221.181 227.651 -51.6683 221.181 282.329 -51.6683 221.181 227.651 -107.993 221.181 282.329 -107.993 221.181 282.329 -51.6683 453.812 281.619 -51.6683 454.979 281.481 -51.6683 456.113 281.254 -51.6683 457.213 280.92 -51.6683 458.277 280.461 -51.6683 459.305 279.86 -51.6683 221.181 282.329 -107.993 453.812 281.619 -107.993 454.979 281.481 -107.993 456.113 281.254 -107.993 457.213 280.92 -107.993 458.277 280.461 -107.993 459.305 279.86 -107.993 276.691 242.655 -107.993 275.913 226.012 -107.993 272.97 226.273 -107.993 275.048 240.788 -107.993 271.567 226.551 -107.993 274.356 254.528 -107.993 270.217 226.945 -107.993 243.295 249.446 -107.993 241.955 227.349 -107.993 238.62 245.245 -107.993 236.21 227.965 -107.993 232.1 239.751 -107.993 231.346 228.802 -107.993 229.674 237.244 -107.993 230.503 228.774 -107.993 227.5 234.684 -107.993 228.635 228.468 -107.993 224.026 230.441 -107.993 224.438 227.622 -107.993 223.253 229.594 -107.993 223.347 227.523 -107.993 222.258 227.523 -107.993 222.326 228.667 -107.993 221.181 227.651 -107.993 248.676 254.75 -107.993 221.181 282.329 -107.993 453.377 274.394 -107.993 453.812 281.619 -107.993 453.955 275.031 -107.993 454.979 281.481 -107.993 454.758 275.863 -107.993 456.113 281.254 -107.993 455.719 276.84 -107.993 457.213 280.92 -107.993 458.277 280.461 -107.993 457.063 278.061 -107.993 459.305 279.86 -107.993 454.599 275.685 -107.993 460.167 277.181 -107.993 451.517 272.096 -107.993 460.91 273.75 -107.993 446.201 266.026 -107.993 461.759 267.519 -107.993 438.238 257.63 -107.993 462.295 257.958 -107.993 439.974 249.695 -107.993 462.011 248.047 -107.993 444.665 243.879 -107.993 461.168 241.094 -107.993 447.38 240.504 -107.993 460.271 236.962 -107.993 450.065 237.007 -107.993 459.083 233.407 -107.993 450.879 235.873 -107.993 458.374 231.89 -107.993 451.799 234.573 -107.993 457.586 230.574 -107.993 452.51 233.415 -107.993 456.716 229.475 -107.993 455.761 228.612 -107.993 453.099 232.248 -107.993 454.719 228.003 -107.993 450.773 236.007 -107.993 452.063 227.464 -107.993 448.492 238.976 -107.993 449.141 227.173 -107.993 445.036 243.38 -107.993 444.485 227.125 -107.993 440.798 248.603 -107.993 438.306 227.608 -107.993 437.446 252.746 -107.993 432.917 228.468 -107.993 431.789 228.709 -107.993 419.508 254.685 -107.993 420.853 227.651 -107.993 298.439 227.298 -107.993 295.428 254.81 -107.993 295.297 227.48 -107.993 288.451 254.652 -107.993 290.423 227.244 -107.993 277.443 226.004 -107.993 276.669 249.397 -107.993 433.312 255.33 -107.993 435.61 255.084 -107.993 299.169 254.695 -107.993 277.116 254.129 -107.993</float_array>
+          <technique_common>
+            <accessor source="#muro_cima_teste1-positions-array" count="266" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="muro_cima_teste1-normals">
+          <float_array id="muro_cima_teste1-normals-array" count="798">0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0.951884 0.30646 0 0.964147 0.258936 0 0.983182 0.173149 0 0.993746 0.095378 0 0.999907 0.013667 0 0.997217 -0.074557 0 0.98605 -0.166447 0 0.962641 -0.264479 0 0.927163 -0.370131 0 0.881582 -0.468446 0 0.821317 -0.567509 0 0.729746 -0.683718 0 0.589644 -0.805573 0 0.355942 -0.932702 0 0.149266 -0.988797 0 0.054744 -0.99681 0 -0.03384 -0.997739 0 -0.117619 -0.991359 0 -0.183081 -0.981381 0 -0.057131 -0.998367 0 0.049569 -0.997081 0 -0.02753 -0.997933 0 -0.004806 -0.999988 0 0.071647 -0.995738 0 0.045034 -0.997296 0 -0.046693 -0.998909 0 -0.141721 -0.989907 0 -0.237502 -0.971387 0 -0.148164 -0.987256 0 -0.060437 -0.996481 0 -0.137895 -0.988743 0 -0.0686 -0.995953 0 0.097428 -0.995243 0 0.17935 -0.98207 0 0.144111 -0.987856 0 0.045198 -0.997289 0 -0.059011 -0.996567 0 -0.117725 -0.993046 0 0.951884 0.30646 0 0.964147 0.258936 0 0.983182 0.173149 0 0.993746 0.095378 0 0.999907 0.013667 0 0.997217 -0.074557 0 0.98605 -0.166447 0 0.962641 -0.264479 0 0.927163 -0.370131 0 0.881582 -0.468446 0 0.821316 -0.567509 0 0.729746 -0.683718 0 0.589644 -0.805573 0 0.355942 -0.932702 0 0.149266 -0.988797 0 0.054744 -0.99681 0 -0.03384 -0.997739 0 -0.117619 -0.991359 0 -0.183081 -0.981381 0 -0.057131 -0.998367 0 0.049569 -0.997081 0 -0.02753 -0.997933 0 -0.004806 -0.999988 0 0.071647 -0.995738 0 0.045034 -0.997296 0 -0.046693 -0.998909 0 -0.141721 -0.989907 0 -0.237502 -0.971387 0 -0.148164 -0.987256 0 -0.060437 -0.996481 0 -0.137895 -0.988743 0 -0.0686 -0.995953 0 0.097428 -0.995243 0 0.17935 -0.98207 0 0.144111 -0.987856 0 0.045198 -0.997289 0 -0.059011 -0.996567 0 -0.117725 -0.993046 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0.003047 0.998308 0 0.059998 0.996508 0 0.156871 0.987619 0 0.243812 0.969822 0 0.343321 0.937421 0 0.450701 0.890784 0 0.505049 0.863091 0 0.003047 0.998308 0 0.059998 0.996508 0 0.156871 0.987619 0 0.243812 0.969822 0 0.343321 0.937421 0 0.450701 0.890784 0 0.505049 0.863091 0 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1</float_array>
+          <technique_common>
+            <accessor source="#muro_cima_teste1-normals-array" count="266" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="muro_cima_teste1-texcoords">
+          <float_array id="muro_cima_teste1-texcoords-array" count="532">0.230224 0.29562 0.226997 0.000135 0.21479 0.004768 0.223409 0.262479 0.208972 0.009712 0.220539 0.506408 0.20337 0.016702 0.091715 0.416192 0.086157 0.023877 0.072323 0.341605 0.062328 0.034819 0.045285 0.244065 0.042157 0.049666 0.035221 0.199549 0.03866 0.049176 0.026204 0.154112 0.030913 0.043742 0.011799 0.07878 0.013505 0.028725 0.008592 0.063744 0.008981 0.026961 0.004465 0.026966 0.004746 0.047284 0 0.029233 0.114032 0.510365 0 1 0.963013 0.859125 0.964818 0.98739 0.96541 0.870422 0.969659 0.984949 0.968742 0.885197 0.974363 0.980913 0.972729 0.902548 0.978926 0.974983 0.983338 0.966832 0.978301 0.924216 0.987598 0.956162 0.968083 0.882043 0.991176 0.908592 0.955299 0.818315 0.994257 0.847685 0.933254 0.710552 0.997777 0.73706 0.900226 0.561484 1 0.567322 0.907427 0.420611 0.998821 0.39136 0.926884 0.317352 0.995327 0.2679 0.938141 0.25743 0.991605 0.194552 0.949278 0.19534 0.986679 0.131425 0.952653 0.17522 0.98374 0.104508 0.95647 0.152128 0.98047 0.081137 0.959418 0.131583 0.976861 0.061622 0.9729 0.046301 0.961862 0.110853 0.968581 0.035495 0.952216 0.177599 0.957563 0.025924 0.942756 0.230297 0.945446 0.020749 0.928423 0.308495 0.926135 0.019898 0.910844 0.401218 0.90051 0.028483 0.896942 0.474772 0.878157 0.043736 0.87348 0.04802 0.822544 0.509206 0.828122 0.029233 0.320419 0.022964 0.307934 0.51143 0.307389 0.026206 0.278997 0.508619 0.287176 0.022012 0.233342 0 0.230129 0.415317 0.879798 0.520661 0.889326 0.516283 0.323446 0.509386 0.231984 0.499337 1 1 0.995159 1 0.989123 1 0.978309 1 0.961841 1 0.94479 1 0.932744 1 0.925474 1 0.919027 1 0.916149 1 0.91351 1 0.911099 1 0.908886 1 0.906812 1 0.90215 1 0.897101 1 0.889093 1 0.878435 1 0.86905 1 0.867066 1 0.848171 1 0.637654 1 0.632242 1 0.623851 1 0.601428 1 0.598797 1 0.593715 1 0.591256 1 0.588837 1 0.54023 1 0.530293 1 0.521806 1 0.520355 1 0.5171 1 0.509737 1 0.507854 1 0.505981 1 0.504116 1 1 0 0.995159 0 0.989123 0 0.978309 0 0.961841 0 0.94479 0 0.932744 0 0.925474 0 0.919027 0 0.916149 0 0.91351 0 0.911099 0 0.908886 0 0.906812 0 0.90215 0 0.897101 0 0.889093 0 0.878435 0 0.86905 0 0.867066 0 0.848171 0 0.637654 0 0.632242 0 0.623851 0 0.601428 0 0.598797 0 0.593715 0 0.591256 0 0.588837 0 0.54023 0 0.530293 0 0.521806 0 0.520355 0 0.5171 0 0.509737 0 0.507854 0 0.505981 0 0.504116 0 0.504116 1 0.410085 1 0.504116 0 0.410085 0 0.410085 1 0.010027 1 0.008005 1 0.006016 1 0.004039 1 0.002046 1 0 1 0.410085 0 0.010027 0 0.008005 0 0.006016 0 0.004039 0 0.002046 0 0 0 0.230224 0.29562 0.226997 0.000135 0.21479 0.004768 0.223409 0.262479 0.208972 0.009712 0.220539 0.506408 0.20337 0.016702 0.091715 0.416192 0.086157 0.023877 0.072323 0.341605 0.062328 0.034819 0.045285 0.244065 0.042157 0.049666 0.035221 0.199549 0.03866 0.049176 0.026204 0.154112 0.030913 0.043742 0.011799 0.07878 0.013505 0.028725 0.008592 0.063744 0.008981 0.026961 0.004465 0.026966 0.004746 0.047284 0 0.029233 0.114032 0.510365 0 1 0.963013 0.859125 0.964818 0.98739 0.96541 0.870422 0.969659 0.984949 0.968742 0.885197 0.974363 0.980913 0.972729 0.902548 0.978926 0.974983 0.983338 0.966832 0.978301 0.924216 0.987598 0.956162 0.968083 0.882043 0.991176 0.908592 0.955299 0.818315 0.994257 0.847685 0.933254 0.710552 0.997777 0.73706 0.900226 0.561484 1 0.567322 0.907427 0.420611 0.998821 0.39136 0.926884 0.317352 0.995327 0.2679 0.938141 0.25743 0.991605 0.194552 0.949278 0.19534 0.986679 0.131425 0.952653 0.17522 0.98374 0.104508 0.95647 0.152128 0.98047 0.081137 0.959418 0.131583 0.976861 0.061622 0.9729 0.046301 0.961862 0.110853 0.968581 0.035495 0.952216 0.177599 0.957563 0.025924 0.942756 0.230297 0.945446 0.020749 0.928423 0.308495 0.926135 0.019898 0.910844 0.401218 0.90051 0.028483 0.896942 0.474772 0.878157 0.043736 0.87348 0.04802 0.822544 0.509206 0.828122 0.029233 0.320419 0.022964 0.307934 0.51143 0.307389 0.026206 0.278997 0.508619 0.287176 0.022012 0.233342 0 0.230129 0.415317 0.879798 0.520661 0.889326 0.516283 0.323446 0.509386 0.231984 0.499337</float_array>
+          <technique_common>
+            <accessor source="#muro_cima_teste1-texcoords-array" count="266" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="muro_cima_teste1-vertices">
+          <input semantic="POSITION" source="#muro_cima_teste1-positions"/>
+        </vertices>
+        <triangles material="muro_cima_teste_Material_de_inflação_da_frente" count="126">
+          <input semantic="VERTEX" source="#muro_cima_teste1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#muro_cima_teste1-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#muro_cima_teste1-texcoords" offset="0"/>
+          <p>2 1 3 4 2 3 5 6 3 24 7 6 10 8 9 12 10 11 14 12 13 16 14 15 18 16 17 20 18 19 21 20 22 23 21 22 24 25 7 76 84 25 29 27 28 37 30 29 33 31 32 34 33 35 36 34 35 37 38 30 39 40 26 41 42 39 43 44 41 70 45 44 68 47 46 66 49 48 64 51 50 62 53 52 56 54 55 58 56 57 59 58 60 61 59 60 62 63 53 64 65 51 66 67 49 68 69 47 70 71 45 82 72 83 74 72 73 84 75 73 76 77 84 79 77 78 81 0 78 1 80 0 1 0 3 81 3 0 3 81 5 4 3 6 85 5 81 5 24 6 8 6 7 7 9 8 9 11 10 11 13 12 13 15 14 15 17 16 17 19 18 19 22 20 7 25 9 9 25 11 11 25 13 13 25 15 15 25 17 17 25 19 19 25 22 23 22 25 76 25 78 84 73 25 78 25 85 85 25 5 24 5 25 73 82 25 25 82 43 43 41 25 83 43 82 41 39 25 39 26 25 27 25 26 26 28 27 28 37 29 31 29 30 30 32 31 32 35 33 30 38 32 32 38 35 36 35 38 26 40 28 28 40 37 38 37 40 40 39 42 42 41 44 44 43 70 46 44 45 83 70 43 45 68 46 48 46 47 47 66 48 50 48 49 49 64 50 52 50 51 51 62 52 54 52 53 53 55 54 55 57 56 57 60 58 53 63 55 55 63 57 57 63 60 61 60 63 51 65 62 63 62 65 49 67 64 65 64 67 47 69 66 67 66 69 45 71 68 69 68 71 83 72 70 71 70 72 82 73 72 74 73 75 75 84 77 76 78 77 85 81 78 78 0 79 80 79 0</p>
+        </triangles>
+        <triangles material="muro_cima_teste_Material_de_chanfro_da_frente" count="1">
+          <input semantic="VERTEX" source="#muro_cima_teste1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#muro_cima_teste1-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#muro_cima_teste1-texcoords" offset="0"/>
+          <p>0 0 0</p>
+        </triangles>
+        <triangles material="muro_cima_teste_Material_de_extrusão" count="88">
+          <input semantic="VERTEX" source="#muro_cima_teste1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#muro_cima_teste1-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#muro_cima_teste1-texcoords" offset="0"/>
+          <p>124 86 87 124 87 125 125 87 88 125 88 126 126 88 89 126 89 127 127 89 90 127 90 128 128 90 91 128 91 129 129 91 92 129 92 130 130 92 93 130 93 131 131 93 94 131 94 132 132 94 95 132 95 133 133 95 96 133 96 134 134 96 97 134 97 135 135 97 98 135 98 136 136 98 99 136 99 137 137 99 100 137 100 138 138 100 101 138 101 139 139 101 102 139 102 140 140 102 103 140 103 141 141 103 104 141 104 142 142 104 105 142 105 143 143 105 106 143 106 144 144 106 107 144 107 145 145 107 108 145 108 146 146 108 109 146 109 147 147 109 110 147 110 148 148 110 111 148 111 149 149 111 112 149 112 150 150 112 113 150 113 151 151 113 114 151 114 152 152 114 115 152 115 153 153 115 116 153 116 154 154 116 117 154 117 155 155 117 118 155 118 156 156 118 119 156 119 157 157 119 120 157 120 158 158 120 121 158 121 159 159 121 122 159 122 160 160 122 123 160 123 161 164 162 163 164 163 165 173 166 167 173 167 174 174 167 168 174 168 175 175 168 169 175 169 176 176 169 170 176 170 177 177 170 171 177 171 178 178 171 172 178 172 179</p>
+        </triangles>
+        <triangles material="muro_cima_teste_Material_de_chanfro_do_verso" count="1">
+          <input semantic="VERTEX" source="#muro_cima_teste1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#muro_cima_teste1-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#muro_cima_teste1-texcoords" offset="0"/>
+          <p>0 0 0</p>
+        </triangles>
+        <triangles material="muro_cima_teste_Material_de_inflação_do_verso" count="126">
+          <input semantic="VERTEX" source="#muro_cima_teste1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#muro_cima_teste1-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#muro_cima_teste1-texcoords" offset="0"/>
+          <p>181 182 183 182 184 183 186 185 183 187 204 186 188 190 189 190 192 191 192 194 193 194 196 195 196 198 197 198 200 199 200 201 202 201 203 202 205 204 187 264 256 205 207 209 208 210 217 209 211 213 212 213 214 215 214 216 215 218 217 210 220 219 206 222 221 219 224 223 221 225 250 224 227 248 226 229 246 228 231 244 230 233 242 232 234 236 235 236 238 237 238 239 240 239 241 240 243 242 233 245 244 231 247 246 229 249 248 227 251 250 225 252 262 263 252 254 253 255 264 253 257 256 264 257 259 258 180 261 258 260 181 180 180 181 183 183 261 180 261 183 185 183 184 186 185 265 261 204 185 186 186 188 187 189 187 188 191 189 190 193 191 192 195 193 194 197 195 196 199 197 198 202 199 200 205 187 189 205 189 191 205 191 193 205 193 195 205 195 197 205 197 199 205 199 202 202 203 205 205 256 258 253 264 205 205 258 265 205 265 185 185 204 205 262 253 205 262 205 223 221 223 205 223 263 262 219 221 205 206 219 205 205 207 206 208 206 207 217 208 209 209 211 210 212 210 211 215 212 213 218 210 212 218 212 215 215 216 218 220 206 208 220 208 217 217 218 220 219 220 222 221 222 224 223 224 250 224 226 225 250 263 223 248 225 226 226 228 227 246 227 228 228 230 229 244 229 230 230 232 231 242 231 232 232 234 233 235 233 234 237 235 236 240 237 238 243 233 235 243 235 237 243 237 240 240 241 243 245 231 242 242 243 245 247 229 244 244 245 247 249 227 246 246 247 249 251 225 248 248 249 251 252 263 250 250 251 252 253 262 252 253 254 255 264 255 257 258 256 257 261 265 258 180 258 259 259 260 180</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Luz_infinita__0" name="Luz_infinita__0" type="NODE">
+        <lookat>368.531 467.718 208.625 368.457 467.125 207.824 0 1 0</lookat>
+        <instance_light url="#Luz_infinita__1"/>
+      </node>
+      <node id="Luz_de_acordo_com_a_imagem__0" name="Luz_de_acordo_com_a_imagem__0" type="NODE">
+        <instance_light url="#Luz_de_acordo_com_a_imagem__1"/>
+      </node>
+      <node id="muro_cima_teste" name="muro_cima_teste" type="NODE">
+        <matrix>1 0 0 -341.738 0 1 0 -254.167 0 0 1 79.8309 0 0 0 1</matrix>
+        <instance_geometry url="#muro_cima_teste1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="muro_cima_teste_Material_de_inflação_da_frente" target="#muro_cima_teste_Material_de_infla____o_da_frente"/>
+              <instance_material symbol="muro_cima_teste_Material_de_chanfro_da_frente" target="#muro_cima_teste_Material_de_chanfro_da_frente"/>
+              <instance_material symbol="muro_cima_teste_Material_de_extrusão" target="#muro_cima_teste_Material_de_extrus__o"/>
+              <instance_material symbol="muro_cima_teste_Material_de_chanfro_do_verso" target="#muro_cima_teste_Material_de_chanfro_do_verso"/>
+              <instance_material symbol="muro_cima_teste_Material_de_inflação_do_verso" target="#muro_cima_teste_Material_de_infla____o_do_verso"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra type="pivot_use">
+          <technique profile="ADOBE">
+            <use_pivot>
+              <needPivot>0</needPivot>
+            </use_pivot>
+          </technique>
+        </extra>
+      </node>
+      <extra type="render_settings">
+        <technique profile="ADOBE">
+          <faces>
+            <render_faces>1</render_faces>
+            <face_style>4</face_style>
+            <face_color>1 1 1</face_color>
+            <texture_type>0</texture_type>
+            <anti_alias_quality>1</anti_alias_quality>
+            <show_reflections>1</show_reflections>
+            <show_refractions>1</show_refractions>
+            <show_shadows>1</show_shadows>
+            <remove_backfaces>0</remove_backfaces>
+          </faces>
+          <edges>
+            <render_edges>0</render_edges>
+            <line_style>1</line_style>
+            <line_color>0 0 0</line_color>
+            <line_width>1</line_width>
+            <crease_value>0</crease_value>
+            <remove_backface_lines>0</remove_backface_lines>
+            <remove_hidden_lines>1</remove_hidden_lines>
+          </edges>
+          <vertices>
+            <render_vertices>0</render_vertices>
+            <vertex_style>1</vertex_style>
+            <vertex_color>0 0 0</vertex_color>
+            <vertex_radius>1</vertex_radius>
+            <remove_backface_vertices>0</remove_backface_vertices>
+            <remove_hidden_vertices>1</remove_hidden_vertices>
+          </vertices>
+          <volumes>
+            <render_volume>0</render_volume>
+            <volume_style>2097152</volume_style>
+            <transfer_function0/>
+            <transfer_function1/>
+            <transfer_function2/>
+            <transfer_function3/>
+            <gradient_enhancement>1</gradient_enhancement>
+            <opacity_scale>1</opacity_scale>
+          </volumes>
+          <stereo>
+            <render_stereo>0</render_stereo>
+            <stereo_style>16384</stereo_style>
+            <stereo_offset>5</stereo_offset>
+            <stereo_line_spacing>40</stereo_line_spacing>
+          </stereo>
+          <internal>
+            <projection>0</projection>
+            <blend_unlit>0</blend_unlit>
+          </internal>
+        </technique>
+      </extra>
+      <extra type="background_image_type">
+        <technique profile="ADOBE">
+          <type>
+            <image_type>0</image_type>
+          </type>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
