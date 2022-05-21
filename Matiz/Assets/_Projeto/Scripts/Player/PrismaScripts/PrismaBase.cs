@@ -44,8 +44,8 @@ namespace OniricoStudios
             canTake = true;
 
             yield return new WaitForSeconds(comeBackTime);
-            characterStats.GiveShield();
-            Destroy(gameObject);
+            //characterStats.GiveShield();
+            //Destroy(gameObject);
         }
         private void OnTriggerEnter(Collider other)
         {
