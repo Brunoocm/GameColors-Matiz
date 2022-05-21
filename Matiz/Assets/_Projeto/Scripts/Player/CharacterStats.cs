@@ -35,6 +35,7 @@ namespace OniricoStudios
         public GameObject dropPrisma;
         public GameObject shieldObj;
         private GameObject m_shieldObj;
+        public GameObject prismCompass;
 
         public static CharacterStats playerObj;
 
@@ -80,6 +81,10 @@ namespace OniricoStudios
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                DamageVoid(1, transform);
+            }
 
             if (timeInvencible <= 0)
             {
@@ -139,6 +144,7 @@ namespace OniricoStudios
                     m_shieldObj.SetActive(false);
                     SpawnPrisma();
                     hasShield = false;
+                    prismCompass.SetActive(true);
                     //Instantiate(prismFX, vfxPivot.position, Quaternion.identity);
                 }
                 else
@@ -165,6 +171,7 @@ namespace OniricoStudios
         {
             m_shieldObj.SetActive(true);
             hasShield = true;
+            prismCompass.SetActive(false);
         }
 
         public void SpawnPrisma()
