@@ -16,6 +16,7 @@ namespace OniricoStudios
         public float attackDuration;
         public float stopDistance;
         public float speed;
+        [HideInInspector] public bool isStopped;
 
         [Header("Gizmos")]
         public bool gizmos;
@@ -56,25 +57,34 @@ namespace OniricoStudios
 
         void Update()
         {
-            
 
-            if (CharacterStats.playerObj != null)
+            if (!isStopped)
             {
-                seesTarget = Physics.CheckSphere(transform.position, EnemySeenRange, layerTarget);
-                attackingTarget = Physics.CheckSphere(transform.position, EnemyAttackRange, layerTarget);
-
-                if (seesTarget) FollowTarget();
-                if (attackingTarget) AttackTarget();
-
-                if (stopMoving)
+                if (CharacterStats.playerObj != null)
                 {
-                    attackDuration -= Time.deltaTime;
-                    if (attackDuration <= 0)
+                    navMeshAgent.enabled = true;
+
+                    seesTarget = Physics.CheckSphere(transform.position, EnemySeenRange, layerTarget);
+                    attackingTarget = Physics.CheckSphere(transform.position, EnemyAttackRange, layerTarget);
+
+                    if (seesTarget) FollowTarget();
+                    if (attackingTarget) AttackTarget();
+
+                    if (stopMoving)
                     {
-                        stopMoving = false;
-                        //attackDuration = m_attackDuration;
+                        attackDuration -= Time.deltaTime;
+                        if (attackDuration <= 0)
+                        {
+                            stopMoving = false;
+                            //attackDuration = m_attackDuration;
+                        }
                     }
                 }
+            }
+            else
+            {
+                navMeshAgent.enabled = false;
+                Flip();
             }
         }
 
