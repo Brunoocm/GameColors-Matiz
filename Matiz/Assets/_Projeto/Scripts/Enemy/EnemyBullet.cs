@@ -21,6 +21,8 @@ namespace OniricoStudios
 
             target = GameObject.FindGameObjectWithTag("Player");
 
+            float value = Random.Range(-11, 11);
+            
             Destroy(gameObject, 5f);
         }
 

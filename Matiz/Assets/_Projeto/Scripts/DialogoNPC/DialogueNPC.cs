@@ -8,6 +8,7 @@ public class DialogueNPC : MonoBehaviour
     DialogueSystem dialogueSystem => GetComponentInChildren<DialogueSystem>();
 
     public float timerNewFrase;
+    public bool hasNewFrase;
     private float m_timerNewFrase;
     private bool inRange;
     void Start()
@@ -19,7 +20,7 @@ public class DialogueNPC : MonoBehaviour
     {
         if(inRange)
         {
-            if(timerNewFrase <= 0)
+            if(timerNewFrase <= 0 && hasNewFrase)
             {
                 if (!dialogueSystem.playingText)
                 {

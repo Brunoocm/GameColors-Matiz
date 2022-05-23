@@ -6,6 +6,6 @@ public class SpriteTest : MonoBehaviour
 {
     void Start()
     {
-        transform.eulerAngles -= transform.parent.eulerAngles;
+        //transform.eulerAngles -= transform.parent.eulerAngles;
     }
 }

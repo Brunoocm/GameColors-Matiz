@@ -25,21 +25,21 @@ namespace OniricoStudios
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject.CompareTag("Harbor") || other.gameObject.CompareTag("Checkpoint"))
+            if(other.gameObject.CompareTag("Harbor") || other.gameObject.CompareTag("Checkpoint") || other.gameObject.CompareTag("Interact"))
             {
                 Appears();
             }
         } 
         private void OnTriggerExit(Collider other)
         {
-            if(other.gameObject.CompareTag("Harbor") || other.gameObject.CompareTag("Checkpoint"))
+            if(other.gameObject.CompareTag("Harbor") || other.gameObject.CompareTag("Checkpoint") || other.gameObject.CompareTag("Interact"))
             {
                 Desappears();
             }
         }
         private void OnTriggerStay(Collider other)
         {
-            if(other.gameObject.CompareTag("Harbor") || other.gameObject.CompareTag("Checkpoint"))
+            if(other.gameObject.CompareTag("Harbor") || other.gameObject.CompareTag("Checkpoint") || other.gameObject.CompareTag("Interact"))
             {
                 if(Input.GetKeyDown(KeyCode.E))
                 {

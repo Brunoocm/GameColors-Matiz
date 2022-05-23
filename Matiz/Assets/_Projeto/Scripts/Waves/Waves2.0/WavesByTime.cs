@@ -7,6 +7,8 @@ namespace OniricoStudios
 {
     public class WavesByTime : MonoBehaviour
     {
+        public GameObject door;
+
         public float timerWaves;
         private float m_timerWaves;
         private int num;
@@ -17,6 +19,10 @@ namespace OniricoStudios
         [SerializeField] public List<GameObject> enemy;
         [SerializeField] public List<Transform> PosSpawn;
         [SerializeField] public List<Transform> PosToJump;
+
+
+        private bool isStarted;
+        private bool isFinished;
 
         private int numobj;
         void Awake()
@@ -39,33 +45,53 @@ namespace OniricoStudios
         void Start()
         {
             m_timerWaves = timerWaves;
-
+            door.SetActive(false);
+            StartCoroutine(StartWaves());
         }
 
         void Update()
         {
-            print(num);
-            if(m_timerWaves <= 0)
+           
+            if (isStarted)
             {
-                num++;
-
-                DOTween.To(setter: value =>
+                if (m_timerWaves <= 0 && num < EnemiesParent.Length)
                 {
-                    enemy[num - 1].transform.position = Parabola(PosSpawn[num - 1].position, PosToJump[num - 1].position, 10, value);
-                }, startValue: 0, endValue: 1, duration: 1f)
-            .SetEase(Ease.Linear);
+                    num++;
+
+                    DOTween.To(setter: value =>
+                    {
+                        enemy[num - 1].transform.position = Parabola(PosSpawn[num - 1].position, PosToJump[num - 1].position, 10, value);
+                    }, startValue: 0, endValue: 1, duration: 1f)
+                .SetEase(Ease.Linear);
 
 
 
-                StartCoroutine(Ground());
+                    StartCoroutine(Ground());
 
-                m_timerWaves = timerWaves;
+                    m_timerWaves = timerWaves;
 
+                }
+                else
+                {
+                    m_timerWaves -= Time.deltaTime;
+                }
             }
-            else
+
+            if (num == EnemiesParent.Length)
             {
-                m_timerWaves -= Time.deltaTime;
+                isFinished = true;
             }
+
+            if (isFinished)
+            {
+                door.SetActive(true);
+            }
+        }
+
+        IEnumerator StartWaves()
+        {
+            yield return new WaitForSeconds(3);
+            isStarted = true;
         }
 
         public Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
