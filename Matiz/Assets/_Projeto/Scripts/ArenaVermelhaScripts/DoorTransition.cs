@@ -8,7 +8,6 @@ namespace OniricoStudios
     public class DoorTransition : MonoBehaviour
     {
         [SerializeField] Link link = null;
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))

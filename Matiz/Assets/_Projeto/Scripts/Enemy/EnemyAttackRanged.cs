@@ -7,6 +7,7 @@ public class EnemyAttackRanged : MonoBehaviour
     [Header("Stats")]
     public int damage;
     public float antecipation;
+    public float fireAngle;
 
     [Header("Jump")]
     public float timeJump;
@@ -40,7 +41,10 @@ public class EnemyAttackRanged : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(bullet, muzzle.position, muzzle.rotation);
+        float value = Random.Range(-fireAngle, fireAngle);
+        var rot = muzzle.rotation;
+        rot *= Quaternion.Euler(0, value, 0);
+        Instantiate(bullet, muzzle.position, rot);
     }
     public IEnumerator Jump(int num)
     {

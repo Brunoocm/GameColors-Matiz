@@ -14,6 +14,7 @@ namespace OniricoStudios
 
         public Transform CinzaPos;
         public Transform VermelhaPos;
+        public BlockWayArena blockWayArena;
 
         void Awake()
         {
@@ -43,6 +44,14 @@ namespace OniricoStudios
             if (Input.GetKeyDown(KeyCode.Alpha3))//arena
             {
                 SceneManager.LoadScene("PrimeiraArena");
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                BlockWayArena.firstArena = true;
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                BlockWayArena.secondArena = true;
             }
         }
 
