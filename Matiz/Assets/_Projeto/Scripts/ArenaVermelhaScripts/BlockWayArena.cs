@@ -19,8 +19,6 @@ namespace OniricoStudios
 
         void Update()
         {
-            print(firstArena);
-            print(secondArena);
 
             if (firstArena)
             {
