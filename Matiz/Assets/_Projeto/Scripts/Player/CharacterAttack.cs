@@ -11,7 +11,8 @@ namespace OniricoStudios
         public GameObject pivotAttack;
 
 
-        public float xaa, yaa;
+        //public float xaa, yaa;
+        //public float offset;
         public LayerMask groundLayer;
         public float timeBTWAttack;
         public float timeAttack;
@@ -20,6 +21,7 @@ namespace OniricoStudios
         [HideInInspector]
         public bool canAttack;
 
+        private float angle;
         CharacterMovement characterMovement => gameObject.GetComponent<CharacterMovement>();
         CharacterAbilities characterAbilities => gameObject.GetComponent<CharacterAbilities>();
         Transform playerPos => gameObject.GetComponent<Transform>();
@@ -40,12 +42,10 @@ namespace OniricoStudios
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer)) // 6 = layermask ground
                 {
                     AttackPlayer(hit);
-                    //Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-                    //pivotAttack.rotation = rotation;
 
-                    //var direction = hit.point - transform.position;
-                    //direction.y = 0;
-                    //pivotAttack.transform.rotation = Quaternion.LookRotation(direction);
+                    Vector3 difference = hit.point- attack.transform.position;
+                    angle = Mathf.Atan2(difference.x, difference.z) * Mathf.Rad2Deg;
+                    attack.transform.eulerAngles = new Vector3(-90, angle + 190, 0);
                 }
             }
         }
