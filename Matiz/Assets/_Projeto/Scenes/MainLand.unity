@@ -1779,7 +1779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60647806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 303.4, y: 0, z: 348.7}
+  m_LocalPosition: {x: 288.1, y: 3.69, z: 321.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1390186730}
@@ -2999,7 +2999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101676895}
   m_Layer: 0
-  m_Name: Colliders
+  m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7936,7 +7936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248238117}
   m_Layer: 0
-  m_Name: Colliders
+  m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13961,62 +13961,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284b6f6dfdf020e409a9b59de7e39451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrier: {fileID: 248238116}
   enemy: {fileID: 4546134676138393710, guid: 2143c0d715644924c9d3ea8136385ac3, type: 3}
   canvas: {fileID: 1424308877}
-  start:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 248238116}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 415541560}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 309591180}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   end:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 248238116}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 415541562}
         m_TargetAssemblyTypeName: OniricoStudios.StartDesafio, Assembly-CSharp
         m_MethodName: SetFirstArena
@@ -14029,6 +13979,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  currentEnemy: {fileID: 0}
 --- !u!1001 &417293652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39974,7 +39925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134446427}
   m_LocalRotation: {x: 0.42065907, y: -0.0000000119867085, z: 0.000000005557996, w: 0.9072188}
-  m_LocalPosition: {x: 472.1, y: 24.2, z: 398.1}
+  m_LocalPosition: {x: 561.2, y: 24.2, z: 565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1830707603}
@@ -55412,7 +55363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574829115}
   m_LocalRotation: {x: 0.42065907, y: -0.0000000119867085, z: 0.000000005557996, w: 0.9072188}
-  m_LocalPosition: {x: 472.1, y: 24.2, z: 398.1}
+  m_LocalPosition: {x: 561.2, y: 24.2, z: 565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2036286889}
@@ -60631,7 +60582,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 1.24
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20355797, g: 0.3094203, b: 0.517647, a: 0.75}
+  underwaterColor: {r: 0.20355386, g: 0.30941594, b: 0.517647, a: 0.75}
   underwaterColorStrength: 0.75
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -68768,62 +68719,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284b6f6dfdf020e409a9b59de7e39451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrier: {fileID: 101676894}
   enemy: {fileID: 4546294198943110630, guid: 35c8774b61f049b48a858793a888f5e7, type: 3}
   canvas: {fileID: 1879436072}
-  start:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 101676894}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1943304508}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2107596266}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   end:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 101676894}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1943304507}
         m_TargetAssemblyTypeName: OniricoStudios.StartDesafio, Assembly-CSharp
         m_MethodName: SetSecondArena
@@ -68836,6 +68737,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  currentEnemy: {fileID: 0}
 --- !u!135 &1943304508
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -70983,7 +70885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994593752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 459, y: 0, z: 532}
+  m_LocalPosition: {x: 473.32, y: 3.67, z: 618.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1390186730}
@@ -86460,7 +86362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9113579767074470295, guid: aa5637e74b00be14bbcc33196cb81ccc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 472.1
+      value: 561.2
       objectReference: {fileID: 0}
     - target: {fileID: 9113579767074470295, guid: aa5637e74b00be14bbcc33196cb81ccc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -86468,7 +86370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9113579767074470295, guid: aa5637e74b00be14bbcc33196cb81ccc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 416.1
+      value: 583
       objectReference: {fileID: 0}
     - target: {fileID: 9113579767074470295, guid: aa5637e74b00be14bbcc33196cb81ccc, type: 3}
       propertyPath: m_LocalRotation.w

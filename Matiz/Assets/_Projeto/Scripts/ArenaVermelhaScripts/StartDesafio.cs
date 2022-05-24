@@ -9,13 +9,15 @@ namespace OniricoStudios
 
     public class StartDesafio : MonoBehaviour
     {
+        public GameObject barrier;
         public GameObject enemy;
         public GameObject canvas;
 
-        public UnityEvent start;
         public UnityEvent end;
 
-        private GameObject currentEnemy;
+        public GameObject currentEnemy;
+        private Collider collDialogue => GetComponent<SphereCollider>();
+        private SpriteRenderer spriteRenderer => GetComponentInChildren<SpriteRenderer>();
 
         private bool inCombat;
         private bool isFinished;
@@ -26,35 +28,41 @@ namespace OniricoStudios
 
         void Update()
         {
-            if (inCombat && currentEnemy.activeSelf && !isFinished)
+            if (inCombat && currentEnemy == null && !isFinished)
             {
                 EndDesavio();
             }
+     
         }
 
         public void StartDesavio()
         {
             StartCoroutine(Delay());
-            
-
+           
 
         }
 
         IEnumerator Delay()
         {
+            collDialogue.enabled = false;
+            barrier.SetActive(true);
+
             yield return new WaitForSeconds(3);
 
+            spriteRenderer.enabled = false;
             currentEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
-
-            start.Invoke();
-
             inCombat = true;
+
+
         }
 
         public void EndDesavio()
         {
             isFinished = true;
             inCombat = false;
+            collDialogue.enabled = false;
+
+            barrier.SetActive(false);
             end.Invoke();
         }
 

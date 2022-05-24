@@ -56,16 +56,23 @@ namespace OniricoStudios
         }
 
         IEnumerator loadsceneName(string name, Transform pos)
-
         {
-            SceneManager.LoadScene(name);
+            
+            if (SceneManager.GetActiveScene().name != name)
+            {
+                SceneManager.LoadScene(name);
+            }
             while (SceneManager.GetActiveScene().name != name)
             {
                 yield return null;
             }
 
-            yield return new WaitForSeconds(0.5F);
-            CharacterStats.playerObj.gameObject.transform.position = pos.position;
+            //yield return new WaitForSeconds(0.5F);
+        
+            if (SceneManager.GetActiveScene().name == name)
+            {
+                CharacterStats.playerObj.gameObject.transform.position = pos.position;
+            }
         }
     }
 }
