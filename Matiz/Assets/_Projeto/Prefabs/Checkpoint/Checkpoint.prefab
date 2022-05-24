@@ -249,7 +249,8 @@ GameObject:
   - component: {fileID: 387057258429048295}
   - component: {fileID: 387057258429048292}
   - component: {fileID: 387057258429048294}
-  m_Layer: 0
+  - component: {fileID: 4899894156424937216}
+  m_Layer: 15
   m_Name: Checkpoint
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -323,6 +324,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!136 &4899894156424937216
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387057258429048314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.57
+  m_Height: 5.4498186
+  m_Direction: 1
+  m_Center: {x: -0.03, y: 2.2249093, z: 0.76}
 --- !u!1 &387057258590869648
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,11 +703,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28f54d5e9c8a45408b8759268ac7131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   colors:
   - {fileID: 387057258647572071}
   - {fileID: 387057258596535595}
   - {fileID: 387057258209140304}
   - {fileID: 387057259280194497}
+  chroma: []
   index: 0
 --- !u!1 &387057259258085216
 GameObject:
