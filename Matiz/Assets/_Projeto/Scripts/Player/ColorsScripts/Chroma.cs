@@ -28,7 +28,6 @@ namespace OniricoStudios
 
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
                 {
-                    print("bruninho " + name);
                     SelectKit();
                 }
             }
