@@ -8,6 +8,7 @@ namespace OniricoStudios
     {
         [Header("Stats")]
         public int damage;
+        public float explosionRange;
         public float antecipation;
         public float timeToExplode;
         [HideInInspector] public bool launched;
@@ -57,12 +58,34 @@ namespace OniricoStudios
         {
             yield return new WaitForSeconds(time);
 
-            GameObject bullet = bulletExplosion;
-            bullet.GetComponent<ExplosionBullet>().damage = damage;
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Explode();
+
+            //GameObject bullet = bulletExplosion;
+            //bullet.GetComponent<ExplosionBullet>().damage = damage;
+            Instantiate(bulletExplosion, transform.position, Quaternion.identity);
+
+            //Destroy(gameObject);
+
+        }
+
+        void Explode()
+        {
+            Collider[] hitExplosion = Physics.OverlapSphere(transform.position, explosionRange);
+
+            foreach (Collider thing in hitExplosion)
+            {
+                if (thing.GetComponent<CharacterStats>() != null)
+                {
+                    thing.GetComponent<CharacterStats>().DamageVoid(damage, transform);
+                }
+
+                if (thing.GetComponent<EnemyHealth>() != null)
+                {
+                    thing.GetComponent<EnemyHealth>().DamageVoid(damage);
+                }
+            }
 
             Destroy(gameObject);
-
         }
 
         public IEnumerator Dash(Transform dir)

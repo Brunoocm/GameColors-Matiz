@@ -7,7 +7,9 @@ namespace OniricoStudios
 {
     public class SelectColorSpecial : MonoBehaviour
     {
+        public LayerMask groundLayer;
         public ColorSpecial[] colors;
+        public Chroma[] chroma;
         public int index;
 
         MainCheckpoint mainCheckpoint => gameObject.GetComponentInParent<MainCheckpoint>();
@@ -39,7 +41,6 @@ namespace OniricoStudios
                     if (index > 0)
                     {
                         index--;
-
                     }
                     //esquerda
                 }
@@ -48,7 +49,6 @@ namespace OniricoStudios
                     if (index < colors.Length - 1)
                     {
                         index++;
-
                     }
                     //Direita
                 }

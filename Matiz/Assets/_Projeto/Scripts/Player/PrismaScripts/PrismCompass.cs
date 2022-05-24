@@ -25,6 +25,10 @@ namespace OniricoStudios
                 angle = Mathf.Atan2(difference.x, difference.z) * Mathf.Rad2Deg;
                 transform.eulerAngles = new Vector3(-90, 0, angle + offset);
             }
+            else
+            {
+                prism = GameObject.FindGameObjectWithTag("Prism");
+            }
         }
     }
 }

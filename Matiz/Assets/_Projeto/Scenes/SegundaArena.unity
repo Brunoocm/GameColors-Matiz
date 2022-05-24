@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028478, g: 0.22571535, b: 0.30692434, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028496, g: 0.22571582, b: 0.30692503, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1109,63 +1109,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4546134676138393703, guid: 2143c0d715644924c9d3ea8136385ac3, type: 3}
   m_PrefabInstance: {fileID: 224891738}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &233300158
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 233300159}
-  - component: {fileID: 233300161}
-  - component: {fileID: 233300160}
-  m_Layer: 0
-  m_Name: collider mata player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &233300159
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233300158}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06477824, y: -0.0073718573, z: -0.049518637}
-  m_LocalScale: {x: 4.7054405, y: 0.0015684802, z: 3.5036778}
-  m_Children: []
-  m_Father: {fileID: 1218739537}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &233300160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233300158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3b8718c7b9f4248a8ce835c07216e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &233300161
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233300158}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3000, y: 1, z: 3000}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &235637663
 GameObject:
   m_ObjectHideFlags: 0
@@ -3009,7 +2952,7 @@ Transform:
   m_LocalPosition: {x: -1.1026, y: 5.4, z: -8.617}
   m_LocalScale: {x: 7.2573924, y: 637.5599, z: 6.6741495}
   m_Children:
-  - {fileID: 233300159}
+  - {fileID: 1801023128}
   m_Father: {fileID: 255269700}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3090,18 +3033,18 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0.75471693, g: 0.051653907, b: 0, a: 0.5019608}
-  deepColor: {r: 0.8331011, g: 0.1448836, b: 0, a: 1}
+  shallowColor: {r: 0.75471693, g: 0.051652446, b: 0, a: 0.5019608}
+  deepColor: {r: 0.8331011, g: 0.1448817, b: 0, a: 1}
   colorDepth: 2.13
-  horizonColor: {r: 5.9698997, g: 0.7500689, b: 0, a: 1}
+  horizonColor: {r: 5.96993, g: 0.7500689, b: 0, a: 1}
   horizonDistance: 14.6
   shoreFade: 1
-  shoreColor: {r: 1, g: 0.41957146, b: 0, a: 1}
+  shoreColor: {r: 1, g: 0.41956946, b: 0, a: 1}
   shoreStrength: 1
   shoreBlend: 1
   shoreDepth: 1.5
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20347875, g: 0.30933672, b: 0.517647, a: 0.75}
+  underwaterColor: {r: 0.20347685, g: 0.3093347, b: 0.517647, a: 0.75}
   underwaterColorStrength: 0.75
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -3132,7 +3075,7 @@ MonoBehaviour:
   foamMovement: 0
   intersectionFoamDepth: 0.49
   intersectionFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
-  intersectionFoamColor: {r: 1, g: 0.20879397, b: 0, a: 1}
+  intersectionFoamColor: {r: 1, g: 0.20879194, b: 0, a: 1}
   intersectionFoamMovement: {x: 0.02, y: 0.47}
   intersectionFoamDirection: 0.02
   intersectionFoamSpeed: 0.47
@@ -4780,6 +4723,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1801023127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801023128}
+  - component: {fileID: 1801023130}
+  - component: {fileID: 1801023131}
+  - component: {fileID: 1801023129}
+  m_Layer: 4
+  m_Name: filho
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1801023128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801023127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0082, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1218739537}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1801023129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801023127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.199104, y: 0.017391648, z: 7.2897205}
+  m_Center: {x: 0, y: 0.000090739384, z: 0}
+--- !u!114 &1801023130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801023127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68e1682bdca3fb46a07ac2c1d6a4bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!54 &1801023131
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801023127}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1865249822
 GameObject:
   m_ObjectHideFlags: 0
