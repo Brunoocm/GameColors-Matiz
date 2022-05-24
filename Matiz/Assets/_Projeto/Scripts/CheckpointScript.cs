@@ -48,7 +48,7 @@ namespace OniricoStudios
                     currentSpawnpoint = true;
                     saving = true;
                 }
-                else if (Input.GetKeyDown(KeyCode.L) && !saving) //clicar fora do bagulho com o mouse
+                else if (Input.GetKeyDown(KeyCode.S) && !saving) //clicar fora do bagulho com o mouse
                 {
                     StartCoroutine(ChromaDesappiers());
                     characterMovement.canMove = true;
