@@ -70,9 +70,13 @@ namespace OniricoStudios
 
             FinalAttack();
 
-            yield return new WaitForSeconds(cdToDash);
+            yield return new WaitForSeconds(0.2f);
 
             pivotAttack.SetActive(false);
+
+            yield return new WaitForSeconds(cdToDash);
+
+            
 
             oneTime = false;
             hitTarget = false;
