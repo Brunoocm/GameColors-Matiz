@@ -33,6 +33,35 @@ namespace OniricoStudios
             vermelhoTrue = CharacterStats.vermelhoTrue;
             azulTrue = CharacterStats.azulTrue;
             verdeTrue = CharacterStats.verdeTrue;
+
+            GameObject prisma = FindObjectOfType<PrismaMovement>().gameObject;
+            GameObject prismaColor = prisma.transform.GetChild(0).gameObject;
+            GameObject prismaTrail = prismaColor.transform.GetChild(0).gameObject;
+
+            if (cinzaTrue)
+            {
+                prismaColor.GetComponent<SpriteRenderer>().color = Color.white;
+                prismaTrail.GetComponent<TrailRenderer>().startColor = Color.white;
+                prismaTrail.GetComponent<TrailRenderer>().endColor = Color.white;
+            }
+            else if (vermelhoTrue)
+            {
+                prismaColor.GetComponent<SpriteRenderer>().color = Color.red;
+                prismaTrail.GetComponent<TrailRenderer>().startColor = Color.red;
+                prismaTrail.GetComponent<TrailRenderer>().endColor = Color.red;
+            }
+            else if (verdeTrue)
+            {
+                prismaColor.GetComponent<SpriteRenderer>().color = new Color(0, 1, 0.24f);
+                prismaTrail.GetComponent<TrailRenderer>().startColor = new Color(0, 1, 0.24f);
+                prismaTrail.GetComponent<TrailRenderer>().endColor = new Color(0, 1, 0.24f);
+            }
+            else if (azulTrue)
+            {
+                prismaColor.GetComponent<SpriteRenderer>().color = new Color(0, 0.64f, 1);
+                prismaTrail.GetComponent<TrailRenderer>().startColor = new Color(0, 0.64f, 1);
+                prismaTrail.GetComponent<TrailRenderer>().endColor = new Color(0, 0.64f, 1);
+            }
         }
 
         void Update()

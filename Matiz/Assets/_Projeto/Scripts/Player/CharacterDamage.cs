@@ -8,13 +8,26 @@ namespace OniricoStudios
     {
         CharacterStats charStats => gameObject.GetComponentInParent<CharacterStats>();
 
+        IEnumerator DealDamage(GameObject enemy)
+        {
+            Camera.main.GetComponent<CameraScript>().Shake(500, 300);
+
+            enemy.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
+
+            Instantiate(charStats.attackFX, enemy.transform.position, Quaternion.identity);
+
+            Time.timeScale = 0.2f;
+
+            yield return new WaitForSeconds(0.01f);
+
+            Time.timeScale = 1;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Enemy"))
+            if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<EnemyHealth>() != null)
             {
-                other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
-
-                Instantiate(charStats.attackFX, other.transform.position, Quaternion.identity);
+                StartCoroutine(DealDamage(other.gameObject));
             }
         }
     }
