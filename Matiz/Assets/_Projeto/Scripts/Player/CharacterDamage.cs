@@ -27,7 +27,8 @@ namespace OniricoStudios
         {
             if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<EnemyHealth>() != null)
             {
-                StartCoroutine(DealDamage(other.gameObject));
+                other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
+                //StartCoroutine(DealDamage(other.gameObject));
             }
         }
     }

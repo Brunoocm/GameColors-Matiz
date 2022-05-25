@@ -90,6 +90,7 @@ namespace OniricoStudios
             SpriteNPC.transform.DOMoveZ(SpriteNPC.transform.position.z + 7, 1);
 
             CompleteDesafioUI render = FindObjectOfType<CompleteDesafioUI>();
+
             StartCoroutine(render.SetInsignia());
 
             end.Invoke();
