@@ -7,10 +7,15 @@ namespace OniricoStudios
     public class EnemyDamage : MonoBehaviour
     {
         public int damage;
+        Transform pos;
 
+        private void Awake()
+        {
+            pos = transform.parent;
+        }
         void Start()
         {
-
+            
         }
 
         void Update()
@@ -20,13 +25,12 @@ namespace OniricoStudios
 
         private void OnTriggerEnter(Collider other)
         {
-            print(other.name);
 
-            if (other.gameObject.CompareTag("Enemy"))
+            if (other.gameObject.CompareTag("Player"))
             {
-                if (other.GetComponent<EnemyHealth>() != null)
+                if (other.GetComponent<CharacterStats>() != null)
                 {
-                    other.GetComponent<EnemyHealth>().DamageVoid(damage);
+                    other.GetComponent<CharacterStats>().DamageVoid(damage, pos);
                 }
             }
         }
