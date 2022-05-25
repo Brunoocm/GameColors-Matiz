@@ -93,6 +93,7 @@ namespace OniricoStudios
             else
             {
                 timeInvencible -= Time.deltaTime;
+
             }
 
             if (health <= 0)
@@ -160,7 +161,7 @@ namespace OniricoStudios
                 }
 
                 timeInvencible = m_timeInvencible;
-                StartCoroutine(InvulnerableTime());
+                InvulnerableTime();
 
                 canDamage = false;
             }
@@ -180,20 +181,13 @@ namespace OniricoStudios
 
         }
 
-        private IEnumerator InvulnerableTime()
+        private void InvulnerableTime()
         {
-            yield return null;
-
             Sequence mySequence = DOTween.Sequence();
             mySequence.Append(sprite.DOColor(Color.grey, 0.2f))
                 .Append(sprite.DOColor(Color.white, 0.2f));
             mySequence.SetLoops(-1, LoopType.Restart);
 
-            Time.timeScale = 0.33f;
-
-            yield return new WaitForSeconds(0.1f);
-
-            Time.timeScale = 1;
         }
 
         private void OnTriggerEnter(Collider other)
