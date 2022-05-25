@@ -160,5 +160,17 @@ namespace OniricoStudios
 
             }
         }
+
+
+        public IEnumerator Transition(float timer)
+        {
+
+            transition.transform.DOScale(new Vector2(11, 11), 1);
+            transition.DOFade(1, 1);
+            yield return new WaitForSeconds(timer);
+            transition.transform.DOScale(new Vector2(0, 0), 1);
+            yield return new WaitForSeconds(timer/2);
+            transition.DOFade(0, 0);
+        }
     }
 }

@@ -117,7 +117,7 @@ namespace OniricoStudios
             stopMoving = true;
             attackDuration = m_attackDuration;
             Flip();
-            navMeshAgent.ResetPath();
+            if(gameObject.activeSelf) navMeshAgent.ResetPath();
         }
 
         void Flip()

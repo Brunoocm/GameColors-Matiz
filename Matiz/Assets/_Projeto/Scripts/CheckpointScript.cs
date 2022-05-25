@@ -26,6 +26,7 @@ namespace OniricoStudios
 
         MainCheckpoint mainCheckpoint => gameObject.GetComponentInParent<MainCheckpoint>();
         CharacterMovement characterMovement;
+        CharacterStats charStats;
 
         void Start()
         {
@@ -98,6 +99,7 @@ namespace OniricoStudios
                 isActive = true;
 
                 characterMovement = other.gameObject.GetComponent<CharacterMovement>();
+                charStats = other.gameObject.GetComponent<CharacterStats>();
             }
         }
 

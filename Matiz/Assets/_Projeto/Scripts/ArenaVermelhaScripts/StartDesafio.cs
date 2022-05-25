@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 namespace OniricoStudios
 {
@@ -9,18 +10,24 @@ namespace OniricoStudios
 
     public class StartDesafio : MonoBehaviour
     {
-        public GameObject barrier;
+        public float timerToStart;
+        public float timerToTp;
         public GameObject enemy;
         public GameObject canvas;
+        public Transform pos;
+        public GameObject spriteEnemy;
+        public GameObject SpriteNPC;
+        public DialogueNPC Contagem321;
 
         public UnityEvent end;
 
         public GameObject currentEnemy;
         private Collider collDialogue => GetComponent<SphereCollider>();
         private SpriteRenderer spriteRenderer => GetComponentInChildren<SpriteRenderer>();
+        MainCheckpoint mainCheckpoint => FindObjectOfType<MainCheckpoint>();
 
         private bool inCombat;
-        private bool isFinished;
+        public bool isFinished;
         void Start()
         {
 
@@ -32,12 +39,22 @@ namespace OniricoStudios
             {
                 EndDesavio();
             }
+
+            if(CharacterStats.playerObj == null && !isFinished)
+            {
+                RestartDesafio();
+            }
      
         }
 
         public void StartDesavio()
         {
-            StartCoroutine(Delay());
+            if (!BlockWayArena.completeInsignia)
+            {
+                mainCheckpoint.StartCoroutine(mainCheckpoint.Transition(timerToTp));
+
+                StartCoroutine(Delay());
+            }
            
 
         }
@@ -45,12 +62,20 @@ namespace OniricoStudios
         IEnumerator Delay()
         {
             collDialogue.enabled = false;
-            barrier.SetActive(true);
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(timerToTp/2);
 
-            spriteRenderer.enabled = false;
-            currentEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
+            CharacterStats.playerObj.transform.position = pos.position;
+      
+            yield return new WaitForSeconds(timerToTp / 2);
+
+            Contagem321.StartFunction();
+
+            yield return new WaitForSeconds(timerToStart);
+
+
+            currentEnemy = Instantiate(enemy, spriteEnemy.transform.position, Quaternion.identity);
+            spriteEnemy.SetActive(false);
             inCombat = true;
 
 
@@ -62,18 +87,23 @@ namespace OniricoStudios
             inCombat = false;
             collDialogue.enabled = false;
 
-            barrier.SetActive(false);
+            SpriteNPC.transform.DOMoveZ(SpriteNPC.transform.position.z + 7, 1);
+
+            CompleteDesafioUI render = FindObjectOfType<CompleteDesafioUI>();
+            StartCoroutine(render.SetInsignia());
+
             end.Invoke();
         }
 
-        public void SetFirstArena()
+
+        public void RestartDesafio()
         {
-            BlockWayArena.firstArena = true;
+            inCombat = false;
+            collDialogue.enabled = true;
+            spriteEnemy.SetActive(true);
+            Destroy(currentEnemy);
         }
-        public void SetSecondArena()
-        {
-            BlockWayArena.secondArena = true;
-        }
+
         private void OnTriggerStay(Collider other)
         {
             if (!inCombat && !isFinished)
