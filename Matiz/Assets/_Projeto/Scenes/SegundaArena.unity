@@ -8930,18 +8930,18 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0.75471693, g: 0.051626302, b: 0, a: 0.5019608}
-  deepColor: {r: 0.8331011, g: 0.14484757, b: 0, a: 1}
+  shallowColor: {r: 0.75471693, g: 0.051625848, b: 0, a: 0.5019608}
+  deepColor: {r: 0.8331011, g: 0.14484698, b: 0, a: 1}
   colorDepth: 2.13
-  horizonColor: {r: 5.970476, g: 0.7500689, b: 0, a: 1}
+  horizonColor: {r: 5.9704857, g: 0.7500689, b: 0, a: 1}
   horizonDistance: 14.6
   shoreFade: 1
-  shoreColor: {r: 1, g: 0.41953346, b: 0, a: 1}
+  shoreColor: {r: 1, g: 0.41953284, b: 0, a: 1}
   shoreStrength: 1
   shoreBlend: 1
   shoreDepth: 1.5
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20344272, g: 0.3092987, b: 0.517647, a: 0.75}
+  underwaterColor: {r: 0.20344213, g: 0.30929807, b: 0.517647, a: 0.75}
   underwaterColorStrength: 0.75
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -8972,7 +8972,7 @@ MonoBehaviour:
   foamMovement: 0
   intersectionFoamDepth: 0.49
   intersectionFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
-  intersectionFoamColor: {r: 1, g: 0.20875594, b: 0, a: 1}
+  intersectionFoamColor: {r: 1, g: 0.20875531, b: 0, a: 1}
   intersectionFoamMovement: {x: 0.02, y: 0.47}
   intersectionFoamDirection: 0.02
   intersectionFoamSpeed: 0.47
@@ -13370,22 +13370,22 @@ Material:
     - _WaterColorDepth: 2.13
     - _WaterColorHorizonDistance: 14.6
     m_Colors:
-    - _IntersectionFoamColor: {r: 1, g: 0.20875594, b: 0, a: 1}
+    - _IntersectionFoamColor: {r: 1, g: 0.20875531, b: 0, a: 1}
     - _IntersectionFoamMovement: {r: 0.02, g: 0.47, b: 0, a: 0}
     - _IntersectionFoamSampling: {r: 0, g: 0.91, b: 0, a: 0}
     - _LightingDiffuseColor: {r: 1.3041189, g: 0.47112137, b: 0, a: 0}
     - _LightingSpecularColor: {r: 1, g: 0, b: 0, a: 0}
     - _NormalsMovement: {r: 0.026, g: 1.48, b: 0, a: 0}
-    - _ShoreColor: {r: 1, g: 0.41953346, b: 0, a: 1}
+    - _ShoreColor: {r: 1, g: 0.41953284, b: 0, a: 1}
     - _SurfaceFoamColor1: {r: 1, g: 1, b: 1, a: 0.3215686}
     - _SurfaceFoamColor2: {r: 1, g: 1, b: 1, a: 0.7294118}
     - _SurfaceFoamMovement: {r: 0.7, g: 0, b: 0.47, a: 0.01}
     - _SurfaceFoamSampling: {r: 0.62, g: 0, b: 0, a: 0}
     - _SurfaceFoamTilingAndOffset: {r: -1, g: -1, b: 0.57, a: 1.48}
-    - _WaterColorDeep: {r: 0.8331011, g: 0.14484757, b: 0, a: 1}
-    - _WaterColorHorizon: {r: 5.970476, g: 0.7500689, b: 0, a: 1}
-    - _WaterColorShallow: {r: 0.75471693, g: 0.051626302, b: 0, a: 0.5019608}
-    - _WaterColorUnderwater: {r: 0.20344272, g: 0.3092987, b: 0.517647, a: 0.75}
+    - _WaterColorDeep: {r: 0.8331011, g: 0.14484698, b: 0, a: 1}
+    - _WaterColorHorizon: {r: 5.9704857, g: 0.7500689, b: 0, a: 1}
+    - _WaterColorShallow: {r: 0.75471693, g: 0.051625848, b: 0, a: 0.5019608}
+    - _WaterColorUnderwater: {r: 0.20344213, g: 0.30929807, b: 0.517647, a: 0.75}
     - _WaveColor: {r: 0, g: 0, b: 0, a: 0}
     - _WaveDirections: {r: 0, g: 0.64, b: 1, a: 0.33}
     - _WaveVisuals: {r: 0.159, g: 7.9, b: 0.17, a: 0}
@@ -14825,11 +14825,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 364428016987469585, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 715843065084626910, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 715843065084626910, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922972367202819008, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3256463719203947872, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3256463719203947872, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852829578296966693, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852829578296966693, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852829578296966693, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00008392334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661896172024598997, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340624154780497188, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -14921,22 +14957,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI-Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8111661539619061311, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
-      propertyPath: VidaImage.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8111661539619061311, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
-      propertyPath: VidaImage.Array.data[0]
-      value: 
-      objectReference: {fileID: 2054802284}
-    - target: {fileID: 8111661539619061311, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
-      propertyPath: VidaImage.Array.data[1]
-      value: 
-      objectReference: {fileID: 2054802283}
-    - target: {fileID: 8111661539619061311, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
-      propertyPath: VidaImage.Array.data[2]
-      value: 
-      objectReference: {fileID: 2054802282}
     - target: {fileID: 8111661539636133759, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -14947,39 +14967,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
---- !u!114 &2054802282 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8111661539517686483, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
-  m_PrefabInstance: {fileID: 2054802281}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2054802283 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8111661538022759313, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
-  m_PrefabInstance: {fileID: 2054802281}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2054802284 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8111661538050748001, guid: 991203d144b1113488bc9badf09c44c9, type: 3}
-  m_PrefabInstance: {fileID: 2054802281}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2057961249
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OniricoStudios
 {
@@ -16,6 +17,7 @@ namespace OniricoStudios
         public AzulAbility azulAbility;
         public VerdeAbility verdeAbility;
 
+        Slider AbilitiesCDSlider;
         CharacterStats charStats => GetComponent<CharacterStats>();
 
         private float time;
@@ -29,6 +31,8 @@ namespace OniricoStudios
         }
         void Start()
         {
+            AbilitiesCDSlider = GameObject.Find("AbilitiesCD").GetComponentInChildren<Slider>();
+
             cinzaTrue = CharacterStats.cinzaTrue;
             vermelhoTrue = CharacterStats.vermelhoTrue;
             azulTrue = CharacterStats.azulTrue;
@@ -75,6 +79,9 @@ namespace OniricoStudios
             {
                 cinzaAbility.Especial();
                 cinzaAbility.Dash();
+
+                AbilitiesCDSlider.value = cinzaAbility.m_cooldownSpecial;
+                AbilitiesCDSlider.maxValue = cinzaAbility.cooldownSpecial;
             }
             else if (vermelhoTrue)
             {
@@ -82,20 +89,8 @@ namespace OniricoStudios
                 vermelhoAbility.Especial();
                 vermelhoAbility.Dash();
 
-
-                //if(time <= vermelhoAbility.specialCooldown)
-                //{
-                //    time += Time.deltaTime;
-                //}
-                //else
-                //{
-                //    if (Input.GetKeyDown(KeyCode.Mouse1))
-                //    {
-                //        GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
-                //        red.transform.parent = transform;
-                //        time = 0;
-                //    }
-                //}
+                AbilitiesCDSlider.value = time;
+                AbilitiesCDSlider.maxValue = vermelhoAbility.specialCooldown;
             }
             else if (azulTrue)
             {
@@ -125,7 +120,7 @@ namespace OniricoStudios
                     obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
                 }
 
-                cinzaAbility.m_cooldownSpecial = cinzaAbility.cooldownSpecial;
+                cinzaAbility.m_cooldownSpecial = 0;
 
             }
         }
@@ -150,7 +145,6 @@ namespace OniricoStudios
                 }
             }
         }
-
 
 
         [System.Serializable]
@@ -181,16 +175,20 @@ namespace OniricoStudios
 
             public void Especial()
             {
-                if (m_cooldownSpecial <= 0)
+                if (m_cooldownSpecial >= cooldownSpecial)
                 {
                     characterAbilities.spawnEspecialCinza();
                 }
                 else
                 {
-                    m_cooldownSpecial -= Time.deltaTime;
+                    m_cooldownSpecial += Time.deltaTime;
                 }
             }
 
+            public void SetSliderCinza()
+            {
+                
+            }
             public void Dash()
             {
 
