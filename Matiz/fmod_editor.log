@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001F4B48037F8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000012BB5792738 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,547 +20,487 @@
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4D69CD978 : node = 000001F5E414ED90
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4D69CD978
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C99FDC308 : node = 0000012BD70D8460
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C99FDC308
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E414EEA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012BD70D8570
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4D69CD978
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C99FDC308
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4D69CDB28 : node = 000001F5E414E110
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4D69CDB28
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C99FDB228 : node = 0000012BB2EF90F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C99FDB228
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E414E220
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012BB2EF9200
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4D69CDB28
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C99FDB228
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4AD8BBE68 : node = 000001F5E4D3DD00
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4AD8BBE68
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C99FDB078 : node = 0000012BB2EF95F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C99FDB078
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3DE10
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012BB2EF9700
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4AD8BBE68
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C99FDB078
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4AD8BAA28 : node = 000001F5E4D3D080
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4AD8BAA28
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9A4DFF18 : node = 0000012BB2EF8970
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9A4DFF18
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3D190
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012BB2EF8A80
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4AD8BAA28
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9A4DFF18
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4AD8BB448 : node = 000001F5E4D3DE40
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4AD8BB448
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9A4DEFE8 : node = 0000012BB2EFADB0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9A4DEFE8
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3DF50
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012BB2EFAEC0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4AD8BB448
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9A4DEFE8
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4AF6F5348 : node = 000001F5E4D3D440
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4AF6F5348
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9A4E0428 : node = 0000012BAF96BA50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9A4E0428
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3D550
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012BAF96BB60
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4AF6F5348
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9A4E0428
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4442822A8 : node = 000001F5E4D3D300
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4442822A8
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9A4DF198 : node = 0000012C9A4F2200
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9A4DF198
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3D410
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4F2310
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9A4DF198
+[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9A4DEC88 : node = 0000012C9A4F2480
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9A4DEC88
+[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4F2590
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9A4DEC88
+[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9A4DF6A8 : node = 0000012C9A4F25C0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9A4DF6A8
+[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4F26D0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4442822A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9A4DF6A8
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F444283A48 : node = 000001F5E4D3DA80
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F444283A48
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C642B65B8 : node = 0000012C9A4F2700
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C642B65B8
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3DB90
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F444283A48
-[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F444282E78 : node = 000001F5E4D3D1C0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F444282E78
-[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3D2D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4F2810
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F444282E78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C642B65B8
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F444282458 : node = 000001F5E4D3D580
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F444282458
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C642B6918 : node = 0000012C9A4E16B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C642B6918
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3D690
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E17C0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F444282458
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C642B6918
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4AD8BC018 : node = 000001F5E4D3D6C0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4AD8BC018
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C642B60A8 : node = 0000012C9A4E1430
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C642B60A8
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3D7D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E1540
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4AD8BC018
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C642B60A8
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4AD8BA518 : node = 000001F5E4D3D800
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4AD8BA518
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9EF0F078 : node = 0000012C9A4E12F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9EF0F078
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3D910
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E1400
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4AD8BA518
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9EF0F078
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F44386B9B8 : node = 000001F5E4D3D940
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F44386B9B8
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9EF0ED18 : node = 0000012C9A4E0CB0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9EF0ED18
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F5E4D3DA50
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E0DC0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F44386B9B8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9EF0ED18
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F44386BB68 : node = 000001F4D688C900
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F44386BB68
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9EF0F8E8 : node = 0000012C9A4E1930
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9EF0F8E8
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4D688CA10
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E1A40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9EF0F8E8
+[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9EF0EEC8 : node = 0000012C9A4E17F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9EF0EEC8
+[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E1900
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F44386BB68
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9EF0EEC8
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F4D69CCF58 : node = 000001F4D688CA40
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F4D69CCF58
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9EF10158 : node = 0000012C9A4E0DF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9EF10158
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4D688CB50
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F4D69CCF58
-[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEBC6B88 : node = 000001F4AF86C6F0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEBC6B88
-[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86C800
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E0F00
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEBC6B88
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9EF10158
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEBC5AA8 : node = 000001F4AF86CE70
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEBC5AA8
+[LOG] SystemI::createSound                     : setdata soundi = 0000012C9EF0F3D8 : node = 0000012C9A4E1570
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012C9EF0F3D8
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86CF80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E1680
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEBC5AA8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012C9EF0F3D8
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEBC64C8 : node = 000001F4AF86C830
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEBC64C8
+[LOG] SystemI::createSound                     : setdata soundi = 0000012B433F3F28 : node = 0000012C9A4E1A70
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012B433F3F28
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86C940
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E1B80
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEBC64C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012B433F3F28
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEBC5238 : node = 000001F4AF86CBF0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEBC5238
+[LOG] SystemI::createSound                     : setdata soundi = 0000012B433F3A18 : node = 0000012C9A4E0F30
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012B433F3A18
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86CD00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E1040
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEBC5238
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012B433F3A18
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEBC5FB8 : node = 000001F4AF86CD30
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEBC5FB8
+[LOG] SystemI::createSound                     : setdata soundi = 0000012B433F4288 : node = 0000012C9A4E1070
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012B433F4288
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86CE40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E1180
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas 2', format=5, channels=2, frequency=48000, lengthbytes=1398048, lengthpcm=5910967, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.047953.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEBC5FB8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012B433F4288
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEBC5748 : node = 000001F4AF86C470
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEBC5748
+[LOG] SystemI::createSound                     : setdata soundi = 0000012B433F3D78 : node = 0000012C9A4E11B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012B433F3D78
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86C580
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012C9A4E12C0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEBC5748
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012B433F3D78
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEC4A238 : node = 000001F4AF86C970
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEC4A238
+[LOG] SystemI::createSound                     : setdata soundi = 0000012B433F2AE8 : node = 0000012BAD916810
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012B433F2AE8
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86CA80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012BAD916920
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEC4A238
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012B433F2AE8
 [LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEC4AE08 : node = 000001F4AF86CAB0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEC4AE08
+[LOG] SystemI::createSound                     : setdata soundi = 0000012B433F2FF8 : node = 0000012BAD9166D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000012C64404D98.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000012B433F2FF8
 [LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86CBC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000012BAD9167E0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEC4AE08
-[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEC4BB88 : node = 000001F4AF86C0B0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEC4BB88
-[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86C1C0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEC4BB88
-[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEC4A598 : node = 000001F4AF86C1F0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEC4A598
-[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4AF86C300
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEC4A598
-[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEC4AC58 : node = 000001F4B34CF260
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEC4AC58
-[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4B34CF370
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEC4AC58
-[LOG] SystemI::createSound                     : filename = AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5EEC4A3E8 : node = 000001F4B34CF120
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F4D679B848.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5EEC4A3E8
-[LOG] SystemI::createSoundInternal             :     Create name='AmbientaçãoFMOD/Ambientação/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3690528
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 31072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F4B34CF230
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='mar ondas', format=5, channels=2, frequency=48000, lengthbytes=870624, lengthpcm=3396674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.056408.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5EEC4A3E8
-[LOG] SoundI::release                          : vento ambiente fechado 2.0 (000001F5EF197508)
-[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000001F4ADF76538)
-[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000001F4AF6F5858)
-[LOG] SoundI::release                          : mar ondas 2 (000001F5EEBC5FB8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF4B88A8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EEBC6828)
-[LOG] SoundI::release                          : mar ondas 2 (000001F5EEBC5238)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF4B8568)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EEBC53E8)
-[LOG] SoundI::release                          : mar ondas 2 (000001F5EEBC5AA8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF4B83C8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EEBC5088)
-[LOG] SoundI::release                          : mar ondas 2 (000001F5EEBC6B88)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF4B8708)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EEBC6168)
-[LOG] SoundI::release                          : mar ondas 2 (000001F44386BB68)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF4B8A48)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F44386C228)
-[LOG] SoundI::release                          : mar ondas 2 (000001F44386B9B8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4ADF76D58)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F44386C078)
-[LOG] SoundI::release                          : mar ondas 2 (000001F4AD8BA518)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4ADF76398)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4AD8BBB08)
-[LOG] SoundI::release                          : mar ondas 2 (000001F444282458)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4ADF76058)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4AD8BBCB8)
-[LOG] SoundI::release                          : mar ondas 2 (000001F444282E78)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4ADF76BB8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F444283DA8)
-[LOG] SoundI::release                          : mar ondas 2 (000001F4442822A8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4ADF766D8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F444283388)
-[LOG] SoundI::release                          : mar ondas 2 (000001F4AF6F5348)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4ADF76A18)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4AF6F4E38)
-[LOG] SoundI::release                          : mar ondas 2 (000001F4AD8BAA28)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF656DF8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4AD8BAD88)
-[LOG] SoundI::release                          : mar ondas 2 (000001F4AD8BBE68)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF656AB8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4AD8BAF38)
-[LOG] SoundI::release                          : mar ondas 2 (000001F4D69CD978)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF657618)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4D69CE1E8)
-[LOG] SoundI::release                          : mar ondas 2 (000001F4AF6F4268)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F5EF656C58)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4AF6F4418)
-[LOG] SoundI::release                          : mar ondas 2 (000001F5EF1980D8)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4D67D0208)
-[LOG] SoundI::release                          :     mar ondas 2 (000001F4AF6F4FE8)
-[LOG] SoundI::release                          : mar ondas (000001F5EEC4A3E8)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF85DBB8)
-[LOG] SoundI::release                          :     mar ondas (000001F5EEC4AFB8)
-[LOG] SoundI::release                          : mar ondas (000001F5EEC4AC58)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF85DA18)
-[LOG] SoundI::release                          :     mar ondas (000001F5EEC4B678)
-[LOG] SoundI::release                          : mar ondas (000001F5EEC4A598)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF85D878)
-[LOG] SoundI::release                          :     mar ondas (000001F5EEC4BD38)
-[LOG] SoundI::release                          : mar ondas (000001F5EEC4BB88)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF85E578)
-[LOG] SoundI::release                          :     mar ondas (000001F5EEC4B4C8)
-[LOG] SoundI::release                          : mar ondas (000001F5EEC4AE08)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF85E3D8)
-[LOG] SoundI::release                          :     mar ondas (000001F5EEC4B168)
-[LOG] SoundI::release                          : mar ondas (000001F5EEC4A238)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF4B8D88)
-[LOG] SoundI::release                          :     mar ondas (000001F5EEC4AAA8)
-[LOG] SoundI::release                          : mar ondas (000001F5EEBC5748)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF4B8BE8)
-[LOG] SoundI::release                          :     mar ondas (000001F5EEBC58F8)
-[LOG] SoundI::release                          : mar ondas (000001F5EEBC64C8)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF4B8228)
-[LOG] SoundI::release                          :     mar ondas (000001F5EEBC5C58)
-[LOG] SoundI::release                          : mar ondas (000001F4D69CCF58)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF4B8088)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF1971A8)
-[LOG] SoundI::release                          : mar ondas (000001F4AD8BC018)
-[LOG] SoundI::release                          :     mar ondas (000001F4ADF761F8)
-[LOG] SoundI::release                          :     mar ondas (000001F4AD8BA878)
-[LOG] SoundI::release                          : mar ondas (000001F444283A48)
-[LOG] SoundI::release                          :     mar ondas (000001F4ADF76878)
-[LOG] SoundI::release                          :     mar ondas (000001F444282608)
-[LOG] SoundI::release                          : mar ondas (000001F4AD8BB448)
-[LOG] SoundI::release                          :     mar ondas (000001F5E903C728)
-[LOG] SoundI::release                          :     mar ondas (000001F4AD8BB5F8)
-[LOG] SoundI::release                          : mar ondas (000001F4D69CDB28)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF656918)
-[LOG] SoundI::release                          :     mar ondas (000001F4D69CE6F8)
-[LOG] SoundI::release                          : mar ondas (000001F4AF6F4778)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF6572D8)
-[LOG] SoundI::release                          :     mar ondas (000001F4AF6F4928)
-[LOG] SoundI::release                          : mar ondas (000001F4AF6F5A08)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF657138)
-[LOG] SoundI::release                          :     mar ondas (000001F4AF6F56A8)
-[LOG] SoundI::release                          : mar ondas (000001F5EF197F28)
-[LOG] SoundI::release                          :     mar ondas (000001F4AF9AB818)
-[LOG] SoundI::release                          :     mar ondas (000001F5EF197A18)
-[LOG] SoundI::release                          :  (000001F4ADF97088)
-[LOG] SoundI::release                          :     ambiente sanidadee (000001F5E9ABC9D8)
-[LOG] SoundI::release                          :  (000001F4ADF97C08)
-[LOG] SoundI::release                          :     pedras (000001F5B69B8348)
-[LOG] SoundI::release                          :  (000001F4ADF974D8)
-[LOG] SoundI::release                          :     fumaça 2 (000001F5E9ABC838)
-[LOG] SoundI::release                          :  (000001F4ADF977B8)
-[LOG] SoundI::release                          :     fumaça 3 (000001F5E9ABC358)
-[LOG] SoundI::release                          :  (000001F4B3077788)
-[LOG] SoundI::release                          :     fumaça (000001F5E9ABBB38)
-[LOG] SoundI::release                          :  (000001F4ADF97D78)
-[LOG] SoundI::release                          :     pedras 2 (000001F5E9ABAC98)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000012B433F2FF8
+[LOG] SoundI::release                          : vento ambiente fechado 2.0 (0000012BD698A268)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (0000012B8B881298)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (0000012BD6988AC8)
+[LOG] SoundI::release                          : mar ondas 2 (0000012B433F4288)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BD6A7C968)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012B433F4438)
+[LOG] SoundI::release                          : mar ondas 2 (0000012B433F3A18)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BD6A7C7C8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012B433F3358)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C9EF0F3D8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB3394848)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C9EF0F588)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C9EF10158)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB3394D28)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C9EF10308)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C9EF0EEC8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB3394B88)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C9EF10668)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C9EF0ED18)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB466D778)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C9EF0FFA8)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C9EF0F078)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB466DAB8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C9EF104B8)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C642B6918)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB466DC58)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C642B6768)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C642B65B8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB466D0F8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C642B6E28)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C9A4DF6A8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB466D438)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C9A4DF858)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C9A4E0428)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BAF4FDA48)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C9A4DFA08)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C9A4DFF18)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BAF4FDBE8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C9A4E00C8)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C99FDB078)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BB466D5D8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C99FDB588)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C99FDC308)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BAF4FD098)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C99FDC4B8)
+[LOG] SoundI::release                          : mar ondas 2 (0000012C99FDB3D8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C99FD7BC8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012C99FDB738)
+[LOG] SoundI::release                          : mar ondas 2 (0000012BD6989848)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012B8B8810F8)
+[LOG] SoundI::release                          :     mar ondas 2 (0000012BD698A5C8)
+[LOG] SoundI::release                          : mar ondas (0000012B433F2FF8)
+[LOG] SoundI::release                          :     mar ondas (0000012BD6A7C488)
+[LOG] SoundI::release                          :     mar ondas (0000012B433F36B8)
+[LOG] SoundI::release                          : mar ondas (0000012B433F2AE8)
+[LOG] SoundI::release                          :     mar ondas (0000012BD6A7CE48)
+[LOG] SoundI::release                          :     mar ondas (0000012B433F3868)
+[LOG] SoundI::release                          : mar ondas (0000012B433F3D78)
+[LOG] SoundI::release                          :     mar ondas (0000012BD6A7CB08)
+[LOG] SoundI::release                          :     mar ondas (0000012B433F2C98)
+[LOG] SoundI::release                          : mar ondas (0000012B433F3F28)
+[LOG] SoundI::release                          :     mar ondas (0000012BD6A7CCA8)
+[LOG] SoundI::release                          :     mar ondas (0000012B433F2E48)
+[LOG] SoundI::release                          : mar ondas (0000012C9EF0F8E8)
+[LOG] SoundI::release                          :     mar ondas (0000012BB33949E8)
+[LOG] SoundI::release                          :     mar ondas (0000012C9EF10818)
+[LOG] SoundI::release                          : mar ondas (0000012C642B60A8)
+[LOG] SoundI::release                          :     mar ondas (0000012BB466D298)
+[LOG] SoundI::release                          :     mar ondas (0000012C642B6408)
+[LOG] SoundI::release                          : mar ondas (0000012C9A4DEC88)
+[LOG] SoundI::release                          :     mar ondas (0000012BB466DDF8)
+[LOG] SoundI::release                          :     mar ondas (0000012C9A4DF4F8)
+[LOG] SoundI::release                          : mar ondas (0000012C9A4DF198)
+[LOG] SoundI::release                          :     mar ondas (0000012B8B87D678)
+[LOG] SoundI::release                          :     mar ondas (0000012C9A4E0788)
+[LOG] SoundI::release                          : mar ondas (0000012C9A4DEFE8)
+[LOG] SoundI::release                          :     mar ondas (0000012BAF4FD8A8)
+[LOG] SoundI::release                          :     mar ondas (0000012C9A4DF348)
+[LOG] SoundI::release                          : mar ondas (0000012C99FDB228)
+[LOG] SoundI::release                          :     mar ondas (0000012BB466D918)
+[LOG] SoundI::release                          :     mar ondas (0000012C99FDB8E8)
+[LOG] SoundI::release                          : mar ondas (0000012C99FDBDF8)
+[LOG] SoundI::release                          :     mar ondas (0000012C99FD7F08)
+[LOG] SoundI::release                          :     mar ondas (0000012C99FDCB78)
+[LOG] SoundI::release                          : mar ondas (0000012BD6989BA8)
+[LOG] SoundI::release                          :     mar ondas (0000012B8B880A78)
+[LOG] SoundI::release                          :     mar ondas (0000012BD6989188)
+[LOG] SoundI::release                          :  (0000012B8B2D67B8)
+[LOG] SoundI::release                          :     ambiente sanidadee (0000012BAEB24578)
+[LOG] SoundI::release                          :  (0000012B8B2D5958)
+[LOG] SoundI::release                          :     pedras (0000012BB579D278)
+[LOG] SoundI::release                          :  (0000012B8B2D95B8)
+[LOG] SoundI::release                          :     fumaça 2 (0000012BAEB24D98)
+[LOG] SoundI::release                          :  (0000012B8B2D9E58)
+[LOG] SoundI::release                          :     fumaça 3 (0000012BB579CD98)
+[LOG] SoundI::release                          :  (0000012B8B2D6EE8)
+[LOG] SoundI::release                          :     fumaça (0000012BAEB250D8)
+[LOG] SoundI::release                          :  (0000012B8B2D5C38)
+[LOG] SoundI::release                          :     pedras 2 (0000012BAEB24F38)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

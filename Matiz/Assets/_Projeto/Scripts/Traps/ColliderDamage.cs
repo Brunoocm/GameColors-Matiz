@@ -12,7 +12,7 @@ namespace OniricoStudios
         {
             print(other.name);
 
-            if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy"))
+            if (other.gameObject.CompareTag("Player"))
             {
                 if (other.GetComponent<CharacterStats>() != null)
                 {
@@ -29,7 +29,7 @@ namespace OniricoStudios
         {
             print(collision.gameObject.name);
 
-            if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
+            if (collision.gameObject.CompareTag("Player"))
             {
                 if (collision.gameObject.GetComponent<CharacterStats>() != null)
                 {

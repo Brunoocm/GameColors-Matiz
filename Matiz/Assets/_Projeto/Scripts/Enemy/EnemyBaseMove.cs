@@ -99,7 +99,7 @@ namespace OniricoStudios
         }
         public void FollowTarget(Vector3 position)
         {
-            if (!stopMoving)
+            if (!stopMoving && seesTarget)
             {
                 Flip();
                 navMeshAgent.SetDestination(position);
