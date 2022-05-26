@@ -10,7 +10,6 @@ namespace OniricoStudios
 
         private void OnTriggerEnter(Collider other)
         {
-            print(other.name);
 
             if (other.gameObject.CompareTag("Player"))
             {
