@@ -6,6 +6,9 @@ using UnityEngine.AI;
 
 namespace OniricoStudios
 {
+
+    [RequireComponent(typeof(NavMeshAgent))]
+    [DefaultExecutionOrder(1)]
     public class EnemyBaseMove : MonoBehaviour
     {
         [Header("Stats")]
@@ -37,11 +40,13 @@ namespace OniricoStudios
         private GameObject sprite;
 
         GameObject targetObj;
-        NavMeshAgent navMeshAgent => gameObject.GetComponent<NavMeshAgent>();
+        [HideInInspector] public NavMeshAgent navMeshAgent => gameObject.GetComponent<NavMeshAgent>();
         EnemyHealth enemyHealth => gameObject.GetComponent<EnemyHealth>();
 
         private void Awake()
         {
+            EnemyMainAI.Instance.Units.Add(this);
+
             spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
             sprite = spriteRenderer.gameObject;
             navMeshAgent.speed = speed;
@@ -67,7 +72,7 @@ namespace OniricoStudios
                     seesTarget = Physics.CheckSphere(transform.position, EnemySeenRange, layerTarget);
                     attackingTarget = Physics.CheckSphere(transform.position, EnemyAttackRange, layerTarget);
 
-                    if (seesTarget) FollowTarget();
+                    //if (seesTarget) FollowTarget();
                     if (attackingTarget) AttackTarget();
 
                     if (stopMoving)
@@ -83,18 +88,21 @@ namespace OniricoStudios
             }
             else
             {
-                navMeshAgent.enabled = false;
                 Flip();
+                navMeshAgent.enabled = false;
+                
             }
         }
-
-        void FollowTarget()
+        public void MoveTo(Vector3 Position)
+        {
+            navMeshAgent.SetDestination(Position);
+        }
+        public void FollowTarget(Vector3 position)
         {
             if (!stopMoving)
             {
-                Vector3 target = new Vector3(CharacterStats.playerObj.transform.position.x, transform.position.y, CharacterStats.playerObj.transform.position.z);
-                navMeshAgent.SetDestination(target);
                 Flip();
+                navMeshAgent.SetDestination(position);
             }
             else
             {

@@ -13,7 +13,6 @@ namespace OniricoStudios
 
         [Header("Attack")]
         public GameObject pivotAttack;
-        public Collider coll;
         public float dashForce;
         public float timeDash;
         public float cdToDash;

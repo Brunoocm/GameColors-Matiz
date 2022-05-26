@@ -27,6 +27,7 @@ namespace OniricoStudios
         EnemyBaseMove enemyBaseMove => gameObject.GetComponent<EnemyBaseMove>();
         Rigidbody rb => gameObject.GetComponent<Rigidbody>();
         Animator anim => gameObject.GetComponent<Animator>();
+        EnemyMainAI enemyMainAI => FindObjectOfType<EnemyMainAI>();
         void Start()
         {
             targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
@@ -85,6 +86,7 @@ namespace OniricoStudios
                 }
             }
 
+            enemyMainAI.DeleteObj(gameObject, enemyBaseMove);
             Destroy(gameObject);
         }
 

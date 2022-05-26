@@ -14,7 +14,7 @@ public class FloorTrap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")) && anim != null && !trapActive)
+        if ((other.gameObject.CompareTag("Player") && anim != null && !trapActive))
         {
             anim.SetTrigger("ativa");
             trapActive = true;

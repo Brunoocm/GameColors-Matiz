@@ -29,6 +29,7 @@ namespace OniricoStudios
 
         CharacterAbilities characterAbilities => FindObjectOfType<CharacterAbilities>();
         EnemyBaseMove enemyBaseMove => GetComponent<EnemyBaseMove>();
+        EnemyMainAI enemyMainAI => FindObjectOfType<EnemyMainAI>();
         void Start()
         {
             //playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -42,7 +43,10 @@ namespace OniricoStudios
         {
             if (health <= 0)
             {
+                enemyMainAI.DeleteObj(gameObject, enemyBaseMove);
                 Instantiate(deathFX);
+
+                //transform.gameObject.SetActive(false);
                 Destroy(gameObject);
             }
             if (stopMove)
