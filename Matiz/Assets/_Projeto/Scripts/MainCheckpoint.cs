@@ -73,7 +73,7 @@ namespace OniricoStudios
                     currentSpawnpoint = checkpoints[i].gameObject;
 
 
-                    if (currentScene.name == "PrimeiraArena")
+                    if (currentScene.name == "PrimeiraArena" || currentScene.name == "SegundaArena")
                     {
                         StartCoroutine(ArenaSpawnPlayer());
                     }
