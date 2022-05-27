@@ -42,9 +42,9 @@ namespace OniricoStudios
                     Destroy(gameObject);
                 }
 
-                if (enemyDamage && other.GetComponent<EnemyHealth>() != null)
+                if (enemyDamage && other.gameObject.GetComponent<EnemyHealth>() != null)
                 {
-                    //other.GetComponent<EnemyHealth>().
+                    other.gameObject.GetComponent<EnemyHealth>().DamageVoid(damage);
                 }
             }
         }

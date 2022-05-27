@@ -10,7 +10,7 @@ namespace OniricoStudios
 
         IEnumerator DealDamage(GameObject enemy)
         {
-            Camera.main.GetComponent<CameraScript>().Shake(500, 300);
+            //Camera.main.GetComponent<CameraScript>().Shake(500, 300);
 
             enemy.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
 
@@ -27,8 +27,8 @@ namespace OniricoStudios
         {
             if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<EnemyHealth>() != null)
             {
-                other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
-                //StartCoroutine(DealDamage(other.gameObject));
+                //other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
+                StartCoroutine(DealDamage(other.gameObject));
             }
         }
     }
