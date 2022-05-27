@@ -28,6 +28,8 @@ namespace OniricoStudios
         public GameObject deathFX;
         public Transform vfxPivot;
 
+        //GameObject bloodyScreen;
+
 
         [Header("Shield")]
         public bool hasShield;
