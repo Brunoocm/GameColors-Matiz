@@ -41,7 +41,9 @@ namespace OniricoStudios
             oneTime = true;
 
             GameObject enemy = Instantiate(enemyExplosivo, transform.position, Quaternion.identity);
+            enemy.GetComponent<EnemyAttackExplosivo>().launched = true;
 
+            //enemy.GetComponent<EnemyAttackExplosivo>().AttackVoid();
 
             //enemy.GetComponent<EnemyAttackExplosivo>().launched = true;
             //enemy.GetComponent<EnemyAttackExplosivo>().AttackVoid();

@@ -42,7 +42,15 @@ namespace OniricoStudios
         {
             if (!oneTime)
             {
-                StartCoroutine(Dash(targetObj.transform));
+                if (!launched)
+                {
+                    StartCoroutine(Dash(targetObj.transform));
+                }
+                else
+                {
+                    StartCoroutine(DashLancador(targetObj.transform));
+
+                }
             }
         }
 
@@ -96,6 +104,30 @@ namespace OniricoStudios
 
             yield return new WaitForSeconds(antecipation);
 
+            float vertical = dir.position.z - transform.position.z;
+            float horizontal = dir.position.x - transform.position.x;
+
+            float startTime = Time.time;
+            while (Time.time < startTime + timeDash && !hitBy)
+            {
+                transform.Translate(new Vector3(horizontal, 0, vertical).normalized * dashForce * Time.deltaTime);
+                yield return null;
+            }
+
+            if (!launched)
+            {
+                if (!hitBy) StartCoroutine(Explosion(0f));
+            }
+            else
+            {
+                oneTime = false;
+                launched = false;
+            }
+
+        }
+         public IEnumerator DashLancador(Transform dir)
+        {
+            oneTime = true;
             float vertical = dir.position.z - transform.position.z;
             float horizontal = dir.position.x - transform.position.x;
 

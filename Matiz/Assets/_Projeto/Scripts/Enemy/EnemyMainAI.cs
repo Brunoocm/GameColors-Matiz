@@ -46,14 +46,6 @@ namespace OniricoStudios
         }
 
 
-        private void OnGUI()
-        {
-            if (GUI.Button(new Rect(20, 20, 200, 50), "Move To Target"))
-            {
-                MakeAgentsCircleTarget();
-            }
-        }
-
         private void MakeAgentsCircleTarget()
         {
             Target = CharacterStats.playerObj.transform;

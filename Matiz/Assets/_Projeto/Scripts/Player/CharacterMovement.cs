@@ -72,15 +72,17 @@ namespace OniricoStudios
 
             if (characterAbilities.vermelhoTrue)
             {
-                if (Input.GetKey(KeyCode.Space) && dashMeter < characterAbilities.vermelhoAbility.dashMaxForce)
+                if (Input.GetKey(KeyCode.Space))
                 {
-                    //canMove = false;
+                    if(dashMeter < characterAbilities.vermelhoAbility.dashMaxForce)
+                    {
+                        dashMeter += Time.deltaTime / 3;
+                    }
 
                     float slowMo = m_speed * 0.25f;
 
                     speed = slowMo;
 
-                    dashMeter += Time.deltaTime / 3;
                 }
 
                 if (Input.GetKeyUp(KeyCode.Space))
