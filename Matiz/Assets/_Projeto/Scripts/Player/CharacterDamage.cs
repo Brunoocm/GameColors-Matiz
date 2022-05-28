@@ -6,29 +6,19 @@ namespace OniricoStudios
 {
     public class CharacterDamage : MonoBehaviour
     {
+        bool canDamage = true;
+
         CharacterStats charStats => gameObject.GetComponentInParent<CharacterStats>();
 
-        IEnumerator DealDamage(GameObject enemy)
-        {
-            //Camera.main.GetComponent<CameraScript>().Shake(500, 300);
-
-            enemy.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
-
-            Instantiate(charStats.attackFX, enemy.transform.position, Quaternion.identity);
-
-            Time.timeScale = 0.2f;
-
-            yield return new WaitForSeconds(0.01f);
-
-            Time.timeScale = 1;
-        }
+        CameraScript camScript => FindObjectOfType<CameraScript>();
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<EnemyHealth>() != null)
             {
-                //other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
-                StartCoroutine(DealDamage(other.gameObject));
+                print("========================================================================================================bruno");
+
+                other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
             }
         }
     }
