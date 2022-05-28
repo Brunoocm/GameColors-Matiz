@@ -19,25 +19,23 @@ namespace OniricoStudios
 
         Slider AbilitiesCDSlider;
         CharacterStats charStats => GetComponent<CharacterStats>();
+        ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
 
         private float time;
 
         private void Awake()
         {
-            CharacterStats.cinzaTrue = true;
-            CharacterStats.vermelhoTrue = false;
-            CharacterStats.azulTrue = false;
-            CharacterStats.verdeTrue = false;
+
         }
         void Start()
         {
+            if(progressionManager.cinza == false && progressionManager.vermelho == false && progressionManager.azul == false && progressionManager.verde == false)
+            {
+                progressionManager.cinza = true;
+            }
+
             AbilitiesCDSlider = GameObject.Find("AbilitiesCD").GetComponentInChildren<Slider>();
-
-            cinzaTrue = CharacterStats.cinzaTrue;
-            vermelhoTrue = CharacterStats.vermelhoTrue;
-            azulTrue = CharacterStats.azulTrue;
-            verdeTrue = CharacterStats.verdeTrue;
-
+        
             GameObject prisma = FindObjectOfType<PrismaMovement>().gameObject;
             GameObject prismaColor = prisma.transform.GetChild(0).gameObject;
             GameObject prismaTrail = prismaColor.transform.GetChild(0).gameObject;
@@ -70,10 +68,10 @@ namespace OniricoStudios
 
         void Update()
         {
-            CharacterStats.cinzaTrue = cinzaTrue;
-            CharacterStats.vermelhoTrue = vermelhoTrue;
-            CharacterStats.azulTrue = azulTrue;
-            CharacterStats.verdeTrue = verdeTrue;
+            cinzaTrue = progressionManager.cinza;
+            vermelhoTrue = progressionManager.vermelho;
+            azulTrue = progressionManager.azul;
+            verdeTrue = progressionManager.verde;
 
             if (cinzaTrue)
             {

@@ -10,7 +10,32 @@ namespace OniricoStudios
 
         public float smoothSpeed;
         public Vector3 offset;
+        SpriteRenderer sprite => GetComponentInChildren<SpriteRenderer>();
 
+        ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
+
+        private void Start()
+        {
+            if (progressionManager.cinza)
+            {
+                sprite.color = Color.white;
+            } 
+            if (progressionManager.vermelho)
+            {
+                sprite.color = Color.red;
+
+            }
+            if (progressionManager.azul)
+            {
+                sprite.color = Color.blue;
+
+            }
+            if (progressionManager.verde)
+            {
+                sprite.color = Color.green;
+
+            }
+        }
         private void FixedUpdate()
         {
 
