@@ -12,15 +12,21 @@ namespace OniricoStudios
         public float forceKnockback;
         [HideInInspector] public bool stopMove;
 
+        public GameObject greyPassive;
+
         public GameObject hurtFX;
         public GameObject deathFX;
 
         [Header("Stacks")]
         public int currentStacks;
+        float stackTime;
 
         [SerializeField] private Material flashMaterial;
 
         [SerializeField] private float duration;
+
+        float invulnerable;
+        bool canDamage;
 
         private SpriteRenderer spriteRenderer;
         private Material originalMaterial;
@@ -37,6 +43,8 @@ namespace OniricoStudios
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
             originalMaterial = spriteRenderer.material;
+
+            GreyPassiveSkill();
         }
 
         void Update()
@@ -49,13 +57,31 @@ namespace OniricoStudios
                 //transform.gameObject.SetActive(false);
                 Destroy(gameObject);
             }
+
             if (stopMove)
             {
                 enemyBaseMove.ResetMovement();
             }
+
+            if(invulnerable > 0)
+            {
+                invulnerable -= Time.deltaTime;
+                canDamage = false;
+            }
             else
             {
+                canDamage = true;
+            }
 
+            if(stackTime > 0)
+            {
+                stackTime -= Time.deltaTime;
+            }
+            else
+            {
+                currentStacks = 0;
+
+                GreyPassiveSkill();
             }
         }
         public void Flash()
@@ -81,30 +107,60 @@ namespace OniricoStudios
 
         public void DamageVoid(int dano)
         {
-            if (characterAbilities.cinzaTrue) //HABILIDADE CINZA Script: CharacterAbilities.cs
+            if (canDamage)
             {
-                currentStacks++;
-
-                if (currentStacks == characterAbilities.cinzaAbility.numStacks)
+                if (characterAbilities.cinzaTrue) //HABILIDADE CINZA Script: CharacterAbilities.cs
                 {
-                    health -= dano * 2;
-                    currentStacks = 0;
-                }
+                    if (currentStacks == characterAbilities.cinzaAbility.numStacks)
+                    {
+                        health -= dano * 2;
+                        currentStacks = 0;
+                        GreyPassiveSkill();
+                    }
+                    else
+                    {
+                        health -= dano;
+                        currentStacks++;
+                        GreyPassiveSkill();
+                    }
+                }                                //HABILIDADE CINZA Script: CharacterAbilities.cs
                 else
                 {
                     health -= dano;
-
                 }
-            }                                //HABILIDADE CINZA Script: CharacterAbilities.cs
+
+                Instantiate(hurtFX);
+
+                Flash();
+                StartCoroutine(Knockback());
+            }
+        }
+
+        void GreyPassiveSkill()
+        {
+            stackTime = 5;
+
+            if(currentStacks < characterAbilities.cinzaAbility.numStacks && currentStacks != 0)
+            {
+                for (int i = 0; i < currentStacks; i++)
+                {
+                    if (greyPassive.transform.GetChild(i) != null)
+                    {
+                        greyPassive.transform.GetChild(i).gameObject.SetActive(true);
+                    }
+                }
+
+                greyPassive.transform.GetComponent<SpriteRenderer>().enabled = true;
+            }
             else
             {
-                health -= dano;
+                for (int i = 0; i < greyPassive.transform.childCount; i++)
+                {
+                    greyPassive.transform.GetChild(i).gameObject.SetActive(false);
+                }
+
+                greyPassive.transform.GetComponent<SpriteRenderer>().enabled = false;
             }
-
-            Instantiate(hurtFX);
-
-            Flash();
-            StartCoroutine(Knockback());
         }
 
         public IEnumerator Knockback()
@@ -172,6 +228,14 @@ namespace OniricoStudios
 
             stopMove = false;
 
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("AttackPlayer"))
+            {
+                invulnerable = 0.25f;
+            }
         }
     }
 }
