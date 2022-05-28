@@ -7,6 +7,7 @@ namespace OniricoStudios
 {
     public class WavesByTime : MonoBehaviour
     {
+        public bool firstArena, secondArena;
         public GameObject door;
 
         public float timerWaves;
@@ -25,6 +26,8 @@ namespace OniricoStudios
         private bool isFinished;
 
         private int numobj;
+
+        ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
         void Awake()
         {
 
@@ -85,6 +88,16 @@ namespace OniricoStudios
             if (isFinished)
             {
                 door.SetActive(true);
+
+                if (firstArena) //completou a primeira arena
+                {
+                    progressionManager.secondArena = true; // segunda arena abre
+
+                }
+                else if(secondArena)
+                {
+                   
+                }
             }
         }
 

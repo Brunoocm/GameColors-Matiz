@@ -42,13 +42,16 @@ namespace OniricoStudios
 
         private void Update()
         {
-            MakeAgentsCircleTarget(); 
+            if (CharacterStats.playerObj != null)
+            {
+                MakeAgentsCircleTarget();
+            }
         }
 
 
         private void MakeAgentsCircleTarget()
         {
-            Target = CharacterStats.playerObj.transform;
+            if(Target == null) Target = CharacterStats.playerObj.transform;
       
             for (int i = 0; i < Units.Count; i++)
             {

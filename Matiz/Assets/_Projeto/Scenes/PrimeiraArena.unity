@@ -1147,6 +1147,55 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 24.933887, y: 18.828259, z: 78.921074}
   m_Center: {x: 0.00000021610263, y: 1.2818433, z: -0.0000005863451}
+--- !u!1 &103087588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 103087590}
+  - component: {fileID: 103087589}
+  m_Layer: 0
+  m_Name: =====ProgressionManager=====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &103087589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103087588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edfd679effc4add4a99885b789bb76d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstArena: 0
+  secondArena: 0
+  cinza: 0
+  vermelho: 0
+  azul: 0
+  verde: 0
+--- !u!4 &103087590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103087588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 378.63, y: 1.7491379, z: 593.7791}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112385520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4740,7 +4789,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619964447}
   m_LocalRotation: {x: -0, y: 0.0000059604636, z: -0, w: -1}
-  m_LocalPosition: {x: -2.1900072, y: 11.021501, z: -51.31}
+  m_LocalPosition: {x: -2.19, y: 11.021501, z: -49.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400276375}
@@ -4757,8 +4806,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.111969, y: 6.459035, z: 0.71121216}
-  m_Center: {x: 1.0104828, y: 2.7295175, z: 8.301987}
+  m_Size: {x: 6.79, y: 6.459035, z: 3.9658375}
+  m_Center: {x: 1.0104828, y: 2.7295175, z: 6.674674}
 --- !u!114 &619964450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7667,6 +7716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc3024f6403825408e0f7167a860a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstArena: 1
+  secondArena: 0
   door: {fileID: 619964447}
   timerWaves: 4
   EnemiesObj:
@@ -9282,6 +9333,10 @@ PrefabInstance:
     - target: {fileID: 1630290477387794288, guid: c27a766b0a2555045a3680c017a93963, type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630290477387794288, guid: c27a766b0a2555045a3680c017a93963, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1630290477387794288, guid: c27a766b0a2555045a3680c017a93963, type: 3}
       propertyPath: m_StaticEditorFlags
