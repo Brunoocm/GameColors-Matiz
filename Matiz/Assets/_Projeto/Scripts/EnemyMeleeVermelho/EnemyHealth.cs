@@ -63,7 +63,6 @@ namespace OniricoStudios
 
                 //transform.gameObject.SetActive(false);
 
-                timerArena.AddTime();
 
                 Destroy(gameObject);
             }
@@ -141,12 +140,13 @@ namespace OniricoStudios
 
                 Instantiate(hurtFX);
 
+                timerArena.AddTime();
                 Flash();
                 StartCoroutine(Knockback());
             }
         }
 
-        void GreyPassiveSkill()
+        public void GreyPassiveSkill()
         {
             stackTime = 5;
 
@@ -217,6 +217,8 @@ namespace OniricoStudios
                 health -= dano;
             }
 
+
+            timerArena.AddTime();
             Flash();
             StartCoroutine(SkillCinza(target, time, force));
         }
