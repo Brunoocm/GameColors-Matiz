@@ -12,15 +12,21 @@ namespace OniricoStudios
         public float forceKnockback;
         [HideInInspector] public bool stopMove;
 
+        public GameObject greyPassive;
+
         public GameObject hurtFX;
         public GameObject deathFX;
 
         [Header("Stacks")]
         public int currentStacks;
+        float stackTime;
 
         [SerializeField] private Material flashMaterial;
 
         [SerializeField] private float duration;
+
+        float invulnerable;
+        bool canDamage;
 
         private SpriteRenderer spriteRenderer;
         private Material originalMaterial;
@@ -29,29 +35,62 @@ namespace OniricoStudios
 
         CharacterAbilities characterAbilities => FindObjectOfType<CharacterAbilities>();
         EnemyBaseMove enemyBaseMove => GetComponent<EnemyBaseMove>();
+        EnemyMainAI enemyMainAI => FindObjectOfType<EnemyMainAI>();
+
+        TimerArena timerArena;
         void Start()
         {
+            if(FindObjectOfType<TimerArena>())
+            {
+                timerArena = FindObjectOfType<TimerArena>();
+            }
+
             //playerObj = GameObject.FindGameObjectWithTag("Player");
 
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
             originalMaterial = spriteRenderer.material;
+
+            GreyPassiveSkill();
         }
 
         void Update()
         {
             if (health <= 0)
             {
+                enemyMainAI.DeleteObj(gameObject, enemyBaseMove);
                 Instantiate(deathFX);
+
+                //transform.gameObject.SetActive(false);
+
+
                 Destroy(gameObject);
             }
+
             if (stopMove)
             {
                 enemyBaseMove.ResetMovement();
             }
+
+            if(invulnerable > 0)
+            {
+                invulnerable -= Time.deltaTime;
+                canDamage = false;
+            }
             else
             {
+                canDamage = true;
+            }
 
+            if(stackTime > 0)
+            {
+                stackTime -= Time.deltaTime;
+            }
+            else
+            {
+                currentStacks = 0;
+
+                GreyPassiveSkill();
             }
         }
         public void Flash()
@@ -77,30 +116,61 @@ namespace OniricoStudios
 
         public void DamageVoid(int dano)
         {
-            if (characterAbilities.cinzaTrue) //HABILIDADE CINZA Script: CharacterAbilities.cs
+            if (canDamage)
             {
-                currentStacks++;
-
-                if (currentStacks == characterAbilities.cinzaAbility.numStacks)
+                if (characterAbilities.cinzaTrue) //HABILIDADE CINZA Script: CharacterAbilities.cs
                 {
-                    health -= dano * 2;
-                    currentStacks = 0;
-                }
+                    if (currentStacks == characterAbilities.cinzaAbility.numStacks - 1)
+                    {
+                        health -= dano * 2;
+                        currentStacks = 0;
+                        GreyPassiveSkill();
+                    }
+                    else
+                    {
+                        health -= dano;
+                        currentStacks++;
+                        GreyPassiveSkill();
+                    }
+                }                                //HABILIDADE CINZA Script: CharacterAbilities.cs
                 else
                 {
                     health -= dano;
-
                 }
-            }                                //HABILIDADE CINZA Script: CharacterAbilities.cs
+
+                Instantiate(hurtFX);
+
+                timerArena.AddTime();
+                Flash();
+                StartCoroutine(Knockback());
+            }
+        }
+
+        public void GreyPassiveSkill()
+        {
+            stackTime = 5;
+
+            if(currentStacks < characterAbilities.cinzaAbility.numStacks && currentStacks != 0)
+            {
+                for (int i = 0; i < currentStacks; i++)
+                {
+                    if (greyPassive.transform.GetChild(i) != null)
+                    {
+                        greyPassive.transform.GetChild(i).gameObject.SetActive(true);
+                    }
+                }
+
+                greyPassive.transform.GetComponent<SpriteRenderer>().enabled = true;
+            }
             else
             {
-                health -= dano;
+                for (int i = 0; i < greyPassive.transform.childCount; i++)
+                {
+                    greyPassive.transform.GetChild(i).gameObject.SetActive(false);
+                }
+
+                greyPassive.transform.GetComponent<SpriteRenderer>().enabled = false;
             }
-
-            Instantiate(hurtFX);
-
-            Flash();
-            StartCoroutine(Knockback());
         }
 
         public IEnumerator Knockback()
@@ -128,17 +198,18 @@ namespace OniricoStudios
         {
             if (characterAbilities.cinzaTrue) //HABILIDADE CINZA Script: CharacterAbilities.cs
             {
-                currentStacks++;
 
-                if (currentStacks == characterAbilities.cinzaAbility.numStacks)
+                if (currentStacks == characterAbilities.cinzaAbility.numStacks - 1)
                 {
                     health -= dano * 2;
+                    GreyPassiveSkill();
                     currentStacks = 0;
                 }
                 else
                 {
                     health -= dano;
-
+                    currentStacks++;
+                    GreyPassiveSkill();
                 }
             }                                //HABILIDADE CINZA Script: CharacterAbilities.cs
             else
@@ -146,6 +217,8 @@ namespace OniricoStudios
                 health -= dano;
             }
 
+
+            timerArena.AddTime();
             Flash();
             StartCoroutine(SkillCinza(target, time, force));
         }
@@ -168,6 +241,14 @@ namespace OniricoStudios
 
             stopMove = false;
 
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("AttackPlayer"))
+            {
+                invulnerable = 0.25f;
+            }
         }
     }
 }

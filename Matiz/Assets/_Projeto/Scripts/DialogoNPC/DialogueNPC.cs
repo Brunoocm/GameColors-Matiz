@@ -2,43 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueNPC : MonoBehaviour
+namespace OniricoStudios
 {
 
-    DialogueSystem dialogueSystem => GetComponentInChildren<DialogueSystem>();
-
-    public float timerNewFrase;
-    public bool hasNewFrase;
-    private float m_timerNewFrase;
-    private bool inRange;
-    void Start()
+    public class DialogueNPC : MonoBehaviour
     {
-        m_timerNewFrase = timerNewFrase;
-    }
 
-    void Update()
-    {
-        if(inRange)
+        DialogueSystem dialogueSystem => GetComponentInChildren<DialogueSystem>();
+
+        public float timerNewFrase;
+        public bool hasNewFrase;
+        public bool pressToInteract;
+        private float m_timerNewFrase;
+        private bool inRange;
+        void Start()
         {
-            if(timerNewFrase <= 0 && hasNewFrase)
+            m_timerNewFrase = timerNewFrase;
+        }
+
+        void Update()
+        {
+            if (inRange)
             {
-                if (!dialogueSystem.playingText)
+                if (timerNewFrase <= 0 && hasNewFrase)
                 {
-                    dialogueSystem.Restart(dialogueSystem.sentencesBonus);
-                    timerNewFrase = m_timerNewFrase;
-                    inRange = false;
+                    if (!dialogueSystem.playingText)
+                    {
+                        dialogueSystem.Restart(dialogueSystem.sentencesBonus);
+                        timerNewFrase = m_timerNewFrase;
+                        inRange = false;
+                    }
+                }
+                else
+                {
+                    timerNewFrase -= Time.deltaTime;
                 }
             }
-            else
-            {
-                timerNewFrase -= Time.deltaTime;
-            }
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        public void StartFunction()
         {
             inRange = true;
 
@@ -49,18 +51,59 @@ public class DialogueNPC : MonoBehaviour
                 dialogueSystem.Restart(dialogueSystem.sentences);
             }
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        private void OnTriggerEnter(Collider other)
         {
-            inRange = false;
+            if (other.CompareTag("Player"))
+            {
+                if (!pressToInteract)
+                {
+                    inRange = true;
+
+                    timerNewFrase = m_timerNewFrase;
+
+                    if (!dialogueSystem.playingText)
+                    {
+                        dialogueSystem.Restart(dialogueSystem.sentences);
+                    }
+                }
+                else
+                {
+
+                }
+            }
         }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (pressToInteract)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    inRange = true;
+
+                    timerNewFrase = m_timerNewFrase;
+
+                    if (!dialogueSystem.playingText)
+                    {
+                        dialogueSystem.Restart(dialogueSystem.sentences);
+                    }
+                }
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                inRange = false;
+
+            }
+
+        }
+        //public void OpenDialogue()
+        //{
+        //    StartCoroutine(dialogueSystem.TextDisplayCoroutine());
+        //}
     }
 
-    //public void OpenDialogue()
-    //{
-    //    StartCoroutine(dialogueSystem.TextDisplayCoroutine());
-    //}
 }

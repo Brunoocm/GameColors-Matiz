@@ -155,6 +155,7 @@ namespace StylizedWater
 
         public void OnEnable()
         {
+           
             selected = Selection.activeGameObject;
 
             if (!selected) return;

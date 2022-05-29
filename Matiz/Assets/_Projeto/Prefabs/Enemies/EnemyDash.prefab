@@ -211,6 +211,7 @@ Transform:
   - {fileID: 4546134674981368518}
   - {fileID: 4546134675808795201}
   - {fileID: 7571898066946837087}
+  - {fileID: 2470337181335484755}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -256,10 +257,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884dc95840e4cab4283b58684338f65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 4
   timeKnockback: 0.3
   forceKnockback: 7
   stopMove: 0
+  greyPassive: {fileID: 3781895597722683143}
   hurtFX: {fileID: 4386625202866934257, guid: 93dc0a767a649c645b3ffc3b78611f75, type: 3}
   deathFX: {fileID: 4386625202866934257, guid: ef4b743da7a0b8c478e3e84c4a0a32ad, type: 3}
   currentStacks: 0
@@ -282,6 +284,7 @@ MonoBehaviour:
   attackDuration: 1
   stopDistance: 0
   speed: 5
+  isStopped: 0
   gizmos: 0
   seesTarget: 0
   attackingTarget: 0
@@ -347,3 +350,74 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!1001 &8943161764867366982
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4546134676138393703}
+    m_Modifications:
+    - target: {fileID: 3679510819457799825, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217279689526716225, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_Name
+      value: grey passive skill
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+--- !u!1 &3781895597722683143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5217279689526716225, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+  m_PrefabInstance: {fileID: 8943161764867366982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2470337181335484755 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6797084873131989269, guid: 357c2fe4cb27c1445b9c54f98f2a8e81, type: 3}
+  m_PrefabInstance: {fileID: 8943161764867366982}
+  m_PrefabAsset: {fileID: 0}

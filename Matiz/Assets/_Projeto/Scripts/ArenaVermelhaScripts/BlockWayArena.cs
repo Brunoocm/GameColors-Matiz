@@ -8,17 +8,33 @@ namespace OniricoStudios
     {
         public GameObject firstArenaBlock;
         public GameObject secondArenaBlock;
+        public StartDesafio[] Battles;
 
         public static bool firstArena;
         public static bool secondArena;
         public static bool thirdArena;
+
+        public static bool completeInsignia;
+
+        ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
         void Start()
         {
-
+            Battles = FindObjectsOfType<StartDesafio>();
         }
 
         void Update()
         {
+            InsigniaTrue();
+
+            if (progressionManager.firstArena)
+            {
+                firstArenaBlock.SetActive(false);
+            }
+            if(progressionManager.secondArena)
+            {
+                secondArenaBlock.SetActive(false);
+            }
+           
 
             if (firstArena)
             {
@@ -43,9 +59,12 @@ namespace OniricoStudios
          
         }
 
-        public void ArenaTrue()
+        public void InsigniaTrue()
         {
-
+            if(Battles[0].isFinished && Battles[1].isFinished && Battles[2].isFinished)
+            {
+                progressionManager.firstArena = true;
+            }
         }
     }
 }

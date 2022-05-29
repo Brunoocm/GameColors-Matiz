@@ -22,10 +22,10 @@ namespace OniricoStudios
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                Inpulse();
-            }
+            //if (Input.GetKeyDown(KeyCode.Return))
+            //{
+            //    Inpulse();
+            //}
             if (CharacterStats.playerObj == null) Destroy(gameObject);
         }
 
@@ -35,7 +35,7 @@ namespace OniricoStudios
             Vector3 angleend = new Vector3(angle, angle, angle);
 
             rb.AddTorque(angleend, ForceMode.Impulse);
-            rb.AddRelativeForce(Random.onUnitSphere / 2 * force);
+            rb.AddRelativeForce(Random.onUnitSphere / 2 * force * 10);
         }
 
         IEnumerator DropObject()
@@ -44,8 +44,8 @@ namespace OniricoStudios
             canTake = true;
 
             yield return new WaitForSeconds(comeBackTime);
-            //characterStats.GiveShield();
-            //Destroy(gameObject);
+            characterStats.GiveShield();
+            Destroy(gameObject);
         }
         private void OnTriggerEnter(Collider other)
         {
@@ -57,14 +57,18 @@ namespace OniricoStudios
                     Destroy(gameObject);
                 }
             }
-           
+            if (other.gameObject.CompareTag("Ground"))
+            {
+                rb.isKinematic = true;
+            }
+
         }
 
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("Ground"))
             {
-                rb.isKinematic = true;
+                //rb.isKinematic = true;
             }
         }
     }

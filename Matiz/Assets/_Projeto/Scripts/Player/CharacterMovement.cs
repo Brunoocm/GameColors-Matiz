@@ -27,12 +27,14 @@ namespace OniricoStudios
         public Transform feet;
 
         [HideInInspector]public bool dashing;
+        public bool hasWall;
         private float dashMeter;
         private float xMove, yMove;
         private float trailTime;
         private float vSpeed;
         Vector3 lastDir;
         Vector3 moveDir;
+        Vector3 final;
 
         private Rigidbody rb => gameObject.GetComponent<Rigidbody>();
         private SpriteRenderer spriteRenderer => gameObject.GetComponentInChildren<SpriteRenderer>();
@@ -59,6 +61,8 @@ namespace OniricoStudios
         {
             Gravity();
 
+           
+
             if (Input.GetKeyDown(KeyCode.Space) && characterAbilities.cinzaTrue)
             {
                 if (canMove && canDash)
@@ -72,15 +76,17 @@ namespace OniricoStudios
 
             if (characterAbilities.vermelhoTrue)
             {
-                if (Input.GetKey(KeyCode.Space) && dashMeter < characterAbilities.vermelhoAbility.dashMaxForce)
+                if (Input.GetKey(KeyCode.Space))
                 {
-                    //canMove = false;
+                    if(dashMeter < characterAbilities.vermelhoAbility.dashMaxForce)
+                    {
+                        dashMeter += Time.deltaTime / 3;
+                    }
 
                     float slowMo = m_speed * 0.25f;
 
                     speed = slowMo;
 
-                    dashMeter += Time.deltaTime / 3;
                 }
 
                 if (Input.GetKeyUp(KeyCode.Space))
@@ -128,64 +134,95 @@ namespace OniricoStudios
             anim.SetFloat("MoveX", xMove);
             anim.SetFloat("MoveZ", yMove);
             anim.SetFloat("Speed", moveDir.sqrMagnitude);
+
+            //hasWall = Physics.Raycast(transform.position, final * 10, Mathf.Infinity, 10);
+
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(transform.position, final.normalized * (forceDash * timeDash), out hitInfo, (forceDash * timeDash)))
+            {
+                if (hitInfo.collider.gameObject.tag == "Walls")
+                {
+                    hasWall = true;
+                }
+            
+
+            }
+            else
+            {
+                hasWall = false;
+            }
+
         }
+        private void OnDrawGizmos()
+        {
+            Debug.DrawRay(transform.position, final.normalized * (forceDash * timeDash), Color.green);
+        }
+        //private bool hasWall()
+        //{
+        //    return Physics.Raycast(transform.position, dir, distance, 10);
+        //}
 
         public IEnumerator Dash(float dashTime)
         {
-            dashMeter = 0;
+            //if (!hasWall)
+            //{
 
-            if (characterAbilities.cinzaTrue || characterAbilities.vermelhoTrue)
-            {
-                
-            }
+                dashMeter = 0;
 
-            if (!characterAbilities.vermelhoTrue)
-            {
-                canMove = false;
-            }
-
-            canDash = false;
-
-            float xMove = Input.GetAxisRaw("Horizontal");
-            float yMove = Input.GetAxisRaw("Vertical");
-            Vector3 moveDir = new Vector3(xMove, 0f, yMove).normalized;
-
-            anim.SetTrigger("DashTrigger");
-            anim.SetFloat("Vertical", yMove);
-            anim.SetFloat("Horizontal", xMove);
-
-            float startTime = Time.time;
-            while (Time.time < startTime + dashTime)
-            {
-                characterStats.timeInvencible = characterStats.m_timeInvencible;
-                characterStats.canDamage = false;
-
-                if (characterAbilities.vermelhoTrue)
+                if (characterAbilities.cinzaTrue || characterAbilities.vermelhoTrue)
                 {
-                    Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
-                    transform.Translate(lastDir * forceDash * characterAbilities.vermelhoAbility.dashSpeed * Time.deltaTime);
+
                 }
 
-                if (characterAbilities.cinzaTrue)
+                if (!characterAbilities.vermelhoTrue)
                 {
-                    Instantiate(characterAbilities.cinzaAbility.dashFX, feet.position, Quaternion.identity);
-                    transform.Translate(lastDir * forceDash * Time.deltaTime);
+                    canMove = false;
                 }
 
-                dashing = true;
-                //transform.Translate(moveDir * forceDash * Time.deltaTime);
-                yield return null;
-            }
+                canDash = false;
 
-            characterStats.timeInvencible = 0;
-            characterStats.canDamage = true;
+                float xMove = Input.GetAxisRaw("Horizontal");
+                float yMove = Input.GetAxisRaw("Vertical");
+                Vector3 moveDir = new Vector3(xMove, 0f, yMove).normalized;
 
-            canMove = true;
-            dashing = false;
+                anim.SetTrigger("DashTrigger");
+                anim.SetFloat("Vertical", yMove);
+                anim.SetFloat("Horizontal", xMove);
 
-            yield return new WaitForSeconds(timeBTWDash);
+                float startTime = Time.time;
+                while (Time.time < startTime + dashTime)
+                {
+                    characterStats.timeInvencible = characterStats.m_timeInvencible;
+                    characterStats.canDamage = false;
 
-            canDash = true;
+                    if (characterAbilities.vermelhoTrue)
+                    {
+                        Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
+                        transform.Translate(lastDir * forceDash * characterAbilities.vermelhoAbility.dashSpeed * Time.deltaTime);
+                    }
+
+                    if (characterAbilities.cinzaTrue)
+                    {
+                        Instantiate(characterAbilities.cinzaAbility.dashFX, feet.position, Quaternion.identity);
+                        transform.Translate(lastDir * forceDash * Time.deltaTime);
+                    }
+
+                    dashing = true;
+                    //transform.Translate(moveDir * forceDash * Time.deltaTime);
+                    yield return null;
+                }
+
+                characterStats.timeInvencible = 0;
+                characterStats.canDamage = true;
+
+                canMove = true;
+                dashing = false;
+
+                yield return new WaitForSeconds(timeBTWDash);
+
+                canDash = true;
+            //}
         }
         private void FixedUpdate()
         {
@@ -200,6 +237,9 @@ namespace OniricoStudios
             {
                 lastDir = moveDir;
             }
+
+            final = new Vector3(horizontal, 0f, vertical);
+
         }
 
         private void OnTriggerEnter(Collider other)
@@ -213,11 +253,18 @@ namespace OniricoStudios
             {
                 if (characterAbilities.cinzaTrue)
                 {
-                    other.GetComponent<EnemyHealth>().DamageVoid(0);
+                    if (dashing)
+                    {
+                        other.GetComponent<EnemyHealth>().currentStacks++;
+                        other.GetComponent<EnemyHealth>().GreyPassiveSkill();
+                    }
                 }
                 else if (characterAbilities.vermelhoTrue)
                 {
-                    other.GetComponent<EnemyHealth>().DamageVoid(characterAbilities.vermelhoAbility.dashDamage);
+                    if (dashing)
+                    {
+                        other.GetComponent<EnemyHealth>().DamageVoid(characterAbilities.vermelhoAbility.dashDamage);
+                    }
                 }
             }
         }
@@ -229,5 +276,7 @@ namespace OniricoStudios
                 boat.inHarbor = false;
             }
         }
+
+       
     }
 }

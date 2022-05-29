@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OniricoStudios
 {
@@ -16,36 +17,69 @@ namespace OniricoStudios
         public AzulAbility azulAbility;
         public VerdeAbility verdeAbility;
 
+        Slider AbilitiesCDSlider;
         CharacterStats charStats => GetComponent<CharacterStats>();
+        ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
 
         private float time;
 
         private void Awake()
         {
-            CharacterStats.cinzaTrue = true;
-            CharacterStats.vermelhoTrue = false;
-            CharacterStats.azulTrue = false;
-            CharacterStats.verdeTrue = false;
+
         }
         void Start()
         {
-            cinzaTrue = CharacterStats.cinzaTrue;
-            vermelhoTrue = CharacterStats.vermelhoTrue;
-            azulTrue = CharacterStats.azulTrue;
-            verdeTrue = CharacterStats.verdeTrue;
+            if(progressionManager.cinza == false && progressionManager.vermelho == false && progressionManager.azul == false && progressionManager.verde == false)
+            {
+                progressionManager.cinza = true;
+            }
+
+            AbilitiesCDSlider = GameObject.Find("AbilitiesCD").GetComponentInChildren<Slider>();
+        
+            GameObject prisma = FindObjectOfType<PrismaMovement>().gameObject;
+            GameObject prismaColor = prisma.transform.GetChild(0).gameObject;
+            GameObject prismaTrail = prismaColor.transform.GetChild(0).gameObject;
+
+            if (cinzaTrue)
+            {
+                prismaColor.GetComponent<SpriteRenderer>().color = Color.white;
+                prismaTrail.GetComponent<TrailRenderer>().startColor = Color.white;
+                prismaTrail.GetComponent<TrailRenderer>().endColor = Color.white;
+            }
+            else if (vermelhoTrue)
+            {
+                prismaColor.GetComponent<SpriteRenderer>().color = Color.red;
+                prismaTrail.GetComponent<TrailRenderer>().startColor = Color.red;
+                prismaTrail.GetComponent<TrailRenderer>().endColor = Color.red;
+            }
+            else if (verdeTrue)
+            {
+                prismaColor.GetComponent<SpriteRenderer>().color = new Color(0, 1, 0.24f);
+                prismaTrail.GetComponent<TrailRenderer>().startColor = new Color(0, 1, 0.24f);
+                prismaTrail.GetComponent<TrailRenderer>().endColor = new Color(0, 1, 0.24f);
+            }
+            else if (azulTrue)
+            {
+                prismaColor.GetComponent<SpriteRenderer>().color = new Color(0, 0.64f, 1);
+                prismaTrail.GetComponent<TrailRenderer>().startColor = new Color(0, 0.64f, 1);
+                prismaTrail.GetComponent<TrailRenderer>().endColor = new Color(0, 0.64f, 1);
+            }
         }
 
         void Update()
         {
-            CharacterStats.cinzaTrue = cinzaTrue;
-            CharacterStats.vermelhoTrue = vermelhoTrue;
-            CharacterStats.azulTrue = azulTrue;
-            CharacterStats.verdeTrue = verdeTrue;
+            cinzaTrue = progressionManager.cinza;
+            vermelhoTrue = progressionManager.vermelho;
+            azulTrue = progressionManager.azul;
+            verdeTrue = progressionManager.verde;
 
             if (cinzaTrue)
             {
                 cinzaAbility.Especial();
                 cinzaAbility.Dash();
+
+                AbilitiesCDSlider.value = cinzaAbility.m_cooldownSpecial;
+                AbilitiesCDSlider.maxValue = cinzaAbility.cooldownSpecial;
             }
             else if (vermelhoTrue)
             {
@@ -53,20 +87,8 @@ namespace OniricoStudios
                 vermelhoAbility.Especial();
                 vermelhoAbility.Dash();
 
-
-                //if(time <= vermelhoAbility.specialCooldown)
-                //{
-                //    time += Time.deltaTime;
-                //}
-                //else
-                //{
-                //    if (Input.GetKeyDown(KeyCode.Mouse1))
-                //    {
-                //        GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
-                //        red.transform.parent = transform;
-                //        time = 0;
-                //    }
-                //}
+                AbilitiesCDSlider.value = time;
+                AbilitiesCDSlider.maxValue = vermelhoAbility.specialCooldown;
             }
             else if (azulTrue)
             {
@@ -96,7 +118,7 @@ namespace OniricoStudios
                     obj.GetComponent<SpecialCinza>().timeKnockback = cinzaAbility.timeKnockback;
                 }
 
-                cinzaAbility.m_cooldownSpecial = cinzaAbility.cooldownSpecial;
+                cinzaAbility.m_cooldownSpecial = 0;
 
             }
         }
@@ -121,7 +143,6 @@ namespace OniricoStudios
                 }
             }
         }
-
 
 
         [System.Serializable]
@@ -152,16 +173,20 @@ namespace OniricoStudios
 
             public void Especial()
             {
-                if (m_cooldownSpecial <= 0)
+                if (m_cooldownSpecial >= cooldownSpecial)
                 {
                     characterAbilities.spawnEspecialCinza();
                 }
                 else
                 {
-                    m_cooldownSpecial -= Time.deltaTime;
+                    m_cooldownSpecial += Time.deltaTime;
                 }
             }
 
+            public void SetSliderCinza()
+            {
+                
+            }
             public void Dash()
             {
 

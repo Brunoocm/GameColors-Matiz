@@ -28,6 +28,8 @@ namespace OniricoStudios
         public GameObject deathFX;
         public Transform vfxPivot;
 
+        //GameObject bloodyScreen;
+
 
         [Header("Shield")]
         public bool hasShield;
@@ -140,9 +142,8 @@ namespace OniricoStudios
                     charAttack.SprintLR(enemyX, enemyZ);
 
 
-
-                    m_shieldObj.SetActive(false);
                     SpawnPrisma();
+                    m_shieldObj.SetActive(false);        
                     hasShield = false;
                     prismCompass.SetActive(true);
                     //Instantiate(prismFX, vfxPivot.position, Quaternion.identity);
@@ -176,7 +177,9 @@ namespace OniricoStudios
 
         public void SpawnPrisma()
         {
-            GameObject prisma = Instantiate(dropPrisma, m_shieldObj.GetComponentInChildren<Transform>().position, Quaternion.identity);
+            Vector3 pos = new Vector3(m_shieldObj.transform.position.x, m_shieldObj.transform.position.y + 5, m_shieldObj.transform.position.z);
+
+            GameObject prisma = Instantiate(dropPrisma, pos, Quaternion.identity);
             prisma.GetComponent<PrismaBase>().characterStats = gameObject.GetComponent<CharacterStats>();
 
         }

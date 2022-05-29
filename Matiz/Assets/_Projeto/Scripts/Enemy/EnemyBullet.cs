@@ -9,6 +9,7 @@ namespace OniricoStudios
 
         public int damage;
         public float speed;
+        public bool enemyDamage;
         //public GameObject vfx;
 
         GameObject target;
@@ -39,6 +40,11 @@ namespace OniricoStudios
                 {
                     other.gameObject.GetComponent<CharacterStats>().DamageVoid(damage, transform);
                     Destroy(gameObject);
+                }
+
+                if (enemyDamage && other.gameObject.GetComponent<EnemyHealth>() != null)
+                {
+                    other.gameObject.GetComponent<EnemyHealth>().DamageVoid(damage);
                 }
             }
         }
