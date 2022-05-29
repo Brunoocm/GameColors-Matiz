@@ -253,11 +253,18 @@ namespace OniricoStudios
             {
                 if (characterAbilities.cinzaTrue)
                 {
-                    other.GetComponent<EnemyHealth>().DamageVoid(0);
+                    if (dashing)
+                    {
+                        other.GetComponent<EnemyHealth>().currentStacks++;
+                        other.GetComponent<EnemyHealth>().GreyPassiveSkill();
+                    }
                 }
                 else if (characterAbilities.vermelhoTrue)
                 {
-                    other.GetComponent<EnemyHealth>().DamageVoid(characterAbilities.vermelhoAbility.dashDamage);
+                    if (dashing)
+                    {
+                        other.GetComponent<EnemyHealth>().DamageVoid(characterAbilities.vermelhoAbility.dashDamage);
+                    }
                 }
             }
         }
