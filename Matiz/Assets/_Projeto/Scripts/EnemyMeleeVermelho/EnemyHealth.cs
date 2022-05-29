@@ -36,8 +36,15 @@ namespace OniricoStudios
         CharacterAbilities characterAbilities => FindObjectOfType<CharacterAbilities>();
         EnemyBaseMove enemyBaseMove => GetComponent<EnemyBaseMove>();
         EnemyMainAI enemyMainAI => FindObjectOfType<EnemyMainAI>();
+
+        TimerArena timerArena;
         void Start()
         {
+            if(FindObjectOfType<TimerArena>())
+            {
+                timerArena = FindObjectOfType<TimerArena>();
+            }
+
             //playerObj = GameObject.FindGameObjectWithTag("Player");
 
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -55,6 +62,9 @@ namespace OniricoStudios
                 Instantiate(deathFX);
 
                 //transform.gameObject.SetActive(false);
+
+                timerArena.AddTime();
+
                 Destroy(gameObject);
             }
 
@@ -111,7 +121,7 @@ namespace OniricoStudios
             {
                 if (characterAbilities.cinzaTrue) //HABILIDADE CINZA Script: CharacterAbilities.cs
                 {
-                    if (currentStacks == characterAbilities.cinzaAbility.numStacks)
+                    if (currentStacks == characterAbilities.cinzaAbility.numStacks - 1)
                     {
                         health -= dano * 2;
                         currentStacks = 0;
@@ -188,17 +198,18 @@ namespace OniricoStudios
         {
             if (characterAbilities.cinzaTrue) //HABILIDADE CINZA Script: CharacterAbilities.cs
             {
-                currentStacks++;
 
-                if (currentStacks == characterAbilities.cinzaAbility.numStacks)
+                if (currentStacks == characterAbilities.cinzaAbility.numStacks - 1)
                 {
                     health -= dano * 2;
+                    GreyPassiveSkill();
                     currentStacks = 0;
                 }
                 else
                 {
                     health -= dano;
-
+                    currentStacks++;
+                    GreyPassiveSkill();
                 }
             }                                //HABILIDADE CINZA Script: CharacterAbilities.cs
             else

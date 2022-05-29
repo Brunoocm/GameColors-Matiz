@@ -16,7 +16,6 @@ namespace OniricoStudios
         {
             if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<EnemyHealth>() != null)
             {
-                print("========================================================================================================bruno");
 
                 other.gameObject.GetComponent<EnemyHealth>().DamageVoid(charStats.damage);
             }
