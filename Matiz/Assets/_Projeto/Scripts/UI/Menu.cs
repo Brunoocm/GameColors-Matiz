@@ -12,7 +12,9 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         paused = false;
-        pauseMenu.SetActive(false);
+
+        if(pauseMenu != null) pauseMenu.SetActive(false);
+        
         Time.timeScale = 1;
     }
 
@@ -27,7 +29,7 @@ public class Menu : MonoBehaviour
     public void PauseResume()
     {
         paused = !paused;
-        pauseMenu.SetActive(paused);
+        if (pauseMenu != null) pauseMenu.SetActive(paused);
 
         if (paused)
         {
