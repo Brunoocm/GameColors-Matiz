@@ -38,7 +38,8 @@ public class TimerArena : MonoBehaviour
 
         if (timer <= m_timer)
         {
-            volume.weight += Time.deltaTime * timer / 5000;
+            //volume.weight += Time.deltaTime * timer / 5000;
+            volume.weight = (1.3f / timer) * 10;
         }
 
     }
@@ -46,7 +47,7 @@ public class TimerArena : MonoBehaviour
     public void AddTime()
     {
         timer += timePerEnemy;
-        volume.weight -= timePerEnemy / 100;
+        //volume.weight -= timePerEnemy / 100;
 
         if (timer > m_timer)
         {
