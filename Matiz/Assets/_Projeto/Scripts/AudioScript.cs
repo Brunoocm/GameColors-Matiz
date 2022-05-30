@@ -8,6 +8,11 @@ namespace OniricoStudios
     {
         public static AudioScript Instance;
 
+
+        //copiar a linha de baixo pra chamar o som 
+        //FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance. =====  NOME DA VARIÁVEL  =====, transform.position);
+
+
         [Header("Player")]
         [FMODUnity.EventRef] public string playerStepsEvent;
         [FMODUnity.EventRef] public string playerAttackEvent;

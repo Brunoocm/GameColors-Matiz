@@ -20,13 +20,14 @@ namespace OniricoStudios
         public bool canDash;
 
         public float speed = 2f;
+        public float footstepSfxTime;
         [HideInInspector] public float m_speed;
 
         public float trailCooldown;
         public GameObject trailFX;
         public Transform feet;
 
-        [HideInInspector]public bool dashing;
+        [HideInInspector] public bool dashing;
         public bool hasWall;
         private float dashMeter;
         private float xMove, yMove;
@@ -57,13 +58,13 @@ namespace OniricoStudios
 
             m_speed = speed;
 
-            InvokeRepeating("SoundFootSteps", 0, 0.5f);
+            InvokeRepeating("SoundFootSteps", 0, footstepSfxTime);
         }
         private void Update()
         {
             Gravity();
 
-           
+
 
             if (Input.GetKeyDown(KeyCode.Space) && characterAbilities.cinzaTrue)
             {
@@ -80,7 +81,7 @@ namespace OniricoStudios
             {
                 if (Input.GetKey(KeyCode.Space))
                 {
-                    if(dashMeter < characterAbilities.vermelhoAbility.dashMaxForce)
+                    if (dashMeter < characterAbilities.vermelhoAbility.dashMaxForce)
                     {
                         dashMeter += Time.deltaTime / 3;
                     }
@@ -109,20 +110,20 @@ namespace OniricoStudios
         {
             if (moveDir != Vector3.zero)
             {
-                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.playerStepsEvent, transform.position);
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.playerStepsEvent);
             }
         }
 
         void Gravity()
         {
-           
+
             //Vector3 vel = transform.forward * Input.GetAxis("Vertical") * speed;
             //var controller = GetComponent(CharacterController);
 
             vSpeed -= 1 * Time.deltaTime;
             //vel.y = vSpeed; // include vertical speed in vel
-                            // convert vel to displacement and Move the character:
-            characterController.Move(new Vector3(0,-10,0) * Time.deltaTime);
+            // convert vel to displacement and Move the character:
+            characterController.Move(new Vector3(0, -10, 0) * Time.deltaTime);
 
         }
 
@@ -155,7 +156,7 @@ namespace OniricoStudios
                 {
                     hasWall = true;
                 }
-            
+
 
             }
             else
@@ -178,60 +179,65 @@ namespace OniricoStudios
             //if (!hasWall)
             //{
 
-                dashMeter = 0;
+            dashMeter = 0;
 
-                if (characterAbilities.cinzaTrue || characterAbilities.vermelhoTrue)
+            if (characterAbilities.cinzaTrue)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.greyDashEvent);
+            }
+
+            if (characterAbilities.vermelhoTrue)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.redDashEvent);
+            }
+
+            if (!characterAbilities.vermelhoTrue)
+            {
+                canMove = false;
+            }
+
+            canDash = false;
+
+            float xMove = Input.GetAxisRaw("Horizontal");
+            float yMove = Input.GetAxisRaw("Vertical");
+            Vector3 moveDir = new Vector3(xMove, 0f, yMove).normalized;
+
+            anim.SetTrigger("DashTrigger");
+            anim.SetFloat("Vertical", yMove);
+            anim.SetFloat("Horizontal", xMove);
+
+            float startTime = Time.time;
+            while (Time.time < startTime + dashTime)
+            {
+                characterStats.timeInvencible = characterStats.m_timeInvencible;
+                characterStats.canDamage = false;
+
+                if (characterAbilities.vermelhoTrue)
                 {
-
+                    Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
+                    transform.Translate(lastDir * forceDash * characterAbilities.vermelhoAbility.dashSpeed * Time.deltaTime);
                 }
 
-                if (!characterAbilities.vermelhoTrue)
+                if (characterAbilities.cinzaTrue)
                 {
-                    canMove = false;
+                    Instantiate(characterAbilities.cinzaAbility.dashFX, feet.position, Quaternion.identity);
+                    transform.Translate(lastDir * forceDash * Time.deltaTime);
                 }
 
-                canDash = false;
+                dashing = true;
+                //transform.Translate(moveDir * forceDash * Time.deltaTime);
+                yield return null;
+            }
 
-                float xMove = Input.GetAxisRaw("Horizontal");
-                float yMove = Input.GetAxisRaw("Vertical");
-                Vector3 moveDir = new Vector3(xMove, 0f, yMove).normalized;
+            characterStats.timeInvencible = 0;
+            characterStats.canDamage = true;
 
-                anim.SetTrigger("DashTrigger");
-                anim.SetFloat("Vertical", yMove);
-                anim.SetFloat("Horizontal", xMove);
+            canMove = true;
+            dashing = false;
 
-                float startTime = Time.time;
-                while (Time.time < startTime + dashTime)
-                {
-                    characterStats.timeInvencible = characterStats.m_timeInvencible;
-                    characterStats.canDamage = false;
+            yield return new WaitForSeconds(timeBTWDash);
 
-                    if (characterAbilities.vermelhoTrue)
-                    {
-                        Instantiate(characterAbilities.vermelhoAbility.dashFX, feet.position, Quaternion.identity);
-                        transform.Translate(lastDir * forceDash * characterAbilities.vermelhoAbility.dashSpeed * Time.deltaTime);
-                    }
-
-                    if (characterAbilities.cinzaTrue)
-                    {
-                        Instantiate(characterAbilities.cinzaAbility.dashFX, feet.position, Quaternion.identity);
-                        transform.Translate(lastDir * forceDash * Time.deltaTime);
-                    }
-
-                    dashing = true;
-                    //transform.Translate(moveDir * forceDash * Time.deltaTime);
-                    yield return null;
-                }
-
-                characterStats.timeInvencible = 0;
-                characterStats.canDamage = true;
-
-                canMove = true;
-                dashing = false;
-
-                yield return new WaitForSeconds(timeBTWDash);
-
-                canDash = true;
+            canDash = true;
             //}
         }
         private void FixedUpdate()
@@ -287,6 +293,6 @@ namespace OniricoStudios
             }
         }
 
-       
+
     }
 }

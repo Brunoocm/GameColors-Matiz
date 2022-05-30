@@ -122,6 +122,8 @@ namespace OniricoStudios
                 {
                     if (currentStacks == characterAbilities.cinzaAbility.numStacks - 1)
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.greyPassiveEvent);
+
                         health -= dano * 2;
                         currentStacks = 0;
                         GreyPassiveSkill();

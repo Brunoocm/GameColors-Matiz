@@ -4,65 +4,70 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class DialogueSystem : MonoBehaviour
+namespace OniricoStudios
 {
-   
-    [TextArea (3, 3)]
-    public string[] sentences;
-    [TextArea(3, 3)]
-    public string[] sentencesBonus;
-    public float delaySentences;
-    public float delay;
-
-    [HideInInspector] public bool playingText;
-    private int index;
-    TextMeshProUGUI textDisplay => gameObject.GetComponentInChildren<TextMeshProUGUI>();
-    Image background => gameObject.GetComponentInChildren<Image>();
-    void Start()
+    public class DialogueSystem : MonoBehaviour
     {
-    }
 
-    void Update()
-    {
-        background.rectTransform.sizeDelta = new Vector2(textDisplay.rectTransform.rect.width / 2.5f, textDisplay.rectTransform.rect.height /2);
+        [TextArea(3, 3)]
+        public string[] sentences;
+        [TextArea(3, 3)]
+        public string[] sentencesBonus;
+        public float delaySentences;
+        public float delay;
 
-        //if (Input.GetKeyDown(KeyCode.M)) Restart();
-    }
-
-    public IEnumerator TextDisplayCoroutine(string[] sentence)
-    {
-        playingText = true;
-
-        foreach (char letter in sentence[index].ToCharArray())
+        [HideInInspector] public bool playingText;
+        private int index;
+        TextMeshProUGUI textDisplay => gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        Image background => gameObject.GetComponentInChildren<Image>();
+        void Start()
         {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(delay);
         }
 
-        yield return new WaitForSeconds(delaySentences);
-        NextSentence(sentence);
-
-
-    }
-
-    public void NextSentence(string[] sentence)
-    {
-        if(index < sentence.Length - 1)
+        void Update()
         {
-            index++;
-            textDisplay.text = "";
+            background.rectTransform.sizeDelta = new Vector2(textDisplay.rectTransform.rect.width / 2.5f, textDisplay.rectTransform.rect.height / 2);
+
+            //if (Input.GetKeyDown(KeyCode.M)) Restart();
+        }
+
+        public IEnumerator TextDisplayCoroutine(string[] sentence)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.dialogEvent, transform.position);
+
+            playingText = true;
+
+            foreach (char letter in sentence[index].ToCharArray())
+            {
+                textDisplay.text += letter;
+                yield return new WaitForSeconds(delay);
+            }
+
+            yield return new WaitForSeconds(delaySentences);
+            NextSentence(sentence);
+
+
+        }
+
+        public void NextSentence(string[] sentence)
+        {
+            if (index < sentence.Length - 1)
+            {
+                index++;
+                textDisplay.text = "";
+                StartCoroutine(TextDisplayCoroutine(sentence));
+            }
+            else
+            {
+                playingText = false;
+                textDisplay.text = "";
+            }
+        }
+
+        public void Restart(string[] sentence)
+        {
+            index = 0;
             StartCoroutine(TextDisplayCoroutine(sentence));
         }
-        else
-        {
-            playingText = false;
-            textDisplay.text = "";
-        }
-    }
-
-    public void Restart(string[] sentence)
-    {
-        index = 0;
-        StartCoroutine(TextDisplayCoroutine(sentence));
     }
 }

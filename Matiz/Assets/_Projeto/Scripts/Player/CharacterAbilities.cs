@@ -120,6 +120,7 @@ namespace OniricoStudios
 
                 cinzaAbility.m_cooldownSpecial = 0;
 
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.greySpecialEvent);
             }
         }
 
@@ -140,6 +141,8 @@ namespace OniricoStudios
                     GameObject red = Instantiate(vermelhoAbility.specialVermelho, transform.position, Quaternion.identity);
                     red.transform.parent = transform;
                     time = 0;
+
+                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.redSpecialEvent);
                 }
             }
         }
