@@ -37,7 +37,7 @@ namespace OniricoStudios
                 PosToJump.Add(EnemiesParent[i].transform.GetChild(1));
 
                 int num = Random.Range(0, EnemiesObj.Length);
-                GameObject e = Instantiate(EnemiesObj[num], PosSpawn[i].position, Quaternion.identity);
+                GameObject e = Instantiate(EnemiesObj[i], PosSpawn[i].position, Quaternion.identity);
                 e.gameObject.GetComponent<NavMeshAgent>().enabled = false;
                 e.gameObject.GetComponent<EnemyBaseMove>().isStopped = true;
                 enemy.Add(e);
