@@ -140,7 +140,7 @@ namespace OniricoStudios
 
                 Instantiate(hurtFX);
 
-                timerArena.AddTime();
+                if (timerArena != null) timerArena.AddTime();
                 Flash();
                 StartCoroutine(Knockback());
             }
@@ -218,7 +218,7 @@ namespace OniricoStudios
             }
 
 
-            timerArena.AddTime();
+            if(timerArena != null) timerArena.AddTime();
             Flash();
             StartCoroutine(SkillCinza(target, time, force));
         }

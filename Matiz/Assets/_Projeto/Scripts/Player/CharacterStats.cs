@@ -125,6 +125,7 @@ namespace OniricoStudios
         void Die()
         {
             Instantiate(deathFX, vfxPivot.position, Quaternion.identity);
+            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.playerDeathEvent, transform.position);
 
             mainCheckpoint.Death();
             isDead = true;
@@ -147,6 +148,8 @@ namespace OniricoStudios
                     hasShield = false;
                     prismCompass.SetActive(true);
                     //Instantiate(prismFX, vfxPivot.position, Quaternion.identity);
+
+                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.prismDamageEvent, transform.position);
                 }
                 else
                 {
@@ -159,6 +162,8 @@ namespace OniricoStudios
 
                     health -= dano;
                     Instantiate(damageFX, vfxPivot.position, Quaternion.identity);
+
+                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.playerDamageEvent, transform.position);
                 }
 
                 timeInvencible = m_timeInvencible;
@@ -173,6 +178,8 @@ namespace OniricoStudios
             m_shieldObj.SetActive(true);
             hasShield = true;
             prismCompass.SetActive(false);
+
+            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.prismCollectEvent, transform.position);
         }
 
         public void SpawnPrisma()

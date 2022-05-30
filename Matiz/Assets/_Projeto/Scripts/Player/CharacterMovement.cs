@@ -56,6 +56,8 @@ namespace OniricoStudios
             boat = FindObjectOfType<Boat>();
 
             m_speed = speed;
+
+            InvokeRepeating("SoundFootSteps", 0, 0.5f);
         }
         private void Update()
         {
@@ -100,6 +102,14 @@ namespace OniricoStudios
                         canMove = true;
                     }
                 }
+            }
+        }
+
+        void SoundFootSteps()
+        {
+            if (moveDir != Vector3.zero)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.playerStepsEvent, transform.position);
             }
         }
 

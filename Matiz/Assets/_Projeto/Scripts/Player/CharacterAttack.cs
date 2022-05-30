@@ -6,10 +6,8 @@ namespace OniricoStudios
 {
     public class CharacterAttack : MonoBehaviour
     {
-
         public GameObject attack;
         public GameObject pivotAttack;
-
 
         //public float xaa, yaa;
         //public float offset;
@@ -62,6 +60,9 @@ namespace OniricoStudios
             anim.SetFloat("Horizontal", horizontal);
 
             attack.SetActive(true);
+
+            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.playerAttackEvent, transform.position);
+
             SprintLR(horizontal, vertical);
         }
 
