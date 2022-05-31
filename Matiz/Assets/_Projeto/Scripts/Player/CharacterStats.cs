@@ -31,6 +31,7 @@ namespace OniricoStudios
 
         public Image bloodyScreen;
         public Image prismScreen;
+        public GameObject prismShield;
 
         //GameObject bloodyScreen;
 
@@ -190,11 +191,17 @@ namespace OniricoStudios
 
         IEnumerator PrismScreen()
         {
+            prismShield.SetActive(true);
+
             prismScreen.DOFade(0.5f, 0.1f);
 
             yield return new WaitForSeconds(0.1f);
 
             prismScreen.DOFade(0, 1);
+
+            yield return new WaitForSeconds(0.4f);
+
+            prismShield.SetActive(false);
         }
 
         public void GiveShield()
@@ -217,10 +224,10 @@ namespace OniricoStudios
 
         private void InvulnerableTime()
         {
-            Sequence mySequence = DOTween.Sequence();
-            mySequence.Append(sprite.DOColor(Color.grey, 0.2f))
-                .Append(sprite.DOColor(Color.white, 0.2f));
-            mySequence.SetLoops(-1, LoopType.Restart);
+            //Sequence mySequence = DOTween.Sequence();
+            //mySequence.Append(sprite.DOColor(Color.grey, 0.2f))
+                //.Append(sprite.DOColor(Color.white, 0.2f));
+            //mySequence.SetLoops(-1, LoopType.Restart);
 
         }
 
