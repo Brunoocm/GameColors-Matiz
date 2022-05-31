@@ -58,7 +58,7 @@ namespace OniricoStudios
                     StartCoroutine(Debuff());
                 }
             }
-            if (timer >= m_timer)
+            if (timer >= m_timer - 10)
             {
                 if(!isFury)
                 {
@@ -83,7 +83,7 @@ namespace OniricoStudios
         {
             isFury = true;
 
-            characterMovement.speed = speed * 2;
+            characterMovement.speed = speed * 1.3f;
 
             yield return new WaitForSeconds(timeEffect);
 

@@ -15,10 +15,10 @@ namespace OniricoStudios
                 other.GetComponent<CharacterStats>().DamageVoid(damage, transform);
             }
 
-            if (other.GetComponent<EnemyHealth>() != null)
-            {
-                other.GetComponent<EnemyHealth>().DamageVoid(damage);
-            }
+            //if (other.GetComponent<EnemyHealth>() != null)
+            //{
+            //    other.GetComponent<EnemyHealth>().DamageVoid(damage);
+            //}
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -28,10 +28,10 @@ namespace OniricoStudios
                 collision.gameObject.GetComponent<CharacterStats>().DamageVoid(damage, transform);
             }
 
-            if (collision.gameObject.GetComponent<EnemyHealth>() != null)
-            {
-                collision.gameObject.GetComponent<EnemyHealth>().DamageVoid(damage);
-            }
+            //if (collision.gameObject.GetComponent<EnemyHealth>() != null)
+            //{
+            //    collision.gameObject.GetComponent<EnemyHealth>().DamageVoid(damage);
+            //}
         }
     }
 }

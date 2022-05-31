@@ -69,5 +69,10 @@ namespace OniricoStudios
             index = 0;
             StartCoroutine(TextDisplayCoroutine(sentence));
         }
+
+        public void StopDialogue()
+        {
+            //index = 0;
+        }
     }
 }

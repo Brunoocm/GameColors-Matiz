@@ -9,6 +9,7 @@ namespace OniricoStudios
     {
 
         DialogueSystem dialogueSystem => GetComponentInChildren<DialogueSystem>();
+        public GameObject dialogueObj;
 
         public float timerNewFrase;
         public bool hasNewFrase;
@@ -18,6 +19,7 @@ namespace OniricoStudios
         void Start()
         {
             m_timerNewFrase = timerNewFrase;
+            dialogueObj = dialogueSystem.gameObject;
         }
 
         void Update()
@@ -57,6 +59,8 @@ namespace OniricoStudios
             {
                 if (!pressToInteract)
                 {
+                    dialogueObj.SetActive(true);
+
                     inRange = true;
 
                     timerNewFrase = m_timerNewFrase;
@@ -68,24 +72,39 @@ namespace OniricoStudios
                 }
                 else
                 {
-
                 }
             }
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (pressToInteract)
+            if (other.CompareTag("Player"))
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (pressToInteract)
                 {
-                    inRange = true;
-
-                    timerNewFrase = m_timerNewFrase;
-
-                    if (!dialogueSystem.playingText)
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
-                        dialogueSystem.Restart(dialogueSystem.sentences);
+                        dialogueObj.SetActive(true);
+
+                        //if (!dialogueObj.activeSelf)
+                        //{
+                        //}
+                        //else if(!dialogueSystem.playingText)
+                        //{
+                        //    dialogueSystem.Restart(dialogueSystem.sentences);
+
+
+                        //}
+
+                        inRange = true;
+
+                        timerNewFrase = m_timerNewFrase;
+                        //dialogueSystem.Restart(dialogueSystem.sentences);
+
+                        if (!dialogueSystem.playingText)
+                        {
+                            dialogueSystem.Restart(dialogueSystem.sentences);
+                        }
                     }
                 }
             }
@@ -96,6 +115,7 @@ namespace OniricoStudios
             if (other.CompareTag("Player"))
             {
                 inRange = false;
+                //dialogueObj.SetActive(false);
 
             }
 
