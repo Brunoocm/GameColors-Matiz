@@ -9,7 +9,7 @@ public class Flower : MonoBehaviour
     public float range;
     public float timeToRespawn;
 
-    MeshRenderer meshRenderer => GetComponent<MeshRenderer>();
+    SpriteRenderer spriteRenderer => GetComponentInChildren<SpriteRenderer>();
     Collider col => GetComponent<Collider>();
     void Start()
     {
@@ -34,10 +34,8 @@ public class Flower : MonoBehaviour
             }
 
             StartCoroutine(Respawn());
-
         }
     }
-
 
     IEnumerator SpawnObj()
     {
@@ -58,12 +56,12 @@ public class Flower : MonoBehaviour
     }
     IEnumerator Respawn()
     {
-        meshRenderer.enabled = false;
+        spriteRenderer.enabled = false;
         col.enabled = false;
 
         yield return new WaitForSeconds(timeToRespawn);
 
-        meshRenderer.enabled = true;
+        spriteRenderer.enabled = true;
         col.enabled = true;
 
     }
