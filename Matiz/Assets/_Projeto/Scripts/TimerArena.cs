@@ -7,51 +7,101 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class TimerArena : MonoBehaviour
+namespace OniricoStudios
 {
-    public float timer;
-    public float velocity;
-    public float timePerEnemy;
-
-    private float m_timer;
-    private float reverseTimer;
-    Slider slider => GetComponent<Slider>();
-    Volume volume => GetComponentInChildren<Volume>();
-    //public TextMeshProUGUI text;
-
-    private void Start()
+    public class TimerArena : MonoBehaviour
     {
-        m_timer = timer;
-        slider.maxValue = timer;
-    }
-    void Update()
-    {
-        if (timer > 0)
+        public float timer;
+        public float velocity;
+        public float timePerEnemy;
+        public float timeEffect;
+
+        private bool isFury;
+        private bool isDebuffed;
+        private float m_timer;
+        private float reverseTimer;
+        private float speed;
+        private float attack;
+        Slider slider => GetComponent<Slider>();
+        Volume volume => GetComponentInChildren<Volume>();
+        CharacterStats characterStats => FindObjectOfType<CharacterStats>();
+        CharacterMovement characterMovement => FindObjectOfType<CharacterMovement>();
+
+        //public TextMeshProUGUI text;
+
+        private void Start()
         {
-            timer -= Time.deltaTime * velocity;
-            timer = Mathf.Round(timer * 100.0f) * 0.01f;
+            m_timer = timer;
+            slider.maxValue = timer;
 
-            slider.value = timer;
+            speed = characterMovement.speed;
+        }
+        void Update()
+        {
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime * velocity;
+                timer = Mathf.Round(timer * 100.0f) * 0.01f;
+
+                slider.value = timer;
+            }
+            if (timer <= m_timer)
+            {
+                //volume.weight += Time.deltaTime * timer / 5000;
+                //volume.weight = (1.3f / timer) * 10;
+            }
+            
+            if (timer <= 0)
+            {
+                if (!isDebuffed)
+                {
+                    StartCoroutine(Debuff());
+                }
+            }
+            if (timer >= m_timer)
+            {
+                if(!isFury)
+                {
+                    StartCoroutine(Furry());
+                }
+            }
         }
 
-
-
-        if (timer <= m_timer)
+        public void AddTime()
         {
-            //volume.weight += Time.deltaTime * timer / 5000;
-            volume.weight = (1.3f / timer) * 10;
+            timer += timePerEnemy;
+
+            //volume.weight -= timePerEnemy / 100;
+
+            if (timer > m_timer)
+            {
+                timer = m_timer;
+            }
         }
 
-    }
-
-    public void AddTime()
-    {
-        timer += timePerEnemy;
-        //volume.weight -= timePerEnemy / 100;
-
-        if (timer > m_timer)
+        IEnumerator Furry()
         {
-            timer = m_timer;
+            isFury = true;
+
+            characterMovement.speed = speed * 2;
+
+            yield return new WaitForSeconds(timeEffect);
+
+            characterMovement.speed = speed;
+
+            isFury = false;
+        }
+        IEnumerator Debuff()
+        {
+            isDebuffed = true;
+
+            characterMovement.speed = speed / 2;
+
+            yield return new WaitForSeconds(timeEffect);
+
+            characterMovement.speed = speed;
+
+            isDebuffed = false;
         }
     }
 }
