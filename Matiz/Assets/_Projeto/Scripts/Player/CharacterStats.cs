@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 using DG.Tweening;
 
@@ -27,6 +28,9 @@ namespace OniricoStudios
         public GameObject prismFX;
         public GameObject deathFX;
         public Transform vfxPivot;
+
+        public Image bloodyScreen;
+        public Image prismScreen;
 
         //GameObject bloodyScreen;
 
@@ -137,6 +141,8 @@ namespace OniricoStudios
             {
                 if (hasShield)
                 {
+                    StartCoroutine(PrismScreen());
+
                     float enemyX = transform.position.x - enemy.position.x;
                     float enemyZ = transform.position.z - enemy.position.z;
 
@@ -153,7 +159,7 @@ namespace OniricoStudios
                 }
                 else
                 {
-                    //piscadinha branca
+                    StartCoroutine(BloodyScreen());
 
                     float enemyX = transform.position.x - enemy.position.x;
                     float enemyZ = transform.position.z - enemy.position.z;
@@ -171,6 +177,24 @@ namespace OniricoStudios
 
                 canDamage = false;
             }
+        }
+
+        IEnumerator BloodyScreen()
+        {
+            bloodyScreen.DOFade(1, 0.1f);
+
+            yield return new WaitForSeconds(0.1f);
+
+            bloodyScreen.DOFade(0, 4);
+        }
+
+        IEnumerator PrismScreen()
+        {
+            prismScreen.DOFade(0.5f, 0.1f);
+
+            yield return new WaitForSeconds(0.1f);
+
+            prismScreen.DOFade(0, 1);
         }
 
         public void GiveShield()
