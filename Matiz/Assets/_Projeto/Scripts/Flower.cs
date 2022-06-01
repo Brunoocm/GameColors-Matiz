@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+
+namespace OniricoStudios
+{
+
 public class Flower : MonoBehaviour
 {
     public GameObject lifePoints;
@@ -34,6 +38,8 @@ public class Flower : MonoBehaviour
             }
 
             StartCoroutine(Respawn());
+
+            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.PlantaEstourarEvent, transform.position);
         }
     }
 
@@ -65,4 +71,5 @@ public class Flower : MonoBehaviour
         col.enabled = true;
 
     }
+}
 }
