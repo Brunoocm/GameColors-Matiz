@@ -6,9 +6,8 @@ namespace OniricoStudios
 {
 
     public class DialogueNPC : MonoBehaviour
-    {
-
-        DialogueSystem dialogueSystem => GetComponentInChildren<DialogueSystem>();
+    {            
+        [Header("Dialogue")]
         public GameObject dialogueObj;
 
         public float timerNewFrase;
@@ -16,6 +15,13 @@ namespace OniricoStudios
         public bool pressToInteract;
         private float m_timerNewFrase;
         private bool inRange;
+
+        [Header("Different Dialogue Arenas")]
+        public bool newFraseForFirstArena;
+        public bool newFraseForSecondArena;
+
+        DialogueSystem dialogueSystem => GetComponentInChildren<DialogueSystem>();
+        ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
         void Start()
         {
             m_timerNewFrase = timerNewFrase;
@@ -53,22 +59,38 @@ namespace OniricoStudios
                 dialogueSystem.Restart(dialogueSystem.sentences);
             }
         }
+
+        public void WhichTextDisplay()
+        {
+            if (!dialogueSystem.playingText)
+            {
+                if (newFraseForFirstArena && progressionManager.desafio)                 //se ele terminou o desafio e tem frase pra primeira arena
+                {
+                    dialogueSystem.Restart(dialogueSystem.sentencesForFirstArena);
+                }
+                else if (newFraseForSecondArena && progressionManager.firstArena)                 //se ele terminou a primeira arena e tem frase pra segunda arena
+                {
+                    dialogueSystem.Restart(dialogueSystem.sentencesForSecondArena);
+                }
+                else
+                {
+                    dialogueSystem.Restart(dialogueSystem.sentences);
+                }
+            }
+        }
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 if (!pressToInteract)
                 {
-                    dialogueObj.SetActive(true);
+                    //dialogueObj.SetActive(true);
 
                     inRange = true;
-
+                    WhichTextDisplay();
                     timerNewFrase = m_timerNewFrase;
 
-                    if (!dialogueSystem.playingText)
-                    {
-                        dialogueSystem.Restart(dialogueSystem.sentences);
-                    }
+                   
                 }
                 else
                 {

@@ -7,6 +7,7 @@ public class ProgressionManager : MonoBehaviour
     public static ProgressionManager instance;
 
     [Header("Arenas")]
+    public bool desafio;
     public bool firstArena;
     public bool secondArena;
 

@@ -13,6 +13,11 @@ namespace OniricoStudios
         public string[] sentences;
         [TextArea(3, 3)]
         public string[] sentencesBonus;
+        [TextArea(3, 3)]
+        public string[] sentencesForFirstArena;
+        [TextArea(3, 3)]
+        public string[] sentencesForSecondArena;
+
         public float delaySentences;
         public float delay;
 
