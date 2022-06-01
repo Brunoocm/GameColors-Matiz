@@ -44,19 +44,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd408f90483d6254f984158ad8d87be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStepsEvent: event:/Player Footsteps
-  playerAttackEvent: 
-  playerDamageEvent: 
-  playerDeathEvent: 
-  prismDamageEvent: 
-  prismCollectEvent: 
-  greyPassiveEvent: 
-  greyDashEvent: 
-  greySpecialEvent: 
-  redPassiveEvent: 
-  redDashEvent: 
+  PlantaEstourarEvent: "event:/Ambienta\xE7\xE3o/Planta estourar"
+  PlantaComerEvent: "event:/Ambienta\xE7\xE3o/Planta comer"
+  FireEvent: "event:/Ambienta\xE7\xE3o/fogo"
+  playerStepsEvent: "event:/Dieg\xE9ticos/Player/Player passos"
+  playerAttackEvent: "event:/Dieg\xE9ticos/Player/Player Hit Ar"
+  playerDamageEvent: "event:/Dieg\xE9ticos/Player/Player tomar dano"
+  playerDeathEvent: event:/UI/Game over/Game over
+  prismIdleEvent: "event:/Dieg\xE9ticos/Prisma/Idle"
+  prismDamageEvent: "event:/Dieg\xE9ticos/Prisma/Defender - Recuperar"
+  prismCollectEvent: "event:/Dieg\xE9ticos/Prisma/Defender - Recuperar"
+  greyPassiveEvent: "event:/Dieg\xE9ticos/Poderes/Cinza/Passiva cinza"
+  greyDashEvent: "event:/Dieg\xE9ticos/Player/Dash"
+  greySpecialEvent: "event:/Dieg\xE9ticos/Poderes/Cinza/Especial cinza"
+  redPassiveEvent: "event:/Dieg\xE9ticos/Poderes/Vermelho/Passiva vermelho"
+  redDashChargeEvent: "event:/Dieg\xE9ticos/Poderes/Vermelho/Carregar Dash vermelho"
+  redDashReleaseEvent: "event:/Dieg\xE9ticos/Poderes/Vermelho/Dash vermelho"
   redSpecialEvent: 
-  dialogEvent: 
+  SpearsEvent: "event:/Dieg\xE9ticos/Armadilhas/lan\xE7as"
+  LavaEvent: "event:/Dieg\xE9ticos/Armadilhas/lava - queimar"
+  ArrowsEvent: 
+  RedMeleeEvent: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee"
+  RedRangedEvent: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged"
+  RedTankEvent: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank"
+  RedExplosiveEvent: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo"
+  RedDashEvent: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash"
+  dialogEvent: "event:/Dieg\xE9ticos/NPC/Vermelho/Di\xE1logo"
+  BoatInOutEvent: "event:/Dieg\xE9ticos/Barco/Barco Entrar - Sair"
+  IdleEvent: event:/UI/Save/Idle
+  OpenCloseEvent: "event:/UI/Save/Poderes sele\xE7\xE3o"
+  ColourSelectedEvent: event:/UI/Save/Poderes selecionar
+  SelectingEvent: event:/UI/Save/Poderes mouse trigger
+  MenuAmbientEvent: 
+  TemaPrincipalEvent: event:/Soundtrack/Tema principal
+  TemaColiseuEvent: 
+  TemaBrigaEvent: 
 --- !u!114 &6888694688074402179
 MonoBehaviour:
   m_ObjectHideFlags: 0
