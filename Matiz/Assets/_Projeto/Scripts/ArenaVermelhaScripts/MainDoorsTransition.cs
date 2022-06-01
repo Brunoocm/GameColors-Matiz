@@ -13,5 +13,11 @@ namespace OniricoStudios
         {
             SceneManager.LoadScene(name);
         }
+
+        public string nameScene()
+        {
+            return name;
+        }
+
     }
 }
