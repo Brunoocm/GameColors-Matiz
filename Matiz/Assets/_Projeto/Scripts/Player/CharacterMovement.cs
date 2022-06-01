@@ -188,7 +188,7 @@ namespace OniricoStudios
 
             if (characterAbilities.vermelhoTrue)
             {
-                //FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.redDashEvent);
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.redDashEvent);
             }
 
             if (!characterAbilities.vermelhoTrue)

@@ -33,8 +33,8 @@ namespace OniricoStudios
 
         public IEnumerator TextDisplayCoroutine(string[] sentence)
         {
-            //FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.dialogEvent, transform.position);
-            //Começa o audio de dialogo aqui <------
+            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.dialogEvent, transform.position);
+
             playingText = true;
 
             foreach (char letter in sentence[index].ToCharArray())
@@ -43,7 +43,6 @@ namespace OniricoStudios
                 yield return new WaitForSeconds(delay);
             }
 
-            //Pausar o audio de dialogo aqui <-----
             yield return new WaitForSeconds(delaySentences);
             NextSentence(sentence);
 
@@ -52,7 +51,6 @@ namespace OniricoStudios
 
         public void NextSentence(string[] sentence)
         {
-
             if (index < sentence.Length - 1)
             {
                 index++;

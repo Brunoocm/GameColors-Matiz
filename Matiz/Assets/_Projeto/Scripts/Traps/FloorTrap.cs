@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OniricoStudios
-{
-    
 public class FloorTrap : MonoBehaviour
 {
     bool trapActive;
@@ -21,7 +18,6 @@ public class FloorTrap : MonoBehaviour
         {
             anim.SetTrigger("ativa");
             trapActive = true;
-            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.SpearsEvent, transform.position);
         }
     }
 
@@ -29,5 +25,4 @@ public class FloorTrap : MonoBehaviour
     {
         trapActive = false;
     }
-}
 }
