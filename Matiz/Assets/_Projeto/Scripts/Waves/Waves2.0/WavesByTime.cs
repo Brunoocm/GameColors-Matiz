@@ -31,6 +31,11 @@ namespace OniricoStudios
         void Awake()
         {
 
+        
+        }
+
+        void Start()
+        {
             for (int i = 0; i < EnemiesParent.Length; i++)
             {
                 PosSpawn.Add(EnemiesParent[i].transform.GetChild(0));
@@ -43,10 +48,7 @@ namespace OniricoStudios
                 enemy.Add(e);
 
             }
-        }
 
-        void Start()
-        {
             m_timerWaves = timerWaves;
             door.SetActive(false);
             StartCoroutine(StartWaves());

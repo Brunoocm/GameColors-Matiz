@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using UnityEngine.Events;
 
 namespace OniricoStudios
 {
@@ -22,7 +22,10 @@ namespace OniricoStudios
         [HideInInspector] public bool selectColor;
         private bool isActive;
         private bool saving;
+        private bool isInteract;
 
+        [Header("Events")]
+        public UnityEvent m_MyEvent;
 
         MainCheckpoint mainCheckpoint => gameObject.GetComponentInParent<MainCheckpoint>();
         CharacterMovement characterMovement;
@@ -40,19 +43,22 @@ namespace OniricoStudios
 
             if (isActive)
             {
-                if (Input.GetKeyDown(KeyCode.E) && !saving)
+                if (Input.GetKeyDown(KeyCode.E) && !saving && !isInteract)
                 {
                     mainCheckpoint.ResetSpawnpoints();
                     StartCoroutine(SaveCoroutine());
                     StartCoroutine(ChromaAppiers());
 
                     currentSpawnpoint = true;
+                    isInteract = true;
                     saving = true;
                 }
-                else if (Input.GetKeyDown(KeyCode.S) && !saving) //clicar fora do bagulho com o mouse
+                else if (Input.GetKeyDown(KeyCode.E) && !saving && isInteract) //clicar fora do bagulho com o mouse
                 {
                     StartCoroutine(ChromaDesappiers());
                     characterMovement.canMove = true;
+                    isInteract = false;
+                    m_MyEvent.Invoke();
                 }
             }
 
