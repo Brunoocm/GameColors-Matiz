@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{3729aabe-e9cd-41ae-aa29-cc51cc2d1b0b}">
 		<property name="name">
-			<value>Barco Entrar - Sair</value>
+			<value>Barco Entrar</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -64,7 +64,6 @@
 	<object class="GroupTrack" id="{a48e090f-53c2-4d80-9387-ed310a9858c7}">
 		<relationship name="modules">
 			<destination>{c89e578f-c5a8-41b3-b423-97105029f73e}</destination>
-			<destination>{6e420e10-2bf3-44ff-9987-b7fcaf37c3ed}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{4e1fedc9-0883-4123-bdec-981fb0e046ed}</destination>
@@ -78,7 +77,6 @@
 	<object class="ParameterProxy" id="{d106ff4a-5ca2-4346-9ae7-e89e79e27411}">
 		<relationship name="modules">
 			<destination>{c89e578f-c5a8-41b3-b423-97105029f73e}</destination>
-			<destination>{6e420e10-2bf3-44ff-9987-b7fcaf37c3ed}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{235a6907-cd86-44ac-ba58-b41f6da24173}</destination>
@@ -104,14 +102,6 @@
 	<object class="SingleSound" id="{c89e578f-c5a8-41b3-b423-97105029f73e}">
 		<relationship name="audioFile">
 			<destination>{9825a44a-e546-4901-9f03-2ba1d9861f7f}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{6e420e10-2bf3-44ff-9987-b7fcaf37c3ed}">
-		<property name="start">
-			<value>1</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{4720eb45-ba65-4e09-80fe-c20c06bbe294}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{4e1fedc9-0883-4123-bdec-981fb0e046ed}">

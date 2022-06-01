@@ -20,6 +20,7 @@ namespace OniricoStudios
         StartDesafio[] startDesafio;
 
         public static bool CompleteInsignia;
+        ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
 
         void Start()
         {
@@ -28,7 +29,7 @@ namespace OniricoStudios
 
         void Update()
         {
-            
+        
         }
 
         public IEnumerator SetInsignia()
@@ -37,7 +38,10 @@ namespace OniricoStudios
             if (startDesafio[1].isFinished) { insignias[1].enabled = true; insignias[1].sprite = sprites[1]; }
             if (startDesafio[2].isFinished) { insignias[2].enabled = true; insignias[2].sprite = sprites[2]; }
 
-
+            if (startDesafio[0].isFinished && startDesafio[1].isFinished && startDesafio[2].isFinished)
+            {
+                progressionManager.desafio = true;
+            }
 
             yield return new WaitForSeconds(1f);
 

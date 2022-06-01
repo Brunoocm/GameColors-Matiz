@@ -43,6 +43,7 @@ namespace OniricoStudios
                         index--;
                     }
                     //esquerda
+                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.SelectingEvent, transform.position);
                 }
                 if (Input.GetKeyDown(KeyCode.D))
                 {
@@ -51,6 +52,7 @@ namespace OniricoStudios
                         index++;
                     }
                     //Direita
+                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.SelectingEvent, transform.position);
                 }
             }
 

@@ -44,22 +44,39 @@ namespace OniricoStudios
         [FMODUnity.EventRef] public string ArrowsEvent;
 
         [Header("Inimigos")]
-        [FMODUnity.EventRef] public string RedMeleeEvent;
-        [FMODUnity.EventRef] public string RedRangedEvent;
-        [FMODUnity.EventRef] public string RedTankEvent;
-        [FMODUnity.EventRef] public string RedExplosiveEvent;
-        [FMODUnity.EventRef] public string RedDashEvent;
+        [FMODUnity.EventRef] public string RedMeleeAtackEvent;
+        [FMODUnity.EventRef] public string RedMeleeDamageEvent;
+        [FMODUnity.EventRef] public string RedMeleeDeathEvent;
+
+        [FMODUnity.EventRef] public string RedDashAtackEvent;
+        [FMODUnity.EventRef] public string RedDashDamageEvent;
+        [FMODUnity.EventRef] public string RedDashDeathEvent;
+
+        [FMODUnity.EventRef] public string RedRangedAtackEvent;
+        [FMODUnity.EventRef] public string RedRangedDamageEvent;
+        [FMODUnity.EventRef] public string RedRangedDeathEvent;
+
+        [FMODUnity.EventRef] public string RedExplosiveAtackEvent;
+        [FMODUnity.EventRef] public string RedExplosiveDamageEvent;
+        [FMODUnity.EventRef] public string RedExplosiveDeathEvent;
+
+        [FMODUnity.EventRef] public string RedTankAtackEvent;
+        [FMODUnity.EventRef] public string RedTankDamageEvent;
+        [FMODUnity.EventRef] public string RedTankDeathEvent;
 
         [Header("NPCS")]
         [FMODUnity.EventRef] public string dialogEvent;
 
         [Header("Barco")]
-        [FMODUnity.EventRef] public string BoatInOutEvent;
+        [FMODUnity.EventRef] public string BoatInEvent;
+        [FMODUnity.EventRef] public string BoatOutEvent;
 
         [Header("Save")]
         [FMODUnity.EventRef] public string IdleEvent;
-        [FMODUnity.EventRef] public string OpenCloseEvent;
-        [FMODUnity.EventRef] public string ColourSelectedEvent;
+        [FMODUnity.EventRef] public string OpenEvent;
+        [FMODUnity.EventRef] public string CloseEvent;
+        [FMODUnity.EventRef] public string SelectedGrayEvent;
+        [FMODUnity.EventRef] public string SelectedRedEvent;
         [FMODUnity.EventRef] public string SelectingEvent;
 
         [Header("Menu")]
