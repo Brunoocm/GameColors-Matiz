@@ -25,7 +25,7 @@ namespace OniricoStudios
         //GameObject targetObj;
 
         Rigidbody rb => gameObject.GetComponent<Rigidbody>();
-        //Animator anim => gameObject.GetComponentInChildren<Animator>();
+        Animator anim => gameObject.GetComponentInChildren<Animator>();
         void Start()
         {
             //targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);

@@ -17,6 +17,7 @@ namespace OniricoStudios
         [Range(0.0f, 50f)]
         public float EnemyAttackRange;
         public float attackDuration;
+        public float attackCooldown;
         public float stopDistance;
         public float speed;
         [HideInInspector] public bool isStopped;
@@ -34,7 +35,8 @@ namespace OniricoStudios
         [Header("Attacks")]
         public UnityEvent eventAttack;
 
-        private float m_attackDuration;
+        private float attackTime;
+        public bool canAttack;
 
         //private SpriteRenderer spriteRenderer;
         private GameObject animated;
@@ -51,7 +53,6 @@ namespace OniricoStudios
             EnemyMainAI.Instance.Units.Add(this);
             navMeshAgent.speed = speed;
             navMeshAgent.stoppingDistance = stopDistance;
-            m_attackDuration = attackDuration;
         }
 
         void Start()
@@ -61,6 +62,10 @@ namespace OniricoStudios
             anim = GetComponentInChildren<Animator>();
             animated = anim.gameObject;
             size = animated.transform.GetChild(0).localScale;
+
+            attackTime = attackCooldown;
+
+            navMeshAgent.enabled = true;
         }
 
 
@@ -71,23 +76,39 @@ namespace OniricoStudios
             {
                 if (CharacterStats.playerObj != null)
                 {
-                    navMeshAgent.enabled = true;
+                    //navMeshAgent.enabled = true;
 
                     seesTarget = Physics.CheckSphere(transform.position, EnemySeenRange, layerTarget);
-                    attackingTarget = Physics.CheckSphere(transform.position, EnemyAttackRange, layerTarget);
-
+                    
                     //if (seesTarget) FollowTarget();
-                    if (attackingTarget) AttackTarget();
-
-                    if (stopMoving)
+                    if (attackingTarget && canAttack)
                     {
-                        attackDuration -= Time.deltaTime;
-                        if (attackDuration <= 0)
-                        {
-                            stopMoving = false;
-                            //attackDuration = m_attackDuration;
-                        }
+                        AttackTarget();
                     }
+                    else
+                    {
+                        attackingTarget = Physics.CheckSphere(transform.position, EnemyAttackRange, layerTarget);
+                    }
+
+                    if(attackCooldown > 0)
+                    {
+                        attackCooldown -= Time.deltaTime;
+                        canAttack = false;
+                    }
+                    else
+                    {
+                        canAttack = true;
+                    }
+
+                    //if (stopMoving)
+                    //{
+                    //    attackDuration -= Time.deltaTime;
+                    //    if (attackDuration <= 0)
+                    //    {
+                    //        stopMoving = false;
+                    //        //attackDuration = m_attackDuration;
+                    //    }
+                    //}
                 }
             }
             else
@@ -118,17 +139,23 @@ namespace OniricoStudios
         {
             if (!enemyHealth.stopMove)
             {
-                ResetMovement();
                 eventAttack.Invoke();
-                navMeshAgent.ResetPath();
+
+                StartCoroutine(ResetMovement());
             }
         }
 
-        public void ResetMovement()
+        public IEnumerator ResetMovement()
         {
-            stopMoving = true;
-            attackDuration = m_attackDuration;
+            navMeshAgent.enabled = false;
+            attackCooldown = attackTime;
+
+            yield return new WaitForSeconds(attackDuration);
+
+            navMeshAgent.enabled = true;
+
             Flip();
+
             if(navMeshAgent.isActiveAndEnabled) navMeshAgent.ResetPath();
         }
 
