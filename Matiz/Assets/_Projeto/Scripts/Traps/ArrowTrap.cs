@@ -38,7 +38,6 @@ namespace OniricoStudios
             if(other.GetComponent<CharacterStats>() != null && canShoot)
             {
                 ShootArrow();
-                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.ArrowsEvent, transform.position);
             }
         }
     }

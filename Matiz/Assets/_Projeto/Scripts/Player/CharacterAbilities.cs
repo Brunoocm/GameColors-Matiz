@@ -29,7 +29,6 @@ namespace OniricoStudios
         }
         void Start()
         {
-
             if(progressionManager.cinza == false && progressionManager.vermelho == false && progressionManager.azul == false && progressionManager.verde == false)
             {
                 progressionManager.cinza = true;
@@ -217,7 +216,6 @@ namespace OniricoStudios
                 {
                     characterStats.damage = passiveDamage;
                     characterMove.speed = passiveSpeed;
-                    //FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.redPassiveEvent);
                 }
                 else
                 {
