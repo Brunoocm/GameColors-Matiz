@@ -64,14 +64,14 @@ namespace OniricoStudios
         {
             if (!dialogueSystem.playingText)
             {
-                if (newFraseForFirstArena && progressionManager.desafio)                 //se ele terminou o desafio e tem frase pra primeira arena
-                {
-                    dialogueSystem.Restart(dialogueSystem.sentencesForFirstArena);
-                }
-                else if (newFraseForSecondArena && progressionManager.firstArena)                 //se ele terminou a primeira arena e tem frase pra segunda arena
+                if (newFraseForSecondArena && progressionManager.firstArena)                //se ele terminou o desafio e tem frase pra primeira arena  
                 {
                     dialogueSystem.Restart(dialogueSystem.sentencesForSecondArena);
                 }
+                else if (newFraseForFirstArena && progressionManager.desafio)                //se ele terminou a primeira arena e tem frase pra segunda arena
+                {
+                    dialogueSystem.Restart(dialogueSystem.sentencesForFirstArena);
+                }         
                 else
                 {
                     dialogueSystem.Restart(dialogueSystem.sentences);
