@@ -52,6 +52,9 @@ namespace OniricoStudios
                     isInteract = true;
                     currentSpawnpoint = true;
                     saving = true;
+
+                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.OpenEvent, transform.position);
+
                 }
                 else if (Input.GetKeyDown(KeyCode.E) && !saving && isInteract) //clicar fora do bagulho com o mouse
                 {
@@ -59,6 +62,7 @@ namespace OniricoStudios
                     m_MyEvent.Invoke();
                     isInteract = false;
                     characterMovement.canMove = true;
+                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.CloseEvent, transform.position);
                 }
             }
 

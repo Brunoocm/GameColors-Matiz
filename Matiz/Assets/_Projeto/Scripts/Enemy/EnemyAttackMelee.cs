@@ -41,6 +41,8 @@ namespace OniricoStudios
             {
                 //anim.SetTrigger("AntecipationTrigger");
                 if(CharacterStats.playerObj != null) StartCoroutine(Dash(CharacterStats.playerObj.transform));
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.RedDashAtackEvent, transform.position);
+                
             }
         }
 

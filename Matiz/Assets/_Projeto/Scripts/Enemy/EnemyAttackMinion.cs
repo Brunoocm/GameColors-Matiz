@@ -39,6 +39,7 @@ namespace OniricoStudios
             if (!oneTime)
             {
                 if (CharacterStats.playerObj != null) StartCoroutine(Dash(CharacterStats.playerObj.transform));
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.RedMeleeAtackEvent, transform.position);
             }
         }
 

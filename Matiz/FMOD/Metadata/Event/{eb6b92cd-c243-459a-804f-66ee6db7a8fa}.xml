@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{eb6b92cd-c243-459a-804f-66ee6db7a8fa}">
 		<property name="name">
-			<value>Defender - Recuperar</value>
+			<value>Defender</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -64,7 +64,6 @@
 	<object class="GroupTrack" id="{3b1e1f03-862a-4ce8-82bc-0a6a3a6f609a}">
 		<relationship name="modules">
 			<destination>{cc9cfe97-0f21-49e1-aed3-0a039c6b7a02}</destination>
-			<destination>{a8362f1a-7f2c-428e-97d7-825afb336f70}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{123e2580-c1e6-41ae-b4c5-dc43485e6a1d}</destination>
@@ -78,7 +77,6 @@
 	<object class="ParameterProxy" id="{4928d1b9-e30f-4bbf-84ed-427d43a55e3b}">
 		<relationship name="modules">
 			<destination>{cc9cfe97-0f21-49e1-aed3-0a039c6b7a02}</destination>
-			<destination>{a8362f1a-7f2c-428e-97d7-825afb336f70}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{3bd528d5-0a8d-41bf-bc3c-c79811887fed}</destination>
@@ -104,14 +102,6 @@
 	<object class="SingleSound" id="{cc9cfe97-0f21-49e1-aed3-0a039c6b7a02}">
 		<relationship name="audioFile">
 			<destination>{7ff5b7e1-53f7-4358-aaaa-e712425222a4}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{a8362f1a-7f2c-428e-97d7-825afb336f70}">
-		<property name="start">
-			<value>1</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{6aa8d4c0-4665-45b9-9ea1-1a508e4f12ee}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{123e2580-c1e6-41ae-b4c5-dc43485e6a1d}">

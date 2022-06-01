@@ -39,6 +39,7 @@ namespace OniricoStudios
                 progressionManager.azul = false;
 
                 prisma.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+
             }
             else if (isVermelho) 
             {
@@ -48,6 +49,8 @@ namespace OniricoStudios
                 progressionManager.azul = false;
 
                 prisma.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+
+
             }
             else if (isVerde) 
             {
@@ -57,6 +60,7 @@ namespace OniricoStudios
                 progressionManager.azul = false;
 
                 prisma.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0, 1, 0.24f);
+
             }
             else if (isAzul) 
             {
@@ -66,6 +70,7 @@ namespace OniricoStudios
                 progressionManager.verde = false;
 
                 prisma.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0, 0.64f, 1);
+                
             }
         }
     }

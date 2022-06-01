@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+namespace OniricoStudios
+{
+
 public class EnemyAttackRanged : MonoBehaviour
 {
     [Header("Stats")]
@@ -36,6 +40,7 @@ public class EnemyAttackRanged : MonoBehaviour
         {
             int num = Random.Range(0, 4);
             StartCoroutine(Jump(num));
+            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.RedRangedAtackEvent, transform.position);
         }
     }
 
@@ -67,5 +72,5 @@ public class EnemyAttackRanged : MonoBehaviour
     }
 
 
-
+}
 }
