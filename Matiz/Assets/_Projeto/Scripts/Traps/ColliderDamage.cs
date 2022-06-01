@@ -10,8 +10,6 @@ namespace OniricoStudios
 
         private void OnTriggerEnter(Collider other)
         {
-            print("entramo nessa merdaaaaaaaaa " + other);
-
             if (other.GetComponent<CharacterStats>() != null)
             {
                 other.GetComponent<CharacterStats>().DamageVoid(damage, transform);
@@ -25,8 +23,6 @@ namespace OniricoStudios
 
         private void OnCollisionEnter(Collision collision)
         {
-            print("pisamo nessa merdaaaaaaaaa " + collision);
-
             if (collision.gameObject.GetComponent<CharacterStats>() != null)
             {
                 collision.gameObject.GetComponent<CharacterStats>().DamageVoid(damage, transform);
