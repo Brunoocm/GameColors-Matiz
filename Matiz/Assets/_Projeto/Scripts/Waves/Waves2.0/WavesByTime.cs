@@ -24,10 +24,12 @@ namespace OniricoStudios
 
         private bool isStarted;
         private bool isFinished;
+        private bool oneTime;
 
         private int numobj;
 
         ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
+        CompleteDesafioUI completeDesafioUI => FindObjectOfType<CompleteDesafioUI>();
         void Awake()
         {
 
@@ -80,24 +82,26 @@ namespace OniricoStudios
                 }
             }
 
-            if (num == EnemiesParent.Length)
+            if (FindObjectOfType<EnemyHealth>() == null)
             {
                 isFinished = true;
             }
 
-            if (isFinished)
+            if (isFinished && !oneTime)
             {
-                door.SetActive(true);
 
+                StartCoroutine(TimeToEnd());
                 if (firstArena) //completou a primeira arena
                 {
                     progressionManager.secondArena = true; // segunda arena abre
-
+                    StartCoroutine(completeDesafioUI.SetInsigniaArena());
                 }
                 else if(secondArena)
                 {
-                   
+                    StartCoroutine(completeDesafioUI.SetInsigniaArena2());
                 }
+                oneTime = true;
+                //transform.gameObject.SetActive(false);
             }
         }
 
@@ -105,6 +109,11 @@ namespace OniricoStudios
         {
             yield return new WaitForSeconds(3);
             isStarted = true;
+        }
+        IEnumerator TimeToEnd()
+        {
+            yield return new WaitForSeconds(5);
+            door.SetActive(true);
         }
 
         public Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
