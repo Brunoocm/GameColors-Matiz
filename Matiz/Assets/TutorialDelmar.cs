@@ -33,25 +33,34 @@ namespace OniricoStudios
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))//cinza
+            if (Input.GetKeyDown(KeyCode.Alpha1)) //ilha cinza
             {
                 StartCoroutine(loadsceneName("MainLand", CinzaPos));
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2))//vermalha
+
+            if (Input.GetKeyDown(KeyCode.Alpha2)) //ilha vermelha
             {
                 StartCoroutine(loadsceneName("MainLand", VermelhaPos));
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3))//arena
-            {
-                SceneManager.LoadScene("PrimeiraArena");
-            }
-            if(Input.GetKeyDown(KeyCode.Alpha4))
+
+            if (Input.GetKeyDown(KeyCode.Alpha3)) //libera primeira arena
             {
                 BlockWayArena.firstArena = true;
             }
-            if(Input.GetKeyDown(KeyCode.Alpha5))
+
+            if(Input.GetKeyDown(KeyCode.Alpha4)) //libera segunda arena
             {
                 BlockWayArena.secondArena = true;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha5)) //primeira arena
+            {
+                SceneManager.LoadScene("PrimeiraArena");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha6)) //segunda arena
+            {
+                SceneManager.LoadScene("SegundaArena");
             }
         }
 

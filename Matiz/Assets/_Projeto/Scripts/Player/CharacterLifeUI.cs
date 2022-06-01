@@ -19,6 +19,9 @@ namespace OniricoStudios
         public Sprite Vida1;
         public Sprite Vida2;
         public Sprite Vida3;
+
+        public GameObject delmarTut;
+
         private void Start()
         {
             //characterStats = GameObject.FindObjectOfType<CharacterStats>().GetComponent<CharacterStats>();
