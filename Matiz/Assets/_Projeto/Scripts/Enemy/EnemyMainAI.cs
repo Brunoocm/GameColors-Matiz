@@ -56,19 +56,19 @@ namespace OniricoStudios
             for (int i = 0; i < Units.Count; i++)
             {
 
-                if (Units[i].seesTarget)
+                if (Units[i].seesTarget && Units[i] != null)
                 {
                     if (!isSeen.Contains(Units[i].gameObject))
                     {
                         isSeen.Add(Units[i].gameObject);
                     }
                 }
-                else if (isSeen.Contains(Units[i].gameObject) || isSeen.Any(i => i == null))
+                else if (isSeen.Contains(Units[i].gameObject) || isSeen.Any(i => i == null) && Units[i] != null)
                 {
                     isSeen.Remove(Units[i].gameObject);
                 }
 
-                if (Units[i].navMeshAgent.enabled)
+                if (Units[i].navMeshAgent.enabled && Units[i] != null)
                 {
                     Units[i].FollowTarget(new Vector3(
                      Target.position.x + RadiusAroundTarget * Mathf.Cos(2 * Mathf.PI * i / Units.Count),
