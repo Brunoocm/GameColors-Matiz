@@ -36,8 +36,11 @@ namespace OniricoStudios
 
         private float m_attackDuration;
 
-        private SpriteRenderer spriteRenderer;
-        private GameObject sprite;
+        //private SpriteRenderer spriteRenderer;
+        private GameObject animated;
+        private Animator anim;
+
+        Vector3 size;
 
         GameObject targetObj;
         [HideInInspector] public NavMeshAgent navMeshAgent => gameObject.GetComponent<NavMeshAgent>();
@@ -46,9 +49,6 @@ namespace OniricoStudios
         private void Awake()
         {
             EnemyMainAI.Instance.Units.Add(this);
-
-            spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
-            sprite = spriteRenderer.gameObject;
             navMeshAgent.speed = speed;
             navMeshAgent.stoppingDistance = stopDistance;
             m_attackDuration = attackDuration;
@@ -57,6 +57,10 @@ namespace OniricoStudios
         void Start()
         {
             //targetObj = GameObject.FindGameObjectWithTag(tagNameTarget);
+
+            anim = GetComponentInChildren<Animator>();
+            animated = anim.gameObject;
+            size = animated.transform.GetChild(0).localScale;
         }
 
 
@@ -132,17 +136,12 @@ namespace OniricoStudios
         {
             if (CharacterStats.playerObj.transform.position.x < transform.position.x)
             {
-                spriteRenderer.flipX = true;
-
+                animated.transform.GetChild(0).localScale = new Vector3(-size.x, size.y, size.z);
             }
             else
             {
-                spriteRenderer.flipX = false;
-
+                animated.transform.GetChild(0).localScale = new Vector3(size.x, size.y, size.z);
             }
-
-            //spriteRenderer.sprite.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-
         }
         void OnDrawGizmosSelected()
         {

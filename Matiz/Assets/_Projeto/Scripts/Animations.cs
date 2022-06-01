@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Animations : MonoBehaviour
 {
-    //
+    private void Start()
+    {
+        //FMODUnity.RuntimeManager.
+    }
 }
