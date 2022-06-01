@@ -12,7 +12,21 @@ namespace OniricoStudios
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                link.GoTo();
+                
+                //link.GoTo();
+                StartCoroutine(LoadYourAsyncScene());
+            }
+        }
+
+
+        IEnumerator LoadYourAsyncScene()
+        {
+
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(link.nameScene());
+
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
             }
         }
     }

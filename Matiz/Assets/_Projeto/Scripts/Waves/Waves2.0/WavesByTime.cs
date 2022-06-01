@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.AI;
+
 namespace OniricoStudios
 {
     public class WavesByTime : MonoBehaviour
-    {
+    { //"Editor" not "Engine"
+
+
         public bool firstArena, secondArena;
         public GameObject door;
 
@@ -28,9 +31,17 @@ namespace OniricoStudios
         private int numobj;
 
         ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
+
+        public NavMeshSurface navMesh;
         void Awake()
         {
+            navMesh.BuildNavMesh();
 
+      
+        }
+
+        void Start()
+        {
             for (int i = 0; i < EnemiesParent.Length; i++)
             {
                 PosSpawn.Add(EnemiesParent[i].transform.GetChild(0));
@@ -43,10 +54,7 @@ namespace OniricoStudios
                 enemy.Add(e);
 
             }
-        }
 
-        void Start()
-        {
             m_timerWaves = timerWaves;
             door.SetActive(false);
             StartCoroutine(StartWaves());
@@ -103,7 +111,7 @@ namespace OniricoStudios
 
         IEnumerator StartWaves()
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
             isStarted = true;
         }
 
@@ -121,7 +129,7 @@ namespace OniricoStudios
 
         IEnumerator Ground()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.6f);
             enemy[num - 1].gameObject.GetComponent<NavMeshAgent>().enabled = true;
             enemy[num - 1].gameObject.GetComponent<EnemyBaseMove>().isStopped = false;
         }

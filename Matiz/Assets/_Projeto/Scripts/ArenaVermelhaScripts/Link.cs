@@ -16,6 +16,12 @@ namespace OniricoStudios
         {
             current = this;
             level.Load();
+            
+        }
+
+        public string nameScene()
+        {
+            return level.nameScene();
         }
     }
 }
