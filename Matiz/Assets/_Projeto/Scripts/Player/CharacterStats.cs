@@ -237,6 +237,7 @@ namespace OniricoStudios
             {
                 extraLifeScript.currentStacksLife++;
                 Destroy(other.gameObject);
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.PlantaComerEvent, transform.position);
             }
         }
 
