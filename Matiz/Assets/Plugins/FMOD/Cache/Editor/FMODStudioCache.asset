@@ -19,6 +19,28 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 526144
+  Exists: 0
+--- !u!114 &-8706553410049126060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player Footsteps/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
   Exists: 1
 --- !u!114 &-8658434734264296427
 MonoBehaviour:
@@ -56,8 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Armadilhas/lan\xE7as"
   guid: 207222445530ba4388908299a10b2358
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -79,8 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Poderes/Vermelho/Dash vermelho"
   guid: 3b2971f59589cd4ea0dbb1e7da023eb9
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -102,8 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash"
   guid: fc2bb599cc2d644299a84e44dfcae294
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -111,6 +130,30 @@ MonoBehaviour:
   - {fileID: -5181340935852271187}
   MinDistance: 0
   MaxDistance: 0
+  Length: 0
+--- !u!114 &-7096709889486166955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Player Footsteps
+  guid: aaa7a56acaa6f94799ae9da0ae716289
+  Banks:
+  - {fileID: 3542595249357466239}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8706553410049126060}
+  MinDistance: 1
+  MaxDistance: 20
   Length: 0
 --- !u!114 &-7095702879733917316
 MonoBehaviour:
@@ -126,8 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Ambienta\xE7\xE3o/Planta comer"
   guid: 5acfa69b136def4b92cb01197224f67c
-  Banks:
-  - {fileID: 6181317747227440329}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -149,8 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Player/Player tomar dano"
   guid: 4cc30917b2843440a798e9c4a24345f6
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -180,6 +221,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-5931357434156562525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Ambiente/Plat\xE9ia"
+  m_EditorClassIdentifier: 
+  Name: "Plat\xE9ia"
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-5891663484687088647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Poderes/Vermelho/Especial vermelho"
   guid: 913024b2f3ba664e9a741db566c989f6
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -262,8 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/NPC/Vermelho/Di\xE1logo"
   guid: caf71b46f78ef1409e3dccc1198ace1e
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -307,8 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Player/Dash"
   guid: 036dfd41d04e5a4cb3a9e464f13cf65a
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -316,6 +376,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 190
+--- !u!114 &-4141131064249159787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Dialogue_EN.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Dialogue_EN.bank
+  Name: Dialogue_EN
+  StudioPath: bank:/Dialogue_EN
+  lastModified: 637895672106490879
+  FileSizes:
+  - Name: Desktop
+    Value: 61120
+  Exists: 1
 --- !u!114 &-3543949621370196212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +438,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 482
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3468827794276468606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +462,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-2784187253429018730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Dialogue_CN.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Dialogue_CN.bank
+  Name: Dialogue_CN
+  StudioPath: bank:/Dialogue_CN
+  lastModified: 637895672104640762
+  FileSizes:
+  - Name: Desktop
+    Value: 52416
+  Exists: 1
 --- !u!114 &-2687162689432320123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,8 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Poderes/Vermelho/Passiva vermelho"
   guid: fabcec8160b7904ca140e0ff6b8dcd61
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -442,8 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Soundtrack/Tema principal
   guid: f1c1196697b6fa4080a2af4a822d8d3d
-  Banks:
-  - {fileID: 723693289082254656}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -451,6 +549,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 180638
+--- !u!114 &-1184371379391552842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha vermelha
+  m_EditorClassIdentifier: 
+  Name: Ilha vermelha
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-1134962606327843218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,8 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Poderes/Cinza/Passiva cinza"
   guid: e22c149f25b99a4ba898518b9b8c740c
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -496,6 +615,28 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-749991167940277662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha Verde
+  m_EditorClassIdentifier: 
+  Name: Ilha Verde
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-711631853527367643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,8 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo"
   guid: 0b477eec8bc6284c8c7c26c1fa3918d3
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -556,8 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged"
   guid: 74e150c65ad03b4fb7e6d8192b1d6625
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -580,56 +719,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 1200121916044577348}
-  - {fileID: 6181317747227440329}
-  - {fileID: -3502883319121068495}
   - {fileID: 6111068401806198091}
-  - {fileID: 723693289082254656}
   - {fileID: 3542595249357466239}
-  - {fileID: -9208491023278155570}
+  - {fileID: -2784187253429018730}
+  - {fileID: -4141131064249159787}
+  - {fileID: 7042654655641135865}
   EditorEvents:
-  - {fileID: 1573475461688514770}
-  - {fileID: -7095702879733917316}
-  - {fileID: 8948767676253502599}
-  - {fileID: 7312352783323448292}
   - {fileID: -2687162689432320123}
   - {fileID: -3468827794276468606}
   - {fileID: -5730896841307358358}
   - {fileID: 7531927642518853749}
   - {fileID: -3543949621370196212}
-  - {fileID: -1440099470564204082}
-  - {fileID: -4615144867929553398}
-  - {fileID: 4320469428931508976}
-  - {fileID: -711631853527367643}
-  - {fileID: 4990860979506978809}
-  - {fileID: -8564508476853661659}
-  - {fileID: 2947471765821236141}
-  - {fileID: -7705761315106416683}
-  - {fileID: -6817382698697538648}
-  - {fileID: -95326748472587285}
-  - {fileID: 8230166458453272389}
-  - {fileID: -5891663484687088647}
-  - {fileID: 8591873587165507715}
-  - {fileID: 1391017886626037874}
-  - {fileID: -5592369630486027654}
-  - {fileID: 2721661404296275116}
-  - {fileID: 8242360398288906780}
-  - {fileID: -1134962606327843218}
-  - {fileID: 7844871755734597799}
-  - {fileID: -2605840497137859243}
-  - {fileID: -7210787753921958815}
-  - {fileID: 3162107025246690323}
-  - {fileID: 2671828515744634223}
-  - {fileID: 5752994293601118346}
-  - {fileID: 5104821703358586659}
-  - {fileID: 5557010036661211629}
-  - {fileID: 5781392972324355818}
-  - {fileID: 5292324840679664919}
+  - {fileID: 5002563775973289021}
+  - {fileID: -7096709889486166955}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6111068401806198091}
   StringsBanks:
   - {fileID: 1200121916044577348}
-  stringsBankWriteTime: 637897000880124443
+  stringsBankWriteTime: 637895672154331945
   cacheVersion: 8
 --- !u!114 &425034943393175838
 MonoBehaviour:
@@ -672,7 +780,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 2223392
-  Exists: 1
+  Exists: 0
 --- !u!114 &1200121916044577348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,10 +796,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637897000880124443
+  lastModified: 637895672154331945
   FileSizes:
   - Name: Desktop
-    Value: 3998
+    Value: 2038
   Exists: 1
 --- !u!114 &1204018171940300784
 MonoBehaviour:
@@ -729,8 +837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Barco/Barco Entrar - Sair"
   guid: beaa2937cde9ae41aa29cc51cc2d1b0b
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -775,8 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Ambienta\xE7\xE3o/fogo"
   guid: 48674f798ba30f4d9ab1fe3cb256f9f5
-  Banks:
-  - {fileID: 6181317747227440329}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -784,6 +890,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 15064
+--- !u!114 &1632735447844506865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Mar
+  m_EditorClassIdentifier: 
+  Name: Mar
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &2068025530332530678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,8 +948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/Save/Idle
   guid: 1eeaf509f16644478e6adcc1bd4f4231
-  Banks:
-  - {fileID: -9208491023278155570}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -843,8 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Prisma/Defender - Recuperar"
   guid: cd926beb43c29a45804f66ee6db7a8fa
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -889,8 +1015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee"
   guid: 3a412223b8dfb74bb9439ba924a03dc6
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -913,8 +1038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Poderes/Cinza/Especial cinza"
   guid: ffc7ea9e1c15ef4da8a3daed86d00f3e
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -937,10 +1061,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637897000913105388
+  lastModified: 637895672156362116
   FileSizes:
   - Name: Desktop
-    Value: 755360
+    Value: 87904
   Exists: 1
 --- !u!114 &3675665486951724146
 MonoBehaviour:
@@ -964,6 +1088,28 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 0
   Exists: 1
+--- !u!114 &3948309192089112780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha Azul
+  m_EditorClassIdentifier: 
+  Name: Ilha Azul
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &4320469428931508976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,8 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Armadilhas/lava - queimar"
   guid: 03d90543fa187b4d882a9d004d1beaea
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1001,8 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Prisma/Idle"
   guid: 1060335e3b02f542914a9031962dc731
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1010,6 +1154,34 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1799
+--- !u!114 &5002563775973289021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiente
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiente
+  guid: 7e9198bb5bd6f041a0cac50756da3f0e
+  Banks:
+  - {fileID: 6111068401806198091}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1632735447844506865}
+  - {fileID: -5931357434156562525}
+  - {fileID: -1184371379391552842}
+  - {fileID: 3948309192089112780}
+  - {fileID: -749991167940277662}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &5104821703358586659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,8 +1196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/Save/Poderes selecionar
   guid: 688ac6e5fa2e934cbebb9be87015cbc5
-  Banks:
-  - {fileID: -9208491023278155570}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1048,8 +1219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/UI/Save/Poderes sele\xE7\xE3o"
   guid: dffcf84f04be4d489531c39e08c9b65e
-  Banks:
-  - {fileID: -9208491023278155570}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1072,8 +1242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/Game over/Game over
   guid: 75e3737bb9f6bd41970cfd7125771b19
-  Banks:
-  - {fileID: -9208491023278155570}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1096,8 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/Save/Poderes mouse trigger
   guid: 33c9c08975eead40ac8d32dedaca01c5
-  Banks:
-  - {fileID: -9208491023278155570}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1119,8 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/Menu/Menu - Ambiente
   guid: 98e9d78b098efd46abe306086b780fba
-  Banks:
-  - {fileID: -9208491023278155570}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1143,10 +1310,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637897000880104446
+  lastModified: 637895672154091936
   FileSizes:
   - Name: Desktop
-    Value: 15258
+    Value: 3722432
   Exists: 1
 --- !u!114 &6181317747227440329
 MonoBehaviour:
@@ -1167,6 +1334,26 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 3939712
+  Exists: 0
+--- !u!114 &7042654655641135865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Dialogue_JP.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Dialogue_JP.bank
+  Name: Dialogue_JP
+  StudioPath: bank:/Dialogue_JP
+  lastModified: 637895672108519613
+  FileSizes:
+  - Name: Desktop
+    Value: 66560
   Exists: 1
 --- !u!114 &7169079035257254499
 MonoBehaviour:
@@ -1226,8 +1413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Ambienta\xE7\xE3o/Planta estourar"
   guid: e2ce55b38fabab45824b3690cb2fe25f
-  Banks:
-  - {fileID: 6181317747227440329}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1294,8 +1480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Player/Player Hit Ar"
   guid: e3100db5f9f4654c9f5bcd4a56aaa6ce
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1339,8 +1524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank"
   guid: 8ed379a6f625614785a60136b92623e6
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1363,8 +1547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Poderes/Vermelho/Carregar Dash vermelho"
   guid: dfa108d288819e438453a4718b3053a3
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1386,8 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Player/Player passos"
   guid: aaa7a56acaa6f94799ae9da0ae716289
-  Banks:
-  - {fileID: 3542595249357466239}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1410,8 +1592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Ambienta\xE7\xE3o/Ambiente"
   guid: 7e9198bb5bd6f041a0cac50756da3f0e
-  Banks:
-  - {fileID: 6181317747227440329}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
