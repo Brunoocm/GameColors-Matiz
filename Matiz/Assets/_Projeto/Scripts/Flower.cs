@@ -10,7 +10,7 @@ public class Flower : MonoBehaviour
     public float timeToRespawn;
 
     SpriteRenderer spriteRenderer => GetComponentInChildren<SpriteRenderer>();
-    Collider col => GetComponent<Collider>();
+    BoxCollider col => GetComponent<BoxCollider>();
     void Start()
     {
         
