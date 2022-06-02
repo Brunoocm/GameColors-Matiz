@@ -43,7 +43,7 @@ namespace OniricoStudios
         private CharacterAttack characterAttack => gameObject.GetComponent<CharacterAttack>();
         private CharacterAbilities characterAbilities => gameObject.GetComponent<CharacterAbilities>();
         private CharacterStats characterStats => gameObject.GetComponent<CharacterStats>();
-        [HideInInspector] public Animator anim => gameObject.GetComponentInChildren<Animator>();
+        public Animator anim;
 
         private Vector3 _movement;
 
@@ -225,6 +225,9 @@ namespace OniricoStudios
                 }
 
                 dashing = true;
+
+                Flip();
+
                 //transform.Translate(moveDir * forceDash * Time.deltaTime);
                 yield return null;
             }
@@ -238,6 +241,9 @@ namespace OniricoStudios
             yield return new WaitForSeconds(timeBTWDash);
 
             canDash = true;
+
+            Flip();
+
             //}
         }
         private void FixedUpdate()
@@ -252,6 +258,8 @@ namespace OniricoStudios
             if (moveDir != Vector3.zero)
             {
                 lastDir = moveDir;
+
+                Flip();
             }
 
             final = new Vector3(horizontal, 0f, vertical);
@@ -260,13 +268,27 @@ namespace OniricoStudios
 
         void Flip()
         {
-            if (CharacterStats.playerObj.transform.position.x < transform.position.x)
+            if (dashing)
             {
-                //animated.transform.GetChild(0).localScale = new Vector3(-size.x, size.y, size.z);
+                if (lastDir.x < 0)
+                {
+                    anim.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else if (lastDir.x >= 0)
+                {
+                    anim.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                }
             }
             else
             {
-                //animated.transform.GetChild(0).localScale = new Vector3(size.x, size.y, size.z);
+                if (characterController.velocity.x < 0)
+                {
+                    anim.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else if (characterController.velocity.x >= 0)
+                {
+                    anim.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                }
             }
         }
 

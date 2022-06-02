@@ -8,6 +8,7 @@ namespace OniricoStudios
     public class ArrowTrap : MonoBehaviour
     {
         public float cooldown;
+        public bool doubleShot;
         public GameObject arrow;
         public Transform firePoint;
 
@@ -31,6 +32,18 @@ namespace OniricoStudios
         {
             Instantiate(arrow, firePoint.position, firePoint.rotation);
             cooltime = cooldown;
+
+            if (doubleShot)
+            {
+                StartCoroutine(ShootAgain());
+            }
+        }
+
+        IEnumerator ShootAgain()
+        {
+            yield return new WaitForSeconds(0.25f);
+
+            Instantiate(arrow, firePoint.position, firePoint.rotation);
         }
 
         private void OnTriggerEnter(Collider other)

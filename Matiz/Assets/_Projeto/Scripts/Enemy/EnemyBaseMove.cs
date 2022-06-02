@@ -48,6 +48,10 @@ namespace OniricoStudios
         [HideInInspector] public NavMeshAgent navMeshAgent => gameObject.GetComponent<NavMeshAgent>();
         EnemyHealth enemyHealth => gameObject.GetComponent<EnemyHealth>();
 
+
+        public GameObject visual;
+
+
         private void Awake()
         {
             EnemyMainAI.Instance.Units.Add(this);
@@ -77,6 +81,10 @@ namespace OniricoStudios
                 if (CharacterStats.playerObj != null)
                 {
                     //navMeshAgent.enabled = true;
+
+                    Flip();
+
+                    anim.SetBool("walk", navMeshAgent.enabled);
 
                     seesTarget = Physics.CheckSphere(transform.position, EnemySeenRange, layerTarget);
                     
@@ -139,6 +147,8 @@ namespace OniricoStudios
         {
             if (!enemyHealth.stopMove)
             {
+                Flip();
+
                 eventAttack.Invoke();
 
                 StartCoroutine(ResetMovement());
@@ -147,10 +157,14 @@ namespace OniricoStudios
 
         public IEnumerator ResetMovement()
         {
+            anim.SetBool("walk", false);
+
             navMeshAgent.enabled = false;
             attackCooldown = attackTime;
 
             yield return new WaitForSeconds(attackDuration);
+
+            anim.SetBool("walk", true);
 
             navMeshAgent.enabled = true;
 
@@ -164,10 +178,12 @@ namespace OniricoStudios
             if (CharacterStats.playerObj.transform.position.x < transform.position.x)
             {
                 animated.transform.GetChild(0).localScale = new Vector3(-size.x, size.y, size.z);
+                //visual
             }
             else
             {
                 animated.transform.GetChild(0).localScale = new Vector3(size.x, size.y, size.z);
+                //visual
             }
         }
         void OnDrawGizmosSelected()
