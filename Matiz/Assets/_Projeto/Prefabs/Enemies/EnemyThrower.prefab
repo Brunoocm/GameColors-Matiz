@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4546294198943110627}
   - component: {fileID: 4013588670265367063}
   - component: {fileID: 4546294198943110628}
-  - component: {fileID: 4546294198943110629}
   m_Layer: 8
   m_Name: EnemyThrower
   m_TagString: Enemy
@@ -107,9 +106,9 @@ MonoBehaviour:
   EnemySeenRange: 50
   EnemyAttackRange: 28.1
   attackDuration: 1
-  attackCooldown: 1
+  attackCooldown: 2.5
   stopDistance: 0
-  speed: 5
+  speed: 0
   isStopped: 0
   gizmos: 0
   seesTarget: 0
@@ -134,7 +133,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3062161241478062143}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: attack
+          m_BoolArgument: 0
+        m_CallState: 2
   canAttack: 0
+  visual: {fileID: 0}
 --- !u!114 &4013588670265367063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyExplosivo: {fileID: 8546821478046619608, guid: 513d02c1a1fa80e49a330059deaa66c8, type: 3}
-  cooldownShoot: 5
+  cooldownShoot: 2.5
 --- !u!195 &4546294198943110628
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -171,25 +183,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!95 &4546294198943110629
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4546294198943110630}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97decefc9f6926640acb306e018ed7dc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4546294199739810778
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +466,11 @@ PrefabInstance:
 --- !u!4 &8965961957250642177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6202447937837890124, guid: 53e95043f54cfd3448f0bab723681c50, type: 3}
+  m_PrefabInstance: {fileID: 3062161241745738573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3062161241478062143 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 813542258, guid: 53e95043f54cfd3448f0bab723681c50, type: 3}
   m_PrefabInstance: {fileID: 3062161241745738573}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7187829608857317767
