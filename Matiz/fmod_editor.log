@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000019FB4714868 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002B80A2E0D68 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,401 +18,1073 @@
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000019E927BB768 : node = 0000019E9CC37190
-[LOG] SystemI::createSound                     : add node to async list : head = 0000019E93429A78.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019E927BB768
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21056
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019E9CC372A0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019E927BB768
-[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000019E927BB5B8 : node = 0000019E9CC37B90
-[LOG] SystemI::createSound                     : add node to async list : head = 0000019E93429A78.  list count = 0
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019E927BB5B8
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43552
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21056
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000F5BF3F2D8
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019E9CC37CA0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 0000019E9D12A4E8
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
-[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='passos madeira 2', format=5, channels=2, frequency=48000, lengthbytes=3072, lengthpcm=23676, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.171840.
-[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43552
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000F5BF3F2D8
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 0000019E9D12A4E8
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='passos ilha verde 2', format=5, channels=2, frequency=48000, lengthbytes=5312, lengthpcm=23732, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.122694.
-[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43552
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000F5BF3F2D8
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 0000019E9D12A4E8
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='passos ilha cinza 3', format=5, channels=2, frequency=48000, lengthbytes=6784, lengthpcm=25171, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.100694.
-[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43552
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000F5BF3F2D8
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 0000019E9D12A4E8
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019E927BB5B8
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos madeira 2', format=5, channels=2, frequency=48000, lengthbytes=3072, lengthpcm=23676, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.171840.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha verde 2', format=5, channels=2, frequency=48000, lengthbytes=5312, lengthpcm=23732, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.122694.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha cinza 3', format=5, channels=2, frequency=48000, lengthbytes=6784, lengthpcm=25171, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.100694.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha vermelha 2', format=5, channels=2, frequency=48000, lengthbytes=10784, lengthpcm=38348, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.093377.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43552
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000F5BF3F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000019E9D12A4E8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha cinza 1', format=5, channels=2, frequency=48000, lengthbytes=8448, lengthpcm=26707, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.116578.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43552
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000F5BF3F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000019E9D12A4E8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha cinza 2', format=5, channels=2, frequency=48000, lengthbytes=7648, lengthpcm=26399, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.078937.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43552
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000F5BF3F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000019E9D12A4E8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos madeira 1', format=5, channels=2, frequency=48000, lengthbytes=3008, lengthpcm=23676, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.168443.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43552
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000F5BF3F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000019E9D12A4E8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha verde 3', format=5, channels=2, frequency=48000, lengthbytes=6272, lengthpcm=25840, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.127487.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43552
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000F5BF3F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000019E9D12A4E8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha verde 1', format=5, channels=2, frequency=48000, lengthbytes=5248, lengthpcm=24258, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.129861.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43552
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000F5BF3F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000019E9D12A4E8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos madeira 3', format=5, channels=2, frequency=48000, lengthbytes=3168, lengthpcm=22936, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.158135.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43552
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000F5BF3F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000019E9D12A4E8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha vermelha 1', format=5, channels=2, frequency=48000, lengthbytes=11232, lengthpcm=39717, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.069356.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43552
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000F5BF3F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9046460E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9046460B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9046461B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF904646270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000019E9D12A4E8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B80AF167B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='passos ilha vermelha 3', format=5, channels=2, frequency=48000, lengthbytes=8704, lengthpcm=29468, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.119536.
-[LOG] SoundI::release                          : fogo (0000019FB4731868)
-[LOG] SoundI::release                          :     fogo (0000019E91D2F8C8)
-[LOG] SoundI::release                          :     fogo (0000019E9D8E7CF8)
 [LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000019E9DAF0B98 : node = 0000019E9CC381D0
-[LOG] SystemI::createSound                     : add node to async list : head = 0000019E93429A78.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019E9DAF0B98
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA421B1FD8 : node = 000002BA4270D8D0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA421B1FD8
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21056
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019E9CC382E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA4270D9E0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019E9DAF0B98
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA421B1FD8
 [LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000019F879A9E08 : node = 0000019E940BF510
-[LOG] SystemI::createSound                     : add node to async list : head = 0000019E93429A78.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019F879A9E08
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA476C2C78 : node = 000002BA43FB7320
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA476C2C78
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21056
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019E940BF620
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA43FB7430
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019F879A9E08
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA476C2C78
 [LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000019F879AA168 : node = 0000019E940BF650
-[LOG] SystemI::createSound                     : add node to async list : head = 0000019E93429A78.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019F879AA168
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA446244C8 : node = 000002BA475926C0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA446244C8
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21056
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019E940BF760
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA475927D0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019F879AA168
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA446244C8
 [LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000019E91B6A448 : node = 0000019E91E9DB20
-[LOG] SystemI::createSound                     : add node to async list : head = 0000019E93429A78.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019E91B6A448
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA47D614A8 : node = 000002BA47CE1470
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D614A8
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21056
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019E91E9DC30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA47CE1580
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019E91B6A448
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D614A8
 [LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000019E92785BE8 : node = 0000019E91E9D9E0
-[LOG] SystemI::createSound                     : add node to async list : head = 0000019E93429A78.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019E92785BE8
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA4443B098 : node = 000002BA42B44750
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA4443B098
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21056
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019E91E9DAF0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA42B44860
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019E92785BE8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA4443B098
 [LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000019CC660A998 : node = 0000019E91E9D760
-[LOG] SystemI::createSound                     : add node to async list : head = 0000019E93429A78.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019CC660A998
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA42786E28 : node = 000002BA48085670
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA42786E28
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21056
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019E91E9D870
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA48085780
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019CC660A998
-[LOG] SoundI::release                          :  (0000019CCB378DE8)
-[LOG] SoundI::release                          :     passos ilha verde 1 (0000019E91D3B208)
-[LOG] SoundI::release                          : ilha vermelha (0000019CC660A998)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D38E48)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E847CA098)
-[LOG] SoundI::release                          : ilha vermelha (0000019E92785BE8)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D39808)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E847CA3F8)
-[LOG] SoundI::release                          : ilha vermelha (0000019E91B6A448)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D39CE8)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E9DAF0178)
-[LOG] SoundI::release                          : ilha vermelha (0000019F879AA168)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D394C8)
-[LOG] SoundI::release                          :     ilha vermelha (0000019CC719E758)
-[LOG] SoundI::release                          : ilha vermelha (0000019F879A9E08)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D35A48)
-[LOG] SoundI::release                          :     ilha vermelha (0000019CC719E3F8)
-[LOG] SoundI::release                          : ilha vermelha (0000019E9DAF0B98)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D365A8)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E847C9B88)
-[LOG] SoundI::release                          : ilha vermelha (0000019E927BB5B8)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D339C8)
-[LOG] SoundI::release                          :     ilha vermelha (0000019CC719E098)
-[LOG] SoundI::release                          : ilha vermelha (0000019E927BB768)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D33D08)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E847C9EE8)
-[LOG] SoundI::release                          : ilha vermelha (0000019E93917E48)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D32E68)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E97626288)
-[LOG] SoundI::release                          : ilha vermelha (0000019E93917788)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E91D32648)
-[LOG] SoundI::release                          :     ilha vermelha (0000019E9D8E7B48)
-[LOG] SoundI::release                          : vento ambiente fechado 2.0 (0000019CC58E11A8)
-[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (0000019E91D32168)
-[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (0000019E9D8E8208)
-[LOG] SoundI::release                          : vento ambiente fechado 2.0 (0000019FB4A687B8)
-[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (0000019E91D2F0A8)
-[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (0000019E9D8E8A78)
-[LOG] SoundI::release                          :  (0000019CCB38D9F8)
-[LOG] SoundI::release                          :     ambiente sanidadee (0000019E91D2EF08)
-[LOG] SoundI::release                          :  (0000019CCB38BEA8)
-[LOG] SoundI::release                          :     pedras (0000019E91D35568)
-[LOG] SoundI::release                          :  (0000019CCB38A4C8)
-[LOG] SoundI::release                          :     fumaça 2 (0000019E91D2F588)
-[LOG] SoundI::release                          :  (0000019CCB38E128)
-[LOG] SoundI::release                          :     fumaça 3 (0000019E91D34388)
-[LOG] SoundI::release                          :  (0000019CCB389C28)
-[LOG] SoundI::release                          :     fumaça (0000019E91D31948)
-[LOG] SoundI::release                          :  (0000019CCB38C5D8)
-[LOG] SoundI::release                          :     pedras 2 (0000019E91D317A8)
-[LOG] SoundI::release                          :  (0000019CCB37A098)
-[LOG] SoundI::release                          :     passos ilha verde 2 (0000019E91D33EA8)
-[LOG] SoundI::release                          :  (0000019CCB37B798)
-[LOG] SoundI::release                          :     passos ilha verde 3 (0000019E91D39B48)
-[LOG] SoundI::release                          :  (0000019CCB37A658)
-[LOG] SoundI::release                          :     passos madeira 1 (0000019E91D36C28)
-[LOG] SoundI::release                          :  (0000019CCB37C8D8)
-[LOG] SoundI::release                          :     passos madeira 2 (0000019E91D35088)
-[LOG] SoundI::release                          :  (0000019CCB37C5F8)
-[LOG] SoundI::release                          :     passos madeira 3 (0000019E91D3A508)
-[LOG] SoundI::release                          :  (0000019CCB379AD8)
-[LOG] SoundI::release                          :     passos ilha vermelha 1 (0000019E91D37AC8)
-[LOG] SoundI::release                          :  (0000019CCB378B08)
-[LOG] SoundI::release                          :     passos ilha vermelha 2 (0000019E91D34EE8)
-[LOG] SoundI::release                          :  (0000019CCB37D738)
-[LOG] SoundI::release                          :     passos ilha vermelha 3 (0000019E91D3A6A8)
-[LOG] SoundI::release                          :  (0000019CCB377E18)
-[LOG] SoundI::release                          :     passos ilha cinza 1 (0000019E91D2F3E8)
-[LOG] SoundI::release                          :  (0000019CCB37C318)
-[LOG] SoundI::release                          :     passos ilha cinza 2 (0000019E91D382E8)
-[LOG] SoundI::release                          :  (0000019CCB37C1A8)
-[LOG] SoundI::release                          :     passos ilha cinza 3 (0000019E91D34D48)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA42786E28
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA42BEA6D8 : node = 000002BA43B55B30
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA42BEA6D8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA43B55C40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA42BEA6D8
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA47D5F138 : node = 000002BA47CE3130
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5F138
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA47CE3240
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5F138
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA42787848 : node = 000002BA480844F0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA42787848
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA48084600
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA42787848
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA47D5DB48 : node = 000002BA47CE2730
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5DB48
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA47CE2840
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5DB48
+[LOG] SoundI::release                          : vento ambiente fechado 2.0 (000002BA4821A928)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA4291CC58)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA47D60068)
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA47D603C8 : node = 000002BA47CE1E70
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D603C8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA47CE1F80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D603C8
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA4443B908 : node = 000002BA42B44250
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA4443B908
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA42B44360
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA4443B908
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA421B2338 : node = 000002BA44DBEB90
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA421B2338
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA44DBECA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA421B2338
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5EF88
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5EF88
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5DEA8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5DEA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D61148
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D61148
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D60F98
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D60F98
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA421B2BA8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA421B2BA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D60218
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D60218
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D612F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D612F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA42BEA888
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA42BEA888
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA44624168
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA44624168
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B817B83608
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B817B83608
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B817B83968
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B817B83968
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA42BEA528
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA42BEA528
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA476C2768
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA476C2768
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA421B29F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA421B29F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BB20B93D28
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BB20B93D28
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5F9A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5F9A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BB20B93308
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BB20B93308
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA47D5E568 : node = 000002BA47CE16F0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5E568
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA47CE1800
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5E568
+[LOG] SoundI::release                          : platéia longe (000002BA420F9038)
+[LOG] SoundI::release                          :     platéia longe (000002BA4291CDF8)
+[LOG] SoundI::release                          :     platéia longe (000002BA47D5EF88)
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA427879F8 : node = 000002BA48083D70
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA427879F8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA48083E80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA427879F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5DEA8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5DEA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D61148
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D61148
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D60F98
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D60F98
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA421B2BA8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA421B2BA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D60218
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D60218
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D612F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D612F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA42BEA888
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA42BEA888
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA44624168
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA44624168
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B817B83608
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B817B83608
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B817B83968
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B817B83968
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA42BEA528
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA42BEA528
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA476C2768
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA476C2768
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA421B29F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA421B29F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BB20B93D28
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BB20B93D28
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5F9A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5F9A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BB20B93308
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BB20B93308
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B80AC13918
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B80AC13918
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B80AC13AC8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B80AC13AC8
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA476C2408 : node = 000002BA43FB7460
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA476C2408
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA43FB7570
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002BA476C2258 : node = 000002BA43FB76E0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='vento ambiente fechado 2.0', format=5, channels=2, frequency=48000, lengthbytes=218880, lengthpcm=1201668, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.040340.
+[LOG] SystemI::createSound                     :     filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002BA476C2AC8 : node = 000002BAFF19CAD0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002BAFF6EC598.  list count = 1
+[LOG] SystemI::createSound                     :     filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002B80A3CD1E8 : node = 000002BAFF19C5D0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002BAFF6EC598.  list count = 2
+[LOG] SystemI::createSound                     :     filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002B80A3CD398 : node = 000002BAFF19CE90
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002BAFF6EC598.  list count = 3
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA476C2408
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA476C2258
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA43FB77F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='vento ambiente fechado 2.0', format=5, channels=2, frequency=48000, lengthbytes=218880, lengthpcm=1201668, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.040340.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA476C2258
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA476C2AC8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BAFF19CBE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA476C2AC8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B80A3CD1E8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BAFF19C6E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='platéia longe', format=5, channels=2, frequency=48000, lengthbytes=129664, lengthpcm=879674, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.345589.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B80A3CD1E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B80A3CD398
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BAFF19CFA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='vento ambiente fechado 2.0', format=5, channels=2, frequency=48000, lengthbytes=218880, lengthpcm=1201668, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.040340.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B80A3CD398
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B9D88823B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA4443B5A8
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='Hit Ar 5', format=5, channels=2, frequency=48000, lengthbytes=12160, lengthpcm=46695, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.878973.
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 000002B9D88823B8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='Hit Ar 3', format=5, channels=2, frequency=48000, lengthbytes=12256, lengthpcm=46695, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.245087.
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 000002B9D88823B8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='Hit Ar 2', format=5, channels=2, frequency=48000, lengthbytes=11872, lengthpcm=46695, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.110197.
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 000002B9D88823B8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='Hit Ar 4', format=5, channels=2, frequency=48000, lengthbytes=11968, lengthpcm=46695, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.190557.
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 000002B9D88823B8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='Hit Ar 1', format=5, channels=2, frequency=48000, lengthbytes=11968, lengthpcm=46695, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.824110.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA4443B5A8
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BB20B205B8 : node = 000002BA42B44ED0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BB20B205B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA42B44FE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BB20B205B8
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002B80A3CC978 : node = 000002BAFF19C710
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B80A3CC978
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BAFF19C820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B80A3CC978
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA4842F2C8 : node = 000002BA43B55EF0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA4842F2C8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA43B56000
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA4842F2C8
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002BA47A21208
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Dash3', format=5, channels=1, frequency=48000, lengthbytes=1120, lengthpcm=5871, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.034882.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002BA47A21208
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Dash', format=5, channels=1, frequency=48000, lengthbytes=1184, lengthpcm=5871, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.049957.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 784832
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 43296
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000F4E2FFEE98
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD374960E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD374960B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD374961B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD37496270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002BA47A21208
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Dash2', format=5, channels=1, frequency=48000, lengthbytes=1216, lengthpcm=5871, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.049957.
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BB20B1F838 : node = 000002BA42B44890
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BB20B1F838
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA42B449A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BB20B1F838
+[LOG] SoundI::release                          : vento ambiente fechado 2.0 (000002B80A3CD398)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002B80A3CDB28)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002B808B8E238)
+[LOG] SoundI::release                          : platéia longe (000002B80A3CD1E8)
+[LOG] SoundI::release                          :     platéia longe (000002B80A3CE008)
+[LOG] SoundI::release                          :     platéia longe (000002BA4443B5A8)
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BB20B1FB98 : node = 000002BA42B43490
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BB20B1FB98
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA42B435A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BB20B1FB98
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002B80A3CD1E8 : node = 000002BAFF19C5D0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B80A3CD1E8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BAFF19C6E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B80A3CD1E8
+[LOG] SoundI::release                          : ilha vermelha (000002BA4821AC88)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4291E318)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA47D60F98)
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA4821AAD8 : node = 000002BA44DBF090
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA4821AAD8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA44DBF1A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA4821AAD8
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BB20B1F9E8 : node = 000002BA42B45C90
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BB20B1F9E8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA42B45DA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BB20B1F9E8
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA47D5F7F8 : node = 000002BA47CE25F0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D5F7F8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA47CE2700
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D5F7F8
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA4443B5A8 : node = 000002BA42B449D0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA4443B5A8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA42B44AE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA4443B5A8
+[LOG] SoundI::release                          : ilha vermelha (000002BA476C2C78)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4291B738)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA47D60218)
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002BA47D60068 : node = 000002BA47CE3EF0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BA47D60068
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA47CE4000
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BA47D60068
+[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambiente.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002B80AAE0348 : node = 000002BA42B44B10
+[LOG] SystemI::createSound                     : add node to async list : head = 000002BAFF6EC598.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002B80AAE0348
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambiente.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3918912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20800
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002BA42B44C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ilha vermelha', format=5, channels=2, frequency=48000, lengthbytes=148544, lengthpcm=1441571, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.407458.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002B80AAE0348
+[LOG] SoundI::release                          :  (000002BA204768B8)
+[LOG] SoundI::release                          :     Hit Ar 1 (000002BAFFE32DE8)
+[LOG] SoundI::release                          :  (000002BA20476B98)
+[LOG] SoundI::release                          :     Hit Ar 2 (000002BAFFE32908)
+[LOG] SoundI::release                          :  (000002BA20478CA8)
+[LOG] SoundI::release                          :     Hit Ar 3 (000002BAFFE32768)
+[LOG] SoundI::release                          :  (000002BA20474BF8)
+[LOG] SoundI::release                          :     Hit Ar 4 (000002BAFFE32428)
+[LOG] SoundI::release                          :  (000002BA20477E48)
+[LOG] SoundI::release                          :     Hit Ar 5 (000002BAFFE32C48)
+[LOG] SoundI::release                          :  (000002BA204719A8)
+[LOG] SoundI::release                          :     Dash (000002BA43C21F58)
+[LOG] SoundI::release                          :  (000002BA20472528)
+[LOG] SoundI::release                          :     Dash2 (000002BA43C21258)
+[LOG] SoundI::release                          :  (000002BA2046FB78)
+[LOG] SoundI::release                          :     Dash3 (000002BA43C21DB8)
+[LOG] SoundI::release                          :  (000002BA20478B38)
+[LOG] SoundI::release                          :     passos ilha verde 1 (000002BA20A1FBD8)
+[LOG] SoundI::release                          : ilha vermelha (000002BA47D60068)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA43C21C18)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80AC13C78)
+[LOG] SoundI::release                          : ilha vermelha (000002BA4821AAD8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA42F6C228)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4842F7D8)
+[LOG] SoundI::release                          : ilha vermelha (000002BA427879F8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA43C218D8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80AC13AC8)
+[LOG] SoundI::release                          : ilha vermelha (000002BA47D5E568)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA92FB5878)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80AC13918)
+[LOG] SoundI::release                          : ilha vermelha (000002BA421B2338)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA49B9E9D8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BB20B93308)
+[LOG] SoundI::release                          : ilha vermelha (000002BA4443B908)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4291C5D8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA47D5F9A8)
+[LOG] SoundI::release                          : ilha vermelha (000002BA47D603C8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA49B9E838)
+[LOG] SoundI::release                          :     ilha vermelha (000002BB20B93D28)
+[LOG] SoundI::release                          : ilha vermelha (000002BA47D5DB48)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80A304C38)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA421B29F8)
+[LOG] SoundI::release                          : ilha vermelha (000002BA42787848)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA924D8988)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA476C2768)
+[LOG] SoundI::release                          : ilha vermelha (000002BA47D5F138)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA49B9F538)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA42BEA528)
+[LOG] SoundI::release                          : ilha vermelha (000002BA42BEA6D8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA92FB56D8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B817B83968)
+[LOG] SoundI::release                          : ilha vermelha (000002BA42786E28)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA92FB5BB8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B817B83608)
+[LOG] SoundI::release                          : ilha vermelha (000002BA4443B098)
+[LOG] SoundI::release                          :     ilha vermelha (000002BAFF3BB3E8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA44624168)
+[LOG] SoundI::release                          : ilha vermelha (000002BA47D614A8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA49B9F398)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA42BEA888)
+[LOG] SoundI::release                          : ilha vermelha (000002BA446244C8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4291E4B8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA47D612F8)
+[LOG] SoundI::release                          : ilha vermelha (000002BA421B1FD8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80A304A98)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA421B2BA8)
+[LOG] SoundI::release                          : vento ambiente fechado 2.0 (000002BA4821A778)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA4291DAF8)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA47D61148)
+[LOG] SoundI::release                          : ilha vermelha (000002B80AAE0348)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA20A203F8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA427874E8)
+[LOG] SoundI::release                          : ilha vermelha (000002BA4443B5A8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80A3CE4E8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80AADFFE8)
+[LOG] SoundI::release                          : ilha vermelha (000002BA47D5F7F8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA42F6C568)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4842F988)
+[LOG] SoundI::release                          : ilha vermelha (000002BB20B1F9E8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BAFFE32AA8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BB20B22068)
+[LOG] SoundI::release                          : ilha vermelha (000002B80A3CD1E8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA42F6C8A8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4842F628)
+[LOG] SoundI::release                          : ilha vermelha (000002BB20B1FB98)
+[LOG] SoundI::release                          :     ilha vermelha (000002BAFFE32288)
+[LOG] SoundI::release                          :     ilha vermelha (000002BB20B22728)
+[LOG] SoundI::release                          : ilha vermelha (000002BB20B1F838)
+[LOG] SoundI::release                          :     ilha vermelha (000002BAFFE320E8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA44624318)
+[LOG] SoundI::release                          : ilha vermelha (000002BA4842F2C8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80A304DD8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4821A268)
+[LOG] SoundI::release                          : ilha vermelha (000002B80A3CC978)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4291E658)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA47D5EF88)
+[LOG] SoundI::release                          : ilha vermelha (000002BB20B205B8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80A3045B8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4821AE38)
+[LOG] SoundI::release                          : ilha vermelha (000002BA476C2AC8)
+[LOG] SoundI::release                          :     ilha vermelha (000002B80A3CDCC8)
+[LOG] SoundI::release                          :     ilha vermelha (000002BA4443BE18)
+[LOG] SoundI::release                          : vento ambiente fechado 2.0 (000002BA476C2258)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA44C9A668)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA4443BAB8)
+[LOG] SoundI::release                          : vento ambiente fechado 2.0 (000002BA476C2408)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA44C9A4C8)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA4443B3F8)
+[LOG] SoundI::release                          : vento ambiente fechado 2.0 (000002BA421B2848)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA4291D958)
+[LOG] SoundI::release                          :     vento ambiente fechado 2.0 (000002BA47D5DEA8)
+[LOG] SoundI::release                          :  (000002BA2046EBA8)
+[LOG] SoundI::release                          :     ambiente sanidadee (000002BA4291BF58)
+[LOG] SoundI::release                          :  (000002BA2046EA38)
+[LOG] SoundI::release                          :     pedras (000002BA4291D478)
+[LOG] SoundI::release                          :  (000002BA2046F448)
+[LOG] SoundI::release                          :     fumaça 2 (000002BA4291B598)
+[LOG] SoundI::release                          :  (000002BA20470E28)
+[LOG] SoundI::release                          :     fumaça 3 (000002BA4291C438)
+[LOG] SoundI::release                          :  (000002BA20474D68)
+[LOG] SoundI::release                          :     fumaça (000002BA4291D7B8)
+[LOG] SoundI::release                          :  (000002BA2046FA08)
+[LOG] SoundI::release                          :     pedras 2 (000002BA4291D618)
+[LOG] SoundI::release                          :  (000002BA20479828)
+[LOG] SoundI::release                          :     passos ilha verde 2 (000002BA20A1ED38)
+[LOG] SoundI::release                          :  (000002BA20479B08)
+[LOG] SoundI::release                          :     passos ilha verde 3 (000002BA20A1F3B8)
+[LOG] SoundI::release                          :  (000002BA20478F88)
+[LOG] SoundI::release                          :     passos madeira 1 (000002BA20A21438)
+[LOG] SoundI::release                          :  (000002BA204793D8)
+[LOG] SoundI::release                          :     passos madeira 2 (000002BA20A20DB8)
+[LOG] SoundI::release                          :  (000002BA20474ED8)
+[LOG] SoundI::release                          :     passos madeira 3 (000002BA20A200B8)
+[LOG] SoundI::release                          :  (000002BA204779F8)
+[LOG] SoundI::release                          :     passos ilha vermelha 1 (000002BA20A20F58)
+[LOG] SoundI::release                          :  (000002BA20475A58)
+[LOG] SoundI::release                          :     passos ilha vermelha 2 (000002BA20A1F078)
+[LOG] SoundI::release                          :  (000002BA20476748)
+[LOG] SoundI::release                          :     passos ilha vermelha 3 (000002BA20A21918)
+[LOG] SoundI::release                          :  (000002BA20476FE8)
+[LOG] SoundI::release                          :     passos ilha cinza 1 (000002BA20A1F6F8)
+[LOG] SoundI::release                          :  (000002BA204765D8)
+[LOG] SoundI::release                          :     passos ilha cinza 2 (000002BA20A1FA38)
+[LOG] SoundI::release                          :  (000002BA20475608)
+[LOG] SoundI::release                          :     passos ilha cinza 3 (000002BA20A1FD78)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -423,3 +1095,7 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
