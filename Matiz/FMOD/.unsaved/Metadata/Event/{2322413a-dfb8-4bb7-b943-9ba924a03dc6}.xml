@@ -41,9 +41,6 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{1e6d6f17-27a1-4c63-b12d-88c145656d70}">
-		<property name="uiTrackHeight">
-			<value>28</value>
-		</property>
 		<relationship name="mixerGroup">
 			<destination>{4688175e-8b0f-424b-a5d0-830f66a9ce3d}</destination>
 		</relationship>
@@ -60,15 +57,8 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{7ca92b08-9155-4ede-804b-620657b29a6e}" />
-	<object class="MarkerTrack" id="{0ac60880-5827-40db-8aea-02746b366d25}">
-		<property name="uiTrackHeight">
-			<value>100</value>
-		</property>
-	</object>
+	<object class="MarkerTrack" id="{0ac60880-5827-40db-8aea-02746b366d25}" />
 	<object class="GroupTrack" id="{04f856c6-3560-405e-9dda-ff23bf8dd914}">
-		<property name="uiTrackHeight">
-			<value>100</value>
-		</property>
 		<relationship name="modules">
 			<destination>{036c5208-7b07-4626-8df6-1b1098837351}</destination>
 		</relationship>
@@ -82,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{4688175e-8b0f-424b-a5d0-830f66a9ce3d}">
+		<property name="volume">
+			<value>-18</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{7d0f730a-fd9c-4f4a-9328-a620ca0226b5}</destination>
 		</relationship>
@@ -123,6 +116,7 @@
 	<object class="MixerBusEffectChain" id="{7d0f730a-fd9c-4f4a-9328-a620ca0226b5}">
 		<relationship name="effects">
 			<destination>{b2b7796c-b124-455e-a63c-11d68d967296}</destination>
+			<destination>{8c625bbd-452b-477a-aee2-50a2aae3b876}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e80e2e37-163d-4b4c-b36d-fa2effdafb66}" />
@@ -134,5 +128,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{3c35dfde-dd31-4514-afda-4cf215863072}" />
 	<object class="MixerBusFader" id="{b2b7796c-b124-455e-a63c-11d68d967296}" />
+	<object class="PitchShifterEffect" id="{8c625bbd-452b-477a-aee2-50a2aae3b876}">
+		<property name="pitch">
+			<value>1.05999994</value>
+		</property>
+		<property name="overlap">
+			<value>9.80000019</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{180e42b4-4100-4bf6-97fc-8292f2dc032c}" />
 </objects>
