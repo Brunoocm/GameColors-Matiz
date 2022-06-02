@@ -46,8 +46,8 @@ namespace OniricoStudios
             yield return new WaitForSeconds(1f);
 
             Sequence mySequence = DOTween.Sequence();
-            mySequence.Append(pivot.transform.DOScale(4.5f, 0.3f))
-                .Append(pivot.transform.DOScale(3, 0.3f));
+            mySequence.Append(pivot.transform.DOScale(1.7f, 0.3f))
+                .Append(pivot.transform.DOScale(1, 0.3f));
 
             yield return new WaitForSeconds(3f);
             pivot.transform.DOScale(0, 0.3f);
@@ -61,8 +61,8 @@ namespace OniricoStudios
             pivotArena1.SetActive(true);
 
             Sequence mySequence = DOTween.Sequence();
-            mySequence.Append(pivotArena1.transform.DOScale(4.5f, 0.3f))
-                .Append(pivotArena1.transform.DOScale(3, 0.3f));
+            mySequence.Append(pivotArena1.transform.DOScale(1.7f, 0.3f))
+                .Append(pivotArena1.transform.DOScale(1, 0.3f));
 
             yield return new WaitForSeconds(3f);
 
