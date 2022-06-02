@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
+using Cinemachine;
 
 namespace OniricoStudios
 {
@@ -31,10 +32,16 @@ namespace OniricoStudios
         CharacterMovement characterMovement;
         CharacterStats charStats;
 
+        CinemachineVirtualCamera cinemachineVirtualCamera;
+        public float desiredFOV;
+        float orgFOV;
+
         void Start()
         {
             light.intensity = 0;
 
+            cinemachineVirtualCamera = GameObject.FindObjectOfType< CinemachineVirtualCamera>();
+            orgFOV = cinemachineVirtualCamera.m_Lens.FieldOfView;
         }
 
         void Update()
@@ -74,12 +81,12 @@ namespace OniricoStudios
             {
                 intensity -= Time.deltaTime * speed;
             }
-
-
         }
 
         public IEnumerator ChromaAppiers()
         {
+            DOTween.To(() => cinemachineVirtualCamera.m_Lens.FieldOfView, x => cinemachineVirtualCamera.m_Lens.FieldOfView = x, desiredFOV, 3);
+
             selectColor = true;
             chromas.gameObject.SetActive(true);
             yield return new WaitForSeconds(0.4f);
@@ -87,6 +94,8 @@ namespace OniricoStudios
         }
         public IEnumerator ChromaDesappiers()
         {
+            DOTween.To(() => cinemachineVirtualCamera.m_Lens.FieldOfView, x => cinemachineVirtualCamera.m_Lens.FieldOfView = x, orgFOV, 3);
+
             selectColor = false;
             chromas.transform.DOScale(0, 0.4f);
             yield return new WaitForSeconds(0.4f);
@@ -97,11 +106,12 @@ namespace OniricoStudios
         public IEnumerator SaveCoroutine()
         {
             characterMovement.canMove = false;
-            mainCheckpoint.textObj.SetActive(true);
-            yield return new WaitForSeconds(1.5f);
+            //mainCheckpoint.textObj.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
             saving = false;
             mainCheckpoint.textObj.SetActive(false);
         }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))

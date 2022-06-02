@@ -204,6 +204,7 @@ namespace OniricoStudios
             public float dashMinForce, dashMaxForce, specialCooldown, passiveSpeed, dashSpeed;
             public GameObject specialVermelho;
             public GameObject dashFX;
+            public GameObject redPassiveFX;
 
             public CharacterStats characterStats;
             public CharacterMovement characterMove;
@@ -212,6 +213,8 @@ namespace OniricoStudios
             public void Passiva()
             {
                 //quanto menor for a ratio de vida, maior a velocidade e dano (puxar nos scripts de movimenta��o e stats)
+
+                redPassiveFX.SetActive(characterStats.health == 1);
 
                 if (characterStats.health == 1)
                 {
