@@ -179,7 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemySeenRange: 40
   EnemyAttackRange: 8.7
-  attackDuration: 1
+  attackDuration: 2
+  attackCooldown: 3
   stopDistance: 0
   speed: 5
   isStopped: 0
@@ -218,6 +219,7 @@ MonoBehaviour:
           m_StringArgument: attack
           m_BoolArgument: 0
         m_CallState: 2
+  canAttack: 0
 --- !u!114 &4546134676138393702
 MonoBehaviour:
   m_ObjectHideFlags: 0

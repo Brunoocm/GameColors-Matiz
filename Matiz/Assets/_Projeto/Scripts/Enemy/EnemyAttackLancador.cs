@@ -29,10 +29,7 @@ namespace OniricoStudios
             if (!oneTime)
             {
                 StartCoroutine(Shoot());
-
             }
-
-
         }
 
 
