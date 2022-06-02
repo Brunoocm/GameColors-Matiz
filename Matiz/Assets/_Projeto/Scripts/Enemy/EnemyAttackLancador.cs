@@ -11,18 +11,8 @@ namespace OniricoStudios
 
         private bool oneTime;
 
-
         NavMeshAgent navMeshAgent => gameObject.GetComponent<NavMeshAgent>();
-
-        void Start()
-        {
-        }
-
-        void Update()
-        {
-        
-
-        }
+        Animator anim => gameObject.GetComponentInChildren<Animator>();
 
         public void AttackVoid()
         {
@@ -36,6 +26,8 @@ namespace OniricoStudios
         IEnumerator Shoot()
         {
             oneTime = true;
+
+            anim.SetTrigger("attack");
 
             GameObject enemy = Instantiate(enemyExplosivo, transform.position, Quaternion.identity);
             enemy.GetComponent<EnemyAttackExplosivo>().launched = true;
