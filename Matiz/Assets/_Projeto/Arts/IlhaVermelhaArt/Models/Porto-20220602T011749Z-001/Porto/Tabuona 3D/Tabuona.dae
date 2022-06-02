@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Dark</author>
+      <authoring_tool>Adobe Photoshop</authoring_tool>
+      <comments>Photoshop Build Version - 20201006.r.35 x6</comments>
+    </contributor>
+    <created>2022-06-01T21:34:24Z</created>
+    <modified>2022-06-01T21:34:24Z</modified>
+    <unit meter="0.001" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_lights>
+    <light id="Luz_infinita__1" name="Luz_infinita__0">
+      <technique_common>
+        <directional>
+          <color>1 1 1</color>
+        </directional>
+      </technique_common>
+      <extra>
+        <technique profile="MAX3D">
+          <aspect_ratio>1</aspect_ratio>
+          <overshoot>1</overshoot>
+          <decay_type>0</decay_type>
+          <decay_start>10</decay_start>
+          <use_near_attenuation>1</use_near_attenuation>
+          <use_far_attenuation>1</use_far_attenuation>
+          <near_attenuation_start>1</near_attenuation_start>
+          <near_attenuation_end>2</near_attenuation_end>
+          <far_attenuation_start>5</far_attenuation_start>
+          <far_attenuation_end>10</far_attenuation_end>
+        </technique>
+        <technique profile="FCOLLADA">
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+          <falloff_angle>5</falloff_angle>
+          <falloff_exponent>1</falloff_exponent>
+          <intensity>0.9</intensity>
+          <outer_cone>5</outer_cone>
+        </technique>
+      </extra>
+    </light>
+    <light id="Luz_de_acordo_com_a_imagem__1" name="Luz_de_acordo_com_a_imagem__0">
+      <technique_common>
+        <directional>
+          <color>0.1 0.1 0.1</color>
+        </directional>
+      </technique_common>
+      <extra>
+        <technique profile="FCOLLADA">
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+          <falloff_angle>5</falloff_angle>
+          <falloff_exponent>1</falloff_exponent>
+          <intensity>1</intensity>
+          <outer_cone>5</outer_cone>
+        </technique>
+      </extra>
+      <extra type="adobe_light_type">
+        <technique profile="ADOBE">
+          <type>
+            <imageBased>1</imageBased>
+          </type>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images>
+    <image id="Camada_1.psd">
+      <init_from>./Camada%201.psd</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kPSDFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="Camada_1.psd1">
+      <init_from>./Camada%201.psd</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kPSDFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="Camada_1_Material_de_extrus__o_-_Textura_padr__o.psd">
+      <init_from>./Camada%201%20Material%20de%20extrus%C3%A3o%20-%20Textura%20padr%C3%A3o.psd</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kPSDFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="Camada_1.psd2">
+      <init_from>./Camada%201.psd</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kPSDFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="Camada_1.psd3">
+      <init_from>./Camada%201.psd</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kPSDFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Camada_1_Material_de_infla____o_da_frente" name="Camada_1_Material_de_inflação_da_frente">
+      <instance_effect url="#Camada_1_Material_de_infla____o_da_frente-fx"/>
+    </material>
+    <material id="Camada_1_Material_de_chanfro_da_frente" name="Camada_1_Material_de_chanfro_da_frente">
+      <instance_effect url="#Camada_1_Material_de_chanfro_da_frente-fx"/>
+    </material>
+    <material id="Camada_1_Material_de_extrus__o" name="Camada_1_Material_de_extrusão">
+      <instance_effect url="#Camada_1_Material_de_extrus__o-fx"/>
+    </material>
+    <material id="Camada_1_Material_de_chanfro_do_verso" name="Camada_1_Material_de_chanfro_do_verso">
+      <instance_effect url="#Camada_1_Material_de_chanfro_do_verso-fx"/>
+    </material>
+    <material id="Camada_1_Material_de_infla____o_do_verso" name="Camada_1_Material_de_inflação_do_verso">
+      <instance_effect url="#Camada_1_Material_de_infla____o_do_verso-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Camada_1_Material_de_infla____o_da_frente-fx" name="Camada_1_Material_de_inflação_da_frente">
+      <profile_COMMON>
+        <newparam sid="Camada_1_psd-surface">
+          <surface type="2D">
+            <init_from>Camada_1.psd</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Camada_1_psd-sampler">
+          <sampler2D>
+            <source>Camada_1_psd-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Camada_1_psd-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0.019775</offsetu>
+                      <offsetv>-0.000133</offsetv>
+                      <scaleu>0.969458</scaleu>
+                      <scalev>0.997845</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Camada_1_Material_de_chanfro_da_frente-fx" name="Camada_1_Material_de_chanfro_da_frente">
+      <profile_COMMON>
+        <newparam sid="Camada_1_psd1-surface">
+          <surface type="2D">
+            <init_from>Camada_1.psd1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Camada_1_psd1-sampler">
+          <sampler2D>
+            <source>Camada_1_psd1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Camada_1_psd1-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0.019775</offsetu>
+                      <offsetv>-0.000133</offsetv>
+                      <scaleu>0.969458</scaleu>
+                      <scalev>0.997845</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Camada_1_Material_de_extrus__o-fx" name="Camada_1_Material_de_extrusão">
+      <profile_COMMON>
+        <newparam sid="Camada_1_Material_de_extrus__o_-_Textura_padr__o_psd-surface">
+          <surface type="2D">
+            <init_from>Camada_1_Material_de_extrus__o_-_Textura_padr__o.psd</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Camada_1_Material_de_extrus__o_-_Textura_padr__o_psd-sampler">
+          <sampler2D>
+            <source>Camada_1_Material_de_extrus__o_-_Textura_padr__o_psd-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Camada_1_Material_de_extrus__o_-_Textura_padr__o_psd-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0</offsetu>
+                      <offsetv>0</offsetv>
+                      <scaleu>1</scaleu>
+                      <scalev>1</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Camada_1_Material_de_chanfro_do_verso-fx" name="Camada_1_Material_de_chanfro_do_verso">
+      <profile_COMMON>
+        <newparam sid="Camada_1_psd2-surface">
+          <surface type="2D">
+            <init_from>Camada_1.psd2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Camada_1_psd2-sampler">
+          <sampler2D>
+            <source>Camada_1_psd2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Camada_1_psd2-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0.019775</offsetu>
+                      <offsetv>-0.000133</offsetv>
+                      <scaleu>0.969458</scaleu>
+                      <scalev>0.997845</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Camada_1_Material_de_infla____o_do_verso-fx" name="Camada_1_Material_de_inflação_do_verso">
+      <profile_COMMON>
+        <newparam sid="Camada_1_psd3-surface">
+          <surface type="2D">
+            <init_from>Camada_1.psd3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Camada_1_psd3-sampler">
+          <sampler2D>
+            <source>Camada_1_psd3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Camada_1_psd3-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0.019775</offsetu>
+                      <offsetv>-0.000133</offsetv>
+                      <scaleu>0.969458</scaleu>
+                      <scalev>0.997845</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.5 0.5 0.5</diffuse_color>
+              <specular_color>0 0 0</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0</shininess>
+              <roughness>0.333333</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Camada_2" name="Camada_1">
+      <mesh>
+        <source id="Camada_2-positions">
+          <float_array id="Camada_2-positions-array" count="462">31.8601 27.0448 0 31.0842 -0.011383 0 15.534 11.3629 0 14.4828 0.7995 0 9.47586 6.10388 0 8.5221 1.69769 0 6.4152 2.2962 0 7.22757 4.39017 0 5.0031 3.0018 0 28.7334 352.284 0 2.0034 353.603 0 3.9618 371.804 0 11.3801 370.782 0 5.0031 377.998 0 54.0844 366.2 0 54.0882 380.126 0 58.5165 370.441 0 59.3775 379.894 0 63.2069 374.526 0 64.1412 379.233 0 66.2067 378.697 0 65.408 376.229 0 67.9977 377.999 0 67.9977 322 0 72.9972 306.999 0 59.5568 304.309 0 73.2033 304.197 0 59.0238 304.247 0 72.9891 301.819 0 59.0042 304.246 0 72.4536 299.76 0 57.4711 304.298 0 71.694 297.909 0 36.9364 305.411 0 69.0624 292.528 0 35.8528 298.226 0 68.3955 290.431 0 35.266 290.605 0 67.9977 288.001 0 68.9976 1.0029 0 39.8342 29.0249 0 40.4001 -0.039306 0 35.8199 31.0047 0 35.7264 -0.050994 0 36.8226 32.0186 0 35.1591 316.671 0 35.0324 346.303 0 36.9937 305.663 0 68.9976 1.0029 0 40.4001 -0.039306 0 35.7264 -0.050994 0 31.0842 -0.011383 0 14.4828 0.7995 0 8.5221 1.69769 0 6.4152 2.2962 0 5.0031 3.0018 0 68.9976 1.0029 -71.7399 40.4001 -0.039306 -71.7399 35.7264 -0.050994 -71.7399 31.0842 -0.011383 -71.7399 14.4828 0.7995 -71.7399 8.5221 1.69769 -71.7399 6.4152 2.2962 -71.7399 5.0031 3.0018 -71.7399 5.0031 3.0018 0 2.0034 353.603 0 3.9618 371.804 0 5.0031 377.998 0 5.0031 3.0018 -71.7399 2.0034 353.603 -71.7399 3.9618 371.804 -71.7399 5.0031 377.998 -71.7399 5.0031 377.998 0 54.0882 380.126 0 59.3775 379.894 0 64.1412 379.233 0 66.2067 378.697 0 67.9977 377.999 0 5.0031 377.998 -71.7399 54.0882 380.126 -71.7399 59.3775 379.894 -71.7399 64.1412 379.233 -71.7399 66.2067 378.697 -71.7399 67.9977 377.999 -71.7399 67.9977 377.999 0 67.9977 322 0 72.9972 306.999 0 73.2033 304.197 0 72.9891 301.819 0 72.4536 299.76 0 71.694 297.909 0 69.0624 292.528 0 68.3955 290.431 0 67.9977 288.001 0 68.9976 1.0029 0 67.9977 377.999 -71.7399 67.9977 322 -71.7399 72.9972 306.999 -71.7399 73.2033 304.197 -71.7399 72.9891 301.819 -71.7399 72.4536 299.76 -71.7399 71.694 297.909 -71.7399 69.0624 292.528 -71.7399 68.3955 290.431 -71.7399 67.9977 288.001 -71.7399 68.9976 1.0029 -71.7399 31.8601 27.0448 -71.7399 31.0842 -0.011383 -71.7399 15.534 11.3629 -71.7399 14.4828 0.7995 -71.7399 9.47586 6.10388 -71.7399 8.5221 1.69769 -71.7399 6.4152 2.2962 -71.7399 7.22757 4.39017 -71.7399 5.0031 3.0018 -71.7399 28.7334 352.284 -71.7399 2.0034 353.603 -71.7399 3.9618 371.804 -71.7399 11.3801 370.782 -71.7399 5.0031 377.998 -71.7399 54.0844 366.2 -71.7399 54.0882 380.126 -71.7399 58.5165 370.441 -71.7399 59.3775 379.894 -71.7399 63.2069 374.526 -71.7399 64.1412 379.233 -71.7399 66.2067 378.697 -71.7399 65.408 376.229 -71.7399 67.9977 377.999 -71.7399 67.9977 322 -71.7399 72.9972 306.999 -71.7399 59.5568 304.309 -71.7399 73.2033 304.197 -71.7399 59.0238 304.247 -71.7399 72.9891 301.819 -71.7399 59.0042 304.246 -71.7399 72.4536 299.76 -71.7399 57.4711 304.298 -71.7399 71.694 297.909 -71.7399 36.9364 305.411 -71.7399 69.0624 292.528 -71.7399 35.8528 298.226 -71.7399 68.3955 290.431 -71.7399 35.266 290.605 -71.7399 67.9977 288.001 -71.7399 68.9976 1.0029 -71.7399 39.8342 29.0249 -71.7399 40.4001 -0.039306 -71.7399 35.8199 31.0047 -71.7399 35.7264 -0.050994 -71.7399 36.8226 32.0186 -71.7399 35.1591 316.671 -71.7399 35.0324 346.303 -71.7399 36.9937 305.663 -71.7399</float_array>
+          <technique_common>
+            <accessor source="#Camada_2-positions-array" count="154" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Camada_2-normals">
+          <float_array id="Camada_2-normals-array" count="462">0 0 0.998312 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.998312 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.036419 -0.999337 0 0.01943 -0.998123 0 -0.003015 -0.999995 0 -0.028665 -0.999589 0 -0.098853 -0.993406 0 -0.21156 -0.977365 0 -0.361085 -0.930723 0 -0.44623 -0.893032 0 0.036419 -0.999337 0 0.01943 -0.998123 0 -0.003015 -0.999995 0 -0.028665 -0.999589 0 -0.098853 -0.993406 0 -0.21156 -0.977365 0 -0.361085 -0.930723 0 -0.44623 -0.893032 0 -0.999963 -0.008555 0 -0.997099 0.049212 0 -0.988975 0.136218 0 -0.986161 0.165793 0 -0.999963 -0.008555 0 -0.997099 0.049212 0 -0.988975 0.136218 0 -0.986161 0.165793 0 -0.043322 0.999061 0 0.000267 0.998312 0 0.090708 0.995878 0 0.194359 0.97921 0 0.307345 0.949825 0 0.363305 0.93167 0 -0.043322 0.999061 0 0.000267 0.998312 0 0.090708 0.995878 0 0.194359 0.97921 0 0.307345 0.949825 0 0.363305 0.93167 0 1 0 0 0.985425 0.159894 0 0.980548 0.196278 0 0.999966 -0.008217 0 0.985222 -0.171281 0 0.947012 -0.315905 0 0.910656 -0.409065 0 0.926586 -0.371572 0 0.970852 -0.232536 0 0.995168 -0.079173 0 0.999994 0.003483 0 1 0 0 0.985425 0.159894 0 0.980548 0.196278 0 0.999966 -0.008217 0 0.985222 -0.171281 0 0.947012 -0.315905 0 0.910656 -0.409065 0 0.926586 -0.371572 0 0.970852 -0.232536 0 0.995168 -0.079173 0 0.999994 0.003483 0 0 0 -0.998312 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.998312 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1</float_array>
+          <technique_common>
+            <accessor source="#Camada_2-normals-array" count="154" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Camada_2-texcoords">
+          <float_array id="Camada_2-texcoords-array" count="308">0.419337 0.071271 0.408439 0.000104 0.190036 0.030022 0.175273 0.002237 0.10495 0.016189 0.091554 0.004599 0.061963 0.006173 0.073373 0.011681 0.04213 0.008029 0.375422 0.926765 0 0.930235 0.027505 0.978109 0.131696 0.975422 0.04213 0.994401 0.731476 0.963368 0.731529 1 0.793725 0.974526 0.805817 0.999389 0.859601 0.98527 0.872723 0.997652 0.901733 0.996241 0.890516 0.989749 0.926887 0.994404 0.926887 0.847107 0.997105 0.807651 0.808336 0.800574 1 0.800279 0.800849 0.800411 0.996992 0.794024 0.800575 0.800409 0.98947 0.788608 0.779042 0.800546 0.978802 0.783741 0.490633 0.803473 0.941841 0.769587 0.475414 0.784573 0.932475 0.764071 0.467172 0.764529 0.926887 0.757679 0.940931 0.002772 0.531333 0.076479 0.53928 0.00003 0.474951 0.081687 0.473638 0 0.489035 0.084354 0.465671 0.833091 0.463891 0.911035 0.491437 0.804137 1 1 0.967541 1 0.96224 1 0.956975 1 0.938122 1 0.931284 1 0.9288 1 0.92701 1 1 0 0.967541 0 0.96224 0 0.956975 0 0.938122 0 0.931284 0 0.9288 0 0.92701 0 0.92701 1 0.529322 1 0.508558 1 0.501434 1 0.92701 0 0.529322 0 0.508558 0 0.501434 0 0.501434 1 0.445707 1 0.439701 1 0.434246 1 0.431826 1 0.429645 1 0.501434 0 0.445707 0 0.439701 0 0.434246 0 0.431826 0 0.429645 0 0.429645 1 0.366128 1 0.348194 1 0.345006 1 0.342298 1 0.339885 1 0.337616 1 0.330822 1 0.328326 1 0.325533 1 0 1 0.429645 0 0.366128 0 0.348194 0 0.345006 0 0.342298 0 0.339885 0 0.337616 0 0.330822 0 0.328326 0 0.325533 0 0 0 0.419337 0.071271 0.408439 0.000104 0.190036 0.030022 0.175273 0.002237 0.10495 0.016189 0.091554 0.004599 0.061963 0.006173 0.073373 0.011681 0.04213 0.008029 0.375422 0.926765 0 0.930235 0.027505 0.978109 0.131696 0.975422 0.04213 0.994401 0.731476 0.963368 0.731529 1 0.793725 0.974526 0.805817 0.999389 0.859601 0.98527 0.872723 0.997652 0.901733 0.996241 0.890516 0.989749 0.926887 0.994404 0.926887 0.847107 0.997105 0.807651 0.808336 0.800574 1 0.800279 0.800849 0.800411 0.996992 0.794024 0.800575 0.800409 0.98947 0.788608 0.779042 0.800546 0.978802 0.783741 0.490633 0.803473 0.941841 0.769587 0.475414 0.784573 0.932475 0.764071 0.467172 0.764529 0.926887 0.757679 0.940931 0.002772 0.531333 0.076479 0.53928 0.00003 0.474951 0.081687 0.473638 0 0.489035 0.084354 0.465671 0.833091 0.463891 0.911035 0.491437 0.804137</float_array>
+          <technique_common>
+            <accessor source="#Camada_2-texcoords-array" count="154" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Camada_2-vertices">
+          <input semantic="POSITION" source="#Camada_2-positions"/>
+        </vertices>
+        <triangles material="Camada_1_Material_de_inflação_da_frente" count="69">
+          <input semantic="VERTEX" source="#Camada_2-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Camada_2-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#Camada_2-texcoords" offset="0"/>
+          <p>3 1 2 5 3 4 6 5 7 8 6 7 46 9 45 11 10 12 13 11 12 14 15 12 17 15 16 19 17 18 20 19 21 22 20 21 45 23 46 47 31 45 26 24 25 27 28 25 29 30 27 31 32 29 33 34 31 36 34 35 38 36 37 44 40 38 41 39 40 42 43 40 1 43 0 0 2 1 2 4 3 4 7 5 9 10 45 45 10 47 47 10 33 33 10 35 35 10 37 37 10 44 44 10 42 42 10 0 0 10 2 2 10 4 4 10 7 8 7 10 9 12 10 12 9 14 13 12 15 46 14 9 14 16 15 16 18 17 18 21 19 46 23 14 14 23 16 16 23 18 18 23 21 22 21 23 45 31 23 31 29 23 29 27 23 27 25 23 24 23 25 26 25 28 28 27 30 30 29 32 47 33 31 32 31 34 33 35 34 35 37 36 37 44 38 39 38 40 44 42 40 41 40 43 42 0 43</p>
+        </triangles>
+        <triangles material="Camada_1_Material_de_chanfro_da_frente" count="1">
+          <input semantic="VERTEX" source="#Camada_2-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Camada_2-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#Camada_2-texcoords" offset="0"/>
+          <p>0 0 0</p>
+        </triangles>
+        <triangles material="Camada_1_Material_de_extrusão" count="50">
+          <input semantic="VERTEX" source="#Camada_2-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Camada_2-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#Camada_2-texcoords" offset="0"/>
+          <p>56 48 49 56 49 57 57 49 50 57 50 58 58 50 51 58 51 59 59 51 52 59 52 60 60 52 53 60 53 61 61 53 54 61 54 62 62 54 55 62 55 63 68 64 65 68 65 69 69 65 66 69 66 70 70 66 67 70 67 71 78 72 73 78 73 79 79 73 74 79 74 80 80 74 75 80 75 81 81 75 76 81 76 82 82 76 77 82 77 83 95 84 85 95 85 96 96 85 86 96 86 97 97 86 87 97 87 98 98 87 88 98 88 99 99 88 89 99 89 100 100 89 90 100 90 101 101 90 91 101 91 102 102 91 92 102 92 103 103 92 93 103 93 104 104 93 94 104 94 105</p>
+        </triangles>
+        <triangles material="Camada_1_Material_de_chanfro_do_verso" count="1">
+          <input semantic="VERTEX" source="#Camada_2-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Camada_2-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#Camada_2-texcoords" offset="0"/>
+          <p>0 0 0</p>
+        </triangles>
+        <triangles material="Camada_1_Material_de_inflação_do_verso" count="69">
+          <input semantic="VERTEX" source="#Camada_2-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Camada_2-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#Camada_2-texcoords" offset="0"/>
+          <p>107 109 108 109 111 110 111 112 113 112 114 113 115 152 151 116 117 118 117 119 118 121 120 118 121 123 122 123 125 124 125 126 127 126 128 127 129 151 152 137 153 151 130 132 131 134 133 131 136 135 133 138 137 135 140 139 137 140 142 141 142 144 143 146 150 144 145 147 146 149 148 146 149 107 106 108 106 107 110 108 109 113 110 111 116 115 151 116 151 153 116 153 139 116 139 141 116 141 143 116 143 150 116 150 148 116 148 106 116 106 108 116 108 110 116 110 113 113 114 116 118 115 116 115 118 120 118 119 121 120 152 115 122 120 121 124 122 123 127 124 125 129 152 120 129 120 122 129 122 124 129 124 127 127 128 129 137 151 129 135 137 129 133 135 129 131 133 129 129 130 131 131 132 134 133 134 136 135 136 138 139 153 137 137 138 140 141 139 140 143 141 142 150 143 144 144 145 146 148 150 146 146 147 149 106 148 149</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Luz_infinita__0" name="Luz_infinita__0" type="NODE">
+        <lookat>52.2461 306.747 121.776 52.1718 306.154 120.976 0 1 0</lookat>
+        <instance_light url="#Luz_infinita__1"/>
+      </node>
+      <node id="Luz_de_acordo_com_a_imagem__0" name="Luz_de_acordo_com_a_imagem__0" type="NODE">
+        <instance_light url="#Luz_de_acordo_com_a_imagem__1"/>
+      </node>
+      <node id="Camada_1" name="Camada_1" type="NODE">
+        <matrix>0.338771 0.053026 -0.082912 -25.79 -0.058929 0.34732 -0.018653 -64.457 0.078826 0.031762 0.342388 3.28118 0 0 0 1</matrix>
+        <instance_geometry url="#Camada_2">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Camada_1_Material_de_inflação_da_frente" target="#Camada_1_Material_de_infla____o_da_frente"/>
+              <instance_material symbol="Camada_1_Material_de_chanfro_da_frente" target="#Camada_1_Material_de_chanfro_da_frente"/>
+              <instance_material symbol="Camada_1_Material_de_extrusão" target="#Camada_1_Material_de_extrus__o"/>
+              <instance_material symbol="Camada_1_Material_de_chanfro_do_verso" target="#Camada_1_Material_de_chanfro_do_verso"/>
+              <instance_material symbol="Camada_1_Material_de_inflação_do_verso" target="#Camada_1_Material_de_infla____o_do_verso"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra type="pivot_use">
+          <technique profile="ADOBE">
+            <use_pivot>
+              <needPivot>0</needPivot>
+            </use_pivot>
+          </technique>
+        </extra>
+      </node>
+      <extra type="render_settings">
+        <technique profile="ADOBE">
+          <faces>
+            <render_faces>1</render_faces>
+            <face_style>4</face_style>
+            <face_color>1 1 1</face_color>
+            <texture_type>0</texture_type>
+            <anti_alias_quality>1</anti_alias_quality>
+            <show_reflections>1</show_reflections>
+            <show_refractions>1</show_refractions>
+            <show_shadows>1</show_shadows>
+            <remove_backfaces>0</remove_backfaces>
+          </faces>
+          <edges>
+            <render_edges>0</render_edges>
+            <line_style>1</line_style>
+            <line_color>0 0 0</line_color>
+            <line_width>1</line_width>
+            <crease_value>0</crease_value>
+            <remove_backface_lines>0</remove_backface_lines>
+            <remove_hidden_lines>1</remove_hidden_lines>
+          </edges>
+          <vertices>
+            <render_vertices>0</render_vertices>
+            <vertex_style>1</vertex_style>
+            <vertex_color>0 0 0</vertex_color>
+            <vertex_radius>1</vertex_radius>
+            <remove_backface_vertices>0</remove_backface_vertices>
+            <remove_hidden_vertices>1</remove_hidden_vertices>
+          </vertices>
+          <volumes>
+            <render_volume>0</render_volume>
+            <volume_style>2097152</volume_style>
+            <transfer_function0/>
+            <transfer_function1/>
+            <transfer_function2/>
+            <transfer_function3/>
+            <gradient_enhancement>1</gradient_enhancement>
+            <opacity_scale>1</opacity_scale>
+          </volumes>
+          <stereo>
+            <render_stereo>0</render_stereo>
+            <stereo_style>16384</stereo_style>
+            <stereo_offset>5</stereo_offset>
+            <stereo_line_spacing>40</stereo_line_spacing>
+          </stereo>
+          <internal>
+            <projection>0</projection>
+            <blend_unlit>0</blend_unlit>
+          </internal>
+        </technique>
+      </extra>
+      <extra type="background_image_type">
+        <technique profile="ADOBE">
+          <type>
+            <image_type>0</image_type>
+          </type>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>

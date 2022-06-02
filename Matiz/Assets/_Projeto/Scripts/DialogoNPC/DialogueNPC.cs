@@ -64,7 +64,7 @@ namespace OniricoStudios
         {
             if (!dialogueSystem.playingText)
             {
-                if (newFraseForSecondArena && progressionManager.firstArena)                //se ele terminou o desafio e tem frase pra primeira arena  
+                if (newFraseForSecondArena && progressionManager.unlockFirstArena)                //se ele terminou o desafio e tem frase pra primeira arena  
                 {
                     dialogueSystem.Restart(dialogueSystem.sentencesForSecondArena);
                 }

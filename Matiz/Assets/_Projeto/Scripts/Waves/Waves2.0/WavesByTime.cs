@@ -93,11 +93,14 @@ namespace OniricoStudios
                 StartCoroutine(TimeToEnd());
                 if (firstArena) //completou a primeira arena
                 {
-                    progressionManager.secondArena = true; // segunda arena abre
+                    progressionManager.unlockSecondArena = true; //segunda arena abre
+                  
                     StartCoroutine(completeDesafioUI.SetInsigniaArena());
                 }
                 else if(secondArena)
                 {
+                    progressionManager.unlockFinal = true; //final abre
+
                     StartCoroutine(completeDesafioUI.SetInsigniaArena2());
                 }
                 oneTime = true;

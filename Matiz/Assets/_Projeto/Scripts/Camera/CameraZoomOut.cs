@@ -6,6 +6,7 @@ public class CameraZoomOut : MonoBehaviour
 {
 
     public float offSetY;
+    public float velocity;
     private float StartOffSetY;
 
     private bool zoomming;
@@ -34,7 +35,7 @@ public class CameraZoomOut : MonoBehaviour
             {
                 if (transposer.m_FollowOffset.y < offSetY)
                 {
-                    transposer.m_FollowOffset.y += Time.deltaTime * 1.3f;
+                    transposer.m_FollowOffset.y += Time.deltaTime * velocity;
                     print("mais");
 
 
