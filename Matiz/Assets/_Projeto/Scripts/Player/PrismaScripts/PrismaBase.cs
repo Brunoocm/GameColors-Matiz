@@ -60,6 +60,10 @@ namespace OniricoStudios
             if (other.gameObject.CompareTag("Ground"))
             {
                 rb.isKinematic = true;
+            } 
+            if (other.gameObject.CompareTag("Walls"))
+            {
+             
             }
 
         }
