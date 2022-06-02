@@ -8,8 +8,9 @@ public class ProgressionManager : MonoBehaviour
 
     [Header("Arenas")]
     public bool desafio;
-    public bool firstArena;
-    public bool secondArena;
+    public bool unlockFirstArena;
+    public bool unlockSecondArena;
+    public bool unlockFinal;
 
     [Header("Abilities")]
     public bool cinza;
