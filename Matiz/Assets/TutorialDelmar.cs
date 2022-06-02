@@ -16,6 +16,8 @@ namespace OniricoStudios
         public Transform VermelhaPos;
         public BlockWayArena blockWayArena;
 
+        public GameObject delmar;
+
         void Awake()
         {
             DontDestroyOnLoad(this);
@@ -61,6 +63,11 @@ namespace OniricoStudios
             if (Input.GetKeyDown(KeyCode.Alpha6)) //ir para segunda arena
             {
                 SceneManager.LoadScene("SegundaArena");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
+            {
+                delmar.SetActive(!delmar.activeSelf);
             }
         }
 
