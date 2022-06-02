@@ -71,6 +71,13 @@ namespace OniricoStudios
         [FMODUnity.EventRef] public string BoatInEvent;
         [FMODUnity.EventRef] public string BoatOutEvent;
 
+        [Header("UI")]
+        [FMODUnity.EventRef] public string ButtonMouse;
+        [FMODUnity.EventRef] public string ButtonPressed;
+        [FMODUnity.EventRef] public string ButtonConfirm;
+        [FMODUnity.EventRef] public string ButtonCancel;
+
+
         [Header("Save")]
         [FMODUnity.EventRef] public string IdleEvent;
         [FMODUnity.EventRef] public string OpenEvent;
@@ -98,6 +105,11 @@ namespace OniricoStudios
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void PlaySound(string EventName)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(EventName, transform.position);
         }
     }
 }

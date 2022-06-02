@@ -43,6 +43,7 @@ public class Menu : MonoBehaviour
 
     public void GoScene(string scene)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(scene);
     }
 
