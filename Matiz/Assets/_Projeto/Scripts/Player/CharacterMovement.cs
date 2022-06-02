@@ -258,6 +258,18 @@ namespace OniricoStudios
 
         }
 
+        void Flip()
+        {
+            if (CharacterStats.playerObj.transform.position.x < transform.position.x)
+            {
+                //animated.transform.GetChild(0).localScale = new Vector3(-size.x, size.y, size.z);
+            }
+            else
+            {
+                //animated.transform.GetChild(0).localScale = new Vector3(size.x, size.y, size.z);
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Harbor"))

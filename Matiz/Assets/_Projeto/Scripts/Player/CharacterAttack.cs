@@ -19,15 +19,27 @@ namespace OniricoStudios
         [HideInInspector]
         public bool canAttack;
 
+        bool invert;
+
         private float angle;
         CharacterMovement characterMovement => gameObject.GetComponent<CharacterMovement>();
         CharacterAbilities characterAbilities => gameObject.GetComponent<CharacterAbilities>();
         Transform playerPos => gameObject.GetComponent<Transform>();
         Animator anim => gameObject.GetComponentInChildren<Animator>();
         Rigidbody rb => gameObject.GetComponent<Rigidbody>();
+
+
+
+
+
+        Vector3 orgSize;
+
+
         void Start()
         {
             canAttack = true;
+
+            orgSize = transform.localScale;
         }
 
         void Update()
@@ -51,6 +63,17 @@ namespace OniricoStudios
         {
             canAttack = false;
 
+            if(invert)
+            {
+                transform.localScale = new Vector3(orgSize.x, orgSize.y, orgSize.z);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-orgSize.x, orgSize.y, orgSize.z);
+            }
+
+            invert = !invert;
+
             anim.SetTrigger("AttackTrigger");
 
             float vertical = mousePos.point.z - playerPos.position.z;
@@ -60,6 +83,7 @@ namespace OniricoStudios
             anim.SetFloat("Horizontal", horizontal);
 
             attack.SetActive(true);
+            attack.GetComponent<Animator>().Play("trail-attack");
 
             FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.playerAttackEvent, transform.position);
 
@@ -74,6 +98,8 @@ namespace OniricoStudios
 
         public IEnumerator KnockbackLR(float dirH, float dirV)
         {
+            //StartCoroutine(DisableAttack());
+
             characterMovement.canMove = false;
 
             float startTime = Time.time;
@@ -87,8 +113,15 @@ namespace OniricoStudios
             attack.SetActive(false);
             characterMovement.canMove = true;
 
+            transform.localScale = orgSize;
+
             yield return new WaitForSeconds(timeBTWAttack);
             canAttack = true;
+        }
+
+        public void DisableAttack()
+        {
+            attack.SetActive(false);
         }
     }
 }
