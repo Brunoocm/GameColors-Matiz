@@ -159,8 +159,8 @@ https://wingless-seraph.net</value>
 		<relationship name="modules">
 			<destination>{ee99ed9f-9ea2-4be0-942c-852881c23d31}</destination>
 			<destination>{8f9a2d8f-9f69-4953-9e46-f7296586c717}</destination>
-			<destination>{c5e9bce9-2a1e-4d65-9681-9e06d4cf3975}</destination>
 			<destination>{11d69c0f-121e-4646-b38e-928fb2fe36b4}</destination>
+			<destination>{c5e9bce9-2a1e-4d65-9681-9e06d4cf3975}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{483e5cb4-3460-4323-80dd-0abf90b2350d}</destination>
@@ -470,7 +470,7 @@ https://wingless-seraph.net</value>
 	</object>
 	<object class="SingleSound" id="{8f9a2d8f-9f69-4953-9e46-f7296586c717}">
 		<property name="start">
-			<value>0.10000000000000001</value>
+			<value>0.050000000000000003</value>
 		</property>
 		<property name="length">
 			<value>0.14999999999999999</value>
@@ -485,26 +485,9 @@ https://wingless-seraph.net</value>
 			<destination>{ed48c29d-589c-4c8e-9124-846edad0848b}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{c5e9bce9-2a1e-4d65-9681-9e06d4cf3975}">
-		<property name="start">
-			<value>0.25</value>
-		</property>
-		<property name="length">
-			<value>0.049999999999999989</value>
-		</property>
-		<property name="color">
-			<value>Red</value>
-		</property>
-		<relationship name="modulators">
-			<destination>{75fa991d-9406-4310-9331-52858fe1e1a6}</destination>
-		</relationship>
-		<relationship name="audioFile">
-			<destination>{13ff3de9-84d5-4ca6-8f7f-2386f3fd0266}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{11d69c0f-121e-4646-b38e-928fb2fe36b4}">
 		<property name="start">
-			<value>0.29999999999999999</value>
+			<value>0.27000000000000002</value>
 		</property>
 		<property name="length">
 			<value>0.050000000000000058</value>
@@ -517,6 +500,23 @@ https://wingless-seraph.net</value>
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{43480a55-3332-4798-ad89-811bb6bdc420}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{c5e9bce9-2a1e-4d65-9681-9e06d4cf3975}">
+		<property name="start">
+			<value>0.20999999999999999</value>
+		</property>
+		<property name="length">
+			<value>0.049999999999999989</value>
+		</property>
+		<property name="color">
+			<value>Red</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{75fa991d-9406-4310-9331-52858fe1e1a6}</destination>
+		</relationship>
+		<relationship name="audioFile">
+			<destination>{13ff3de9-84d5-4ca6-8f7f-2386f3fd0266}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{483e5cb4-3460-4323-80dd-0abf90b2350d}">
@@ -790,7 +790,7 @@ https://wingless-seraph.net</value>
 			<value>-80</value>
 		</property>
 	</object>
-	<object class="ADSRModulator" id="{75fa991d-9406-4310-9331-52858fe1e1a6}">
+	<object class="ADSRModulator" id="{4d33e5f1-008d-4760-8e4a-17d6f6e769c2}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
@@ -801,7 +801,7 @@ https://wingless-seraph.net</value>
 			<value>-80</value>
 		</property>
 	</object>
-	<object class="ADSRModulator" id="{4d33e5f1-008d-4760-8e4a-17d6f6e769c2}">
+	<object class="ADSRModulator" id="{75fa991d-9406-4310-9331-52858fe1e1a6}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
