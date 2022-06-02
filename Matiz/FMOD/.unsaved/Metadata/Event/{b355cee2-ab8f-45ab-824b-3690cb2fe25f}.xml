@@ -41,9 +41,6 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{f1eb448a-f005-48bf-9033-7812ea940356}">
-		<property name="uiTrackHeight">
-			<value>28</value>
-		</property>
 		<relationship name="mixerGroup">
 			<destination>{cb78e103-463b-4348-98ad-6ff43139bbb8}</destination>
 		</relationship>
@@ -60,15 +57,8 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{80a0b377-478b-47fe-b9ac-fd460a3383f7}" />
-	<object class="MarkerTrack" id="{9fafc728-53a4-49ff-afdf-8076baf47385}">
-		<property name="uiTrackHeight">
-			<value>100</value>
-		</property>
-	</object>
+	<object class="MarkerTrack" id="{9fafc728-53a4-49ff-afdf-8076baf47385}" />
 	<object class="GroupTrack" id="{8da19d55-4125-47a5-8d5b-800c74d97e26}">
-		<property name="uiTrackHeight">
-			<value>100</value>
-		</property>
 		<relationship name="modules">
 			<destination>{441a9e9d-5962-402b-b93f-0d7d4748ab82}</destination>
 		</relationship>
@@ -107,6 +97,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{e6ea4043-3997-4077-bd9e-5531e098da7a}">
+		<property name="volume">
+			<value>-8.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
