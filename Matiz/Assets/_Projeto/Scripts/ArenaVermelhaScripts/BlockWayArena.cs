@@ -32,6 +32,7 @@ namespace OniricoStudios
             }
             if(progressionManager.secondArena)
             {
+                print("oo");
                 secondArenaBlock.SetActive(false);
             }
            
