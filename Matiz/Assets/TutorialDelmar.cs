@@ -18,18 +18,24 @@ namespace OniricoStudios
 
         public GameObject delmar;
 
-        void Awake()
-        {
-            DontDestroyOnLoad(this);
+        // void Awake()
+        // {
+        //     DontDestroyOnLoad(this);
 
-            if (playerInstance == null)
-            {
-                playerInstance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+        //     if (playerInstance == null)
+        //     {
+        //         playerInstance = this;
+        //     }
+        //     else
+        //     {
+        //         Destroy(gameObject);
+        //     }
+        // }
+
+        void OnEnable()
+        {
+            blockWayArena = GameObject.FindObjectOfType <BlockWayArena>();
+            delmar = GameObject.Find("TutorialDelmar");
         }
 
         // Update is called once per frame
