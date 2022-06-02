@@ -166,6 +166,7 @@ namespace OniricoStudios
                 {
                     enemyBaseMove.stopMoving = true;
                     StartCoroutine(Explosion(timeToExplode));
+                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.RedExplosiveDeathEvent, transform.position);
 
                 }
             }

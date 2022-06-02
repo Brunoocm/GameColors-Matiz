@@ -31,6 +31,7 @@ namespace OniricoStudios
 
             GameObject enemy = Instantiate(enemyExplosivo, transform.position, Quaternion.identity);
             enemy.GetComponent<EnemyAttackExplosivo>().launched = true;
+            FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.RedExplosiveAtackEvent, transform.position);
 
             //enemy.GetComponent<EnemyAttackExplosivo>().AttackVoid();
 

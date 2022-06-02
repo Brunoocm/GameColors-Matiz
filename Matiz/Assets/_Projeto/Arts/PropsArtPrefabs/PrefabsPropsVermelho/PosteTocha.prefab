@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8880495734192811471}
   - component: {fileID: 8129951218725133083}
+  - component: {fileID: 5728967407072893572}
+  - component: {fileID: 2203124113477237381}
   m_Layer: 0
   m_Name: PosteTocha
   m_TagString: Untagged
@@ -83,6 +85,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5728967407072893572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3949915974644404647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: "event:/Ambienta\xE7\xE3o/fogo"
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
+--- !u!135 &2203124113477237381
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3949915974644404647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10.02
+  m_Center: {x: 0, y: -0.000030517578, z: 0.000030517578}
 --- !u!1001 &1488718881966935602
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ namespace OniricoStudios
         public int health;
         public float timeKnockback;
         public float forceKnockback;
+        public string deathEventName;
+        public string damageEventName;
         [HideInInspector] public bool stopMove;
 
         public GameObject greyPassive;
@@ -60,6 +62,7 @@ namespace OniricoStudios
             {
                 enemyMainAI.DeleteObj(gameObject, enemyBaseMove);
                 Instantiate(deathFX);
+                FMODUnity.RuntimeManager.PlayOneShot(deathEventName, transform.position);
 
                 //transform.gameObject.SetActive(false);
 
@@ -141,6 +144,8 @@ namespace OniricoStudios
                 }
 
                 Instantiate(hurtFX);
+
+                FMODUnity.RuntimeManager.PlayOneShot(damageEventName, transform.position);
 
                 if (timerArena != null) timerArena.AddTime();
                 Flash();
