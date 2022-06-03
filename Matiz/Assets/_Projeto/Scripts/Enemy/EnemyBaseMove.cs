@@ -20,6 +20,7 @@ namespace OniricoStudios
         public float attackCooldown;
         public float stopDistance;
         public float speed;
+        public bool canWalk;
         [HideInInspector] public bool isStopped;
 
         [Header("Gizmos")]
@@ -84,7 +85,7 @@ namespace OniricoStudios
 
                     Flip();
 
-                    anim.SetBool("walk", navMeshAgent.enabled);
+                    if(canWalk) anim.SetBool("walk", navMeshAgent.enabled);
 
                     seesTarget = Physics.CheckSphere(transform.position, EnemySeenRange, layerTarget);
                     

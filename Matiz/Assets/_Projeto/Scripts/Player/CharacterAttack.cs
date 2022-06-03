@@ -56,6 +56,7 @@ namespace OniricoStudios
                     Vector3 difference = hit.point- attack.transform.position;
                     angle = Mathf.Atan2(difference.x, difference.z) * Mathf.Rad2Deg;
                     attack.transform.eulerAngles = new Vector3(-90, angle + 190, 0);
+                    pivotAttack.transform.eulerAngles = new Vector3(-90, angle + 190, 0);
                 }
             }
         }
@@ -83,6 +84,7 @@ namespace OniricoStudios
             anim.SetFloat("Horizontal", horizontal);
 
             attack.SetActive(true);
+            pivotAttack.SetActive(true);
             attack.GetComponent<Animator>().Play("trail-attack");
 
             FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.playerAttackEvent, transform.position);
@@ -111,6 +113,7 @@ namespace OniricoStudios
             }
 
             attack.SetActive(false);
+            pivotAttack.SetActive(false);
             characterMovement.canMove = true;
 
             transform.localScale = orgSize;

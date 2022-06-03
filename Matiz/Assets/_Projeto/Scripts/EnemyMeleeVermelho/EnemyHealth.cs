@@ -18,6 +18,7 @@ namespace OniricoStudios
 
         public GameObject hurtFX;
         public GameObject deathFX;
+        public GameObject damageFX;
 
         [Header("Stacks")]
         public int currentStacks;
@@ -98,12 +99,14 @@ namespace OniricoStudios
         }
         public void Flash()
         {
-            if (flashRoutine != null)
-            {
-                StopCoroutine(flashRoutine);
-            }
+                            
 
-            flashRoutine = StartCoroutine(FlashRoutine());
+            //if (flashRoutine != null)
+            //{
+            //    StopCoroutine(flashRoutine);
+            //}
+
+            //flashRoutine = StartCoroutine(FlashRoutine());
         }
 
         private IEnumerator FlashRoutine()
@@ -144,6 +147,7 @@ namespace OniricoStudios
                 }
 
                 Instantiate(hurtFX);
+                Instantiate(damageFX, new Vector3(transform.position.x, transform.position.y + 3, transform.position.z), Quaternion.identity);
 
                 FMODUnity.RuntimeManager.PlayOneShot(damageEventName, transform.position);
 

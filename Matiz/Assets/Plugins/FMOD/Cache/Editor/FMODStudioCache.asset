@@ -280,7 +280,7 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Dialogos.bank
   Name: Dialogos
   StudioPath: bank:/Dialogos
-  lastModified: 637897055596844342
+  lastModified: 637898010239693147
   FileSizes:
   - Name: Desktop
     Value: 482
@@ -388,11 +388,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 848978715671298876}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 400
 --- !u!114 &-8075863307798645890
 MonoBehaviour:
@@ -417,6 +417,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 901
+--- !u!114 &-8028894827285673807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Save/Poderes sair
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Save/Poderes sair
+  guid: c5e175f2d9431647bf1c0ddb369f09f6
+  Banks:
+  - {fileID: 848978715671298876}
+  - {fileID: -6353501881290653440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 661
+--- !u!114 &-8024242306095910520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha Verde
+  m_EditorClassIdentifier: 
+  Name: Ilha Verde
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-8017735761266619897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank/Tank - tomar dano"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank/Tank - tomar dano"
+  guid: 608d315b63e06a4399090190192955c9
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 368
 --- !u!114 &-7947763171225030319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,8 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash"
   guid: fc2bb599cc2d644299a84e44dfcae294
-  Banks:
-  - {fileID: 848978715671298876}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -441,6 +509,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-7919375964679841723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged/Ranged - morrer"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged/Ranged - morrer"
+  guid: 015e1df32e02594395b1ab19b3a8bf25
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2311
 --- !u!114 &-7907396993659515730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +635,28 @@ MonoBehaviour:
   Name: Save poderes
   Min: 0
   Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-7675095909888397868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Poder cinza/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 3
   Default: 0
   ID:
     data1: 0
@@ -767,10 +880,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Musicas.bank
   Name: Musicas
   StudioPath: bank:/Musicas
-  lastModified: 637897055627869130
+  lastModified: 637898010240328152
   FileSizes:
   - Name: Desktop
-    Value: 2200960
+    Value: 3308960
   Exists: 1
 --- !u!114 &-7155318860149358074
 MonoBehaviour:
@@ -841,6 +954,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-7053710253085912442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/Bot\xF5es/Bot\xE3o clicar"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/Bot\xF5es/Bot\xE3o clicar"
+  guid: 8a951c551a49094c9b9bbe07c1b16a51
+  Banks:
+  - {fileID: -6353501881290653440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1495
 --- !u!114 &-7027052738515642033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,8 +991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Prisma/Defender - Recuperar"
   guid: cd926beb43c29a45804f66ee6db7a8fa
-  Banks:
-  - {fileID: 848978715671298876}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -886,7 +1021,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6938540108511277431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -976,6 +1111,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-6697411150988795726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Ambiente/Plat\xE9ia"
+  m_EditorClassIdentifier: 
+  Name: "Plat\xE9ia"
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-6694626207409495692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,6 +1244,31 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-6402268651848622897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Save/Poder vermelho
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Save/Poder vermelho
+  guid: bd82458cbcc4b34a82ffe91c65335319
+  Banks:
+  - {fileID: 848978715671298876}
+  - {fileID: -6353501881290653440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5767480527895717448}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-6368022600415881746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,10 +1330,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637897055644916635
+  lastModified: 637898010242224735
   FileSizes:
   - Name: Desktop
-    Value: 1298784
+    Value: 1379968
   Exists: 1
 --- !u!114 &-6304876293931197499
 MonoBehaviour:
@@ -1198,6 +1380,52 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-6000735452368681158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/Bot\xF5es/Bot\xE3o passar mouse"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/Bot\xF5es/Bot\xE3o passar mouse"
+  guid: 171be048311324418e6f544a037d2cf8
+  Banks:
+  - {fileID: -6353501881290653440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1492
+--- !u!114 &-5899586506116286094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo/Explosivo - tomar dano"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo/Explosivo - tomar dano"
+  guid: 127134ddc2a12043bdbfb94b4d7e348d
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 528
 --- !u!114 &-5898844861165684275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,6 +1463,28 @@ MonoBehaviour:
   Name: Inimigo
   Min: 0
   Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-5767480527895717448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Poder vermelho/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 3
   Default: 0
   ID:
     data1: 0
@@ -1332,6 +1582,28 @@ MonoBehaviour:
   IsGlobal: 0
   Exists: 0
 --- !u!114 &-5596935915740860113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Defender/Prisma
+  m_EditorClassIdentifier: 
+  Name: Prisma
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-5589570095153512541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1456,8 +1728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank"
   guid: 8ed379a6f625614785a60136b92623e6
-  Banks:
-  - {fileID: 848978715671298876}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1524,8 +1795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged"
   guid: 74e150c65ad03b4fb7e6d8192b1d6625
-  Banks:
-  - {fileID: 848978715671298876}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1600,6 +1870,30 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-4776343390468808451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Save/Poderes surgir
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Save/Poderes surgir
+  guid: dffcf84f04be4d489531c39e08c9b65e
+  Banks:
+  - {fileID: -6353501881290653440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1524182237412582262}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-4712735957327026807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1708,6 +2002,28 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 52416
+  Exists: 1
+--- !u!114 &-4430613965060945024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Defender/Prisma
+  m_EditorClassIdentifier: 
+  Name: Prisma
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
   Exists: 1
 --- !u!114 &-4397919500031013340
 MonoBehaviour:
@@ -1819,6 +2135,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-4224883368892127822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Game over/Game Over
+  m_EditorClassIdentifier: 
+  Name: Game Over
+  Min: 0
+  Max: 40
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-4212809383864666468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1841,6 +2179,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-4054590296213325815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee/Melee - tomar dano"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee/Melee - tomar dano"
+  guid: 75e3ce0680eb5248a9853eece2fcda07
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 525
 --- !u!114 &-4046453621279866624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2040,6 +2401,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 990
+--- !u!114 &-3465766021593503700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player passos/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-3394093996084179343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2131,6 +2514,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-3250547017773307457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash/Dash - morrer"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash/Dash - morrer"
+  guid: 6d5e606cafad7e41acb0fd0d6f458509
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1087
 --- !u!114 &-3145585974762625575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2175,7 +2581,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2972814949491794095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2301,8 +2707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee"
   guid: 3a412223b8dfb74bb9439ba924a03dc6
-  Banks:
-  - {fileID: 848978715671298876}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2324,15 +2729,15 @@ MonoBehaviour:
   m_Name: "event:/Ambienta\xE7\xE3o/fogo"
   m_EditorClassIdentifier: 
   Path: "event:/Ambienta\xE7\xE3o/fogo"
-  guid: 48674f798ba30f4d9ab1fe3cb256f9f5
+  guid: 57b2b8bb5980824db1dbc316e7d1f67c
   Banks:
   - {fileID: -913139119871210349}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 15064
 --- !u!114 &-2559890924803523279
 MonoBehaviour:
@@ -2444,6 +2849,51 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-2362390543925724911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/Bot\xF5es/Bot\xE3o Sair"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/Bot\xF5es/Bot\xE3o Sair"
+  guid: f875f3893b06bb4793fa93e199d6e70b
+  Banks:
+  - {fileID: -6353501881290653440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1495
+--- !u!114 &-2319153543075307467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha vermelha
+  m_EditorClassIdentifier: 
+  Name: Ilha vermelha
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-2259711954726654494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2466,6 +2916,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-2220032308701910279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Poder cinza/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-2203767222812504166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2486,7 +2958,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 2076818887890335705}
+  - {fileID: -3465766021593503700}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -2530,7 +3002,7 @@ MonoBehaviour:
   - {fileID: -6353501881290653440}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -2579,6 +3051,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-1998247996416381387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash/Dash - ataque"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash/Dash - ataque"
+  guid: fc2bb599cc2d644299a84e44dfcae294
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3254
 --- !u!114 &-1950026509304642821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,7 +3184,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1556707195503381882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2736,6 +3231,28 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-1447665370024020152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Poderes surgir/Save poderes
+  m_EditorClassIdentifier: 
+  Name: Save poderes
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-1417702672893458619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2890,6 +3407,30 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-1128067316858539835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Save/Poder cinza
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Save/Poder cinza
+  guid: 688ac6e5fa2e934cbebb9be87015cbc5
+  Banks:
+  - {fileID: -6353501881290653440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7675095909888397868}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-1103272563016693009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3016,10 +3557,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Ambiente.bank
   Name: Ambiente
   StudioPath: bank:/Ambiente
-  lastModified: 637897055596829462
+  lastModified: 637898010239667894
   FileSizes:
   - Name: Desktop
-    Value: 3939712
+    Value: 3939968
   Exists: 1
 --- !u!114 &-908776019088121702
 MonoBehaviour:
@@ -3043,6 +3584,28 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-807784374563065684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha vermelha
+  m_EditorClassIdentifier: 
+  Name: Ilha vermelha
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-801884527487326840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,6 +3626,28 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Type: 1
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-743653245306193267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha Verde
+  m_EditorClassIdentifier: 
+  Name: Ilha Verde
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
   IsGlobal: 0
   Exists: 1
 --- !u!114 &-722370577478700446
@@ -3109,6 +3694,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-640483124584246089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo/Explosivo - ataque"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo/Explosivo - ataque"
+  guid: 0b477eec8bc6284c8c7c26c1fa3918d3
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1966
 --- !u!114 &-618605639427500563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3357,21 +3965,39 @@ MonoBehaviour:
   - {fileID: -6694626207409495692}
   - {fileID: 8479937643892854876}
   - {fileID: -2090740421571152983}
-  - {fileID: 2036156798632943800}
-  - {fileID: -2610967833322597453}
-  - {fileID: -5005140449078329333}
-  - {fileID: -5079612224881672379}
-  - {fileID: 3990903898728290879}
-  - {fileID: -7027052738515642033}
-  - {fileID: -7947763171225030319}
-  - {fileID: 7018332971886361835}
-  - {fileID: 6759881570102099292}
+  - {fileID: -7919375964679841723}
+  - {fileID: -640483124584246089}
+  - {fileID: -5899586506116286094}
+  - {fileID: 6265757315061883968}
+  - {fileID: 3618079704594932892}
+  - {fileID: 1945388578131363137}
+  - {fileID: -8017735761266619897}
+  - {fileID: 6337773757576332548}
+  - {fileID: -3250547017773307457}
+  - {fileID: 8444264001608220349}
+  - {fileID: -4054590296213325815}
+  - {fileID: 539942113644099668}
+  - {fileID: 1020756573019615079}
+  - {fileID: 8885552756629100647}
+  - {fileID: -6402268651848622897}
+  - {fileID: 8136816620664428565}
+  - {fileID: 210562056511310486}
+  - {fileID: -8028894827285673807}
+  - {fileID: 568907364990155122}
+  - {fileID: -1998247996416381387}
+  - {fileID: -1128067316858539835}
+  - {fileID: -4776343390468808451}
+  - {fileID: 2994679725286390206}
+  - {fileID: -6000735452368681158}
+  - {fileID: -7053710253085912442}
+  - {fileID: 6636100056426934919}
+  - {fileID: -2362390543925724911}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5245078254850373043}
   StringsBanks:
   - {fileID: 5706486362410904872}
-  stringsBankWriteTime: 637897055596953460
+  stringsBankWriteTime: 637898010239892995
   cacheVersion: 8
 --- !u!114 &61669225056709213
 MonoBehaviour:
@@ -3459,6 +4085,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &210562056511310486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash/Dash - tomar dano"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Dash/Dash - tomar dano"
+  guid: c2bc896d06406f47ba5359992ff44579
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 990
 --- !u!114 &318383752651011727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3591,6 +4240,53 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 0
   Exists: 0
+--- !u!114 &539942113644099668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank/Tank - ataque"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank/Tank - ataque"
+  guid: 8ed379a6f625614785a60136b92623e6
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3427
+--- !u!114 &568907364990155122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Prisma/Defender"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Prisma/Defender"
+  guid: cd926beb43c29a45804f66ee6db7a8fa
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4430613965060945024}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &604680558482117438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3694,10 +4390,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637897055633072166
+  lastModified: 637898010241594675
   FileSizes:
   - Name: Desktop
-    Value: 817728
+    Value: 828384
   Exists: 1
 --- !u!114 &1002585348235173756
 MonoBehaviour:
@@ -3721,6 +4417,51 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &1020756573019615079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Prisma/Recuperar"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Prisma/Recuperar"
+  guid: b2332e0e071bc7449de75b3acc7aee0e
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2448
+--- !u!114 &1027661707037035326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Game over/Game Over
+  m_EditorClassIdentifier: 
+  Name: Game Over
+  Min: 0
+  Max: 40
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &1072335197453577392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3829,7 +4570,7 @@ MonoBehaviour:
   - {fileID: 848978715671298876}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -3879,6 +4620,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3254
+--- !u!114 &1374603991846821254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Poder vermelho/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &1381185324137375455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3923,6 +4686,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &1524182237412582262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Poderes surgir/Save poderes
+  m_EditorClassIdentifier: 
+  Name: Save poderes
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &1689223478697800444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3946,6 +4731,51 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1087
+--- !u!114 &1895043521465803545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Barco Entrar/Entrar - Sair
+  m_EditorClassIdentifier: 
+  Name: Entrar - Sair
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &1945388578131363137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee/Melee - ataque"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee/Melee - ataque"
+  guid: 3a412223b8dfb74bb9439ba924a03dc6
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 498
 --- !u!114 &1961562053403844917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4004,8 +4834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo"
   guid: 0b477eec8bc6284c8c7c26c1fa3918d3
-  Banks:
-  - {fileID: 848978715671298876}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4035,7 +4864,7 @@ MonoBehaviour:
     data2: 0
   Type: 1
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2079746218996280138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4049,6 +4878,28 @@ MonoBehaviour:
   m_Name: parameter:/Ambiente/Ilha Verde
   m_EditorClassIdentifier: 
   Name: Ilha Verde
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &2142378560520770942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Mar
+  m_EditorClassIdentifier: 
+  Name: Mar
   Min: 0
   Max: 1
   Default: 0
@@ -4100,6 +4951,28 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Type: 1
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &2403917523323233487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Ambiente/Plat\xE9ia"
+  m_EditorClassIdentifier: 
+  Name: "Plat\xE9ia"
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
   IsGlobal: 0
   Exists: 1
 --- !u!114 &2463348578153325996
@@ -4322,7 +5195,7 @@ MonoBehaviour:
   - {fileID: -7207805319821580429}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -4392,7 +5265,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2934506940062666004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4460,6 +5333,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &2994679725286390206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundtrack/Tema Coliseu
+  m_EditorClassIdentifier: 
+  Path: event:/Soundtrack/Tema Coliseu
+  guid: 5f3af906e76de44f8121e2457009d161
+  Banks:
+  - {fileID: -7207805319821580429}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 91511
 --- !u!114 &3185563210313726306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4595,6 +5491,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &3618079704594932892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo/Explosivo - morrer"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Explosivo/Explosivo - morrer"
+  guid: 2348a743aa76e144b2428e1f91bbd5d8
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1822
 --- !u!114 &3705834001429219660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4617,6 +5536,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &3869594478522784937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Poder vermelho/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &3975313270279954937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4653,8 +5594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/Dieg\xE9ticos/Barco/Barco Entrar - Sair"
   guid: beaa2937cde9ae41aa29cc51cc2d1b0b
-  Banks:
-  - {fileID: 848978715671298876}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4774,6 +5714,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &4310419350366983564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player passos/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &4407989484589557451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4930,7 +5892,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4623004228486766595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4997,6 +5959,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &4772629124198143648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha Azul
+  m_EditorClassIdentifier: 
+  Name: Ilha Azul
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &4896989700146891537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5079,7 +6063,7 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637897055596938579
+  lastModified: 637898010239842960
   FileSizes:
   - Name: Desktop
     Value: 15258
@@ -5253,10 +6237,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637897055596953460
+  lastModified: 637898010239892995
   FileSizes:
   - Name: Desktop
-    Value: 4048
+    Value: 4880
   Exists: 1
 --- !u!114 &5711113755434715113
 MonoBehaviour:
@@ -5530,6 +6514,52 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &6265757315061883968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged/Ranged - tomar dano"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged/Ranged - tomar dano"
+  guid: 2035ae4c2eff2c4f802847c762f69759
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 168
+--- !u!114 &6337773757576332548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee/Melee - morrer"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Melee/Melee - morrer"
+  guid: 6a012fb687f2a145b9a6d59deaf0fe48
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 901
 --- !u!114 &6603644045573261851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5552,6 +6582,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &6636100056426934919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/Bot\xF5es/Bot\xE3o Jogar"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/Bot\xF5es/Bot\xE3o Jogar"
+  guid: 9cb99ef2b963914e81f9664ff561641f
+  Banks:
+  - {fileID: -6353501881290653440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1495
 --- !u!114 &6668189404873029076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5588,8 +6641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "event:/UI/Save/Poderes sele\xE7\xE3o"
   guid: dffcf84f04be4d489531c39e08c9b65e
-  Banks:
-  - {fileID: -6353501881290653440}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5767,8 +6819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/Save/Poderes selecionar
   guid: 688ac6e5fa2e934cbebb9be87015cbc5
-  Banks:
-  - {fileID: -6353501881290653440}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5797,6 +6848,28 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &7146875750103652487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Barco Entrar/Entrar - Sair
+  m_EditorClassIdentifier: 
+  Name: Entrar - Sair
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
   IsGlobal: 0
   Exists: 1
 --- !u!114 &7149107214667660208
@@ -5975,7 +7048,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &7672642531732270705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5999,6 +7072,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3427
+--- !u!114 &7783703798698052412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Poder vermelho/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &7821016357443061274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6111,6 +7206,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2436
+--- !u!114 &8136816620664428565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Barco/Barco Entrar"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Barco/Barco Entrar"
+  guid: beaa2937cde9ae41aa29cc51cc2d1b0b
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1895043521465803545}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &8157451783301237879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6176,11 +7295,11 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -2985515066367049842}
-  - {fileID: -1637920584537050348}
-  - {fileID: -7015052972625209795}
-  - {fileID: 7565611485381619711}
-  - {fileID: 4591613713555028313}
+  - {fileID: 2142378560520770942}
+  - {fileID: 2403917523323233487}
+  - {fileID: -2319153543075307467}
+  - {fileID: 4772629124198143648}
+  - {fileID: -8024242306095910520}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -6206,6 +7325,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &8444264001608220349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged/Ranged - ataque"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Ranged/Ranged - ataque"
+  guid: 74e150c65ad03b4fb7e6d8192b1d6625
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 502
 --- !u!114 &8479937643892854876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6226,10 +7368,32 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 2861960431829794616}
+  - {fileID: -4224883368892127822}
   MinDistance: 0
   MaxDistance: 0
   Length: 7080
+--- !u!114 &8573234446521165697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Ilha Azul
+  m_EditorClassIdentifier: 
+  Name: Ilha Azul
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &8598627035166087167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6319,6 +7483,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &8761400360745246304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/Mar
+  m_EditorClassIdentifier: 
+  Name: Mar
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &8798532270075537069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6363,6 +7549,29 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 0
   Exists: 1
+--- !u!114 &8885552756629100647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank/Tank - morrer"
+  m_EditorClassIdentifier: 
+  Path: "event:/Dieg\xE9ticos/Inimigos/Vermelho/Tank/Tank - morrer"
+  guid: b8100e3c1e5d3c45a1ddb545a15c4639
+  Banks:
+  - {fileID: 848978715671298876}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2436
 --- !u!114 &8925816873192339974
 MonoBehaviour:
   m_ObjectHideFlags: 0

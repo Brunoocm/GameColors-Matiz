@@ -19,7 +19,7 @@ namespace OniricoStudios
 
             if(trigger != null)
             {
-                anim.SetTrigger(trigger);
+                //anim.SetTrigger(trigger);
             }
         }
     }

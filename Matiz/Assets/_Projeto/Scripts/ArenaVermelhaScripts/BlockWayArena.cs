@@ -9,6 +9,7 @@ namespace OniricoStudios
         public GameObject firstArenaBlock;
         public GameObject secondArenaBlock;
         public GameObject thirdArenaBlock;
+        public GameObject tutorial;
         public StartDesafio[] Battles;
 
         public static bool firstArena;
@@ -40,6 +41,10 @@ namespace OniricoStudios
             {
                 print("oo");
                 thirdArenaBlock.SetActive(false);
+            }
+            if(progressionManager.tutorial)
+            {
+                tutorial.SetActive(false);
             }
            
 

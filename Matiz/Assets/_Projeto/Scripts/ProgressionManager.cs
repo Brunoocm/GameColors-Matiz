@@ -18,6 +18,10 @@ public class ProgressionManager : MonoBehaviour
     public bool azul;
     public bool verde;
     
+    [Header("Abilities")]
+    public bool tutorial;
+
+    
     private void Awake()
     {
         if (instance == null)
@@ -32,7 +36,10 @@ public class ProgressionManager : MonoBehaviour
     
     }
 
-    
+    public void endTutorial()
+    {
+        tutorial = true;
+    }
     void Start()
     {
         

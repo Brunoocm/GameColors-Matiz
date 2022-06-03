@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace OniricoStudios
 {
@@ -12,6 +13,8 @@ namespace OniricoStudios
         public Transform pos;
 
         [SerializeField] Link link = null;
+        private  Scene currentScene;
+
         void Awake()
         {
             if (Link.current == link)
@@ -19,7 +22,10 @@ namespace OniricoStudios
                 StartCoroutine(ReloadPosition());
             }
         }
-
+        private void Start()
+        {
+            currentScene = SceneManager.GetActiveScene();
+        }
         private void Spawn()
         {
             CharacterStats.playerObj.transform.position = pos.transform.position;
@@ -27,8 +33,18 @@ namespace OniricoStudios
 
         IEnumerator ReloadPosition()
         {
-            Spawn();    
+            //while (SceneManager.GetActiveScene().name != "MainLand")
+            //{
+            //    yield return null;
+            //}
+
+
+
+
+
+
             transition.transform.DOScale(new Vector2(11, 11), 0.01f);
+            Spawn();
             yield return new WaitForSeconds(1f);
             Spawn();
             transition.transform.DOScale(new Vector2(0, 0), 1);

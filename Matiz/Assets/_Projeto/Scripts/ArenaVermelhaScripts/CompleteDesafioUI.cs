@@ -80,8 +80,8 @@ namespace OniricoStudios
             yield return new WaitForSeconds(1f);
 
             Sequence mySequence = DOTween.Sequence();
-            mySequence.Append(pivotArena2.transform.DOScale(4.5f, 0.3f))
-                .Append(pivotArena2.transform.DOScale(3, 0.3f));
+            mySequence.Append(pivotArena2.transform.DOScale(1.7f, 0.3f))
+                .Append(pivotArena2.transform.DOScale(1, 0.3f));
 
             yield return new WaitForSeconds(3f);
 
