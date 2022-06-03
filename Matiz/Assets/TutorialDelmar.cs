@@ -41,39 +41,48 @@ namespace OniricoStudios
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) //ir para ilha cinza
-            {
-                //StartCoroutine(loadsceneName("MainLand", CinzaPos));
-            }
+            //if (Input.GetKeyDown(KeyCode.Alpha1)) //ir para ilha cinza
+            //{
+            //    StartCoroutine(loadsceneName("MainLand", CinzaPos));
+            //}
 
             if (Input.GetKeyDown(KeyCode.Alpha2)) //ir para ilha vermelha
             {
-                //StartCoroutine(loadsceneName("MainLand", VermelhaPos));
+                StartCoroutine(loadsceneName("MainLand", VermelhaPos));
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha3)) //desbloquear primeira arena
+            if (Input.GetKeyDown(KeyCode.Alpha3)) //ir para primeira arena
             {
-                //BlockWayArena.firstArena = true;
+                SceneManager.LoadScene("PrimeiraArena");
             }
 
-            if(Input.GetKeyDown(KeyCode.Alpha4)) //desbloquear segunda arena
+            if (Input.GetKeyDown(KeyCode.Alpha4)) //ir para segunda arena
             {
-                //BlockWayArena.secondArena = true;
+                SceneManager.LoadScene("SegundaArena");
             }
 
-            if(Input.GetKeyDown(KeyCode.Alpha5)) //ir para primeira arena
+            if (Input.GetKeyDown(KeyCode.Alpha5)) //desbloquear primeira arena
             {
-                //SceneManager.LoadScene("PrimeiraArena");
+                BlockWayArena.firstArena = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha6)) //ir para segunda arena
+            if (Input.GetKeyDown(KeyCode.Alpha6)) //desbloquear segunda arena
             {
-                //SceneManager.LoadScene("SegundaArena");
+                BlockWayArena.secondArena = true;
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Alpha7)) //desbloquear segunda arena
+            {
+                CharacterStats chassr = FindObjectOfType<CharacterStats>();
+                chassr.health = 100000;
             }
 
+           
+
+         
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
             {
-                //delmar.SetActive(!delmar.activeSelf);
+                delmar.SetActive(!delmar.activeSelf);
             }
         }
 
