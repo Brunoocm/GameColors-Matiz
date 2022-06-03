@@ -21,6 +21,7 @@ namespace OniricoStudios
         public GameObject spawnpoint;
         public bool currentSpawnpoint;
         [HideInInspector] public bool selectColor;
+        [HideInInspector] public bool blockedColor;
         private bool isActive;
         private bool saving;
         private bool isInteract;
@@ -63,7 +64,7 @@ namespace OniricoStudios
                     FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.OpenEvent, transform.position);
 
                 }
-                else if (Input.GetKeyDown(KeyCode.E) && !saving && isInteract) //clicar fora do bagulho com o mouse
+                else if (Input.GetKeyDown(KeyCode.E) && !saving && isInteract && !blockedColor) //clicar fora do bagulho com o mouse
                 {
                     StartCoroutine(ChromaDesappiers());
                     m_MyEvent.Invoke();

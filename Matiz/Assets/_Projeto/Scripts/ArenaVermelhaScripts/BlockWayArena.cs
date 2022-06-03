@@ -22,6 +22,11 @@ namespace OniricoStudios
         void Start()
         {
             Battles = FindObjectsOfType<StartDesafio>();
+
+            if (progressionManager.tutorial)
+            {
+                tutorial.SetActive(false);
+            }
         }
 
         void Update()
@@ -42,10 +47,10 @@ namespace OniricoStudios
                 print("oo");
                 thirdArenaBlock.SetActive(false);
             }
-            if(progressionManager.tutorial)
-            {
-                tutorial.SetActive(false);
-            }
+            //if(progressionManager.tutorial)
+            //{
+            //    tutorial.SetActive(false);
+            //}
            
 
             if (firstArena)

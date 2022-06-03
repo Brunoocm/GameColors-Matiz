@@ -43,37 +43,37 @@ namespace OniricoStudios
         {
             if (Input.GetKeyDown(KeyCode.Alpha1)) //ir para ilha cinza
             {
-                StartCoroutine(loadsceneName("MainLand", CinzaPos));
+                //StartCoroutine(loadsceneName("MainLand", CinzaPos));
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2)) //ir para ilha vermelha
             {
-                StartCoroutine(loadsceneName("MainLand", VermelhaPos));
+                //StartCoroutine(loadsceneName("MainLand", VermelhaPos));
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha3)) //desbloquear primeira arena
             {
-                BlockWayArena.firstArena = true;
+                //BlockWayArena.firstArena = true;
             }
 
             if(Input.GetKeyDown(KeyCode.Alpha4)) //desbloquear segunda arena
             {
-                BlockWayArena.secondArena = true;
+                //BlockWayArena.secondArena = true;
             }
 
             if(Input.GetKeyDown(KeyCode.Alpha5)) //ir para primeira arena
             {
-                SceneManager.LoadScene("PrimeiraArena");
+                //SceneManager.LoadScene("PrimeiraArena");
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha6)) //ir para segunda arena
             {
-                SceneManager.LoadScene("SegundaArena");
+                //SceneManager.LoadScene("SegundaArena");
             }
 
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
             {
-                delmar.SetActive(!delmar.activeSelf);
+                //delmar.SetActive(!delmar.activeSelf);
             }
         }
 

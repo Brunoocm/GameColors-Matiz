@@ -41,7 +41,10 @@ namespace OniricoStudios
                     if (index > 0)
                     {
                         index--;
+
+                        checkpointScript.blockedColor = colors[index].blocked;
                     }
+
                     //esquerda
                     FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.SelectingEvent, transform.position);
                 }
@@ -50,8 +53,11 @@ namespace OniricoStudios
                     if (index < colors.Length - 1)
                     {
                         index++;
+
+                        checkpointScript.blockedColor = colors[index].blocked;
                     }
-                    //Direita
+
+                    //direita
                     FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.SelectingEvent, transform.position);
                 }
             }

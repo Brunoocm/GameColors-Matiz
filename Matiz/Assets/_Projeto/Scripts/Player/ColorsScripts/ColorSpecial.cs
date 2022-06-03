@@ -10,6 +10,8 @@ namespace OniricoStudios
         public bool isSelected;
         public bool isCinza, isVermelho, isVerde, isAzul;
 
+        public bool blocked;
+
         CharacterAbilities characterAbilities;
         ProgressionManager progressionManager => FindObjectOfType<ProgressionManager>();
 
