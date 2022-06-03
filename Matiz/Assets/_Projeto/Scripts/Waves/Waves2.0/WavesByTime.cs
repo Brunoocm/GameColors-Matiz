@@ -113,7 +113,7 @@ namespace OniricoStudios
 
         IEnumerator StartWaves()
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(0.5f);
             isStarted = true;
         }
         IEnumerator TimeToEnd()

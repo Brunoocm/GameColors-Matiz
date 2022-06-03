@@ -17,13 +17,14 @@ namespace OniricoStudios
 
         void Awake()
         {
+            
+        }
+        private void Start()
+        {
             if (Link.current == link)
             {
                 StartCoroutine(ReloadPosition());
             }
-        }
-        private void Start()
-        {
             currentScene = SceneManager.GetActiveScene();
         }
         private void Spawn()
