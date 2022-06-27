@@ -7,40 +7,73 @@ namespace OniricoStudios
     public class ColliderDamage : MonoBehaviour
     {
         public int damage;
+        public float lavaCooldown;
         public bool lava;
+
+        private float cooltime;
+        private bool onLava;
+        private GameObject player;
+
+        private void Update()
+        {
+            if (lava)
+            {
+                if (cooltime <= 0)
+                {
+                    player.GetComponent<CharacterStats>().DamageVoid(damage, transform);
+                    cooltime = lavaCooldown;
+                }
+                else
+                {
+                    cooltime -= Time.deltaTime;
+                }
+            }
+        }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<CharacterStats>() != null)
+            if (other.GetComponent<CharacterStats>() != null && !lava)
             {
                 other.GetComponent<CharacterStats>().DamageVoid(damage, transform);
-                if (lava)
-                {
-                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.LavaEvent, transform.position);
-                }
             }
+            else if(other.GetComponent<CharacterStats>() != null && lava)
+            {
+                player = other.gameObject;
 
-            //if (other.GetComponent<EnemyHealth>() != null)
-            //{
-            //    other.GetComponent<EnemyHealth>().DamageVoid(damage);
-            //}
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.LavaEvent, transform.position);
+                onLava = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.GetComponent<CharacterStats>() != null)
+            {
+                onLava = false;
+            }
         }
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.GetComponent<CharacterStats>() != null)
+            if (collision.gameObject.GetComponent<CharacterStats>() != null && !lava)
             {
                 collision.gameObject.GetComponent<CharacterStats>().DamageVoid(damage, transform);
-                if (lava)
-                {
-                    FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.LavaEvent, transform.position);
-                }
             }
+            else if (collision.gameObject.GetComponent<CharacterStats>() != null && lava)
+            {
+                player = collision.gameObject.gameObject;
 
-            //if (collision.gameObject.GetComponent<EnemyHealth>() != null)
-            //{
-            //    collision.gameObject.GetComponent<EnemyHealth>().DamageVoid(damage);
-            //}
+                FMODUnity.RuntimeManager.PlayOneShot(AudioScript.Instance.LavaEvent, transform.position);
+                onLava = true;
+            }
+        }
+
+        private void OnCollisionExit(Collision collision)
+        {
+            if (collision.gameObject.GetComponent<CharacterStats>() != null)
+            {
+                onLava = false;
+            }
         }
     }
 }
